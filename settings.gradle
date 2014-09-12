@@ -1,0 +1,8 @@
+include ':facebookSDK'
+include ':aFileChooser'
+include ':pr'
+include ':crouton'
+include ':sackOfViewsAdapter'
+include ':mergeAdapter'
+include ':gtpr'
+include ':crouton'

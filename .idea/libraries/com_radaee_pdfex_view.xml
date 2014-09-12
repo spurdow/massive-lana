@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="com.radaee.pdfex_view">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/gtpr/libs/com.radaee.pdfex_view.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

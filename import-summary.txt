@@ -1,0 +1,134 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Risky Project Location:
+-----------------------
+The tools *should* handle project locations in any directory. However,
+due to bugs, placing projects in directories containing spaces in the
+path, or characters like ", ' and &, have had issues. We're working to
+eliminate these bugs, but to save yourself headaches you may want to
+move your project to a location where this is not a problem.
+G:\Android Studio\gtg
+          -          
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From FacebookSDK:
+* build.gradle
+* build.xml
+From aFileChooser:
+* proguard.cfg
+From gtpr:
+* .gitignore
+* .idea\
+* .idea\.name
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\encodings.xml
+* .idea\gtg.iml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\scopes\
+* .idea\scopes\scope_settings.xml
+* .idea\vcs.xml
+* .idea\workspace.xml
+* ic_launcher-web.png
+* proguard-project.txt
+From pr:
+* .idea\
+* .idea\.name
+* .idea\PDFReader.iml
+* .idea\compiler.xml
+* .idea\copyright\
+* .idea\copyright\profiles_settings.xml
+* .idea\encodings.xml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\scopes\
+* .idea\scopes\scope_settings.xml
+* .idea\vcs.xml
+* .idea\workspace.xml
+* License.pdf
+* proguard-project.txt
+* release_history.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:+
+android-support-v7-appcompat.jar => com.android.support:appcompat-v7:+
+gson-2.2.4-javadoc.jar => com.google.code.gson:gson:2.2.4
+gson-2.2.4-sources.jar => com.google.code.gson:gson:2.2.4
+gson-2.2.4.jar => com.google.code.gson:gson:2.2.4
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In FacebookSDK:
+* AndroidManifest.xml => facebookSDK\src\main\AndroidManifest.xml
+* assets\ => facebookSDK\src\main\assets\
+* libs\bolts.jar => facebookSDK\libs\bolts.jar
+* res\ => facebookSDK\src\main\res\
+* src\ => facebookSDK\src\main\java\
+In aFileChooser:
+* AndroidManifest.xml => aFileChooser\src\main\AndroidManifest.xml
+* assets\ => aFileChooser\src\main\assets\
+* res\ => aFileChooser\src\main\res\
+* src\ => aFileChooser\src\main\java\
+In pr:
+* AndroidManifest.xml => pr\src\main\AndroidManifest.xml
+* assets\ => pr\src\main\assets\
+* libs\armeabi-v7a\librdpdf.so => pr\src\main\jniLibs\armeabi-v7a\librdpdf.so
+* libs\armeabi\librdpdf.so => pr\src\main\jniLibs\armeabi\librdpdf.so
+* libs\com.radaee.pdfex_view.jar => pr\libs\com.radaee.pdfex_view.jar
+* libs\mips\librdpdf.so => pr\src\main\jniLibs\mips\librdpdf.so
+* libs\x86\librdpdf.so => pr\src\main\jniLibs\x86\librdpdf.so
+* lint.xml => pr\lint.xml
+* res\ => pr\src\main\res\
+* src\ => pr\src\main\java\
+In gtpr:
+* AndroidManifest.xml => gtpr\src\main\AndroidManifest.xml
+* assets\ => gtpr\src\main\assets\
+* libs\com.radaee.pdfex_view.jar => gtpr\libs\com.radaee.pdfex_view.jar
+* libs\epublib-core-latest.jar => gtpr\libs\epublib-core-latest.jar
+* libs\slf4j-android-1.5.8.jar => gtpr\libs\slf4j-android-1.5.8.jar
+* res\ => gtpr\src\main\res\
+* src\ => gtpr\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

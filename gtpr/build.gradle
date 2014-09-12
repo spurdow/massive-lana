@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "gtg.virus.gtpr"
+        minSdkVersion 14
+        targetSdkVersion 19
+    }
+
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile project(':aFileChooser')
+    compile project(':pr')
+    compile project(':facebookSDK')
+    compile project(':mergeAdapter')
+    compile('de.keyboardsurfer.android.widget:crouton:+@aar') {
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+    compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.android.support:appcompat-v7:20.0.0'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.google.code.gson:gson:2.2.4'
+
+    compile files('libs/com.radaee.pdfex_view.jar')
+    compile files('libs/epublib-core-latest.jar')
+    compile files('libs/slf4j-android-1.5.8.jar')
+}

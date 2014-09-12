@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pinbook</string>
+    <string name="app_id">838264129517965</string>
+    <string name="drawer_open">PinBook-Menu</string>
+    <string name="drawer_close">PinBook</string>
+    <string name="first_launch_dialog">Please wait while we configure things</string>
+    <string name="launch_dialog">Please wait while we get the configuration and stuff</string>
+    <string name="menu_add">Add</string>
+
+</resources>
