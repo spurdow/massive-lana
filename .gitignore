@@ -12,11 +12,15 @@
 bin/
 gen/
 
+
+
 # Gradle files
 .gradle/
 build/
 
 !gtpr**/**
+
+
 
 # Local configuration file (sdk path, etc)
 local.properties
