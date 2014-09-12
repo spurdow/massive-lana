@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shelf"
+    android:baselineAligned="false"
+    android:divider="@drawable/linear_layout_vertical_divider"
+    android:gravity="center|center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="3" >
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/shelf_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+<!-- 
+            <include
+                android:id="@+id/shelf_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                layout="@layout/shelf_item" />
+
+            <include
+                android:id="@+id/shelf_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                layout="@layout/shelf_item" />
+
+            <include
+                android:id="@+id/shelf_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                layout="@layout/shelf_item" /> -->
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</LinearLayout><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/layout/shelf_row.xml -->

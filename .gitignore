@@ -1,6 +1,7 @@
 # Created by .gitignore support plugin (hsz.mobi)
 ### Android template
 
+
 # Files for the Dalvik VM
 *.dex
 
@@ -14,6 +15,8 @@ gen/
 # Gradle files
 .gradle/
 build/
+
+!gtpr**/**
 
 # Local configuration file (sdk path, etc)
 local.properties
