@@ -34,21 +34,22 @@
         <activity android:name="NavigationalShelfListViewActivity"></activity>
         
         <activity
-    android:name="com.ipaulpro.afilechooser.FileChooserActivity"
-    android:icon="@drawable/ic_chooser"
-    android:enabled="@bool/use_activity"
-    android:exported="true"
-    android:label="@string/choose_file" >
-    <intent-filter>
-        <action android:name="android.intent.action.GET_CONTENT" />
+        android:name="com.ipaulpro.afilechooser.FileChooserActivity"
+        android:icon="@drawable/ic_chooser"
+        android:enabled="@bool/use_activity"
+        android:exported="true"
+        android:label="@string/choose_file" >
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
 
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.OPENABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
 
-        <data android:mimeType="text/*" />
-    </intent-filter>
-</activity>
+                <data android:mimeType="text/*" />
+            </intent-filter>
+        </activity>
         <activity android:name="GTGPdfViewer"></activity>
+        <activity android:name="GTGEpubViewer"></activity>
     </application>
 
 </manifest>

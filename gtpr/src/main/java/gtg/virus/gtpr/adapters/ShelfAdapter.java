@@ -1,5 +1,6 @@
 package gtg.virus.gtpr.adapters;
 
+import gtg.virus.gtpr.GTGEpubViewer;
 import gtg.virus.gtpr.GTGPdfViewer;
 import gtg.virus.gtpr.R;
 import gtg.virus.gtpr.entities.PBook;
@@ -42,7 +43,6 @@ public class ShelfAdapter extends BaseAdapter {
 	
 	/**
 	 * @param mContext
-	 * @param books
 	 * @param inflater
 	 */
 	public ShelfAdapter(Context mContext, 
@@ -161,7 +161,9 @@ public class ShelfAdapter extends BaseAdapter {
 						public void onClick(View v) {
 							// TODO Auto-generated method stub
 							if(Utilities.isEpub(b.getPath())){
-								
+                                Intent intent = new Intent(mContext, GTGEpubViewer.class);
+                                intent.putExtra(PIN_EXTRA_PBOOK, b.toString());
+                                mContext.startActivity(intent);
 							}else if(Utilities.isPdf(b.getPath())){
 								Intent intent = new Intent(mContext, GTGPdfViewer.class);
 							    intent.putExtra(PIN_EXTRA_PBOOK, b.toString());

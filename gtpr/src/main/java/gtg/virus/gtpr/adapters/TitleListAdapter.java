@@ -52,7 +52,6 @@ public class TitleListAdapter extends AbstractListAdapter<Menu> {
 		}
 
 
-        child.setBackgroundColor(Color.parseColor("#fffff5f5"));
 
         Bitmap bitmap = getObject(position).getImage();
 		if(bitmap != null){
