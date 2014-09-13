@@ -21,6 +21,8 @@ public class WebPageFragment extends Fragment {
 
     private String data = null ;
 
+    private String baseUrl = null;
+
     public static WebPageFragment newInstance(final String data , final String path){
         WebPageFragment mFrag = new WebPageFragment();
 
@@ -48,10 +50,11 @@ public class WebPageFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        final String baseUrl = Environment.getExternalStorageDirectory().getPath()  + "/";
+
         Bundle extras = getArguments();
         if(extras.containsKey(DATA_FILTER)){
             data = extras.getString(DATA_FILTER);
+            baseUrl = extras.getString(PATH_FILTER);
         }
 
 
