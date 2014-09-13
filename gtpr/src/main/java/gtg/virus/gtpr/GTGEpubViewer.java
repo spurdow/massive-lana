@@ -19,20 +19,23 @@ import nl.siegmann.epublib.epub.EpubReader;
 
 import static gtg.virus.gtpr.utils.Utilities.PIN_EXTRA_PBOOK;
 
-public class GTGEpubViewer extends ActionBarActivity {
+public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnActionBarItemClick {
 
     private final static String TAG = GTGEpubViewer.class.getSimpleName();
 
     private WebView mViewPage ;
 
-    private PBook mBook ;
+
+    /**
+     * @return the layout from R.
+     */
+    @Override
+    protected int getContentViewResId() {
+        return R.layout.epub_main_layout;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.epub_main_layout);
-
+    protected void initializeResources(Bundle saveInstanceState) {
         mViewPage = (WebView) findViewById(R.id.epub_web_view);
 
         Bundle extras = getIntent().getExtras();
@@ -67,33 +70,32 @@ public class GTGEpubViewer extends ActionBarActivity {
 
         mViewPage.loadDataWithBaseURL(baseUrl , data , type , encoding , null );
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // TODO Auto-generated method stub
-        getMenuInflater().inflate(R.menu.pdf_viewer_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
 
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // TODO Auto-generated method stub
-        switch(item.getItemId()){
+    public void onItemClick(MenuItem item) {
 
-            case android.R.id.home: finish(); break;
-
-            case R.id.opt_menu_search: break;
-
-            case R.id.opt_menu_set_alarm: break;
-
-            case R.id.opt_menu_view: break;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onItemClick(int resId) {
+
+    }
+
+    @Override
+    public void onSearch() {
+
+    }
+
+    @Override
+    public void onSetAlarm() {
+
+    }
+
+    @Override
+    public void onViewDetails() {
+
+    }
 }
