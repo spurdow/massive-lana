@@ -12,6 +12,7 @@ import java.util.List;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +50,11 @@ public class TitleListAdapter extends AbstractListAdapter<Menu> {
 		}else{
 			mView = (ViewHolder) child.getTag();
 		}
-		Bitmap bitmap = getObject(position).getImage();
+
+
+        child.setBackgroundColor(Color.parseColor("#fffff5f5"));
+
+        Bitmap bitmap = getObject(position).getImage();
 		if(bitmap != null){
 			mView.mImgView.setImageBitmap(getObject(position).getImage());
 		}
