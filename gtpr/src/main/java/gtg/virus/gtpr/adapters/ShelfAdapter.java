@@ -164,6 +164,8 @@ public class ShelfAdapter extends BaseAdapter {
                                 Intent intent = new Intent(mContext, GTGEpubViewer.class);
                                 intent.putExtra(PIN_EXTRA_PBOOK, b.toString());
                                 mContext.startActivity(intent);
+
+                                Log.w(TAG , "Starting GTGEpubViewer " + b.toString() );
 							}else if(Utilities.isPdf(b.getPath())){
 								Intent intent = new Intent(mContext, GTGPdfViewer.class);
 							    intent.putExtra(PIN_EXTRA_PBOOK, b.toString());

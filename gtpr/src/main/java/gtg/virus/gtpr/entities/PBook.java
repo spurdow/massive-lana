@@ -6,37 +6,48 @@ import java.util.List;
 import android.graphics.Bitmap;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.radaee.pdf.Page;
 
 public class PBook {
 	
 	private List<PPage> pages;
-	
+
+    @Expose(serialize = true, deserialize = true)
 	@SerializedName("b_title")
 	private String title = "NA";
-	
+
+    @Expose(serialize = true, deserialize = true)
 	@SerializedName("b_authors")
 	private List<String> authors;
-	
+
+    @Expose(serialize = true, deserialize = true)
 	@SerializedName("b_path")
 	private String path = "NA";
-	
+
+    @Expose(serialize = true, deserialize = true)
 	@SerializedName("b_fname")
 	private String filename = "NA";
 
+    @Expose(serialize = true, deserialize = true)
 	@SerializedName("b_tag")
 	private Object tag;
-	
-	private Bitmap page0;
-	
+
+    @Expose(serialize = true, deserialize = true)
 	@SerializedName("b_isEpub")
 	public boolean isEpub;
-	
-	@SerializedName("b_isPdf")
-	public boolean isPdf; 
 
-	/**
+    @Expose(serialize = true, deserialize = true)
+	@SerializedName("b_isPdf")
+	public boolean isPdf;
+
+
+    private Bitmap page0;
+
+
+    /**
 	 * @param pages
 	 * @param title
 	 * @param author
@@ -153,7 +164,7 @@ public class PBook {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return new Gson().toJson(this, PBook.class);
+		return new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create().toJson(this, PBook.class);
 	}
 	
 	

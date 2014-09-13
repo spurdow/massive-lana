@@ -2,8 +2,9 @@ package gtg.virus.gtpr;
 
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.MenuItem;
 import android.webkit.WebView;
 
@@ -12,8 +13,12 @@ import com.google.gson.Gson;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import gtg.virus.gtpr.adapters.PagerAdapter;
 import gtg.virus.gtpr.entities.PBook;
+import gtg.virus.gtpr.fragment_pages.WebPageFragment;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.epub.EpubReader;
 
@@ -23,8 +28,11 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
     private final static String TAG = GTGEpubViewer.class.getSimpleName();
 
-    private WebView mViewPage ;
+    private ViewPager mPager;
 
+    private PagerAdapter mAdapter;
+
+    private List<Fragment> mFragments;
 
     /**
      * @return the layout from R.
@@ -36,7 +44,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
     @Override
     protected void initializeResources(Bundle saveInstanceState) {
-        mViewPage = (WebView) findViewById(R.id.epub_web_view);
+        mPager = (ViewPager) findViewById(R.id.pager);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
@@ -58,17 +66,37 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
             e.printStackTrace();
         }
 
-        final String baseUrl = Environment.getExternalStorageDirectory().getPath()  + "/";
-        String data = "";
-        try {
-            data = new String(epubBook.getContents().get(2).getData());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        final String type = "text/html";
-        final String encoding = "UTF-8";
+        mFragments = new ArrayList<Fragment>();
+        for(int i= 0 ; i < epubBook.getContents().size() ; i++){
+            try {
+                String data = new String(epubBook.getContents().get(i).getData());
+                mFragments.add(WebPageFragment.newInstance(data , mBook.getPath()));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-        mViewPage.loadDataWithBaseURL(baseUrl , data , type , encoding , null );
+        }
+
+        mAdapter = new PagerAdapter(getSupportFragmentManager() , mFragments);
+
+        mPager.setPageTransformer(false , new PageTransformer());
+        mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i2) {
+                Log.w(TAG , "onPageScrolled");
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                Log.w(TAG , "onPageSelected");
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+                Log.w(TAG , "onPageScrollStateChanged");
+            }
+        });
+        mPager.setAdapter(mAdapter);
 
     }
 
