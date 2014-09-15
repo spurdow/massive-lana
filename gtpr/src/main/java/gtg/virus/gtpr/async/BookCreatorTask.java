@@ -105,6 +105,9 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
                 newBook.setTitle("TextFile");
                 Bitmap page0 = BitmapFactory.decodeResource(mContext.getResources() , R.drawable.ic_content_paste);
                 newBook.setPage0(page0);
+                newBook.setPath(params[0]);
+                newBook.setFilename(file.getName());
+                Log.w(TAG , "txt file added");
             }
 		}
 		return newBook;

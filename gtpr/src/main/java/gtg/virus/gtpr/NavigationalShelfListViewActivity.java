@@ -408,6 +408,9 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                                             b.setTitle("TextFile");
                                             Bitmap page0 = BitmapFactory.decodeResource(getResources() , R.drawable.ic_content_paste);
                                             b.setPage0(page0);
+                                            b.setPath(path);
+                                            b.setFilename(newPdf.getName());
+                                            Log.w(TAG , "txt file added");
                                         }
 					                }else if(!isValideBook(path)){
 					                	makeText( "File is not a pdf/epub/txt");
@@ -501,6 +504,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 			                Log.i(TAG, "Path " + path);
 			                // Alternatively, use FileUtils.getFile(Context, Uri)
 			                if (path != null && isValideBook(path) && FileUtils.isLocal(path)) {
+                                Log.w(TAG , "Valid Book");
 			                    if(isPdf(path)){
 			                    	
 			                    	
@@ -576,7 +580,15 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 			                    			b.setPage0(page0);
 			                    		}
 			                    	}
-			                    }
+			                    }else if(isTxt(path)){
+                                    b = new PBook();
+                                    b.setTitle("TextFile");
+                                    Bitmap page0 = BitmapFactory.decodeResource(getResources() , R.drawable.ic_content_paste);
+                                    b.setPage0(page0);
+                                    b.setPath(path);
+                                    b.setFilename(newPdf.getName());
+                                    Log.w(TAG , "txt file added");
+                                }
 			                }else if(!isValideBook(path)){
 			                	makeText( "File is not a pdf/epub/txt");
 			                }
