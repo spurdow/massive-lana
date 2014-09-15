@@ -1,6 +1,8 @@
 package gtg.virus.gtpr.fragment_pages;
 
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
@@ -51,6 +53,7 @@ public class WebPageFragment extends Fragment {
         return view;
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -65,8 +68,11 @@ public class WebPageFragment extends Fragment {
         Log.w(TAG , "Path " + baseUrl );
         final String type = "text/html";
         final String encoding = "utf-8";
-        mWebView.setScrollContainer(false  );
-        mWebView.loadDataWithBaseURL(baseUrl ,  data, type, encoding , null );
+        mWebView.getSettings().setDisplayZoomControls(true);
+        mWebView.getSettings().setBuiltInZoomControls(true);
+        mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
+        mWebView.getSettings().setLoadsImagesAutomatically(true);
+        mWebView.loadDataWithBaseURL(baseUrl, data, type, encoding, null);
 
 
     }

@@ -24,6 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gtg.iws" />
@@ -83,8 +84,8 @@
       <file leaf-file-name="WebPageFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5392157" vertical-offset="590" max-vertical-offset="1035">
-              <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.46568626" vertical-offset="605" max-vertical-offset="1095">
+              <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -3759,10 +3760,10 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/AbstractViewer.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/PagerAdapter.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/VerticalViewPager.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/VerticalPageTransformer.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/epub_main_layout.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java" />
       </list>
     </option>
   </component>
@@ -4284,7 +4285,11 @@
       <created>1410787988601</created>
       <updated>1410787988601</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="hello">
+      <created>1410788373521</created>
+      <updated>1410788373521</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -4765,8 +4770,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5392157" vertical-offset="590" max-vertical-offset="1035">
-          <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.46568626" vertical-offset="605" max-vertical-offset="1095">
+          <caret line="65" column="9" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="9" />
           <folding />
         </state>
       </provider>
