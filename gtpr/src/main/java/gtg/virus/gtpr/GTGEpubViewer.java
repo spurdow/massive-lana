@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.castorflex.android.verticalviewpager.VerticalViewPager;
 import gtg.virus.gtpr.adapters.PagerAdapter;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.fragment_pages.WebPageFragment;
@@ -29,7 +30,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
     private final static String TAG = GTGEpubViewer.class.getSimpleName();
 
-    private ViewPager mPager;
+    private VerticalViewPager mPager;
 
     private PagerAdapter mAdapter;
 
@@ -45,7 +46,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
     @Override
     protected void initializeResources(Bundle saveInstanceState) {
-        mPager = (ViewPager) findViewById(R.id.pager);
+        mPager = (VerticalViewPager) findViewById(R.id.pager);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
@@ -94,7 +95,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         Log.w(TAG , "Fragments size " + mFragments.size());
         mAdapter = new PagerAdapter(getSupportFragmentManager() , mFragments);
 
-        /*mPager.setPageTransformer(false , new PageTransformer());*/
+        mPager.setPageTransformer(false , new VerticalPageTransformer());
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
