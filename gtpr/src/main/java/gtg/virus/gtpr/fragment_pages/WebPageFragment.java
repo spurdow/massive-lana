@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import gtg.virus.gtpr.R;
 
 public class WebPageFragment extends Fragment {
 
+    private static final String TAG = WebPageFragment.class.getSimpleName();
     private WebView mWebView;
 
     public final static String DATA_FILTER = "_data_filter";
@@ -42,6 +44,8 @@ public class WebPageFragment extends Fragment {
         mWebView = (WebView) view.findViewById(R.id.epub_web_view);
 
         mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE , null);
+
+
         setHasOptionsMenu(true);
 
         return view;
@@ -58,11 +62,11 @@ public class WebPageFragment extends Fragment {
             baseUrl = extras.getString(PATH_FILTER);
         }
 
-
+        Log.w(TAG , "Path " + baseUrl );
         final String type = "text/html";
         final String encoding = "utf-8";
-
-        mWebView.loadData( data, type, encoding );
+        mWebView.setScrollContainer(false  );
+        mWebView.loadDataWithBaseURL(baseUrl ,  data, type, encoding , null );
 
 
     }

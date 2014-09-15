@@ -94,7 +94,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         Log.w(TAG , "Fragments size " + mFragments.size());
         mAdapter = new PagerAdapter(getSupportFragmentManager() , mFragments);
 
-        mPager.setPageTransformer(false , new PageTransformer());
+        /*mPager.setPageTransformer(false , new PageTransformer());*/
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
@@ -131,7 +131,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
             row.setResource(tocReference.getResource());
             contentDetails.add(row);*/
             try {
-                mFragments.add(WebPageFragment.newInstance(new String(tocReference.getResource().getData()) , ""));
+                mFragments.add(WebPageFragment.newInstance(new String(tocReference.getResource().getData()) , mBook.getPath()));
             } catch (IOException e) {
                 e.printStackTrace();
             }

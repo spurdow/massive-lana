@@ -31,8 +31,8 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.google.code.gson:gson:2.2.4'
-
     compile files('libs/com.radaee.pdfex_view.jar')
     compile files('libs/epublib-core-latest.jar')
     compile files('libs/slf4j-android-1.5.8.jar')
+    compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
 }
