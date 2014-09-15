@@ -1334,15 +1334,15 @@ containing a value of this type.
         public static final int listMode=0x7f080001;
         public static final int list_item=0x7f08002b;
         public static final int list_item_section_text=0x7f080070;
-        public static final int menu_add=0x7f080096;
+        public static final int menu_add=0x7f080097;
         public static final int middle=0x7f08000b;
         public static final int never=0x7f08000d;
         public static final int none=0x7f080009;
         public static final int normal=0x7f080000;
-        public static final int opt_menu_search=0x7f080097;
-        public static final int opt_menu_set_alarm=0x7f080099;
-        public static final int opt_menu_view=0x7f08009a;
-        public static final int opt_more=0x7f080098;
+        public static final int opt_menu_search=0x7f080098;
+        public static final int opt_menu_set_alarm=0x7f08009a;
+        public static final int opt_menu_view=0x7f08009b;
+        public static final int opt_more=0x7f080099;
         public static final int pagenum_edit=0x7f080060;
         public static final int pager=0x7f08006e;
         public static final int pdf_reader_pageno=0x7f080088;
@@ -1384,6 +1384,7 @@ containing a value of this type.
         public static final int top_action_bar=0x7f080022;
         public static final int txt_content=0x7f080063;
         public static final int txt_find=0x7f080073;
+        public static final int txt_main_layout_view=0x7f080096;
         public static final int txt_menu_list_title=0x7f080082;
         public static final int txt_password=0x7f080065;
         public static final int txt_subj=0x7f080062;
@@ -1459,6 +1460,7 @@ containing a value of this type.
         public static final int shelf_item=0x7f03003a;
         public static final int shelf_row=0x7f03003b;
         public static final int support_simple_spinner_dropdown_item=0x7f03003c;
+        public static final int txt_main_layout=0x7f03003d;
     }
     public static final class menu {
         public static final int main_menu=0x7f0d0000;

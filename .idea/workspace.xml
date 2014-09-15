@@ -25,8 +25,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGTxtViewer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtpr/src/main/res/layout/txt_main_layout.xml" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\debug\android\support\v7\appcompat\R.java" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\debug\com\facebook\android\R.java" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\debug\com\ipaulpro\afilechooser\R.java" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\debug\com\radaee\reader\R.java" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\debug\gtg\virus\gtpr\R.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/BookCreatorTask.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/BookCreatorTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gtg.iws" />
@@ -50,75 +56,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EpubCoverImageFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/EpubCoverImageFragment.java">
+      <file leaf-file-name="GTGEpubViewer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="91" max-vertical-offset="795">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#800#801#0" expanded="true" />
-                <element signature="e#858#859#0" expanded="true" />
-                <element signature="e#1188#1189#0" expanded="true" />
-                <element signature="e#1239#1240#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="2145">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractFragmentViewer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/AbstractFragmentViewer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="825">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebPageFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="177" max-vertical-offset="870">
-              <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
-              <folding>
-                <element signature="e#962#963#0" expanded="true" />
-                <element signature="e#1014#1015#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="epub_fragment_cover_layout.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/layout/epub_fragment_cover_layout.xml">
+      <file leaf-file-name="txt_main_layout.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/layout/txt_main_layout.xml">
           <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
           <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GTGPdfViewer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGPdfViewer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="2370">
-              <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NavigationalShelfListViewActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NavigationalShelfListViewActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75949365" vertical-offset="7740" max-vertical-offset="9015">
-              <caret line="590" column="33" selection-start-line="590" selection-start-column="33" selection-end-line="590" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="7740" max-vertical-offset="9015">
+              <caret line="586" column="54" selection-start-line="586" selection-start-column="54" selection-end-line="586" selection-end-column="54" />
               <folding>
                 <element signature="e#3969#3989#0" expanded="true" />
                 <element signature="e#3991#4012#0" expanded="true" />
@@ -143,9 +108,23 @@
       <file leaf-file-name="BookCreatorTask.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/BookCreatorTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="970" max-vertical-offset="1695">
-              <caret line="109" column="16" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="925" max-vertical-offset="1695">
+              <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GTGTxtViewer.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGTxtViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33088234" vertical-offset="375" max-vertical-offset="1725">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#618#619#0" expanded="true" />
+                <element signature="e#665#666#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -3788,7 +3767,6 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/PagerAdapter.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/VerticalViewPager.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/VerticalPageTransformer.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/epub_main_layout.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/AbstractFragmentViewer.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java" />
@@ -3796,8 +3774,12 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/EpubCoverImageFragment.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/TitleListAdapter.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/Utilities.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/BookCreatorTask.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/epub_main_layout.xml" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/BookCreatorTask.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/GTGTxtViewer.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/txt_main_layout.xml" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGTxtViewer.java" />
       </list>
     </option>
   </component>
@@ -3852,6 +3834,166 @@
               <option name="myItemId" value="gtg" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -3903,6 +4045,9 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\Android Studio\gtg\gtpr\src\main\res\drawable" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="gtg.virus.gtpr" />
     </key>
     <key name="android.template.parentActivityClass">
       <recent name="" />
@@ -4141,7 +4286,11 @@
       <created>1410798379311</created>
       <updated>1410798379311</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="hello">
+      <created>1410799648625</created>
+      <updated>1410799648625</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -4200,24 +4349,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/AppLaunchTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="2100">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="704" max-vertical-offset="9570">
-          <caret line="395" column="53" selection-start-line="395" selection-start-column="53" selection-end-line="395" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/AbstractListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="2130">
@@ -4504,29 +4639,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/layout/epub_main_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="240">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/PagerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.080882356" vertical-offset="117" max-vertical-offset="585">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49367088" vertical-offset="0" max-vertical-offset="2145">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -4585,26 +4701,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGPdfViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="2400">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/TitleListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="327" max-vertical-offset="1035">
           <caret line="63" column="96" selection-start-line="63" selection-start-column="96" selection-end-line="63" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/BookCreatorTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="970" max-vertical-offset="1695">
-          <caret line="109" column="16" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -4620,10 +4720,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/layout/epub_main_layout.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="240">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGPdfViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="2400">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/layout/txt_main_layout.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/BookCreatorTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="925" max-vertical-offset="1695">
+          <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75949365" vertical-offset="7740" max-vertical-offset="9015">
-          <caret line="590" column="33" selection-start-line="590" selection-start-column="33" selection-end-line="590" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="7740" max-vertical-offset="9015">
+          <caret line="586" column="54" selection-start-line="586" selection-start-column="54" selection-end-line="586" selection-end-column="54" />
           <folding>
             <element signature="e#3969#3989#0" expanded="true" />
             <element signature="e#3991#4012#0" expanded="true" />
@@ -4640,6 +4778,26 @@
             <element signature="e#17150#17151#0" expanded="true" />
             <element signature="e#23062#23386#0" expanded="true" />
             <element signature="e#23367#23368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="2145">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGTxtViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33088234" vertical-offset="375" max-vertical-offset="1725">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
           </folding>
         </state>
       </provider>
