@@ -41,6 +41,7 @@ public class WebPageFragment extends Fragment {
 
         mWebView = (WebView) view.findViewById(R.id.epub_web_view);
 
+        mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE , null);
         setHasOptionsMenu(true);
 
         return view;
@@ -59,9 +60,10 @@ public class WebPageFragment extends Fragment {
 
 
         final String type = "text/html";
-        final String encoding = "UTF-8";
+        final String encoding = "utf-8";
 
-        mWebView.loadDataWithBaseURL(baseUrl, data, type, encoding, null);
+        mWebView.loadData( data, type, encoding );
+
 
     }
 }

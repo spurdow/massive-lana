@@ -20,6 +20,7 @@ import gtg.virus.gtpr.adapters.PagerAdapter;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.fragment_pages.WebPageFragment;
 import nl.siegmann.epublib.domain.Book;
+import nl.siegmann.epublib.domain.TOCReference;
 import nl.siegmann.epublib.epub.EpubReader;
 
 import static gtg.virus.gtpr.utils.Utilities.PIN_EXTRA_PBOOK;
@@ -67,7 +68,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         }
 
         mFragments = new ArrayList<Fragment>();
-        for(int i= 0 ; i < epubBook.getContents().size() ; i++){
+/*        for(int i= 0 ; i < epubBook.getContents().size() ; i++){
             try {
                 String data = new String(epubBook.getContents().get(i).getData());
                 mFragments.add(WebPageFragment.newInstance(data , mBook.getPath()));
@@ -75,15 +76,30 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
                 e.printStackTrace();
             }
 
-        }
+        }*/
+/*        List<TOCReference> mref = epubBook.getTableOfContents().getTocReferences();
+        Log.w(TAG , " Size of TocReferece " + mref.size() );
+        for(TOCReference ref : mref){
+            try {
+                String data = new String(ref.getResource().getData());
+                mFragments.add(WebPageFragment.newInstance(data , mBook.getPath()));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
+        }*/
+
+        logContentsTable(epubBook.getTableOfContents().getTocReferences() , 0);
+
+        Log.w(TAG , "Fragments size " + mFragments.size());
         mAdapter = new PagerAdapter(getSupportFragmentManager() , mFragments);
 
         mPager.setPageTransformer(false , new PageTransformer());
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
-                Log.w(TAG , "onPageScrolled");
+
+                Log.w(TAG , "onPageScrolled " + i + " " + i2);
             }
 
             @Override
@@ -100,7 +116,28 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
     }
 
+    private void logContentsTable(List<TOCReference> tocReferences, int depth) {
+        if (tocReferences == null) {
+            return;
+        }
+        for (TOCReference tocReference:tocReferences) {
+            StringBuilder tocString = new StringBuilder();
+            for (int i = 0; i < depth; i++) {
+                tocString.append("\t");
+            }
+            tocString.append(tocReference.getTitle());
 
+/*            row.setTitle(tocString.toString());
+            row.setResource(tocReference.getResource());
+            contentDetails.add(row);*/
+            try {
+                mFragments.add(WebPageFragment.newInstance(new String(tocReference.getResource().getData()) , ""));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            logContentsTable(tocReference.getChildren(), depth + 1);
+        }
+    }
 
     @Override
     public void onItemClick(MenuItem item) {
