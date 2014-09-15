@@ -13,6 +13,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,8 @@ public class TitleListAdapter extends AbstractListAdapter<Menu> {
 	
 	
 	private LayoutInflater mInflater = null;
+
+    public boolean isMenu = true;
 
 	public TitleListAdapter(Context context, List<Menu> lists) {
 		super(context, lists);
@@ -55,8 +58,12 @@ public class TitleListAdapter extends AbstractListAdapter<Menu> {
 
         Bitmap bitmap = getObject(position).getImage();
 		if(bitmap != null){
+
 			mView.mImgView.setImageBitmap(getObject(position).getImage());
-		}
+		    if(isMenu){
+                mView.mImgView.getDrawable().setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
+            }
+        }
 		
 		mView.mTitle.setText(getObject(position).getTitle());
 

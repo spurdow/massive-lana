@@ -403,7 +403,12 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 					                    			b.setPage0(page0);
 					                    		}
 					                    	}
-					                    }
+					                    }else if(isTxt(path)){
+                                            b = new PBook();
+                                            b.setTitle("TextFile");
+                                            Bitmap page0 = BitmapFactory.decodeResource(getResources() , R.drawable.ic_content_paste);
+                                            b.setPage0(page0);
+                                        }
 					                }else if(!isValideBook(path)){
 					                	makeText( "File is not a pdf/epub/txt");
 					                }

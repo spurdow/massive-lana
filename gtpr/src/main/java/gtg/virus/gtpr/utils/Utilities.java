@@ -207,7 +207,12 @@ public final class Utilities {
 		final String regularExpression = "[^!]*.pdf";
 		return Pattern.matches(regularExpression, path);
 	}
-	
+
+    public static boolean isTxt(String path){
+        final String regularExpression = "[^!]*.txt";
+        return Pattern.matches(regularExpression , path);
+    }
+
 	public static void copy(File src, File dst) throws IOException {
 /*	    InputStream in = new FileInputStream(src);
 	    OutputStream out = new FileOutputStream(dst);

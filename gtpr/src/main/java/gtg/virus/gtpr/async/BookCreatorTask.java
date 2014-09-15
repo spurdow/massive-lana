@@ -10,9 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-
-
+import gtg.virus.gtpr.R;
 import nl.siegmann.epublib.domain.Author;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.epub.EpubReader;
@@ -102,7 +100,12 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
         		if(page0 != null){
         			newBook.setPage0(page0);
         		}	
-        	}
+        	}else if(isTxt(params[0])){
+                newBook = new PBook();
+                newBook.setTitle("TextFile");
+                Bitmap page0 = BitmapFactory.decodeResource(mContext.getResources() , R.drawable.ic_content_paste);
+                newBook.setPage0(page0);
+            }
 		}
 		return newBook;
 	}

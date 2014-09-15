@@ -15,17 +15,10 @@ import android.webkit.WebView;
 
 import gtg.virus.gtpr.R;
 
-public class WebPageFragment extends Fragment {
+public class WebPageFragment extends AbstractFragmentViewer {
 
     private static final String TAG = WebPageFragment.class.getSimpleName();
     private WebView mWebView;
-
-    public final static String DATA_FILTER = "_data_filter";
-    public final static String PATH_FILTER = "_path_filter";
-
-    private String data = null ;
-
-    private String baseUrl = null;
 
     public static WebPageFragment newInstance(final String data , final String path){
         WebPageFragment mFrag = new WebPageFragment();
@@ -40,31 +33,22 @@ public class WebPageFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = (View)inflater.inflate(R.layout.epub_fragment_layout, container, false);
+    public int getResId() {
+        return R.layout.epub_fragment_layout;
+    }
 
+    @Override
+    public void initializeView(View view, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mWebView = (WebView) view.findViewById(R.id.epub_web_view);
 
         mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE , null);
 
-
         setHasOptionsMenu(true);
-
-        return view;
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-
-        Bundle extras = getArguments();
-        if(extras.containsKey(DATA_FILTER)){
-            data = extras.getString(DATA_FILTER);
-            baseUrl = extras.getString(PATH_FILTER);
-        }
-
+    public void overrideActions(Bundle savedInstanceState) {
         Log.w(TAG , "Path " + baseUrl );
         final String type = "text/html";
         final String encoding = "utf-8";
@@ -74,6 +58,7 @@ public class WebPageFragment extends Fragment {
         mWebView.getSettings().setLoadsImagesAutomatically(true);
         mWebView.loadDataWithBaseURL(baseUrl, data, type, encoding, null);
 
-
     }
+
+
 }
