@@ -50,6 +50,7 @@
         </activity>
         <activity android:name="GTGPdfViewer"></activity>
         <activity android:name="GTGEpubViewer"></activity>
+        <activity android:name="GTGTxtViewer"></activity>
     </application>
 
 </manifest>

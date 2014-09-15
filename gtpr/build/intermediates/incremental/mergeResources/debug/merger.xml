@@ -4,6 +4,9 @@
     <dataSet config="20.0.0" >
         <source path="G:\Android Studio\gtg\gtpr\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\res" />
     </dataSet>
+    <dataSet config="19.0.1" >
+        <source path="G:\Android Studio\gtg\gtpr\build\intermediates\exploded-aar\com.github.castorflex.verticalviewpager\library\19.0.1\res" />
+    </dataSet>
     <dataSet config="20.0.0" >
         <source path="G:\Android Studio\gtg\gtpr\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\res" >
             <file
@@ -9734,6 +9737,16 @@ true
                 qualifiers=""
                 type="drawable" />
             <file
+                name="bookmark2x"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\drawable\bookmark2x.png"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="bookmarkgray2x"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\drawable\bookmarkgray2x.png"
+                qualifiers=""
+                type="drawable" />
+            <file
                 name="btn_cab_done_pinbook_layout"
                 path="G:\Android Studio\gtg\gtpr\src\main\res\drawable\btn_cab_done_pinbook_layout.xml"
                 qualifiers=""
@@ -11409,6 +11422,21 @@ true
                 qualifiers=""
                 type="layout" />
             <file
+                name="epub_fragment_cover_layout"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\layout\epub_fragment_cover_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="epub_fragment_layout"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\layout\epub_fragment_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="epub_main_layout"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\layout\epub_main_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="fragment_main"
                 path="G:\Android Studio\gtg\gtpr\src\main\res\layout\fragment_main.xml"
                 qualifiers=""
@@ -11441,6 +11469,11 @@ true
             <file
                 name="shelf_row"
                 path="G:\Android Studio\gtg\gtpr\src\main\res\layout\shelf_row.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="txt_main_layout"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\layout\txt_main_layout.xml"
                 qualifiers=""
                 type="layout" />
             <file

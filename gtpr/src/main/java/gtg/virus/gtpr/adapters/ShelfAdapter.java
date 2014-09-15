@@ -2,6 +2,7 @@ package gtg.virus.gtpr.adapters;
 
 import gtg.virus.gtpr.GTGEpubViewer;
 import gtg.virus.gtpr.GTGPdfViewer;
+import gtg.virus.gtpr.GTGTxtViewer;
 import gtg.virus.gtpr.R;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.entities.Shelf;
@@ -170,7 +171,11 @@ public class ShelfAdapter extends BaseAdapter {
 								Intent intent = new Intent(mContext, GTGPdfViewer.class);
 							    intent.putExtra(PIN_EXTRA_PBOOK, b.toString());
 							    mContext.startActivity(intent);
-							}
+							}else if(Utilities.isTxt(b.getPath())){
+                                Intent intent = new Intent(mContext, GTGTxtViewer.class);
+                                intent.putExtra(PIN_EXTRA_PBOOK, b.toString());
+                                mContext.startActivity(intent);
+                            }
 
 						}
 						

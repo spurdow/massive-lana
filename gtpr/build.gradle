@@ -15,6 +15,10 @@ android {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+        dev {
+            debuggable true
+            versionNameSuffix '-unsigned'
+        }
     }
 }
 
