@@ -32,7 +32,7 @@ public class GTGTxtViewer extends AbstractViewer {
     @Override
     protected void initializeResources(Bundle saveInstanceState) {
         mTextView = (TextView) findViewById(R.id.txt_main_layout_view);
-
+        mTextView.setText("");
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             String gsonExtra =  extras.getString(PIN_EXTRA_PBOOK);

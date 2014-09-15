@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <!-- From: file:/G:/Android%20Studio/gtg/gtpr/build/intermediates/exploded-aar/gtg/facebookSDK/unspecified/res/values-xhdpi-v4/values.xml -->
-    <eat-comment />
-
-    <dimen name="com_facebook_picker_divider_width">2px</dimen>
-
-</resources>
