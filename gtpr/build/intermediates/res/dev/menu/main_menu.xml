@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:gtg.virus.gtpr="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_add" android:icon="@drawable/ic_content_new" gtg.virus.gtpr:showAsAction="ifRoom" android:title="@string/menu_add"></item>
+    
+
+</menu>
+<!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/menu/main_menu.xml -->

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/G:/Android%20Studio/gtg/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/res/values-v19/values.xml -->
+    <eat-comment />
+
+    <bool name="use_activity">false</bool>
+    <bool name="use_provider">true</bool>
+
+</resources>
