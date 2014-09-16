@@ -36,6 +36,8 @@ public abstract class AbstractViewer extends ActionBarActivity{
 
     protected abstract void initializeResources(Bundle saveInstanceState);
 
+    protected abstract void changeViewItem(MenuItem item);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +73,7 @@ public abstract class AbstractViewer extends ActionBarActivity{
                 break;
 
             case R.id.opt_menu_set_alarm:
+                changeViewItem(item);
                 if(mAbsClickListener != null){
                     mAbsClickListener.onSetAlarm();
                 }

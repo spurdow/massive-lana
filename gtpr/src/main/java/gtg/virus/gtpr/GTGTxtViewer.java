@@ -2,6 +2,7 @@ package gtg.virus.gtpr;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -103,6 +104,11 @@ public class GTGTxtViewer extends AbstractViewer {
              }
          }.execute(null, null, null);
 
+    }
+
+    @Override
+    protected void changeViewItem(MenuItem item) {
+        item.setTitle("View Text Details");
     }
 
 

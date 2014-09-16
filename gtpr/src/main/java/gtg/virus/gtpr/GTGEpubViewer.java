@@ -117,6 +117,11 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
     }
 
+    @Override
+    protected void changeViewItem(MenuItem item) {
+        item.setTitle("View Epub Details");
+    }
+
     private void logContentsTable(List<TOCReference> tocReferences, int depth) {
         if (tocReferences == null) {
             return;

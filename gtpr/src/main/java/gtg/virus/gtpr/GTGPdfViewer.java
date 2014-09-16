@@ -60,10 +60,13 @@ public class GTGPdfViewer extends AbstractViewer implements PDFReaderListener , 
         setAbsClickListener(this);
     }
 
-	
-	
+    @Override
+    protected void changeViewItem(MenuItem item) {
 
-	@Override
+    }
+
+
+    @Override
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		Log.i(TAG, "OnDestroy");
