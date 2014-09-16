@@ -25,50 +25,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="">
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\buildConfig\dev\gtg\virus\gtpr\BuildConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\buildConfig\release\gtg\virus\gtpr\BuildConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\buildConfig\test\debug\gtg\virus\gtpr\test\BuildConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\debug\android\support\v7\appcompat\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\debug\com\facebook\android\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\debug\com\ipaulpro\afilechooser\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\debug\com\radaee\reader\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\debug\gtg\virus\gtpr\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\dev\android\support\v7\appcompat\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\dev\com\facebook\android\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\dev\com\ipaulpro\afilechooser\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\dev\com\radaee\reader\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\dev\gtg\virus\gtpr\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\release\android\support\v7\appcompat\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\release\com\facebook\android\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\release\com\ipaulpro\afilechooser\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\release\com\radaee\reader\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\release\gtg\virus\gtpr\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\dex\debug\classes.dex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\bolts-e9ca8463a677f36ad2441710da26df4f20a5ea85.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-08b07b9a2c50ee87724b0f50091ec7c1159a7d34.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-1bc446361de0e7b5a61e6e5d618432f01e6bcfe1.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-25726913283b17f1c5d749c23fb1353d0847366d.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-5cb9225cc915e22dfb8169dba9d1214e0e6f3a66.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-6639838fd86dd4d759b1f964cae38c2231f5c135.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-6a8418fe73a44140f75be5e473f5e33d49e9599e.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-75818ce37589fe907b1b8a44f5183233f8eff2ec.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-88e1c5698eccb11740d9306771579ecfcd1b4242.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-cd812a0eab3ce5d81733ba1d56e68609fb14a01d.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\com.radaee.pdfex_view-72342ce026f768523003d60d2c37c57da9eae005.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\epublib-core-latest-3fd10a5f172034e83e2b83fde5710acdcf708586.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\gson-2.2.4-5055d30cb0043c15bad643a1d081dd6347645369.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-03f3ab49ff4000dd47840d30168dccbefadc17f3.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\slf4j-android-1.5.8-f3d994523b74ae1050df6346fd45148c4b340960.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-00b717b2bcf07508906848cf1a186f260fd56164.jar" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\outputs\apk\gtpr-debug-unaligned.apk" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\outputs\apk\gtpr-debug.apk" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/facebookSDK/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/facebookSDK/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/mergeAdapter/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/mergeAdapter/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/pr/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/pr/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/sackOfViewsAdapter/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/sackOfViewsAdapter/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGTxtViewer.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGTxtViewer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gtg.iws" />
@@ -4563,17 +4519,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25277337" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31111112" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31111112" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25277337" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31111112" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960381" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25277337" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25277337" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
