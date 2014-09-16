@@ -24,31 +24,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/OverridedBaseImageDownloader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/universal_image_loader_1_9_3.xml" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\.idea\libraries\appcompat_v7_20_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\.idea\libraries\bolts.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\.idea\libraries\com_radaee_pdfex_view.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\.idea\libraries\crouton_1_8_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\.idea\libraries\epublib_core_latest.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\.idea\libraries\gson_2_2_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\.idea\libraries\library_19_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\.idea\libraries\slf4j_android_1_5_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\.idea\libraries\support_annotations_20_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\.idea\libraries\support_v4_19_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\.idea\libraries\support_v4_20_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\crouton\crouton.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build.gradle" afterPath="$PROJECT_DIR$/gtpr/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/gtpr.iml" afterPath="$PROJECT_DIR$/gtpr/gtpr.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sackOfViewsAdapter/sackOfViewsAdapter.iml" afterPath="$PROJECT_DIR$/sackOfViewsAdapter/sackOfViewsAdapter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\buildConfig\test\debug\gtg\virus\gtpr\test\BuildConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\dex\debug\classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\exploded-aar\de.keyboardsurfer.android.widget\crouton\1.8.5\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\exploded-aar\de.keyboardsurfer.android.widget\crouton\1.8.5\classes.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\exploded-aar\gtg\mergeAdapter\unspecified\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\exploded-aar\gtg\mergeAdapter\unspecified\classes.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\exploded-aar\gtg\sackOfViewsAdapter\unspecified\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\exploded-aar\gtg\sackOfViewsAdapter\unspecified\classes.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\bolts-e9ca8463a677f36ad2441710da26df4f20a5ea85.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-172de85af2fa908b878a1a946332910601568ffa.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-1bc446361de0e7b5a61e6e5d618432f01e6bcfe1.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-25726913283b17f1c5d749c23fb1353d0847366d.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-5cb9225cc915e22dfb8169dba9d1214e0e6f3a66.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-6639838fd86dd4d759b1f964cae38c2231f5c135.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-76eee5efcb56059dd207785dea68d3d00e7f0d91.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-88e1c5698eccb11740d9306771579ecfcd1b4242.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-8f6d7fcde7b21a14a4760aff906e3df38afa2582.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\classes-cd812a0eab3ce5d81733ba1d56e68609fb14a01d.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\com.radaee.pdfex_view-72342ce026f768523003d60d2c37c57da9eae005.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\epublib-core-latest-3fd10a5f172034e83e2b83fde5710acdcf708586.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\gson-2.2.4-5055d30cb0043c15bad643a1d081dd6347645369.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-03f3ab49ff4000dd47840d30168dccbefadc17f3.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\slf4j-android-1.5.8-f3d994523b74ae1050df6346fd45148c4b340960.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-79e42da7c2657068d681cf877be8b4cc06e3cb7a.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.3-08648744bb6af33d778b536fa26c0fe617128613.jar" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\outputs\apk\gtpr-debug-unaligned.apk" afterPath="" />
+      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\outputs\apk\gtpr-debug.apk" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/crouton/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/crouton/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/facebookSDK/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/facebookSDK/unspecified/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/pr/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/pr/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gtg.iws" />
@@ -88,8 +94,8 @@
       <file leaf-file-name="NavigationalShelfListViewActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="1867" max-vertical-offset="9285">
-              <caret line="193" column="25" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.4218289" vertical-offset="1867" max-vertical-offset="9540">
+              <caret line="195" column="5" selection-start-line="195" selection-start-column="5" selection-end-line="195" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -3920,131 +3926,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtpr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtpr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtpr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtpr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtpr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gtpr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
+              <option name="myItemId" value="build" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -4367,7 +4249,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25277337" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25277337" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -4376,7 +4258,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25277337" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25277337" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -4837,8 +4719,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="1867" max-vertical-offset="9285">
-          <caret line="193" column="25" selection-start-line="193" selection-start-column="25" selection-end-line="193" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.4218289" vertical-offset="1867" max-vertical-offset="9285">
+          <caret line="195" column="5" selection-start-line="195" selection-start-column="5" selection-end-line="195" selection-end-column="5" />
           <folding />
         </state>
       </provider>
