@@ -24,124 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="">
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\buildConfig\release\gtg\virus\gtpr\BuildConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\release\android\support\v7\appcompat\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\release\com\facebook\android\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\release\com\ipaulpro\afilechooser\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\release\com\radaee\reader\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\generated\source\r\release\gtg\virus\gtpr\R.java" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$anim.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$bool.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$color.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$integer.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R$styleable.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\android\support\v7\appcompat\R.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\facebook\android\R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\facebook\android\R$color.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\facebook\android\R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\facebook\android\R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\facebook\android\R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\facebook\android\R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\facebook\android\R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\facebook\android\R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\facebook\android\R$styleable.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\facebook\android\R.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\ipaulpro\afilechooser\R$bool.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\ipaulpro\afilechooser\R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\ipaulpro\afilechooser\R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\ipaulpro\afilechooser\R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\ipaulpro\afilechooser\R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\ipaulpro\afilechooser\R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\ipaulpro\afilechooser\R$xml.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\ipaulpro\afilechooser\R.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\radaee\reader\R$color.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\radaee\reader\R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\radaee\reader\R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\radaee\reader\R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\radaee\reader\R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\com\radaee\reader\R.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\AbstractViewer$OnActionBarItemClick.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\AbstractViewer.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\BuildConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\GTGEpubViewer$1.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\GTGEpubViewer.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\GTGPdfViewer.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\GTGTxtViewer$1.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\GTGTxtViewer.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\LoginActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\LoginFragment$1.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\LoginFragment$2.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\LoginFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\NavigationalShelfListViewActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\NavigationalShelfListViewActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\NavigationalShelfListViewActivity$3$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\NavigationalShelfListViewActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\NavigationalShelfListViewActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\NavigationalShelfListViewActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\NavigationalShelfListViewActivity$5$1.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\NavigationalShelfListViewActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\NavigationalShelfListViewActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$anim.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$bool.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$color.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$integer.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$menu.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$styleable.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R$xml.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\R.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\SplashActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\SplashActivity$SplashRunnable.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\SplashActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\VerticalPageTransformer.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\adapters\AbstractListAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\adapters\IGeneric.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\adapters\PagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\adapters\ShelfAdapter$1.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\adapters\ShelfAdapter$2.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\adapters\ShelfAdapter$ViewHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\adapters\ShelfAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\adapters\TitleListAdapter$1.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\adapters\TitleListAdapter$ViewHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\adapters\TitleListAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\async\AppLaunchTask$AppLaunchListener.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\async\AppLaunchTask.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\async\BookCreatorTask.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\async\PdfDetail.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\db\DatabaseHelper.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\db\IHelper.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\db\Item$SQItem.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\db\Item.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\db\ItemHelper.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\entities\Menu.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\entities\PBook.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\entities\PPage.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\entities\Shelf.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\entities\User.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\fragment_pages\AbstractFragmentViewer.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\fragment_pages\EpubCoverImageFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\fragment_pages\WebPageFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\utils\OverridedBaseImageDownloader.class" afterPath="" />
-      <change type="DELETED" beforePath="G:\Android Studio\gtg\gtpr\build\intermediates\classes\debug\gtg\virus\gtpr\utils\Utilities.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/crouton/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/crouton/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/facebookSDK/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/facebookSDK/unspecified/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/pr/unspecified/classes.jar" afterPath="$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/gtg/pr/unspecified/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gtg.iws" />
@@ -194,7 +77,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6666667" vertical-offset="13" max-vertical-offset="585">
+            <state vertical-scroll-proportion="0.6985294" vertical-offset="0" max-vertical-offset="570">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
@@ -4795,7 +4678,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6666667" vertical-offset="13" max-vertical-offset="585">
+        <state vertical-scroll-proportion="0.6985294" vertical-offset="0" max-vertical-offset="570">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
