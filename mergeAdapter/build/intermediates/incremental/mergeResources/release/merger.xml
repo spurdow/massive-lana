@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="unspecified" >
+        <source path="G:\Android Studio\gtg\mergeAdapter\build\intermediates\exploded-aar\gtg\sackOfViewsAdapter\unspecified\res" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="G:\Android Studio\gtg\mergeAdapter\src\main\res" />
+        <source path="G:\Android Studio\gtg\mergeAdapter\build\generated\res\rs\release" />
+        <source path="G:\Android Studio\gtg\mergeAdapter\build\generated\res\generated\release" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="G:\Android Studio\gtg\mergeAdapter\src\release\res" />
+    </dataSet>
+
+</merger>

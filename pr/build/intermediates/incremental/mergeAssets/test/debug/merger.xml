@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="debug" >
+        <source path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\assets" >
+            <file
+                name="cmaps1"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\assets\cmaps1" />
+            <file
+                name="cmaps2"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\assets\cmaps2" />
+            <file
+                name="rdf013"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\assets\rdf013" />
+            <file
+                name="test.PDF"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\assets\test.PDF" />
+            <file
+                name="umaps1"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\assets\umaps1" />
+            <file
+                name="umaps2"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\assets\umaps2" />
+        </source>
+    </dataSet>
+    <dataSet config="main" >
+        <source path="G:\Android Studio\gtg\pr\src\androidTest\assets" />
+    </dataSet>
+
+</merger>

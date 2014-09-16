@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="G:\Android Studio\gtg\facebookSDK\src\main\assets" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="G:\Android Studio\gtg\facebookSDK\src\release\assets" />
+    </dataSet>
+
+</merger>

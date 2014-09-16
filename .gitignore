@@ -16,7 +16,8 @@ gen/
 
 # Gradle files
 .gradle/
-build/
+build**/**
+
 
 !gtpr**/**
 

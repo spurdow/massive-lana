@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="debug" >
+        <source path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res" >
+            <file
+                name="file03"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-hdpi-v4\file03.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="folder"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-hdpi-v4\folder.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="folder0"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-hdpi-v4\folder0.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="folder1"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-hdpi-v4\folder1.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="folder2"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-hdpi-v4\folder2.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-hdpi-v4\ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="pdf_icon"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-hdpi-v4\pdf_icon.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="file03"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-ldpi-v4\file03.png"
+                qualifiers="ldpi-v4"
+                type="drawable" />
+            <file
+                name="folder"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-ldpi-v4\folder.png"
+                qualifiers="ldpi-v4"
+                type="drawable" />
+            <file
+                name="folder0"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-ldpi-v4\folder0.png"
+                qualifiers="ldpi-v4"
+                type="drawable" />
+            <file
+                name="folder1"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-ldpi-v4\folder1.png"
+                qualifiers="ldpi-v4"
+                type="drawable" />
+            <file
+                name="folder2"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-ldpi-v4\folder2.png"
+                qualifiers="ldpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-ldpi-v4\ic_launcher.png"
+                qualifiers="ldpi-v4"
+                type="drawable" />
+            <file
+                name="pdf_icon"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-ldpi-v4\pdf_icon.png"
+                qualifiers="ldpi-v4"
+                type="drawable" />
+            <file
+                name="file03"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-mdpi-v4\file03.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="folder"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-mdpi-v4\folder.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="folder0"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-mdpi-v4\folder0.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="folder1"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-mdpi-v4\folder1.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="folder2"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-mdpi-v4\folder2.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-mdpi-v4\ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="pdf_icon"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-mdpi-v4\pdf_icon.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="file03"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-xhdpi-v4\file03.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="folder"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-xhdpi-v4\folder.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="folder0"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-xhdpi-v4\folder0.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="folder1"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-xhdpi-v4\folder1.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="folder2"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-xhdpi-v4\folder2.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-xhdpi-v4\ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="pdf_icon"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\drawable-xhdpi-v4\pdf_icon.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="dlg_note"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\layout\dlg_note.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="dlg_password"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\layout\dlg_password.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="dlg_text"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\layout\dlg_text.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\layout\main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="pop_combo"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\layout\pop_combo.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="pop_edit"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\layout\pop_edit.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="reader"
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\layout\reader.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="G:\Android Studio\gtg\pr\build\intermediates\bundles\debug\res\values\values.xml"
+                qualifiers="" >
+                <string name="s_act" >Do
+                </string>
+                <string name="s_edit" >Edit
+                </string>
+                <string name="s_find" >the
+                </string>
+                <string name="s_saveas" >Save as
+                </string>
+                <string name="s_ink" >Ink
+                </string>
+                <string name="s_rect" >Rect
+                </string>
+
+                <color name="clr_back" >#FFCCCC80
+                </color>
+
+                <string name="s_save" >Save
+                </string>
+                <string name="s_remove" >Remove
+                </string>
+                <string name="s_end" >End
+                </string>
+                <string name="s_next" >>
+                </string>
+                <string name="app_name" >PDFReader
+                </string>
+                <string name="s_prev" >&lt;
+                </string>
+            </file>
+        </source>
+    </dataSet>
+    <dataSet config="main" >
+        <source path="G:\Android Studio\gtg\pr\src\androidTest\res" />
+        <source path="G:\Android Studio\gtg\pr\build\generated\res\rs\test\debug" />
+        <source path="G:\Android Studio\gtg\pr\build\generated\res\generated\test\debug" />
+    </dataSet>
+
+</merger>
