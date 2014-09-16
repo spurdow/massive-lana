@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="merge-1.0.2">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/com.commonsware.cwac/merge/1.0.2/res" />
+      <root url="jar://$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/com.commonsware.cwac/merge/1.0.2/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

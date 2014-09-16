@@ -7,9 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/facebookSDK/facebookSDK.iml" filepath="$PROJECT_DIR$/facebookSDK/facebookSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/gtg.iml" filepath="$PROJECT_DIR$/gtg.iml" />
       <module fileurl="file://$PROJECT_DIR$/gtpr/gtpr.iml" filepath="$PROJECT_DIR$/gtpr/gtpr.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mergeAdapter/mergeAdapter.iml" filepath="$PROJECT_DIR$/mergeAdapter/mergeAdapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/pr/pr.iml" filepath="$PROJECT_DIR$/pr/pr.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sackOfViewsAdapter/sackOfViewsAdapter.iml" filepath="$PROJECT_DIR$/sackOfViewsAdapter/sackOfViewsAdapter.iml" />
     </modules>
   </component>
 </project>

@@ -135,7 +135,6 @@ public class LoginFragment extends Fragment{
 										}
 										muser.setFacebook_id(user.getId());
 										muser.setFullname(user.getName());
-										muser.setPhoto("http://graph.facebook.com/"+user.getId()+"/picture?type=large");
 										muser.setStatus(1);
 
 										if(LoginFragment.this.getActivity() != null && muser != null)
