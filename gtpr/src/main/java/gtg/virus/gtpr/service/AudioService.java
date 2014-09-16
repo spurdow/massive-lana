@@ -100,7 +100,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
     private final List<Audio> store = new ArrayList<Audio>();
     protected boolean addToStore(Audio audio){
-        // implement 
+        // TODO: check if audio is already in the cache store
         //if()
         return false;
     }
@@ -125,6 +125,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                     mPlayer.setOnPreparedListener(null);
                     mPlayer.setOnPreparedListener(AudioService.this);
                     mPlayer.setOnErrorListener(AudioService.this);
+                    // TODO: add data source from bundle convert to gson pojo
                     //mPlayer.setDataSource();
                 }
             }else if(mStop && (!mPlay && !mPause)){
