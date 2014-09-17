@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="epublib-core-latest">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/gtpr/libs/epublib-core-latest.jar!/" />
+      <root url="jar://$PROJECT_DIR$/EPUB3Reader/libs/epublib-core-latest.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -18,6 +18,9 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <supports-screens
         android:anyDensity="true"
@@ -70,6 +73,10 @@
         <activity android:name="gtg.virus.gtpr.GTGPdfViewer" />
         <activity android:name="gtg.virus.gtpr.GTGEpubViewer" />
         <activity android:name="gtg.virus.gtpr.GTGTxtViewer" />
+        <activity android:name="gtg.virus.gtpr.AudioBookMaker" />
+
+        <service android:name="gtg.virus.gtpr.service.AudioService" />
+
         <activity
             android:name="com.radaee.reader.PDFReaderAct"
             android:configChanges="orientation"

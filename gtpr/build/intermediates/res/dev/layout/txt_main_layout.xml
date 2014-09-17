@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/txt_main_layout_view"
+        android:textSize="17dip"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"/>
+</LinearLayout><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/layout/txt_main_layout.xml -->

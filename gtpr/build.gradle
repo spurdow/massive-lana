@@ -19,6 +19,9 @@ android {
             debuggable true
             versionNameSuffix '-unsigned'
         }
+        debug {
+            debuggable true
+        }
     }
 }
 
