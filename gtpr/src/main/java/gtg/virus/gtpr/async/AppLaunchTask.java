@@ -134,6 +134,8 @@ public class AppLaunchTask extends AsyncTask<Void,String,Boolean>{
 
                     publishProgress("Creating audio directory...");
                     Thread.sleep(1000L);
+                    if(aDirectory.exists())
+                        break;
                 }catch(InterruptedException e){
                     e.printStackTrace();
                 }

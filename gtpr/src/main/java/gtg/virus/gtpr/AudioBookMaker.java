@@ -7,11 +7,15 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
@@ -37,7 +41,7 @@ public class AudioBookMaker extends ActionBarActivity {
 
     private boolean hangingStart = false;
 
-    private boolean hangingStop = false;
+    private volatile boolean hangingStop = false;
 
     private Handler mHandler = new Handler();
 
@@ -46,6 +50,8 @@ public class AudioBookMaker extends ActionBarActivity {
     private long timeStarted = 0;
 
     public final static long MAX_TIME = 60 * 60;
+
+    private final DecimalFormat formatter = new DecimalFormat("00");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +79,13 @@ public class AudioBookMaker extends ActionBarActivity {
 
         Intent service = new Intent(this , AudioService.class);
         startService(service);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void start(){
         if(!hangingStart){
+
             hangingStart = true;
             Intent i = new Intent();
             i.setAction(ACTION_MEDIA_RECORDER_SERVICE);
@@ -90,12 +99,29 @@ public class AudioBookMaker extends ActionBarActivity {
 
     private void stop(){
         if(!hangingStop){
-            hangingStop = false;
+            min = 0;
+            time = 0;
+            hangingStop = true;
             Intent i = new Intent();
             i.setAction(ACTION_MEDIA_RECORDER_STOP_SERVICE);
             sendBroadcast(i);
 
         }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch(item.getItemId()){
+            case android.R.id.home: finish(); break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /**
@@ -140,12 +166,11 @@ public class AudioBookMaker extends ActionBarActivity {
                 Crouton.makeText(AudioBookMaker.this , audioMessage, Style.INFO).show();
                 if(hangingStop){
                     // stop all recordings running ui
-                    if(hangingStart){
-                        Crouton.makeText(AudioBookMaker.this , "Saving...", Style.INFO).show();
-                        hangingStart = false;
-                        mHandler.removeCallbacks(runner);
-                    }
+                    Crouton.makeText(AudioBookMaker.this , "Saved", Style.INFO).show();
+                    hangingStart = false;
                     hangingStop = false;
+                    mHandler.removeCallbacks(runner);
+                    mTime.setText(String.format(filter , min, formatter.format(time) ));
                 }
 
                 mBackgroundLabel.setImageResource(R.drawable.ic_device_access_mic_muted);
@@ -153,6 +178,8 @@ public class AudioBookMaker extends ActionBarActivity {
         }
     }
 
+    private final static String filter = "%s:%s";
+    private int min = 0;
     protected TestRunner runner = new TestRunner();
     private class TestRunner implements Runnable{
 
@@ -163,11 +190,15 @@ public class AudioBookMaker extends ActionBarActivity {
          */
         @Override
         public void run() {
+
             time+= 1;
 
+            if(time >= 60){
+                min+=1;
+                time = 0;
+            }
 
-
-
+            mTime.setText(String.format(filter , min, formatter.format(time) ));
 
             if((time  )>= MAX_TIME){
                 stop();
