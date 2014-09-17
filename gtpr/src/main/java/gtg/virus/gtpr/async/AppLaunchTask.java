@@ -141,8 +141,10 @@ public class AppLaunchTask extends AsyncTask<Void,String,Boolean>{
 
             if(aDirectory.exists()){
                 publishProgress("Audio directory successfully created!");
+                Log.w(TAG , "Audio Dir Exists");
             }else{
                 publishProgress("Creation of audio directory encountered errors");
+                Log.w(TAG , "Audio dir not exists");
             }
 
         }

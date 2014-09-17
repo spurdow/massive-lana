@@ -16,20 +16,20 @@ public final class R {
 		public static final int list_padding = 0x7f090023;
 	}
 	public static final class drawable {
-		public static final int ic_chooser = 0x7f02009e;
-		public static final int ic_file = 0x7f0200b1;
-		public static final int ic_folder = 0x7f0200b2;
-		public static final int ic_provider = 0x7f0200c5;
+		public static final int ic_chooser = 0x7f02009f;
+		public static final int ic_file = 0x7f0200b4;
+		public static final int ic_folder = 0x7f0200b5;
+		public static final int ic_provider = 0x7f0200c8;
 	}
 	public static final class layout {
-		public static final int file = 0x7f030030;
+		public static final int file = 0x7f030033;
 	}
 	public static final class string {
 		public static final int choose_file = 0x7f0b000f;
 		public static final int empty_directory = 0x7f0b002c;
 		public static final int error_selecting_file = 0x7f0b002d;
 		public static final int internal_storage = 0x7f0b002f;
-		public static final int storage_removed = 0x7f0b003d;
+		public static final int storage_removed = 0x7f0b003e;
 	}
 	public static final class style {
 		public static final int fileChooserName = 0x7f0c0097;

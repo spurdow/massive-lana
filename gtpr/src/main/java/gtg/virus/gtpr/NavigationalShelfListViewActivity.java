@@ -303,6 +303,10 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 	        Intent intent = Intent.createChooser(getContentIntent, "Select a file");
 	        startActivityForResult(intent, REQUEST_CHOOSER);
 	    	break;
+            case R.id.menu_record:
+                Intent i = new Intent(this , AudioBookMaker.class);
+                startActivity(i);
+            break;
 	    }
 	    return super.onOptionsItemSelected(item);
 	}

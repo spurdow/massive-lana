@@ -13,6 +13,7 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.util.Log;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -45,6 +46,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
     public final static String RECORD = TAG + ".RECORD";
 
+    public final static String FILE_NAME = TAG + ".FILE_NAME" ;
+
     private boolean mPlay = false;
 
     private boolean mStop = false;
@@ -66,6 +69,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     public final static int ERROR_NOT_RUNNING = 0x003;
 
 
+    public final static String SUFFIX = ".3gp";
 
     // key status
     public final static String SERVICE_STATUS = TAG+ ".SERVICE_KEY_STATUS";
@@ -94,8 +98,17 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
         mRecorder = new MediaRecorder();
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);
+
+
         mRecorder.setOutputFile(Environment.getExternalStorageDirectory() + "/" +AUDIO_STORAGE_SUFFIX);
         mRecorder.setOnInfoListener(this);
+
+        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + AUDIO_STORAGE_SUFFIX;
+        File dir = new File(path);
+        if(!dir.exists())
+            dir.mkdirs();
+
     }
 
     @Override
@@ -251,9 +264,12 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
             wl.acquire();
 
             try{
-
+                Bundle extras = intent.getExtras();
+                final String fileName = extras.getString(FILE_NAME) + SUFFIX;
                 if(mRecorder == null){
                     initializeMediaRecorder();
+
+                    mRecorder.setOutputFile(Environment.getExternalStorageDirectory() + "/" +AUDIO_STORAGE_SUFFIX +"/"+fileName);
 
                     if(!mRecord){
 
@@ -282,7 +298,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                     mRecorder.reset();
                     mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
                     mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-                    mRecorder.setOutputFile(Environment.getExternalStorageDirectory() + "/" +AUDIO_STORAGE_SUFFIX);
+                    mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);
+                    mRecorder.setOutputFile(Environment.getExternalStorageDirectory() + "/" +AUDIO_STORAGE_SUFFIX +"/"+fileName);
                     try {
                         mRecorder.prepare();
                     } catch (IOException e) {

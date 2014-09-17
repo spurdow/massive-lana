@@ -8,5 +8,6 @@
     <string name="first_launch_dialog">Please wait while we configure things</string>
     <string name="launch_dialog">Please wait while we get the configuration and stuff</string>
     <string name="menu_add">Add</string>
+    <string name="menu_record">Record</string>
 
 </resources>

@@ -130,9 +130,9 @@ public class SplashActivity extends Activity {
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
-			/*Intent i = new Intent(SplashActivity.this, NavigationalShelfListViewActivity.class);
+			Intent i = new Intent(SplashActivity.this, NavigationalShelfListViewActivity.class);
 			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-			startActivity(i);*/
+			startActivity(i);
 			User user = Utilities.getUser(SplashActivity.this);
 
             Map<String, String> userFromPhone = getList(SplashActivity.this);
@@ -147,7 +147,7 @@ public class SplashActivity extends Activity {
             Utilities.saveUser(SplashActivity.this, user);
 
 
-			if(user == null){
+/*			if(user == null){
 				// go to login
 				Intent i = new Intent(SplashActivity.this,  LoginActivity.class);
 				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -157,7 +157,7 @@ public class SplashActivity extends Activity {
 				Intent i = new Intent(SplashActivity.this,  NavigationalShelfListViewActivity.class);
 				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				startActivity(i);
-			}
+			}*/
 		}
 		
 	}
