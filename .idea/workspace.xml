@@ -45,7 +45,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/AppLaunchTask.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/AppLaunchTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/Utilities.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/Utilities.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gtg.iws" />
@@ -80,7 +83,7 @@
       <file leaf-file-name="menu_list_row.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/layout/menu_list_row.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="570">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="105" max-vertical-offset="570">
               <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="30" selection-end-column="21" />
               <folding />
             </state>
@@ -90,31 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GTGPdfViewer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGPdfViewer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="2685">
-              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GTGTxtViewer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGTxtViewer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="1650" max-vertical-offset="1815">
               <caret line="110" column="43" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GTGEpubViewer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1815" max-vertical-offset="2670">
-              <caret line="121" column="40" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -179,14 +162,38 @@
       <file leaf-file-name="AudioService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0390625" vertical-offset="1215" max-vertical-offset="2550">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.41962776" vertical-offset="1387" max-vertical-offset="6045">
+              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2578#2579#0" expanded="true" />
-                <element signature="e#2606#2607#0" expanded="true" />
-                <element signature="e#2666#2681#0" expanded="true" />
+                <element signature="e#3502#4359#0" expanded="true" />
+                <element signature="e#4348#4349#0" expanded="true" />
+                <element signature="e#4574#4575#0" expanded="true" />
+                <element signature="e#4600#4601#0" expanded="true" />
+                <element signature="e#4913#4914#0" expanded="true" />
+                <element signature="e#4941#4942#0" expanded="true" />
+                <element signature="e#5001#5016#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="491" max-vertical-offset="1155">
+              <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utilities.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/Utilities.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3210">
+              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -3460,7 +3467,6 @@
         <option value="$PROJECT_DIR$/facebookSDK/build.gradle" />
         <option value="$PROJECT_DIR$/aFileChooser/build.gradle" />
         <option value="$PROJECT_DIR$/pr/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/AppLaunchTask.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/shelf_item.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/AbstractListAdapter.java" />
         <option value="$PROJECT_DIR$/sackOfViewsAdapter/src/main/AndroidManifest.xml" />
@@ -3475,7 +3481,6 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/epub_fragment_cover_layout.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/EpubCoverImageFragment.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/TitleListAdapter.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/Utilities.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/epub_main_layout.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/BookCreatorTask.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/GTGTxtViewer.java" />
@@ -3490,7 +3495,6 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGAudioBooks.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/audio_books_main_layout.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/AbstractViewer.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java" />
@@ -3499,7 +3503,10 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/entities/Audio.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/audio_list_row.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/AudioListAdapter.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/Utilities.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/AppLaunchTask.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -3740,6 +3747,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -3775,6 +3816,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gtpr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="async" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -4146,7 +4221,11 @@
       <created>1410908501524</created>
       <updated>1410908501524</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="hello">
+      <created>1410959546032</created>
+      <updated>1410959546032</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -4154,19 +4233,21 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25277337" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960381" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -4179,8 +4260,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2282092" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -4237,17 +4316,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/import-summary.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2100">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/facebookSDK/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7934509" vertical-offset="0" max-vertical-offset="450">
@@ -4289,13 +4361,6 @@
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/drawable-mdpi/ic_all_books.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/AppLaunchTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1905">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/layout/shelf_item.xml">
@@ -4434,13 +4499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/Utilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="3210">
-          <caret line="95" column="26" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/layout/epub_main_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="240">
@@ -4495,6 +4553,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1437" max-vertical-offset="2160">
           <caret line="162" column="5" selection-start-line="162" selection-start-column="5" selection-end-line="162" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4516,6 +4575,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2115" max-vertical-offset="9285">
           <caret line="212" column="19" selection-start-line="212" selection-start-column="19" selection-end-line="212" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4531,14 +4591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
           <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="1095">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -4664,15 +4716,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/AppLaunchTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1986755" vertical-offset="1665" max-vertical-offset="2400">
+          <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/Utilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3210">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-19/android/media/MediaRecorder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24834438" vertical-offset="9615" max-vertical-offset="14940">
+          <caret line="680" column="75" selection-start-line="680" selection-start-column="75" selection-end-line="680" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="491" max-vertical-offset="1155">
+          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0390625" vertical-offset="1215" max-vertical-offset="2550">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.41962776" vertical-offset="1387" max-vertical-offset="6045">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2578#2579#0" expanded="true" />
-            <element signature="e#2606#2607#0" expanded="true" />
-            <element signature="e#2666#2681#0" expanded="true" />
+            <element signature="e#3502#4359#0" expanded="true" />
+            <element signature="e#4348#4349#0" expanded="true" />
+            <element signature="e#4574#4575#0" expanded="true" />
+            <element signature="e#4600#4601#0" expanded="true" />
+            <element signature="e#4913#4914#0" expanded="true" />
+            <element signature="e#4941#4942#0" expanded="true" />
+            <element signature="e#5001#5016#0" expanded="true" />
           </folding>
         </state>
       </provider>

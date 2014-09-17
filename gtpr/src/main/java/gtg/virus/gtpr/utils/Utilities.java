@@ -37,6 +37,8 @@ public final class Utilities {
 	private static final String TAG = GLOBAL_TAG;
 	
 	public final static String STORAGE_SUFFIX = "Pinbook";
+
+    public final static String AUDIO_STORAGE_SUFFIX = "Pinbook_Media";
 	
 	public final static String pdfPattern = "[a-zA-Z0-9,.-_]*.(pdf|epub|txt)";
 	

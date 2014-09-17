@@ -69,6 +69,9 @@ public class AppLaunchTask extends AsyncTask<Void,String,Boolean>{
 	protected void onProgressUpdate(String... values) {
 		// TODO Auto-generated method stub
 		super.onProgressUpdate(values);
+        if(mDialog != null){
+            mDialog.setMessage(values[0]);
+        }
 	}
 
 
@@ -96,28 +99,58 @@ public class AppLaunchTask extends AsyncTask<Void,String,Boolean>{
 	protected Boolean doInBackground(Void... params) {
 		// TODO Auto-generated method stub
 		File fDirectory = new File(Environment.getExternalStorageDirectory() , STORAGE_SUFFIX);
-		
-		if(fDirectory.isDirectory()){
-			return true;
-		}
-		File parent = fDirectory.getParentFile();
-		while(!fDirectory.mkdir() || !fDirectory.isDirectory()){
-			try {
-				Log.w(TAG, "Creating directory...");
-				Thread.sleep(1000L);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} 
-		}
-	
-		if(fDirectory.exists()){
-			Log.w(TAG, "Directory exists");
-			return true;
-		}else{
-			Log.w(TAG, "Directory did not exist");
-		}
-		
+
+
+
+		if(!fDirectory.isDirectory()){
+            File parent = fDirectory.getParentFile();
+            while(!fDirectory.mkdir() || !fDirectory.isDirectory()){
+                try {
+                    Log.w(TAG, "Creating directory...");
+                    publishProgress("Creating pinbook directory...");
+                    Thread.sleep(1000L);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+
+            if(fDirectory.exists()){
+                Log.w(TAG, "Directory exists");
+                publishProgress("Pinbook directory successfully created!");
+            }else{
+                publishProgress("Creation of Pinbook directory was unsuccessful!");
+                Log.w(TAG, "Directory did not exist");
+            }
+
+        }
+
+
+        File aDirectory = new File(Environment.getExternalStorageDirectory() , AUDIO_STORAGE_SUFFIX);
+        if(aDirectory.isDirectory()){
+            File aParent = aDirectory.getParentFile();
+            while(!aDirectory.mkdir() || !aDirectory.isDirectory()){
+                try{
+
+                    publishProgress("Creating audio directory...");
+                    Thread.sleep(1000L);
+                }catch(InterruptedException e){
+                    e.printStackTrace();
+                }
+            }
+
+            if(aDirectory.exists()){
+                publishProgress("Audio directory successfully created!");
+            }else{
+                publishProgress("Creation of audio directory encountered errors");
+            }
+
+        }
+
+        if(fDirectory.exists() && aDirectory.exists()){
+            return true;
+        }
+
 		return false;
 	}
 
