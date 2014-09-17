@@ -7,9 +7,12 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.PowerManager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import gtg.virus.gtpr.entities.Audio;
 
@@ -98,11 +101,22 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
         return false;
     }
 
-    private final List<Audio> store = new ArrayList<Audio>();
+    private final Map<String , Audio> store = new HashMap<String ,Audio>();
+
+    /**
+     *
+     * @param audio
+     * @return true if not exists in store, else false
+     */
     protected boolean addToStore(Audio audio){
         // TODO: check if audio is already in the cache store
-        //if()
-        return false;
+        if(store.containsKey(audio.getPath())){
+            return false;
+        }else{
+            store.put(audio.getPath() , audio);
+            return true;
+        }
+
     }
 
     public class PlayBackReceiver extends BroadcastReceiver{
@@ -110,28 +124,42 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            Bundle extras = intent.getExtras();
+            PowerManager pManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
 
-            mPlay = extras.getBoolean(PLAY , false);
+            PowerManager.WakeLock wl = pManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK , TAG + ".MediaPlayerService");
+            wl.acquire();
+            try {
+                Bundle extras = intent.getExtras();
 
-            mStop = extras.getBoolean(STOP , false);
+                mPlay = extras.getBoolean(PLAY, false);
 
-            mPause = extras.getBoolean(PAUSE , false);
+                mStop = extras.getBoolean(STOP, false);
+
+                mPause = extras.getBoolean(PAUSE, false);
 
 
-            if(mPlay && (!mStop && !mPause)){
+                if (mPlay && (!mStop && !mPause)) {
 
-                if(!mPlayer.isPlaying()){
-                    mPlayer.setOnPreparedListener(null);
-                    mPlayer.setOnPreparedListener(AudioService.this);
-                    mPlayer.setOnErrorListener(AudioService.this);
-                    // TODO: add data source from bundle convert to gson pojo
-                    //mPlayer.setDataSource();
+                    if (mPlayer != null && !mPlayer.isPlaying()) {
+                        mPlayer.setOnPreparedListener(null);
+                        mPlayer.setOnPreparedListener(AudioService.this);
+                        mPlayer.setOnErrorListener(AudioService.this);
+                        // TODO: add data source from bundle convert to gson pojo
+                        //mPlayer.setDataSource();
+                    }
+                } else if (mStop && (!mPlay && !mPause)) {
+                    if (mPlayer != null && mPlayer.isPlaying()) {
+                        mPlayer.stop();
+
+                    }
+                } else if (mPause && (!mPlay && !mStop)) {
+                    if (mPlayer != null && mPlayer.isPlaying()) {
+                        mPlayer.pause();
+                    }
                 }
-            }else if(mStop && (!mPlay && !mPause)){
-
-            }else if(mPause && (!mPlay && !mStop)){
-
+            }finally{
+                if(wl != null)
+                    wl.release();
             }
         }
     }
