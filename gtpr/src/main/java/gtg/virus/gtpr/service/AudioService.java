@@ -223,6 +223,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
             String mFileName = mpStack.pop().getKey();
             mPlayerAbsPath = ABSOLUTE_PATH +"/"+mFileName;
             try {
+                mPlayer.stop();
+                mPlayer.reset();
                 mPlayer.setDataSource(mPlayerAbsPath);
                 mPlayer.setOnPreparedListener(AudioService.this);
                 mPlayer.setOnCompletionListener(AudioService.this);
@@ -361,8 +363,28 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                 }
 
             }
-            if(!mpStack.isEmpty())
-                mpStack.pop();
+            if(!mpStack.isEmpty() && mPlayer != null){
+                Log.w(TAG , "We have remaining 3gp to play");
+                String mFileName = mpStack.pop().getKey();
+                mPlayerAbsPath = ABSOLUTE_PATH +"/"+mFileName;
+                try {
+                    mPlayer.stop();
+                    mPlayer.reset();
+                    mPlayer.setDataSource(mPlayerAbsPath);
+                    mPlayer.setOnPreparedListener(AudioService.this);
+                    mPlayer.setOnCompletionListener(AudioService.this);
+                    mPlayer.setScreenOnWhilePlaying(true);
+                    mPlayer.prepareAsync();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    // alarm user error occured
+                    broadcastServiceStatus(ERROR_NOT_RUNNING, "MediaPlayer not running...");
+
+                }
+
+            }else if(mPlayer == null){
+                mpStack.clear();
+            }
             store.clear();
 
 

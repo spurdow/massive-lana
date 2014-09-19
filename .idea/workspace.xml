@@ -46,7 +46,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gtg.iws" />
@@ -143,30 +142,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AudioService.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AudioService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2714" max-vertical-offset="9075">
-              <caret line="221" column="57" selection-start-line="221" selection-start-column="57" selection-end-line="221" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.6551724" vertical-offset="4932" max-vertical-offset="9405">
+              <caret line="380" column="37" selection-start-line="380" selection-start-column="37" selection-end-line="380" selection-end-column="37" />
               <folding>
-                <element signature="e#9105#9131#0" expanded="true" />
-                <element signature="e#18110#18111#0" expanded="true" />
-                <element signature="e#18144#18145#0" expanded="true" />
-                <element signature="e#18292#18293#0" expanded="true" />
-                <element signature="e#18326#18327#0" expanded="true" />
-                <element signature="e#18367#18368#0" expanded="true" />
-                <element signature="e#18405#18406#0" expanded="true" />
-                <element signature="e#18456#18457#0" expanded="true" />
-                <element signature="e#18494#18495#0" expanded="true" />
+                <element signature="e#9170#9196#0" expanded="true" />
+                <element signature="e#19077#19078#0" expanded="true" />
+                <element signature="e#19111#19112#0" expanded="true" />
+                <element signature="e#19259#19260#0" expanded="true" />
+                <element signature="e#19293#19294#0" expanded="true" />
+                <element signature="e#19334#19335#0" expanded="true" />
+                <element signature="e#19372#19373#0" expanded="true" />
+                <element signature="e#19423#19424#0" expanded="true" />
+                <element signature="e#19461#19462#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SplashActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SplashActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7914438" vertical-offset="1714" max-vertical-offset="2190">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1240" max-vertical-offset="2190">
               <caret line="161" column="21" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
               <folding />
             </state>
@@ -3508,8 +3507,8 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/AudioBookMaker.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/entities/Audio.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java" />
       </list>
     </option>
   </component>
@@ -4396,12 +4395,16 @@
       <created>1411139408025</created>
       <updated>1411139408025</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="with audio">
+      <created>1411140445521</created>
+      <updated>1411140445521</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -4416,7 +4419,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21428572" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23217116" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31111112" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36507937" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3857143" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960381" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -4848,29 +4851,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java">
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2714" max-vertical-offset="9075">
-          <caret line="221" column="57" selection-start-line="221" selection-start-column="57" selection-end-line="221" selection-end-column="57" />
-          <folding>
-            <element signature="e#9105#9131#0" expanded="true" />
-            <element signature="e#18110#18111#0" expanded="true" />
-            <element signature="e#18144#18145#0" expanded="true" />
-            <element signature="e#18292#18293#0" expanded="true" />
-            <element signature="e#18326#18327#0" expanded="true" />
-            <element signature="e#18367#18368#0" expanded="true" />
-            <element signature="e#18405#18406#0" expanded="true" />
-            <element signature="e#18456#18457#0" expanded="true" />
-            <element signature="e#18494#18495#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="1240" max-vertical-offset="2190">
+          <caret line="161" column="21" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java">
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/service/AudioService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7914438" vertical-offset="1714" max-vertical-offset="2190">
-          <caret line="161" column="21" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
-          <folding />
+        <state vertical-scroll-proportion="0.6551724" vertical-offset="4932" max-vertical-offset="9405">
+          <caret line="380" column="37" selection-start-line="380" selection-start-column="37" selection-end-line="380" selection-end-column="37" />
+          <folding>
+            <element signature="e#9170#9196#0" expanded="true" />
+            <element signature="e#19077#19078#0" expanded="true" />
+            <element signature="e#19111#19112#0" expanded="true" />
+            <element signature="e#19259#19260#0" expanded="true" />
+            <element signature="e#19293#19294#0" expanded="true" />
+            <element signature="e#19334#19335#0" expanded="true" />
+            <element signature="e#19372#19373#0" expanded="true" />
+            <element signature="e#19423#19424#0" expanded="true" />
+            <element signature="e#19461#19462#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
