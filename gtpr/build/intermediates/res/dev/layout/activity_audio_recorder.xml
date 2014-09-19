@@ -25,4 +25,44 @@
         android:src="@drawable/ic_device_access_mic_muted"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Medium TextMedium TextMedium TextMedium TextMedium Text"
+        android:id="@+id/audio_txt_file_name"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:textColor="#fff3f8f3"
+        android:textSize="23sp"
+        android:singleLine="true"
+        android:maxLength="25"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:weightSum="2"
+        android:visibility="invisible"
+        android:id="@+id/parent_btn_layout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Discard"
+            android:id="@+id/btn_audio_discard"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Save"
+            android:id="@+id/btn_audio_save"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
 </RelativeLayout><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/layout/activity_audio_recorder.xml -->

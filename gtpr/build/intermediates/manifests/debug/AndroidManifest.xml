@@ -54,7 +54,9 @@
             android:value="@string/app_id" />
 
         <activity android:name="gtg.virus.gtpr.LoginActivity" />
-        <activity android:name="gtg.virus.gtpr.NavigationalShelfListViewActivity" />
+        <activity
+            android:name="gtg.virus.gtpr.NavigationalShelfListViewActivity"
+            android:launchMode="singleInstance" />
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
             android:enabled="@bool/use_activity"

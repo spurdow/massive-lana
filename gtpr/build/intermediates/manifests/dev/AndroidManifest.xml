@@ -54,7 +54,9 @@
             android:value="@string/app_id" />
 
         <activity android:name="gtg.virus.gtpr.LoginActivity" />
-        <activity android:name="gtg.virus.gtpr.NavigationalShelfListViewActivity" />
+        <activity
+            android:name="gtg.virus.gtpr.NavigationalShelfListViewActivity"
+            android:launchMode="singleInstance" />
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
             android:enabled="@bool/use_activity"
@@ -74,8 +76,11 @@
         <activity android:name="gtg.virus.gtpr.GTGEpubViewer" />
         <activity android:name="gtg.virus.gtpr.GTGTxtViewer" />
         <activity android:name="gtg.virus.gtpr.AudioBookMaker" />
+        <activity android:name="gtg.virus.gtpr.AudioListView" />
 
-        <service android:name="gtg.virus.gtpr.service.AudioService" />
+        <service
+            android:name="gtg.virus.gtpr.service.AudioService"
+            android:process=":remote" />
 
         <activity
             android:name="com.radaee.reader.PDFReaderAct"
