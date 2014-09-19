@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 import static gtg.virus.gtpr.utils.Utilities.*;
 
@@ -190,6 +191,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     public void onPrepared(MediaPlayer mp) {
         mp.start();
         setUpAsForeground("Playing..." , R.drawable.ic_audio_play);
+
     }
 
     void setUpAsForeground(String text , int resId) {
@@ -214,6 +216,28 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     public void onCompletion(MediaPlayer mp) {
         setUpAsForeground("AudioBook has finished." , R.drawable.ic_audio_stop);
         store.clear();
+        mpStack.pop();
+
+        if(!mpStack.isEmpty() && mPlayer != null){
+            Log.w(TAG , "We have remaining 3gp to play");
+            String mFileName = mpStack.pop().getKey();
+            mPlayerAbsPath = ABSOLUTE_PATH +"/"+mFileName;
+            try {
+                mPlayer.setDataSource(mPlayerAbsPath);
+                mPlayer.setOnPreparedListener(AudioService.this);
+                mPlayer.setOnCompletionListener(AudioService.this);
+                mPlayer.setScreenOnWhilePlaying(true);
+                mPlayer.prepareAsync();
+            } catch (IOException e) {
+                e.printStackTrace();
+                // alarm user error occured
+                broadcastServiceStatus(ERROR_NOT_RUNNING, "MediaPlayer not running...");
+
+            }
+
+        }else if(mPlayer == null){
+            mpStack.clear();
+        }
     }
 
 
@@ -226,6 +250,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
         broadcastServiceStatus(ERROR_NOT_RUNNING , "MediaPlayer has stopped...");
 
         store.clear();
+
+        mpStack.clear();
         return true;
     }
 
@@ -252,6 +278,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     }
 
 
+    protected Stack<Map.Entry<String,String>> mpStack = new Stack<Map.Entry<String,String>>();
     public class PlayBackReceiver extends BroadcastReceiver{
 
 
@@ -274,6 +301,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                             mPlayer.setOnCompletionListener(AudioService.this);
                             mPlayer.setScreenOnWhilePlaying(true);
                             mPlayer.prepareAsync();
+                            KVEntry e = new KVEntry(mFileName , mPlayerAbsPath);
+                            mpStack.push(e);
                         } catch (IOException e) {
                             e.printStackTrace();
 
@@ -294,6 +323,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                             mPlayer.setOnCompletionListener(AudioService.this);
                             mPlayer.setScreenOnWhilePlaying(true);
                             mPlayer.prepareAsync();
+                            KVEntry e = new KVEntry(mFileName , mPlayerAbsPath);
+                            mpStack.push(e);
                         } catch (IOException e) {
                             e.printStackTrace();
 
@@ -326,9 +357,12 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
             if (mPlayer != null) {
                 if (mPlayer.isPlaying()) {
                     mPlayer.stop();
+
                 }
 
             }
+            if(!mpStack.isEmpty())
+                mpStack.pop();
             store.clear();
 
 
@@ -496,6 +530,56 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+    private class KVEntry implements Map.Entry<String, String> {
+
+        private String key;
+        private String val;
+        public KVEntry(String k, String v){
+            this.key = k;
+            this.val = v;
+        }
+        /**
+         * Returns the key.
+         *
+         * @return the key
+         */
+        @Override
+        public String getKey() {
+            return key;
+        }
+
+        /**
+         * Returns the value.
+         *
+         * @return the value
+         */
+        @Override
+        public String getValue() {
+            return val;
+        }
+
+        public void setKey(String key){
+            this.key = key;
+        }
+
+        public void OverridesetValue(String val){
+            this.val = val;
+        }
+
+        /**
+         * Sets the value of this entry to the specified value, replacing any
+         * existing value.
+         *
+         * @param object the new value to set.
+         * @return object the replaced value of this entry.
+         */
+        @Override
+        public String setValue(String object) {
+            val = object;
+            return object;
+        }
+    }
 
     /**
      * Called by the system to notify a Service that it is no longer used and is being removed.  The
