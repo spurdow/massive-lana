@@ -43,6 +43,8 @@ public final class Utilities {
 	public final static String pdfPattern = "[a-zA-Z0-9,.-_]*.(pdf|epub|txt)";
 	
 	public final static String pdfSlashPattern = "[^!.]*.(pdf|epub|txt)";
+
+    public final static String audioPattern = "[^!.]*.(mp3|ogg|3gp)";
 	
 	public final static String PIN_EXTRA_PBOOK = "_pbook_extra";
 	
@@ -99,7 +101,7 @@ public final class Utilities {
 		return Pattern.matches(pdfSlashPattern, name);
 	}
 	
-	public static void walkdir(File dir , HashMap<String , String> data) {
+	public static void walkdir(File dir , HashMap<String , String> data , String pattern) {
 
 		    File listFile[] = dir.listFiles();
 
@@ -107,9 +109,9 @@ public final class Utilities {
 		        for (int i = 0; i < listFile.length; i++) {
 
 		            if (listFile[i].isDirectory()) {
-		                walkdir(listFile[i] , data);
+		                walkdir(listFile[i] , data , pattern);
 		            } else {
-		              if (Pattern.matches(pdfSlashPattern, listFile[i].getAbsolutePath())){
+		              if (Pattern.matches(pattern, listFile[i].getAbsolutePath())){
 		                  // add to hashmap
 		            	  data.put(listFile[i].getName(), listFile[i].getAbsolutePath());
 		            	  Log.i(TAG, "Not Test " + listFile[i].getName()  +" " + listFile[i].getAbsolutePath());

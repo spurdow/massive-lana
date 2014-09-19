@@ -19,6 +19,9 @@ public class Audio {
         this.details = details;
     }
 
+    public Audio() {
+    }
+
     public long getId() {
         return id;
     }

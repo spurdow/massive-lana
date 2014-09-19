@@ -11477,6 +11477,11 @@ true
                 qualifiers=""
                 type="layout" />
             <file
+                name="audio_switch_actionbar_menu"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\layout\audio_switch_actionbar_menu.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="dialog_pagenumber"
                 path="G:\Android Studio\gtg\gtpr\src\main\res\layout\dialog_pagenumber.xml"
                 qualifiers=""
@@ -11536,6 +11541,11 @@ true
                 path="G:\Android Studio\gtg\gtpr\src\main\res\layout\txt_main_layout.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="audio_creator_menu"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\menu\audio_creator_menu.xml"
+                qualifiers=""
+                type="menu" />
             <file
                 name="main_menu"
                 path="G:\Android Studio\gtg\gtpr\src\main\res\menu\main_menu.xml"

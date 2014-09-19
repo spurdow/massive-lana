@@ -1,6 +1,8 @@
 package gtg.virus.gtpr.adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,20 +11,40 @@ import android.widget.Filter;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import gtg.virus.gtpr.R;
 import gtg.virus.gtpr.entities.Audio;
 
-
+import static gtg.virus.gtpr.service.AudioService.*;
 public class AudioListAdapter extends AbstractListAdapter<Audio>{
-
-    private MediaPlayer mPlayer = null;
 
     public AudioListAdapter(Context context, List<Audio> lists) {
         super(context, lists);
     }
 
+    public AudioListAdapter(Context context){
+        this(context , new ArrayList<Audio>());
+    }
+
+
+    public void add(Audio a){
+        this.getList().add(a);
+        ((Activity)getContext()).runOnUiThread(new Runnable() {
+
+            /**
+             * Starts executing the active part of the class' code. This method is
+             * called when a thread is started that has been created with a class which
+             * implements {@code Runnable}.
+             */
+            @Override
+            public void run() {
+                notifyDataSetChanged();
+            }
+        });
+
+    }
     /**
      * returns the Override view provided by its subclass
      *
@@ -47,12 +69,22 @@ public class AudioListAdapter extends AbstractListAdapter<Audio>{
 
         final Audio audio = getObject(position);
 
-        vH.title.setText(audio.getTitle());
-        vH.details.setText(audio.getDetails());
+        vH.title.setText(audio.getTitle()+"");
+        vH.details.setText(audio.getDetails()+"");
         vH.button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
+                if(isChecked){
+                    Intent i = new Intent();
+                    i.setAction(ACTION_MEDIA_PLAYER_SERVICE);
+                    i.putExtra(FILE_NAME , audio.getTitle());
+                    getContext().sendBroadcast(i);
+                }else{
+                    Intent i = new Intent();
+                    i.setAction(ACTION_MEDIA_PLAYER_STOP_SERVICE);
+                    i.putExtra(FILE_NAME , audio.getTitle());
+                    getContext().sendBroadcast(i);
+                }
             }
         });
 

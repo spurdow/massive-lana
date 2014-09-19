@@ -57,6 +57,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -118,11 +119,29 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 
 	    // Set the adapter for the list view
 	    mDrawerList.setAdapter(mMergeAdapter);
-/*	    // Set the list's click listener
-	    mDrawerList.setOnItemClickListener(new DrawerItemClickListener(){
-	    	
-	    });
-	    */
+	    // Set the list's click listener
+	    mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            /**
+             * Callback method to be invoked when an item in this AdapterView has
+             * been clicked.
+             * <p/>
+             * Implementers can call getItemAtPosition(position) if they need
+             * to access the data associated with the selected item.
+             *
+             * @param parent   The AdapterView where the click happened.
+             * @param view     The view within the AdapterView that was clicked (this
+             *                 will be a view provided by the adapter)
+             * @param position The position of the view in the adapter.
+             * @param id       The row id of the item that was clicked.
+             */
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.w(TAG , "POSITION : " + position);
+
+                itemClick(position);
+            }
+        });
 	    mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close) {
 
@@ -162,7 +181,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 				
 				HashMap<String ,String> data = new HashMap<String , String>();
 				File f = new File(Environment.getExternalStorageDirectory() , STORAGE_SUFFIX);
-				Utilities.walkdir(f , data);
+				Utilities.walkdir(f , data , Utilities.pdfSlashPattern);
 
 				if(data.size() > 0){
 					for(Entry<String,String> e : data.entrySet()){
@@ -182,6 +201,19 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 		
 		
 	}
+
+    private void itemClick(int position){
+        switch(position){
+            case 0 : break;
+            case 1 : break;
+            case 2 : break;
+            case 3 : break;
+            case 4 :
+                Intent i = new Intent(this , AudioListView.class);
+                startActivity(i);
+                break;
+        }
+    }
 
     private ImageLoaderConfiguration getConfig(){
         return new ImageLoaderConfiguration.Builder(this)

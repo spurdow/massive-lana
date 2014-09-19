@@ -1,20 +1,27 @@
 package gtg.virus.gtpr;
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.SeekBar;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import java.io.File;
 import java.text.DecimalFormat;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
@@ -53,32 +60,81 @@ public class AudioBookMaker extends ActionBarActivity {
 
     private final DecimalFormat formatter = new DecimalFormat("00");
 
+    private String mFileName = "AudioPinBook_" ;
+
+    private String mPrevAbsPath = "";
+
+    private String mFileName_suffix = System.currentTimeMillis()+"";
+
+    private TextView mTextView = null;
+
+    private LinearLayout mBtn_parent;
+
+    private Button mBtn_discard;
+
+    private Button mBtn_save;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_recorder);
 
 
-        mToggle = (Switch) findViewById(R.id.audio_toggle_play_stop);
+
         mTime = (TextView) findViewById(R.id.audio_time_elapse);
         mBackgroundLabel = (ImageView) findViewById(R.id.audio_background_image_view);
+        mTextView = (TextView) findViewById(R.id.audio_txt_file_name);
 
-        mToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        mTextView.setText(mFileName + mFileName_suffix);
+
+        mBtn_parent = (LinearLayout) findViewById(R.id.parent_btn_layout);
+        mBtn_discard = (Button) findViewById(R.id.btn_audio_discard);
+        mBtn_save = (Button) findViewById(R.id.btn_audio_save);
+
+
+        mBtn_discard.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    start();
-                }else{
-                    stop();
-                }
+            public void onClick(View v) {
+                new AsyncTask<Void, Void, Void>(){
+
+
+                    @Override
+                    protected Void doInBackground(Void... params) {
+
+                        File f = new File(mPrevAbsPath);
+                        while(!f.delete()){
+
+                            try {
+                                Thread.sleep(50);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        return null;
+                    }
+                }.execute(null , null, null);
+
+                Crouton.makeText(AudioBookMaker.this , "Discarded!" , Style.INFO).show();
+                mBtn_parent.setVisibility(View.INVISIBLE);
             }
         });
 
+
+        mBtn_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Crouton.makeText(AudioBookMaker.this , "Saved!" , Style.INFO).show();
+                mBtn_parent.setVisibility(View.INVISIBLE);
+            }
+        });
         serviceReceiver = new AudioServiceStatusReceiver();
         registerReceiver(serviceReceiver , new IntentFilter(AUDIO_SERVICE_STATUS));
 
         Intent service = new Intent(this , AudioService.class);
         startService(service);
+
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -89,7 +145,7 @@ public class AudioBookMaker extends ActionBarActivity {
             hangingStart = true;
             Intent i = new Intent();
             i.setAction(ACTION_MEDIA_RECORDER_SERVICE);
-            i.putExtra(FILE_NAME, "Book_Recording_" +System.currentTimeMillis());
+            i.putExtra(FILE_NAME, mFileName + mFileName_suffix);
             sendBroadcast(i);
             timeStarted = System.currentTimeMillis();
 
@@ -101,10 +157,14 @@ public class AudioBookMaker extends ActionBarActivity {
         if(!hangingStop){
             min = 0;
             time = 0;
+            mHandler.removeCallbacks(runner);
+            mTime.setText(String.format(filter , min, formatter.format(time) ));
             hangingStop = true;
             Intent i = new Intent();
             i.setAction(ACTION_MEDIA_RECORDER_STOP_SERVICE);
             sendBroadcast(i);
+            mPrevAbsPath = ABSOLUTE_PATH + "/" + mFileName+mFileName_suffix + SUFFIX;
+            mFileName_suffix = System.currentTimeMillis() +"";
 
         }
     }
@@ -112,6 +172,24 @@ public class AudioBookMaker extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.audio_creator_menu , menu);
+
+        View view =  menu.findItem(R.id.opt_menu_switch).getActionView();
+
+        mToggle = (Switch)view.findViewById(R.id.audio_toggle_play_stop);
+
+        mToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    start();
+                    mBtn_parent.setVisibility(View.INVISIBLE);
+                }else{
+                    stop();
+                }
+            }
+        });
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -120,9 +198,42 @@ public class AudioBookMaker extends ActionBarActivity {
 
         switch(item.getItemId()){
             case android.R.id.home: finish(); break;
+            case R.id.opt_menu_overwrite:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                final EditText editText = new EditText(this);
+                editText.setText(mFileName+mFileName_suffix);
+                AlertDialog alert = builder.setTitle("Edit Filename")
+                        .setView(editText)
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .setPositiveButton("Proceed", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                final String editTextString = editText.getText().toString();
+                                if (editTextString != null && !editTextString.isEmpty()) {
+                                    mFileName = editTextString;
+                                    mTextView.setText(mFileName);
+
+
+                                } else {
+                                    Crouton.makeText(AudioBookMaker.this, "File name is empty", Style.ALERT).show();
+                                }
+
+                            }
+                        }).create();
+
+                alert.show();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 
     /**
      *         Intent i = new Intent();
@@ -166,11 +277,10 @@ public class AudioBookMaker extends ActionBarActivity {
                 Crouton.makeText(AudioBookMaker.this , audioMessage, Style.INFO).show();
                 if(hangingStop){
                     // stop all recordings running ui
-                    Crouton.makeText(AudioBookMaker.this , "Saved", Style.INFO).show();
                     hangingStart = false;
                     hangingStop = false;
-                    mHandler.removeCallbacks(runner);
-                    mTime.setText(String.format(filter , min, formatter.format(time) ));
+                    mTextView.setText(mFileName+mFileName_suffix);
+                    mBtn_parent.setVisibility(View.VISIBLE);
                 }
 
                 mBackgroundLabel.setImageResource(R.drawable.ic_device_access_mic_muted);
@@ -198,10 +308,11 @@ public class AudioBookMaker extends ActionBarActivity {
                 time = 0;
             }
 
-            mTime.setText(String.format(filter , min, formatter.format(time) ));
+            mTime.setText(String.format(filter , formatter.format(min), formatter.format(time) ));
 
             if((time  )>= MAX_TIME){
                 stop();
+                Crouton.makeText(AudioBookMaker.this , "Maximum time reached! Saving..." , Style.ALERT).show();
             }else{
                 mHandler.postDelayed(this, 1000);
             }
@@ -219,5 +330,7 @@ public class AudioBookMaker extends ActionBarActivity {
         }
 
         stopService(new Intent(this, AudioService.class));
+
+        Crouton.cancelAllCroutons();
     }
 }

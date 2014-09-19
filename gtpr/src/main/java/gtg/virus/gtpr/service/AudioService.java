@@ -1,5 +1,7 @@
 package gtg.virus.gtpr.service;
 
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -20,6 +22,8 @@ import java.util.Map;
 
 import static gtg.virus.gtpr.utils.Utilities.*;
 
+import gtg.virus.gtpr.AudioBookMaker;
+import gtg.virus.gtpr.R;
 import gtg.virus.gtpr.entities.Audio;
 
 public class AudioService extends Service implements MediaPlayer.OnPreparedListener , MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener, MediaRecorder.OnErrorListener, MediaRecorder.OnInfoListener {
@@ -31,6 +35,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     public final static String ACTION_MEDIA_RECORDER_SERVICE = TAG + ".ACTION_MEDIA_RECORDER_SERVICE";
 
     public final static String ACTION_MEDIA_PLAYER_STOP_SERVICE = TAG + ".ACTION_MEDIA_PLAYER_STOP_SERVICE";
+
+    public final static String ACTION_MEDIA_PLAYER_PAUSE_SERVICE = TAG + ".ACTION_MEDIA_PLAYER_PAUSE_SERVICE";
 
     public final static String ACTION_MEDIA_RECORDER_STOP_SERVICE = TAG + ".ACTION_MEDIA_RECORDER_STOP_SERVICE";
 
@@ -47,6 +53,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     public final static String RECORD = TAG + ".RECORD";
 
     public final static String FILE_NAME = TAG + ".FILE_NAME" ;
+
+    private static final int NOTIFICATION_ID = R.drawable.ic_audio;
 
     private boolean mPlay = false;
 
@@ -76,8 +84,16 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
     public final static String EXTRA_SERVICE_MESSAGE_STATUS  = TAG + ".EXTRA_SERVICE_MSG_STATUS";
 
+    public final static String EXTRA_SERVICE_PATH_STATUS = TAG+  ".EXTRA_SERVICE_PATH_STATUS";
+
     public final static String AUDIO_SERVICE_STATUS = TAG +  "AUDIO_SERVICE_STATUS";
 
+
+    private String mRecorderAbsPath = "";
+
+    private String mPlayerAbsPath = "";
+
+    private String mPrevFileName = "";
 
     /**
      * BroadcastReceivers Instance
@@ -86,9 +102,20 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
     protected RecordStopReceiver mStopRecorderReciever = null;
 
+    protected PlayBackReceiver mPlayReceiver = null;
+
+    protected StopPlaybackReceiver mStopReceiver = null;
+
+    protected PausePlaybackReceiver mPauseReceiver = null;
+
+    public final static String ABSOLUTE_PATH = Environment.getExternalStorageDirectory() + "/" + AUDIO_STORAGE_SUFFIX;
+
+    private Notification mNotification;
 
     private void initializeMediaPlayer(){
         mPlayer = new MediaPlayer();
+
+        mPlayer.setWakeMode(getApplicationContext() , PowerManager.PARTIAL_WAKE_LOCK);
         mPlayer.setOnPreparedListener(null);
         mPlayer.setOnPreparedListener(this);
         mPlayer.setOnErrorListener(this);
@@ -101,11 +128,10 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
         mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);
 
 
-        mRecorder.setOutputFile(Environment.getExternalStorageDirectory() + "/" +AUDIO_STORAGE_SUFFIX);
+        mRecorder.setOutputFile(ABSOLUTE_PATH);
         mRecorder.setOnInfoListener(this);
 
-        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + AUDIO_STORAGE_SUFFIX;
-        File dir = new File(path);
+        File dir = new File(ABSOLUTE_PATH);
         if(!dir.exists())
             dir.mkdirs();
 
@@ -142,6 +168,16 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                     // init recorder stopper
                     mStopRecorderReciever = new RecordStopReceiver();
                     registerReceiver(mStopRecorderReciever , new IntentFilter(ACTION_MEDIA_RECORDER_STOP_SERVICE));
+
+
+                    mPlayReceiver = new PlayBackReceiver();
+                    registerReceiver(mPlayReceiver , new IntentFilter(ACTION_MEDIA_PLAYER_SERVICE));
+
+                    mStopReceiver = new StopPlaybackReceiver();
+                    registerReceiver(mStopReceiver , new IntentFilter(ACTION_MEDIA_PLAYER_STOP_SERVICE));
+
+                    mPauseReceiver = new PausePlaybackReceiver();
+                    registerReceiver(mPauseReceiver , new IntentFilter(ACTION_MEDIA_PLAYER_PAUSE_SERVICE));
                 }
             }
         }).start();
@@ -155,6 +191,20 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     @Override
     public void onPrepared(MediaPlayer mp) {
         mp.start();
+        setUpAsForeground("Playing..." , R.drawable.ic_audio_play);
+    }
+
+    void setUpAsForeground(String text , int resId) {
+        PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 0,
+                new Intent(getApplicationContext(), AudioBookMaker.class),
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        mNotification = new Notification();
+        mNotification.tickerText = text;
+        mNotification.icon = resId;
+        mNotification.flags |= Notification.FLAG_ONGOING_EVENT;
+        mNotification.setLatestEventInfo(getApplicationContext(), "AudioBook Player",
+                text, pi);
+        startForeground(NOTIFICATION_ID, mNotification);
     }
 
     /**
@@ -164,28 +214,34 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
      */
     @Override
     public void onCompletion(MediaPlayer mp) {
-
+        setUpAsForeground("AudioBook has finished." , R.drawable.ic_audio_stop);
+        store.clear();
     }
 
 
     @Override
     public boolean onError(MediaPlayer mp, int what, int extra) {
-        return false;
+
+        mp.stop();
+
+        broadcastServiceStatus(ERROR_NOT_RUNNING , "MediaPlayer has stopped...");
+
+        store.clear();
+        return true;
     }
 
-    private final Map<String , Audio> store = new HashMap<String ,Audio>();
+    private final Map<String , String> store = new HashMap<String ,String>();
 
     /**
      *
-     * @param audio
      * @return true if not exists in store, else false
      */
-    protected boolean addToStore(Audio audio){
+    protected boolean addToStore(String fileName , String absPath){
         // TODO: check if audio is already in the cache store
-        if(store.containsKey(audio.getPath())){
+        if(store.containsKey(fileName) || store.containsValue(absPath)){
             return false;
         }else{
-            store.put(audio.getPath() , audio);
+            store.put(fileName , absPath);
             return true;
         }
 
@@ -202,40 +258,95 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            PowerManager pManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
 
-            PowerManager.WakeLock wl = pManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK , TAG + ACTION_MEDIA_PLAYER_SERVICE);
-            wl.acquire();
-            try {
                 Bundle extras = intent.getExtras();
 
-                mPlay = extras.getBoolean(PLAY, false);
+                final String mFileName = extras.getString(FILE_NAME);
 
-                mStop = extras.getBoolean(STOP, false);
+                mPlayerAbsPath = ABSOLUTE_PATH + "/" + FILE_NAME;
 
-                mPause = extras.getBoolean(PAUSE, false);
+                if(addToStore(mFileName , mPlayerAbsPath)) {
+                    if (mPlayer == null) {
+
+                        initializeMediaPlayer();
+                        try {
+                            mPlayer.setDataSource(mPlayerAbsPath);
+                            mPlayer.prepareAsync();
+                        } catch (IOException e) {
+                            e.printStackTrace();
 
 
-                if (mPlay && (!mStop && !mPause)) {
+                            // alarm user error occured
+                            broadcastServiceStatus(ERROR_NOT_RUNNING, "MediaPlayer not running...");
 
-                    if (mPlayer != null && !mPlayer.isPlaying()) {
+                        }
 
-                        // TODO: add data source from bundle convert to gson pojo
-                        //mPlayer.setDataSource();
+                    } else {
+
+
+
+                        mPlayer.reset();
+                        try {
+                            mPlayer.setDataSource(mPlayerAbsPath);
+                            mPlayer.prepareAsync();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+
+                            // alarm user error occured
+                            broadcastServiceStatus(ERROR_NOT_RUNNING, "MediaPlayer not running...");
+
+                        }
                     }
-                } else if (mStop && (!mPlay && !mPause)) {
-                    if (mPlayer != null && mPlayer.isPlaying()) {
-                        mPlayer.stop();
-
-                    }
-                } else if (mPause && (!mPlay && !mStop)) {
-                    if (mPlayer != null && mPlayer.isPlaying()) {
-                        mPlayer.pause();
+                // else filename or path already existed
+                // meaning it is playing which is stored in store
+                }else{
+                    if(mPlayer == null){
+                        initializeMediaPlayer();
                     }
                 }
-            }finally{
-                wl.release();
-            }
+
+
+        }
+    }
+
+
+    public class StopPlaybackReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+                if(mPlayer == null){
+                    initializeMediaPlayer();
+                }else{
+                    if(mPlayer.isPlaying()){
+                        mPlayer.stop();
+                        store.clear();
+
+                    }
+                }
+
+                setUpAsForeground("Player stopped..." , R.drawable.ic_audio_stop);
+
+
+        }
+    }
+
+    public class PausePlaybackReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+                if(mPlayer == null){
+                    initializeMediaPlayer();
+                }
+
+                if(mPlayer.isPlaying()){
+                    mPlayer.pause();
+                }
+
+                setUpAsForeground("Player Paused..." , R.drawable.ic_audio_pause);
+
+
         }
     }
 
@@ -266,10 +377,11 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
             try{
                 Bundle extras = intent.getExtras();
                 final String fileName = extras.getString(FILE_NAME) + SUFFIX;
+                mRecorderAbsPath = ABSOLUTE_PATH + "/" + fileName;
                 if(mRecorder == null){
                     initializeMediaRecorder();
 
-                    mRecorder.setOutputFile(Environment.getExternalStorageDirectory() + "/" +AUDIO_STORAGE_SUFFIX +"/"+fileName);
+                    mRecorder.setOutputFile(mRecorderAbsPath);
 
                     if(!mRecord){
 
@@ -299,7 +411,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                     mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
                     mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
                     mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);
-                    mRecorder.setOutputFile(Environment.getExternalStorageDirectory() + "/" +AUDIO_STORAGE_SUFFIX +"/"+fileName);
+                    mRecorder.setOutputFile(mRecorderAbsPath);
                     try {
                         mRecorder.prepare();
                     } catch (IOException e) {
@@ -366,6 +478,10 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     }
 
 
+    public void broadcastExtraStatus(String message){
+
+    }
+
 
     @Override
     public void onError(MediaRecorder mr, int what, int extra) {
@@ -411,6 +527,21 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
         if(mStopRecorderReciever != null){
             unregisterReceiver(mStopRecorderReciever);
             mStopRecorderReciever = null;
+        }
+
+        if(mPlayReceiver != null){
+            unregisterReceiver(mPlayReceiver);
+            mPlayReceiver = null;
+        }
+
+        if(mStopReceiver != null){
+            unregisterReceiver(mStopReceiver);
+            mStopReceiver = null;
+        }
+
+        if(mPauseReceiver != null){
+            unregisterReceiver(mPauseReceiver);
+            mPauseReceiver = null;
         }
     }
 }

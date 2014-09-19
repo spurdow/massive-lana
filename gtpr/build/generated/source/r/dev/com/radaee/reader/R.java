@@ -59,13 +59,13 @@ public final class R {
 		public static final int view = 0x7f080092;
 	}
 	public static final class layout {
-		public static final int dlg_note = 0x7f03002d;
-		public static final int dlg_password = 0x7f03002e;
-		public static final int dlg_text = 0x7f03002f;
-		public static final int main = 0x7f030036;
-		public static final int pop_combo = 0x7f03003a;
-		public static final int pop_edit = 0x7f03003b;
-		public static final int reader = 0x7f03003c;
+		public static final int dlg_note = 0x7f03002e;
+		public static final int dlg_password = 0x7f03002f;
+		public static final int dlg_text = 0x7f030030;
+		public static final int main = 0x7f030037;
+		public static final int pop_combo = 0x7f03003b;
+		public static final int pop_edit = 0x7f03003c;
+		public static final int reader = 0x7f03003d;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f0b000e;

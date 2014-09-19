@@ -6764,24 +6764,24 @@ false
                     msgid="3588849162933574182" >"Več možnosti"
                 </string>
                 <string
-                    name="abc_action_mode_done"
-                    msgid="4076576682505996667" >"Končano"
+                    name="abc_shareactionprovider_share_with"
+                    msgid="3421042268587513524" >"Deljenje z"
                 </string>
                 <string
                     name="abc_activity_chooser_view_see_all"
                     msgid="7468859129482906941" >"Pokaži vse"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with"
-                    msgid="3421042268587513524" >"Deljenje z"
-                </string>
-                <string
-                    name="abc_searchview_description_query"
-                    msgid="2550479030709304392" >"Iskalna poizvedba"
+                    name="abc_action_mode_done"
+                    msgid="4076576682505996667" >"Končano"
                 </string>
                 <string
                     name="abc_searchview_description_submit"
                     msgid="8928215447528550784" >"Pošiljanje poizvedbe"
+                </string>
+                <string
+                    name="abc_searchview_description_query"
+                    msgid="2550479030709304392" >"Iskalna poizvedba"
                 </string>
                 <string
                     name="abc_searchview_description_voice"
@@ -11477,6 +11477,11 @@ true
                 qualifiers=""
                 type="layout" />
             <file
+                name="audio_switch_actionbar_menu"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\layout\audio_switch_actionbar_menu.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="dialog_pagenumber"
                 path="G:\Android Studio\gtg\gtpr\src\main\res\layout\dialog_pagenumber.xml"
                 qualifiers=""
@@ -11536,6 +11541,11 @@ true
                 path="G:\Android Studio\gtg\gtpr\src\main\res\layout\txt_main_layout.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="audio_creator_menu"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\menu\audio_creator_menu.xml"
+                qualifiers=""
+                type="menu" />
             <file
                 name="main_menu"
                 path="G:\Android Studio\gtg\gtpr\src\main\res\menu\main_menu.xml"

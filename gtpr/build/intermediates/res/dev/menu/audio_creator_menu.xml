@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gtg.virus.gtpr="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/opt_menu_switch"
+        android:title=""
+        gtg.virus.gtpr:showAsAction="always"
+        android:actionLayout="@layout/audio_switch_actionbar_menu"
+        />
+</menu><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/menu/audio_creator_menu.xml -->
