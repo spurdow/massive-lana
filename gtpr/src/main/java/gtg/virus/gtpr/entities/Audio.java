@@ -12,11 +12,14 @@ public class Audio {
 
     private String details;
 
-    public Audio(long id, String title, String path, String details) {
+    private long time;
+
+    public Audio(long id, String title, String path, String details , long time) {
         this.id = id;
         this.title = title;
         this.path = path;
         this.details = details;
+        this.time = time;
     }
 
     public Audio() {
@@ -52,5 +55,13 @@ public class Audio {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
     }
 }
