@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import gtg.virus.gtpr.service.AudioService;
 import gtg.virus.gtpr.utils.OverridedBaseImageDownloader;
 import nl.siegmann.epublib.domain.Author;
 import nl.siegmann.epublib.domain.Book;
@@ -198,9 +199,11 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 			
 		});
 		task.execute(null,null,null);
-		
-		
-	}
+
+        Intent service = new Intent(this , AudioService.class);
+        startService(service);
+
+    }
 
     private void itemClick(int position){
         switch(position){
@@ -718,8 +721,10 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 		}
 		
 		bookCache.clear();
-		
-		Global.RemoveTmp();
+
+        stopService(new Intent(this , AudioService.class));
+
+        Global.RemoveTmp();
 	}
 	
 

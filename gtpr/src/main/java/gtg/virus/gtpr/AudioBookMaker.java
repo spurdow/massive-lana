@@ -131,10 +131,6 @@ public class AudioBookMaker extends ActionBarActivity {
         serviceReceiver = new AudioServiceStatusReceiver();
         registerReceiver(serviceReceiver , new IntentFilter(AUDIO_SERVICE_STATUS));
 
-        Intent service = new Intent(this , AudioService.class);
-        startService(service);
-
-
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -329,7 +325,6 @@ public class AudioBookMaker extends ActionBarActivity {
             serviceReceiver = null;
         }
 
-        stopService(new Intent(this, AudioService.class));
 
         Crouton.cancelAllCroutons();
     }

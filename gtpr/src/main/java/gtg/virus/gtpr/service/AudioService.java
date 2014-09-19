@@ -116,8 +116,6 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
         mPlayer = new MediaPlayer();
 
         mPlayer.setWakeMode(getApplicationContext() , PowerManager.PARTIAL_WAKE_LOCK);
-        mPlayer.setOnPreparedListener(null);
-        mPlayer.setOnPreparedListener(this);
         mPlayer.setOnErrorListener(this);
     }
 
@@ -222,7 +220,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     @Override
     public boolean onError(MediaPlayer mp, int what, int extra) {
 
-        mp.stop();
+        if(mp.isPlaying())
+            mp.stop();
 
         broadcastServiceStatus(ERROR_NOT_RUNNING , "MediaPlayer has stopped...");
 
@@ -263,14 +262,17 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
                 final String mFileName = extras.getString(FILE_NAME);
 
-                mPlayerAbsPath = ABSOLUTE_PATH + "/" + FILE_NAME;
-
+                mPlayerAbsPath = ABSOLUTE_PATH + "/" + mFileName;
+                Log.w(TAG , mPlayerAbsPath);
                 if(addToStore(mFileName , mPlayerAbsPath)) {
                     if (mPlayer == null) {
 
                         initializeMediaPlayer();
                         try {
                             mPlayer.setDataSource(mPlayerAbsPath);
+                            mPlayer.setOnPreparedListener(AudioService.this);
+                            mPlayer.setOnCompletionListener(AudioService.this);
+                            mPlayer.setScreenOnWhilePlaying(true);
                             mPlayer.prepareAsync();
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -288,6 +290,9 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                         mPlayer.reset();
                         try {
                             mPlayer.setDataSource(mPlayerAbsPath);
+                            mPlayer.setOnPreparedListener(AudioService.this);
+                            mPlayer.setOnCompletionListener(AudioService.this);
+                            mPlayer.setScreenOnWhilePlaying(true);
                             mPlayer.prepareAsync();
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -314,18 +319,21 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
         @Override
         public void onReceive(Context context, Intent intent) {
+            Bundle extra = intent.getExtras();
+            String fileName = extra.getString(FILE_NAME);
+            mPlayerAbsPath = ABSOLUTE_PATH + "/" + fileName;
 
-                if(mPlayer == null){
-                    initializeMediaPlayer();
-                }else{
-                    if(mPlayer.isPlaying()){
-                        mPlayer.stop();
-                        store.clear();
-
-                    }
+            if (mPlayer != null) {
+                if (mPlayer.isPlaying()) {
+                    mPlayer.stop();
                 }
 
-                setUpAsForeground("Player stopped..." , R.drawable.ic_audio_stop);
+            }
+            store.clear();
+
+
+
+            setUpAsForeground("Player stopped..." , R.drawable.ic_audio_stop);
 
 
         }
@@ -335,17 +343,13 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
         @Override
         public void onReceive(Context context, Intent intent) {
-
-                if(mPlayer == null){
-                    initializeMediaPlayer();
-                }
-
-                if(mPlayer.isPlaying()){
-                    mPlayer.pause();
+                if(mPlayer!=null){
+                    if(mPlayer.isPlaying()) {
+                        mPlayer.pause();
+                    }
                 }
 
                 setUpAsForeground("Player Paused..." , R.drawable.ic_audio_pause);
-
 
         }
     }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 
@@ -19,6 +20,7 @@ import gtg.virus.gtpr.utils.Utilities;
 
 public class AudioListView extends ActionBarActivity {
 
+    private static final String TAG = AudioListView.class.getSimpleName();
     private ListView mListView;
 
     private AudioListAdapter mAdapter;
@@ -38,8 +40,6 @@ public class AudioListView extends ActionBarActivity {
 
         new AsyncFind().execute(null,null,null);
 
-        Intent service = new Intent(this , AudioService.class);
-        startService(service);
 
 
 
@@ -49,9 +49,6 @@ public class AudioListView extends ActionBarActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-        stopService(new Intent(this , AudioService.class));
-
 
     }
 
@@ -94,6 +91,7 @@ public class AudioListView extends ActionBarActivity {
                 a.setDetails("test");
                 a.setTitle(e.getKey());
                 a.setPath(e.getValue());
+                Log.w(TAG , "key " + e.getKey() + " val " + e.getValue());
                 mAdapter.add(a);
             }
 
