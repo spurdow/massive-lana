@@ -54,9 +54,7 @@
             android:value="@string/app_id" />
 
         <activity android:name="gtg.virus.gtpr.LoginActivity" />
-        <activity
-            android:name="gtg.virus.gtpr.NavigationalShelfListViewActivity"
-            android:launchMode="singleInstance" />
+        <activity android:name="gtg.virus.gtpr.NavigationalShelfListViewActivity" />
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
             android:enabled="@bool/use_activity"
@@ -69,7 +67,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.OPENABLE" />
 
-                <data android:mimeType="text/*" />
+                <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
         <activity android:name="gtg.virus.gtpr.GTGPdfViewer" />
