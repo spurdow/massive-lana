@@ -75,6 +75,7 @@
         <activity android:name="gtg.virus.gtpr.GTGTxtViewer" />
         <activity android:name="gtg.virus.gtpr.AudioBookMaker" />
         <activity android:name="gtg.virus.gtpr.AudioListView" />
+        <activity android:name="gtg.virus.gtpr.GTGAudioListener" />
 
         <service
             android:name="gtg.virus.gtpr.service.AudioService"

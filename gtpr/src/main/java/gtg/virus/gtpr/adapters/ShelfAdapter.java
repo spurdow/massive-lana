@@ -1,9 +1,11 @@
 package gtg.virus.gtpr.adapters;
 
+import gtg.virus.gtpr.GTGAudioListener;
 import gtg.virus.gtpr.GTGEpubViewer;
 import gtg.virus.gtpr.GTGPdfViewer;
 import gtg.virus.gtpr.GTGTxtViewer;
 import gtg.virus.gtpr.R;
+import gtg.virus.gtpr.entities.Audio;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.entities.Shelf;
 import gtg.virus.gtpr.utils.Utilities;
@@ -27,6 +29,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import static gtg.virus.gtpr.utils.Utilities.*;
 public class ShelfAdapter extends BaseAdapter {
 
@@ -177,6 +183,44 @@ public class ShelfAdapter extends BaseAdapter {
                                 mContext.startActivity(intent);
                             }else if(Utilities.isMp3(b.getPath())){
 
+                                List<Audio> audios = new ArrayList<Audio>();
+
+
+                                /**
+                                 *
+
+                                HashMap<String , String> data = new HashMap<String, String>();
+                                File f = new File(AudioService.ABSOLUTE_PATH);
+                                Utilities.walkdir(f , data ,Utilities.audioPattern );
+
+                                for(Map.Entry<String, String> e : data.entrySet()){
+                                Audio a = new Audio();
+                                a.setDetails("test");
+                                a.setTitle(e.getKey());
+                                a.setPath(e.getValue());
+
+                                 */
+                                for(PBook p : books){
+                                    if(Utilities.isMp3(p.getPath())){
+                                        Audio a = new Audio();
+                                        a.setDetails("test");
+                                        a.setTitle(p.getTitle());
+                                        a.setPath(p.getPath());
+
+                                        if(a.getPath().equals(b.getPath())){
+                                            a.setIsPlay(true);
+                                        }else{
+                                            a.setIsPlay(false);
+                                        }
+
+                                        audios.add(a);
+                                    }
+
+                                }
+
+                                Intent intent = new Intent(mContext, GTGAudioListener.class);
+                                intent.putExtra(PIN_EXTRA_PBOOK , new Gson().toJson(audios, new TypeToken<List<Audio>>(){}.getType()));
+                                mContext.startActivity(intent);
                             }
 
 						}

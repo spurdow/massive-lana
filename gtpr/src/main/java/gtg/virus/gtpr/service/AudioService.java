@@ -41,6 +41,12 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
     public final static String ACTION_MEDIA_RECORDER_STOP_SERVICE = TAG + ".ACTION_MEDIA_RECORDER_STOP_SERVICE";
 
+    //public final static String ACTION_MEDIA_PLAYER_TOGGLE_SHUFFLE = TAG + ".ACTION_MEDIA_PLAYER_TOGGLE_SHUFFLE";
+
+    public final static String ACTION_MEDIA_PLAYER_SEEK_SERVICE = TAG + ".ACTION_MEDIA_PLAYER_SEEK_SERVICE";
+
+    public final static String ACTION_MEDIA_PLAYER_TOGGLE_REPEAT_SERVICE = TAG + ".ACTION_MEDIA_PLAYER_TOGGLE_REPEAT_SERVICE";
+
     public final static String ACTION_PLAY_STOP_PAUSE = TAG + ".ACTION_PLAY_STOP_PAUSE";
 
     public final static String ACTION_DATA_SOURCE = TAG + ".DATA_SOURCE";
@@ -54,6 +60,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     public final static String RECORD = TAG + ".RECORD";
 
     public final static String FILE_NAME = TAG + ".FILE_NAME" ;
+
+    public final static String ABS_FILE_NAME = TAG + ".ABS_FILE_NAME";
 
     private static final int NOTIFICATION_ID = R.drawable.ic_audio;
 
@@ -75,7 +83,18 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
     public final static int SUCCESSFUL_STOP = 0x002;
 
-    public final static int ERROR_NOT_RUNNING = 0x003;
+    public final static int SUCCESSFUL_PAUSE = 0x003;
+
+    public final static int ERROR_NOT_RUNNING = 0x004;
+
+    public final static int MAX_PLAYER_DURATION = 0x005;
+
+    public final static int PLAYER_DURATION = 0x006;
+
+    public final static int SEEK_SUCCESS = 0x007;
+
+
+
 
 
     public final static String SUFFIX = ".3gp";
@@ -84,6 +103,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     public final static String SERVICE_STATUS = TAG+ ".SERVICE_KEY_STATUS";
 
     public final static String EXTRA_SERVICE_MESSAGE_STATUS  = TAG + ".EXTRA_SERVICE_MSG_STATUS";
+
+    public final static String EXTRA_EXTRA_SERVICE_MESSAGE_STATUS  = TAG + ".EXTRA_EXTRA_SERVICE_MSG_STATUS";
 
     public final static String EXTRA_SERVICE_PATH_STATUS = TAG+  ".EXTRA_SERVICE_PATH_STATUS";
 
@@ -109,7 +130,13 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
     protected PausePlaybackReceiver mPauseReceiver = null;
 
+    protected SeekToPlaybackReceiver mSeekReceiver = null;
+
+    protected RepeatPlaybackReceiver mRepeatReceiver = null;
+
     public final static String ABSOLUTE_PATH = Environment.getExternalStorageDirectory() + "/" + AUDIO_STORAGE_SUFFIX;
+
+    public final static String ABSOLUTE_PATH_SHELF = Environment.getExternalStorageDirectory() + "/" + STORAGE_SUFFIX;
 
     private Notification mNotification;
 
@@ -176,6 +203,12 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
                     mPauseReceiver = new PausePlaybackReceiver();
                     registerReceiver(mPauseReceiver , new IntentFilter(ACTION_MEDIA_PLAYER_PAUSE_SERVICE));
+
+                    mRepeatReceiver = new RepeatPlaybackReceiver();
+                    registerReceiver(mRepeatReceiver , new IntentFilter(ACTION_MEDIA_PLAYER_TOGGLE_REPEAT_SERVICE));
+
+                    mSeekReceiver = new SeekToPlaybackReceiver();
+                    registerReceiver(mSeekReceiver , new IntentFilter(ACTION_MEDIA_PLAYER_SEEK_SERVICE));
                 }
             }
         }).start();
@@ -188,7 +221,9 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
      */
     @Override
     public void onPrepared(MediaPlayer mp) {
+        broadcastServiceStatus(MAX_PLAYER_DURATION , mp.getDuration() +"");
         mp.start();
+        broadcastServiceStatus(SUCCESSFUL_RUNNING , "MediaPlayer Success");
         setUpAsForeground("Playing..." , R.drawable.ic_audio_play);
 
     }
@@ -266,7 +301,14 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
                 final String mFileName = extras.getString(FILE_NAME);
 
-                mPlayerAbsPath = ABSOLUTE_PATH + "/" + mFileName;
+                String absPath = extras.getString(ABS_FILE_NAME);
+
+                if(absPath != null){
+                    mPlayerAbsPath = absPath + "/" + mFileName;
+                }else{
+                    mPlayerAbsPath = ABSOLUTE_PATH + "/" + mFileName;
+                }
+
                 Log.w(TAG , mPlayerAbsPath);
                 if(addToStore(mFileName , mPlayerAbsPath)) {
                     if (mPlayer == null) {
@@ -276,7 +318,6 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                             mPlayer.setDataSource(mPlayerAbsPath);
                             mPlayer.setOnPreparedListener(AudioService.this);
                             mPlayer.setOnCompletionListener(AudioService.this);
-                            mPlayer.setScreenOnWhilePlaying(true);
                             mPlayer.prepareAsync();
 
                         } catch (IOException e) {
@@ -297,7 +338,6 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                             mPlayer.setDataSource(mPlayerAbsPath);
                             mPlayer.setOnPreparedListener(AudioService.this);
                             mPlayer.setOnCompletionListener(AudioService.this);
-                            mPlayer.setScreenOnWhilePlaying(true);
                             mPlayer.prepareAsync();
 
                         } catch (IOException e) {
@@ -327,6 +367,14 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
         public void onReceive(Context context, Intent intent) {
             Bundle extra = intent.getExtras();
             String fileName = extra.getString(FILE_NAME);
+
+            String absPath = extra.getString(ABS_FILE_NAME);
+
+            if(absPath != null){
+                mPlayerAbsPath = absPath + "/" + fileName;
+            }else{
+                mPlayerAbsPath = ABSOLUTE_PATH + "/" + fileName;
+            }
             mPlayerAbsPath = ABSOLUTE_PATH + "/" + fileName;
 
             if (mPlayer != null) {
@@ -352,6 +400,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                 if(mPlayer!=null){
                     if(mPlayer.isPlaying()) {
                         mPlayer.pause();
+                        broadcastServiceStatus(SUCCESSFUL_PAUSE , "MediaPlayer Paused");
                     }
                 }
 
@@ -359,6 +408,61 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
         }
     }
+
+
+    public class RepeatPlaybackReceiver extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if(mPlayer != null){
+
+                if(mPlayer.isLooping()){
+
+                    mPlayer.setLooping(false);
+
+                }else{
+
+                    mPlayer.setLooping(true);
+
+                }
+            }
+
+            setUpAsForeground("Repeating..." , R.drawable.ic_audio_play);
+        }
+    }
+
+    public final static String EXTRA_SEEK_SECONDS = TAG + ".EXTRA_SEEK_SECONDS";
+    public class SeekToPlaybackReceiver extends BroadcastReceiver implements MediaPlayer.OnSeekCompleteListener {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            Bundle extras = intent.getExtras();
+
+
+
+            int secondsToSeek = extras.getInt(EXTRA_SEEK_SECONDS);
+
+            if(mPlayer != null){
+
+                if(mPlayer.isPlaying()){
+                    mPlayer.setOnSeekCompleteListener(this);
+                    mPlayer.seekTo(secondsToSeek);
+
+                }
+
+            }
+        }
+
+
+        @Override
+        public void onSeekComplete(MediaPlayer mp) {
+            broadcastServiceStatus(SEEK_SUCCESS , "SeekSuccess");
+            mp.setOnSeekCompleteListener(null);
+        }
+    }
+
+
 
     /**
      * Fancy over here, first is getting us
@@ -488,9 +592,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     }
 
 
-    public void broadcastExtraStatus(String message){
 
-    }
 
 
     @Override
@@ -553,6 +655,13 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
         }
     }
 
+    private int getMusicPlayerDuration(){
+        if(mPlayer != null ){
+          return  mPlayer.getDuration();
+        }
+        return -1;
+    }
+
     /**
      * Called by the system to notify a Service that it is no longer used and is being removed.  The
      * service should clean up any resources it holds (threads, registered
@@ -603,5 +712,17 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
             unregisterReceiver(mPauseReceiver);
             mPauseReceiver = null;
         }
+
+        if(mSeekReceiver != null){
+            unregisterReceiver(mSeekReceiver);
+            mSeekReceiver = null;
+        }
+
+        if(mRepeatReceiver != null){
+            unregisterReceiver(mRepeatReceiver);
+            mRepeatReceiver = null;
+        }
+
+
     }
 }
