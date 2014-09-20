@@ -145,6 +145,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
         mPlayer.setWakeMode(getApplicationContext() , PowerManager.PARTIAL_WAKE_LOCK);
         mPlayer.setOnErrorListener(this);
+
     }
 
     private void initializeMediaRecorder(){
@@ -222,6 +223,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     @Override
     public void onPrepared(MediaPlayer mp) {
         broadcastServiceStatus(MAX_PLAYER_DURATION , mp.getDuration() +"");
+        Log.w(TAG , "Duration : " + mp.getDuration());
         mp.start();
         broadcastServiceStatus(SUCCESSFUL_RUNNING , "MediaPlayer Success");
         setUpAsForeground("Playing..." , R.drawable.ic_audio_play);

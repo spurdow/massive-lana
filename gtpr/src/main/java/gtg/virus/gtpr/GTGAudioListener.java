@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.MenuItem;
@@ -18,6 +19,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Stack;
 
@@ -41,6 +44,7 @@ public class GTGAudioListener extends ActionBarActivity {
 
     private TextView mDuration = null;
 
+    private TextView mTitle = null;
 
     private DecimalFormat format  = new DecimalFormat("00");
 
@@ -48,7 +52,7 @@ public class GTGAudioListener extends ActionBarActivity {
 
     private final Stack<Integer> pendingSeek = new Stack<Integer>();
 
-    private boolean isPlaying = false;
+    private volatile boolean isPlaying = false;
 
     private PlayerRunnable mPlayerRunnable = new PlayerRunnable();
 
@@ -76,6 +80,7 @@ public class GTGAudioListener extends ActionBarActivity {
 
     private int maxPosition = 0;
 
+    private Handler mHandler = new Handler();
 
     protected StatusReceiver mReceiver = null;
 
@@ -97,12 +102,17 @@ public class GTGAudioListener extends ActionBarActivity {
             ctr++;
         }
 
+        mTitle = (TextView) findViewById(R.id.txt_title);
+
         maxPosition = players.size();
 
         mSeekBar = (SeekBar) findViewById(R.id.audio_player_seekbar);
 
         mPlayStop = (ImageButton) findViewById(R.id.audio_button_play_stop);
 
+        mNext = (ImageButton) findViewById(R.id.audio_button_next);
+
+        mPrev = (ImageButton) findViewById(R.id.audio_button_prev);
 
         mCurrent = (TextView) findViewById(R.id.txt_current_time);
 
@@ -135,15 +145,47 @@ public class GTGAudioListener extends ActionBarActivity {
             }
         });
 
+        mNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                next();
+            }
+        });
+
+        mPrev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                prev();
+            }
+        });
+
         if(mReceiver == null){
+            mReceiver = new StatusReceiver();
             registerReceiver(mReceiver, new IntentFilter(AUDIO_SERVICE_STATUS));
         }
 
+        setUp();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    private void setUp(){
+        mTitle.setText(players.get(currPosition).getTitle());
+    }
+
+    private void next(){
+        currPosition = ( currPosition + 1 ) % players.size() ;
+        setUp();
+        Log.w(TAG , "Currposition " + currPosition);
+    }
+
+    private void prev(){
+        currPosition = ( currPosition + players.size() - 1) % players.size();
+        setUp();
+        Log.w(TAG , "Currposition " + currPosition);
+    }
+
     private void reset(){
-        mDurationHour = mDurationMin = mDurationSec = mCurrentHour = mCurrentMin = mCurrentSec = 0;
+        mDurationHour = mDurationMin = mDurationSec = mCurrentHour = mCurrentMin = mCurrentSec = currentDuration = maxDuration= 0;
 
         mSeekBar.setProgress(0);
         mSeekBar.setMax(0);
@@ -165,13 +207,16 @@ public class GTGAudioListener extends ActionBarActivity {
 
             Intent i = new Intent();
             i.setAction(ACTION_MEDIA_PLAYER_STOP_SERVICE);
-            i.putExtra(FILE_NAME , players.get(currPosition).getTitle());
+            i.putExtra(FILE_NAME, players.get(currPosition).getTitle());
             i.putExtra(ABS_FILE_NAME , ABSOLUTE_PATH_SHELF);
             Log.w(TAG , players.get(currPosition).getTitle());
+            mHandler.removeCallbacks(mPlayerRunnable);
+            reset();
             sendBroadcast(i);
-
+            isPlaying = false;
 
         }else{
+
             ((ImageButton)v).setImageResource(R.drawable.ic_audio_stop);
             Intent i = new Intent();
             i.setAction(ACTION_MEDIA_PLAYER_SERVICE);
@@ -180,8 +225,15 @@ public class GTGAudioListener extends ActionBarActivity {
             Log.w(TAG , players.get(currPosition).getTitle());
             sendBroadcast(i);
 
+            isPlaying = true;
+
         }
-        isPlaying = !isPlaying;
+
+        Log.w(TAG ,"Is Playing : " + isPlaying);
+
+
+
+
 
 
      }
@@ -216,28 +268,30 @@ public class GTGAudioListener extends ActionBarActivity {
 
             int status = extras.getInt(SERVICE_STATUS);
 
-            String service = extras.getString(SERVICE_STATUS);
+            String service = extras.getString(EXTRA_SERVICE_MESSAGE_STATUS);
 
             if(status == SEEK_SUCCESS){
 
             }else if(status == PLAYER_DURATION){
-                currentDuration = Integer.valueOf(service) * 60;
+                currentDuration = Integer.valueOf(service) / 1000;
 
             }else if(status == MAX_PLAYER_DURATION){
-                maxDuration = Integer.valueOf(service) * 60;
-                mSeekBar.setMax(maxDuration);
+                maxDuration = Integer.valueOf(service) / 1000 ;
+                Log.w(TAG , "MAx Duration : " + maxDuration);
+                mSeekBar.setMax(maxDuration );
+                calculateDuration();
 
             }else if(status == SUCCESSFUL_RUNNING ){
                 if(!pause){
-                    mSeekBar.post(mPlayerRunnable);
+                    mHandler.post(mPlayerRunnable);
                 }
             }else if(status == SUCCESSFUL_STOP){
-                mSeekBar.removeCallbacks(mPlayerRunnable);
+                mHandler.removeCallbacks(mPlayerRunnable);
                 reset();
             }else if(status == SUCCESSFUL_PAUSE){
                 pause = true;
             }else if(status == ERROR_NOT_RUNNING){
-                mSeekBar.removeCallbacks(mPlayerRunnable);
+                mHandler.removeCallbacks(mPlayerRunnable);
                 reset();
 
             }
@@ -245,17 +299,50 @@ public class GTGAudioListener extends ActionBarActivity {
     }
 
 
-    private void display(){
+    private void calculateDuration(){
 
-        mCurrent.setText(String.format(configuration , format.format(mCurrentHour) , format.format(mCurrentMin) , format.format(mCurrentSec)));
+        mDurationHour = (int) (maxDuration / 3600);
+        mDurationMin = ((int) (maxDuration / 60)) % 60;
+        mDurationSec = maxDuration % 60;
 
         mDuration.setText(String.format(configuration, format.format(mDurationHour), format.format(mDurationMin), format.format(mDurationSec)));
     }
 
+    private void display(){
+
+        mCurrent.setText(String.format(configuration , format.format(mCurrentHour) , format.format(mCurrentMin) , format.format(mCurrentSec)));
+
+       // mDuration.setText(String.format(configuration, format.format(mDurationHour), format.format(mDurationMin), format.format(mDurationSec)));
+    }
+
     private class PlayerRunnable implements Runnable{
+
+        private void calculateCurrent(){
+            currentDuration = currentDuration + 1;
+
+            mCurrentSec = mCurrentSec + 1;
+
+            if(mCurrentSec > 59){
+                mCurrentMin = mCurrentMin + 1;
+                mCurrentSec = 0;
+            }
+
+            if(mCurrentMin > 59){
+                mCurrentHour= (mCurrentHour + 1) % 24;
+                mCurrentMin = 0;
+            }
+
+
+            // days
+        }
+
 
         @Override
         public void run() {
+
+            calculateCurrent();
+
+            //calculateDuration();
 
             mSeekBar.setProgress(currentDuration);
 
@@ -269,9 +356,10 @@ public class GTGAudioListener extends ActionBarActivity {
                 }
             }
 
-            mSeekBar.postDelayed(this, 1000L);
+            mHandler.postDelayed(this, 1000L);
         }
     }
+
 
 
 }

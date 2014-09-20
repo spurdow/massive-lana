@@ -4779,16 +4779,16 @@ useLogo|showHome|showTitle
                     msgid="2031811694353399454" >"Επιλέξτε κάποια εφαρμογή"
                 </string>
                 <string
+                    name="abc_searchview_description_clear"
+                    msgid="3691816814315814921" >"Διαγραφή ερωτήματος"
+                </string>
+                <string
                     name="abc_searchview_description_voice"
                     msgid="893419373245838918" >"Φωνητική αναζήτηση"
                 </string>
                 <string
                     name="abc_action_menu_overflow_description"
                     msgid="3588849162933574182" >"Περισσότερες επιλογές"
-                </string>
-                <string
-                    name="abc_searchview_description_clear"
-                    msgid="3691816814315814921" >"Διαγραφή ερωτήματος"
                 </string>
             </file>
             <file
@@ -6110,16 +6110,16 @@ false
                     msgid="4076576682505996667" >"Atlikta"
                 </string>
                 <string
+                    name="abc_action_bar_home_description"
+                    msgid="4600421777120114993" >"Eiti į pagrindinį puslapį"
+                </string>
+                <string
                     name="abc_searchview_description_search"
                     msgid="8264924765203268293" >"Paieška"
                 </string>
                 <string
                     name="abc_shareactionprovider_share_with_application"
                     msgid="7165123711973476752" >"Bendrinti naudojant „%s“"
-                </string>
-                <string
-                    name="abc_action_bar_home_description"
-                    msgid="4600421777120114993" >"Eiti į pagrindinį puslapį"
                 </string>
             </file>
             <file
@@ -11825,6 +11825,46 @@ true
                 path="G:\Android Studio\gtg\gtpr\src\main\res\layout\activity_audio_player.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="ic_audio_books"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\drawable-hdpi\ic_audio_books.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_headphones"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\drawable-xhdpi\ic_headphones.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_headphones"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\drawable-hdpi\ic_headphones.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_headphones"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\drawable-xxhdpi\ic_headphones.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_headphones"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\drawable-mdpi\ic_headphones.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_audio_books"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\drawable-mdpi\ic_audio_books.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_audio_books"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\drawable-xxhdpi\ic_audio_books.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_audio_books"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\drawable-xhdpi\ic_audio_books.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
         </source>
         <source path="G:\Android Studio\gtg\gtpr\build\generated\res\rs\debug" />
         <source path="G:\Android Studio\gtg\gtpr\build\generated\res\generated\debug" />
