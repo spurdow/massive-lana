@@ -64,4 +64,14 @@ public class Audio {
     public void setTime(long time) {
         this.time = time;
     }
+
+    protected boolean isPlay = false;
+
+    public void setIsPlay(boolean isPlay){
+        this.isPlay = isPlay;
+    }
+
+    public boolean getIsPlay(){
+        return isPlay;
+    }
 }

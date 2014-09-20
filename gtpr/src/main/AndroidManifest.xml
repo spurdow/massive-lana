@@ -45,7 +45,7 @@
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
         <activity android:name="LoginActivity"></activity>
         <activity android:name="NavigationalShelfListViewActivity"
-            android:launchMode="singleInstance"></activity>
+            ></activity>
         
         <activity
         android:name="com.ipaulpro.afilechooser.FileChooserActivity"
@@ -59,7 +59,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.OPENABLE" />
 
-                <data android:mimeType="text/*" />
+                <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
         <activity android:name="GTGPdfViewer"></activity>

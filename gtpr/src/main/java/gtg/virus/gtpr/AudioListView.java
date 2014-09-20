@@ -1,7 +1,6 @@
 package gtg.virus.gtpr;
 
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -18,7 +17,7 @@ import gtg.virus.gtpr.entities.Audio;
 import gtg.virus.gtpr.service.AudioService;
 import gtg.virus.gtpr.utils.Utilities;
 
-public class AudioListView extends ActionBarActivity {
+public class AudioListView extends ActionBarActivity implements AudioListAdapter.OnRefreshList {
 
     private static final String TAG = AudioListView.class.getSimpleName();
     private ListView mListView;
@@ -35,6 +34,7 @@ public class AudioListView extends ActionBarActivity {
         mListView = (ListView) findViewById(R.id.audio_list);
 
         mAdapter = new AudioListAdapter(this);
+        mAdapter.setmRef(this);
 
         mListView.setAdapter(mAdapter);
 
@@ -75,6 +75,23 @@ public class AudioListView extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void refresh(int pos) {
+        final int size= mAdapter.getCount();
+
+        for(int i = 0; i < size ; i++){
+            if(i == pos){
+                Audio a = mAdapter.getObject(i);
+                a.setIsPlay(true);
+            }else{
+                Audio a = mAdapter.getObject(i);
+                a.setIsPlay(false);
+            }
+        }
+
+        mAdapter.notifyDataSetChanged();
     }
 
     private class AsyncFind extends AsyncTask<Void , Void, Void>{

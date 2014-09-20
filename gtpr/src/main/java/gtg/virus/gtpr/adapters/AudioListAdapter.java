@@ -28,6 +28,14 @@ public class AudioListAdapter extends AbstractListAdapter<Audio>{
         this(context , new ArrayList<Audio>());
     }
 
+    protected OnRefreshList mRef = null;
+    public interface OnRefreshList{
+        void refresh(int pos);
+    }
+
+    public void setmRef(OnRefreshList mRef) {
+        this.mRef = mRef;
+    }
 
     public void add(Audio a){
         this.getList().add(a);
@@ -71,6 +79,11 @@ public class AudioListAdapter extends AbstractListAdapter<Audio>{
 
         vH.title.setText(audio.getTitle()+"");
         vH.details.setText(audio.getDetails()+"");
+        final int pos = position;
+
+        vH.button.setChecked(audio.getIsPlay());
+
+
         vH.button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -79,11 +92,15 @@ public class AudioListAdapter extends AbstractListAdapter<Audio>{
                     i.setAction(ACTION_MEDIA_PLAYER_SERVICE);
                     i.putExtra(FILE_NAME , audio.getTitle());
                     getContext().sendBroadcast(i);
+                    if(mRef != null){
+                        mRef.refresh(pos);
+                    }
                 }else{
                     Intent i = new Intent();
                     i.setAction(ACTION_MEDIA_PLAYER_STOP_SERVICE);
                     i.putExtra(FILE_NAME , audio.getTitle());
                     getContext().sendBroadcast(i);
+
                 }
             }
         });

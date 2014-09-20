@@ -47,6 +47,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -492,9 +493,30 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                                             b.setPath(path);
                                             b.setFilename(newPdf.getName());
                                             Log.w(TAG , "txt file added");
+                                        }else if(isMp3(path)){
+                                            b = new PBook();
+                                            MediaMetadataRetriever meta = new MediaMetadataRetriever();
+                                            meta.setDataSource(path);
+
+                                            byte[] art = meta.getEmbeddedPicture();
+                                            Bitmap songImage = null;
+                                            try {
+                                                songImage = BitmapFactory.decodeByteArray(art, 0, art.length);
+                                            }catch(Exception ex){
+
+                                            }
+                                            b.setPage0(songImage);
+                                            b.addAuthor(meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_AUTHOR));
+                                            b.setFilename(newPdf.getName());
+                                            b.setPath(path);
+                                            b.setTitle(meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE));
+
+                                            b.setTitle(newPdf.getName());
+                                            meta.release();
+                                            Log.w(TAG , "mp3 file added.");
                                         }
 					                }else if(!isValideBook(path)){
-					                	makeText( "File is not a pdf/epub/txt");
+					                	makeText( "File is not a pdf/epub/txt/mp3");
 					                }
 					                Log.w(TAG, "doInBackground");
 									return b;
@@ -669,7 +691,28 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                                     b.setPath(path);
                                     b.setFilename(newPdf.getName());
                                     Log.w(TAG , "txt file added");
+                                }else if(isMp3(path)){
+                                    b = new PBook();
+                                    MediaMetadataRetriever meta = new MediaMetadataRetriever();
+                                    meta.setDataSource(path);
+
+                                    byte[] art = meta.getEmbeddedPicture();
+                                    Bitmap songImage = null;
+                                    try {
+                                        songImage = BitmapFactory.decodeByteArray(art, 0, art.length);
+                                    }catch(Exception ex){
+
+                                    }
+                                    b.setPage0(songImage);
+                                    b.addAuthor(meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_AUTHOR));
+                                    b.setFilename(newPdf.getName());
+                                    b.setPath(path);
+                                    b.setTitle(newPdf.getName());
+
+                                    meta.release();
+                                    Log.w(TAG , "mp3 file added. ");
                                 }
+
 			                }else if(!isValideBook(path)){
 			                	makeText( "File is not a pdf/epub/txt");
 			                }

@@ -126,7 +126,6 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
         mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);
 
-
         mRecorder.setOutputFile(ABSOLUTE_PATH);
         mRecorder.setOnInfoListener(this);
 
@@ -216,30 +215,8 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     public void onCompletion(MediaPlayer mp) {
         setUpAsForeground("AudioBook has finished." , R.drawable.ic_audio_stop);
         store.clear();
-        mpStack.pop();
 
-        if(!mpStack.isEmpty() && mPlayer != null){
-            Log.w(TAG , "We have remaining 3gp to play");
-            String mFileName = mpStack.pop().getKey();
-            mPlayerAbsPath = ABSOLUTE_PATH +"/"+mFileName;
-            try {
-                mPlayer.stop();
-                mPlayer.reset();
-                mPlayer.setDataSource(mPlayerAbsPath);
-                mPlayer.setOnPreparedListener(AudioService.this);
-                mPlayer.setOnCompletionListener(AudioService.this);
-                mPlayer.setScreenOnWhilePlaying(true);
-                mPlayer.prepareAsync();
-            } catch (IOException e) {
-                e.printStackTrace();
-                // alarm user error occured
-                broadcastServiceStatus(ERROR_NOT_RUNNING, "MediaPlayer not running...");
 
-            }
-
-        }else if(mPlayer == null){
-            mpStack.clear();
-        }
     }
 
 
@@ -253,7 +230,6 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
 
         store.clear();
 
-        mpStack.clear();
         return true;
     }
 
@@ -280,7 +256,6 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
     }
 
 
-    protected Stack<Map.Entry<String,String>> mpStack = new Stack<Map.Entry<String,String>>();
     public class PlayBackReceiver extends BroadcastReceiver{
 
 
@@ -303,8 +278,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                             mPlayer.setOnCompletionListener(AudioService.this);
                             mPlayer.setScreenOnWhilePlaying(true);
                             mPlayer.prepareAsync();
-                            KVEntry e = new KVEntry(mFileName , mPlayerAbsPath);
-                            mpStack.push(e);
+
                         } catch (IOException e) {
                             e.printStackTrace();
 
@@ -325,8 +299,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                             mPlayer.setOnCompletionListener(AudioService.this);
                             mPlayer.setScreenOnWhilePlaying(true);
                             mPlayer.prepareAsync();
-                            KVEntry e = new KVEntry(mFileName , mPlayerAbsPath);
-                            mpStack.push(e);
+
                         } catch (IOException e) {
                             e.printStackTrace();
 
@@ -363,28 +336,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
                 }
 
             }
-            if(!mpStack.isEmpty() && mPlayer != null){
-                Log.w(TAG , "We have remaining 3gp to play");
-                String mFileName = mpStack.pop().getKey();
-                mPlayerAbsPath = ABSOLUTE_PATH +"/"+mFileName;
-                try {
-                    mPlayer.stop();
-                    mPlayer.reset();
-                    mPlayer.setDataSource(mPlayerAbsPath);
-                    mPlayer.setOnPreparedListener(AudioService.this);
-                    mPlayer.setOnCompletionListener(AudioService.this);
-                    mPlayer.setScreenOnWhilePlaying(true);
-                    mPlayer.prepareAsync();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    // alarm user error occured
-                    broadcastServiceStatus(ERROR_NOT_RUNNING, "MediaPlayer not running...");
 
-                }
-
-            }else if(mPlayer == null){
-                mpStack.clear();
-            }
             store.clear();
 
 

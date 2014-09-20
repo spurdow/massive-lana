@@ -175,6 +175,8 @@ public class ShelfAdapter extends BaseAdapter {
                                 Intent intent = new Intent(mContext, GTGTxtViewer.class);
                                 intent.putExtra(PIN_EXTRA_PBOOK, b.toString());
                                 mContext.startActivity(intent);
+                            }else if(Utilities.isMp3(b.getPath())){
+
                             }
 
 						}

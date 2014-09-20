@@ -42,9 +42,10 @@ public final class Utilities {
 	
 	public final static String pdfPattern = "[a-zA-Z0-9,.-_]*.(pdf|epub|txt)";
 	
-	public final static String pdfSlashPattern = "[^!.]*.(pdf|epub|txt)";
+	public final static String pdfSlashPattern = "[^!]*.(pdf|epub|txt|mp3)";
 
     public final static String audioPattern = "[^!.]*.(mp3|ogg|3gp)";
+
 	
 	public final static String PIN_EXTRA_PBOOK = "_pbook_extra";
 	
@@ -211,6 +212,11 @@ public final class Utilities {
 		final String regularExpression = "[^!]*.pdf";
 		return Pattern.matches(regularExpression, path);
 	}
+
+    public static boolean isMp3(String path){
+        final String regularExpression = "[^!]*.mp3";
+        return Pattern.matches(regularExpression , path);
+    }
 
     public static boolean isTxt(String path){
         final String regularExpression = "[^!]*.txt";

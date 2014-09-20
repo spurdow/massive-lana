@@ -21,6 +21,7 @@ import com.radaee.pdf.Page;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaMetadataRetriever;
 import android.os.AsyncTask;
 import android.util.Log;
 import gtg.virus.gtpr.adapters.ShelfAdapter;
@@ -109,6 +110,26 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
             newBook.setPath(params[0]);
             newBook.setFilename(file.getName());
 
+        }else if(isMp3(params[0])){
+            newBook = new PBook();
+            MediaMetadataRetriever meta = new MediaMetadataRetriever();
+            meta.setDataSource(params[0]);
+
+            byte[] art = meta.getEmbeddedPicture();
+            Bitmap songImage = null;
+                try {
+                    songImage = BitmapFactory.decodeByteArray(art, 0, art.length);
+                }catch(Exception ex){
+
+                }
+            newBook.setPage0(songImage);
+            newBook.addAuthor(meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_AUTHOR));
+            newBook.setFilename(file.getName());
+            newBook.setTitle(file.getName());
+            newBook.setPath(params[0]);
+
+            meta.release();
+            Log.w(TAG , "mp3 file added. " );
         }
 		return newBook;
 	}
