@@ -388,9 +388,7 @@ public class AudioService extends Service implements MediaPlayer.OnPreparedListe
             store.clear();
 
 
-
             setUpAsForeground("Player stopped..." , R.drawable.ic_audio_stop);
-
 
         }
     }
