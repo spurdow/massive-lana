@@ -4779,16 +4779,16 @@ useLogo|showHome|showTitle
                     msgid="2031811694353399454" >"Επιλέξτε κάποια εφαρμογή"
                 </string>
                 <string
-                    name="abc_searchview_description_clear"
-                    msgid="3691816814315814921" >"Διαγραφή ερωτήματος"
-                </string>
-                <string
                     name="abc_searchview_description_voice"
                     msgid="893419373245838918" >"Φωνητική αναζήτηση"
                 </string>
                 <string
                     name="abc_action_menu_overflow_description"
                     msgid="3588849162933574182" >"Περισσότερες επιλογές"
+                </string>
+                <string
+                    name="abc_searchview_description_clear"
+                    msgid="3691816814315814921" >"Διαγραφή ερωτήματος"
                 </string>
             </file>
             <file
@@ -6110,16 +6110,16 @@ false
                     msgid="4076576682505996667" >"Atlikta"
                 </string>
                 <string
-                    name="abc_action_bar_home_description"
-                    msgid="4600421777120114993" >"Eiti į pagrindinį puslapį"
-                </string>
-                <string
                     name="abc_searchview_description_search"
                     msgid="8264924765203268293" >"Paieška"
                 </string>
                 <string
                     name="abc_shareactionprovider_share_with_application"
                     msgid="7165123711973476752" >"Bendrinti naudojant „%s“"
+                </string>
+                <string
+                    name="abc_action_bar_home_description"
+                    msgid="4600421777120114993" >"Eiti į pagrindinį puslapį"
                 </string>
             </file>
             <file
@@ -6754,16 +6754,16 @@ false
                     msgid="3588849162933574182" >"Več možnosti"
                 </string>
                 <string
-                    name="abc_shareactionprovider_share_with"
-                    msgid="3421042268587513524" >"Deljenje z"
+                    name="abc_action_mode_done"
+                    msgid="4076576682505996667" >"Končano"
                 </string>
                 <string
                     name="abc_activity_chooser_view_see_all"
                     msgid="7468859129482906941" >"Pokaži vse"
                 </string>
                 <string
-                    name="abc_action_mode_done"
-                    msgid="4076576682505996667" >"Končano"
+                    name="abc_shareactionprovider_share_with"
+                    msgid="3421042268587513524" >"Deljenje z"
                 </string>
                 <string
                     name="abc_action_bar_home_description"
@@ -6782,12 +6782,12 @@ false
                     msgid="8264924765203268293" >"Iskanje"
                 </string>
                 <string
-                    name="abc_searchview_description_submit"
-                    msgid="8928215447528550784" >"Pošiljanje poizvedbe"
-                </string>
-                <string
                     name="abc_searchview_description_query"
                     msgid="2550479030709304392" >"Iskalna poizvedba"
+                </string>
+                <string
+                    name="abc_searchview_description_submit"
+                    msgid="8928215447528550784" >"Pošiljanje poizvedbe"
                 </string>
                 <string
                     name="abc_searchview_description_voice"
@@ -11555,7 +11555,27 @@ true
             <file
                 path="G:\Android Studio\gtg\gtpr\src\main\res\values\strings.xml"
                 qualifiers="" >
+                <string name="time" >Set Time
+                </string>
                 <string name="menu_record" >Record
+                </string>
+                <string name="label" >Info
+                </string>
+                <string name="alarm_repeat" >Repeat
+                </string>
+                <string name="enable" >Enable
+                </string>
+                <string name="drawer_close" >PinBook
+                </string>
+                <string name="first_launch_dialog" >Please wait while we configure things
+                </string>
+                <string name="launch_dialog" >Please wait while we get the configuration and stuff
+                </string>
+                <string name="alarm_vibrate" >Vibrate
+                </string>
+                <string name="set_alarm" >Set Alarm
+                </string>
+                <string name="alert" >Alert
                 </string>
                 <string name="menu_add" >Add
                 </string>
@@ -11564,12 +11584,6 @@ true
                 <string name="app_id" >838264129517965
                 </string>
                 <string name="drawer_open" >PinBook-Menu
-                </string>
-                <string name="drawer_close" >PinBook
-                </string>
-                <string name="first_launch_dialog" >Please wait while we configure things
-                </string>
-                <string name="launch_dialog" >Please wait while we get the configuration and stuff
                 </string>
             </file>
             <file
@@ -11865,6 +11879,16 @@ true
                 path="G:\Android Studio\gtg\gtpr\src\main\res\drawable-xhdpi\ic_audio_books.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
+            <file
+                name="alarm_xml"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\xml\alarm_xml.xml"
+                qualifiers=""
+                type="xml" />
+            <file
+                name="activity_scheduled_books"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\layout\activity_scheduled_books.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="G:\Android Studio\gtg\gtpr\build\generated\res\rs\debug" />
         <source path="G:\Android Studio\gtg\gtpr\build\generated\res\generated\debug" />

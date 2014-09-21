@@ -363,7 +363,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
             	if(bookCache.containsKey(newFile.getName())){
             		AlertDialog.Builder builder = new AlertDialog.Builder(this);
             		builder.setTitle("Warning");
-            		builder.setMessage("The system found that this file is already in your list.If you continue file will NOT be appended. Are you sure you want to continue?");
+            		builder.setMessage("The system found that this file is already in your list.If you continue file will NOT be appended.");
             		builder.setPositiveButton("Yes", new OnClickListener(){
 
 						@Override

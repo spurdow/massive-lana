@@ -630,6 +630,9 @@
     <!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/values/strings.xml -->
     <eat-comment />
 
+    <string name="alarm_repeat">Repeat</string>
+    <string name="alarm_vibrate">Vibrate</string>
+    <string name="alert">Alert</string>
     <string name="app_id">838264129517965</string>
     <string name="app_name">Pinbook</string>
     <!-- From: file:/G:/Android%20Studio/gtg/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/res/values/values.xml -->
@@ -674,6 +677,13 @@
     <eat-comment />
 
     <string name="empty_directory">Empty Directory</string>
+    <!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="enable">Enable</string>
+    <!-- From: file:/G:/Android%20Studio/gtg/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/res/values/values.xml -->
+    <eat-comment />
+
     <string name="error_selecting_file">Error selecting File</string>
     <!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/values/strings.xml -->
     <eat-comment />
@@ -686,6 +696,7 @@
     <!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/values/strings.xml -->
     <eat-comment />
 
+    <string name="label">Info</string>
     <string name="launch_dialog">Please wait while we get the configuration and stuff</string>
     <string name="menu_add">Add</string>
     <string name="menu_record">Record</string>
@@ -703,10 +714,18 @@
     <string name="s_remove">Remove</string>
     <string name="s_save">Save</string>
     <string name="s_saveas">Save as</string>
+    <!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="set_alarm">Set Alarm</string>
     <!-- From: file:/G:/Android%20Studio/gtg/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/res/values/values.xml -->
     <eat-comment />
 
     <string name="storage_removed">Storage was removed or unmounted.</string>
+    <!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="time">Set Time</string>
     <!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/values/styles_pinbook_layout.xml -->
     <eat-comment />
 

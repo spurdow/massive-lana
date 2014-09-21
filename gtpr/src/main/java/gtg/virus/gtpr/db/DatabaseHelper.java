@@ -36,7 +36,6 @@ public final class DatabaseHelper extends SQLiteOpenHelper{
 		db.execSQL(SQItem.CREATE_TABLE);
         db.execSQL(Book.SQBook.CREATE_TABLE);
         db.execSQL(ScheduledBooks.SQScheduledBooks.CREATE_TABLE);
-        db.execSQL(ScheduledBooks.SQScheduledBooks.KEY);
 	}
 
 	@Override

@@ -22,19 +22,19 @@ public final class R {
 		public static final int ic_provider = 0x7f0200ca;
 	}
 	public static final class layout {
-		public static final int file = 0x7f030035;
+		public static final int file = 0x7f030036;
 	}
 	public static final class string {
-		public static final int choose_file = 0x7f0b000f;
-		public static final int empty_directory = 0x7f0b002c;
-		public static final int error_selecting_file = 0x7f0b002d;
-		public static final int internal_storage = 0x7f0b002f;
-		public static final int storage_removed = 0x7f0b003e;
+		public static final int choose_file = 0x7f0b0012;
+		public static final int empty_directory = 0x7f0b002f;
+		public static final int error_selecting_file = 0x7f0b0031;
+		public static final int internal_storage = 0x7f0b0033;
+		public static final int storage_removed = 0x7f0b0044;
 	}
 	public static final class style {
 		public static final int fileChooserName = 0x7f0c0097;
 	}
 	public static final class xml {
-		public static final int mimetypes = 0x7f050000;
+		public static final int mimetypes = 0x7f050001;
 	}
 }

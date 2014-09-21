@@ -11,6 +11,7 @@ import java.util.List;
 
 
 import gtg.virus.gtpr.R;
+import gtg.virus.gtpr.db.BookHelper;
 import nl.siegmann.epublib.domain.Author;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.epub.EpubReader;
@@ -142,10 +143,17 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
 		if(result == null) return;
 		super.onPostExecute(result);
 
-        B
+        BookHelper mh = new BookHelper(mContext);
+        gtg.virus.gtpr.db.Book b = mh.getBook(result.getPath());
 
-		mAdapter.addBook(result);
-		bookCache.put(result.getFilename(), result);
+
+        if(b != null){
+            mAdapter.addBook(result);
+
+        }
+
+        bookCache.put(result.getFilename(), result);
+
 		if(mDoc != null)
 			mDoc.Close();
 
