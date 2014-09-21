@@ -70,14 +70,14 @@ public abstract class AbstractViewer extends ActionBarActivity{
         return super.onCreateOptionsMenu(menu);
     }
 
-    int sx = 0;
-    int sy = 0;
+    int sx = -1;
+    int sy = -1;
     Rect r = new Rect();
     private boolean editmode = false;
 
     private DrawView mDraw;
 
-    private class DrawView extends View implements View.OnTouchListener{
+    private class DrawView extends View {
 
         private final String TAG = DrawView.class.getSimpleName();
         Rect r = new Rect();
@@ -102,11 +102,20 @@ public abstract class AbstractViewer extends ActionBarActivity{
             super.onDraw(canvas);
 
 
+
             canvas.drawPoint(sx , sy , p);
 
-            path.lineTo(sx , sy);
+            if(started){
+                path.lineTo(sx , sy);
 
-            canvas.drawPath(path , p);
+                Log.w(TAG , sx + " " + sy);
+
+                canvas.drawPath(path , p);
+            }else{
+                path.reset();
+                canvas.drawPath(path , p);
+            }
+
 
 
 
@@ -117,32 +126,10 @@ public abstract class AbstractViewer extends ActionBarActivity{
 
 
 
-        @Override
-        public boolean onTouch(View v, MotionEvent event) {
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                sx = (int) event.getX();
-                sy = (int) event.getY();
-                r.set(sx,sy,sx,sy);
-
-            }else if(event.getAction()==MotionEvent.ACTION_UP){
-                r.set(sx,sy,(int)event.getX(),(int)event.getY());
- 
-
-            }else if(event.getAction()==MotionEvent.ACTION_MOVE){
-                r.set(sx,sy,(int)event.getX(),(int)event.getY());
-                sx = (int) event.getX();
-                sy = (int) event.getY();
-
-            }
-
-            invalidate();
-            Log.w(TAG , "Painting..");
-            return true;
-        }
 
 
     }
-
+    private boolean started = false;
     int ctr = 0;
     private float[] points = new float[10000];
     //private List<Point> points = (List<Point>) new ArrayList<Point>();
@@ -162,35 +149,24 @@ public abstract class AbstractViewer extends ActionBarActivity{
                     mDraw.setOnTouchListener(new View.OnTouchListener() {
                         @Override
                         public boolean onTouch(View v, MotionEvent event) {
+
                             if (event.getAction() == MotionEvent.ACTION_DOWN) {
                                 sx = (int) event.getX();
                                 sy = (int) event.getY();
 
-                                points[ctr] = event.getX();
-                                ctr = (ctr + 1 ) % points.length -1;
-                                points[ctr] = event.getY();
-                                ctr = (ctr + 1 ) % points.length -1;
 
-                                r.set(sx,sy,sx,sy);
 
                             }else if(event.getAction()==MotionEvent.ACTION_UP){
-                                r.set(sx,sy,(int)event.getX(),(int)event.getY());
-                                sx = -1000;
-                                sy = -1000;
 
                             }else if(event.getAction()==MotionEvent.ACTION_MOVE){
-                                r.set(sx,sy,(int)event.getX(),(int)event.getY());
+
                                 sx = (int) event.getX();
                                 sy = (int) event.getY();
-
-                                points[ctr] = event.getX();
-                                ctr = (ctr + 1 ) % points.length -1;
-                                points[ctr] = event.getY();
-                                ctr = (ctr + 1 ) % points.length -1;
 
                             }
 
                             mDraw.invalidate();
+                            started  = true;
                             Log.w("TEST" , "Painting..");
                             return true;
                         }
@@ -204,9 +180,9 @@ public abstract class AbstractViewer extends ActionBarActivity{
                     //erase doodle
                     if(mDraw != null)
                         vg.removeView(mDraw);
-
-                    sx = 0;
-                    sy = 0;
+                    started = false;
+                    sx = -1;
+                    sy = -1;
                     r = new Rect();
 
                     editmode = false;
