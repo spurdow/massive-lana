@@ -29,6 +29,29 @@ public class ScheduleHelper extends AbstractHelper implements IHelper<ScheduledB
 
     }
 
+    public ScheduledBooks getSchedBook(long book_id){
+
+        SQLiteDatabase db = mInstance.getReadableDatabase();
+
+        Cursor c = db.rawQuery("SELECT * FROM " + ScheduledBooks.SQScheduledBooks.TABLE_NAME + " WHERE " + ScheduledBooks.SQScheduledBooks.BOOK_ID +" =?", new String[]{String.valueOf(book_id)});
+
+        if(c.moveToFirst()){
+
+                ScheduledBooks book = new ScheduledBooks();
+                book.setId(c.getLong(c.getColumnIndex(ScheduledBooks.SQScheduledBooks.ID)));
+                book.setBook_id(c.getLong(c.getColumnIndex(ScheduledBooks.SQScheduledBooks.BOOK_ID)));
+                book.setInfo(c.getString(c.getColumnIndex(ScheduledBooks.SQScheduledBooks.INFO)));
+                book.setTimeToAlarm(c.getString(c.getColumnIndex(ScheduledBooks.SQScheduledBooks.TIME_TO_ALARM)));
+                book.setBitWeek(c.getString(c.getColumnIndex(ScheduledBooks.SQScheduledBooks.BIT_WEEK)));
+                book.setStatus(c.getInt(c.getColumnIndex(ScheduledBooks.SQScheduledBooks.STATUS)));
+
+            return book;
+        }
+
+
+        return null;
+    }
+
     @Override
     public List<ScheduledBooks> list() {
         List<ScheduledBooks> sBooks = new ArrayList<ScheduledBooks>();

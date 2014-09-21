@@ -2,6 +2,7 @@ package gtg.virus.gtpr;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -34,6 +35,7 @@ public class GTGTxtViewer extends AbstractViewer {
     protected void initializeResources(Bundle saveInstanceState) {
         mTextView = (TextView) findViewById(R.id.txt_main_layout_view);
         mTextView.setText("");
+        mTextView.setMovementMethod(new ScrollingMovementMethod());
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             String gsonExtra =  extras.getString(PIN_EXTRA_PBOOK);

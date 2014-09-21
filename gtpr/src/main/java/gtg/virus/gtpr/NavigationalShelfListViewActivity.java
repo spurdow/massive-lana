@@ -12,6 +12,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import gtg.virus.gtpr.db.BookHelper;
+import gtg.virus.gtpr.db.ScheduledBooks;
 import gtg.virus.gtpr.service.AudioService;
 import gtg.virus.gtpr.utils.OverridedBaseImageDownloader;
 import nl.siegmann.epublib.domain.Author;
@@ -216,6 +217,15 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
             case 4 :
                 Intent i = new Intent(this , AudioListView.class);
                 startActivity(i);
+                break;
+            case 5 :
+                Intent s = new Intent(this , ScheduledBooksView.class);
+                startActivity(s);
+                break;
+
+            case 8:
+                Intent x = new Intent(this , Help.class);
+                startActivity(x);
                 break;
         }
     }

@@ -46,6 +46,10 @@ public class PBook {
 
     private Bitmap page0;
 
+    @Expose(serialize = true, deserialize = true)
+    @SerializedName("status")
+    public int status= 0;
+
 
     /**
 	 * @param pages

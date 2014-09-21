@@ -147,10 +147,16 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
         gtg.virus.gtpr.db.Book b = mh.getBook(result.getPath());
 
 
-        if(b != null){
-            mAdapter.addBook(result);
+        if(b == null){
+            b = new gtg.virus.gtpr.db.Book();
+            b.setTitle(result.getTitle());
+            b.setPath(result.getPath());
+            b.setStatus(1);
 
+            mh.add(b);
         }
+
+        mAdapter.addBook(result);
 
         bookCache.put(result.getFilename(), result);
 

@@ -194,6 +194,25 @@ public final class Utilities {
 			return true;
 		}
 	}
+
+    public static String bitWeekAsString(int[] i){
+        String bitWeek = "";
+        for(int x =0; x < i.length ; x++){
+            bitWeek+=i[x]+"";
+        }
+        Log.w(TAG , "s " +bitWeek);
+        return bitWeek;
+    }
+
+    public static int[] bitWeekAsInt(String bitWeek){
+        Log.w(TAG , "i " + bitWeek);
+        int[] i = new int[bitWeek.length()];
+        for(int x = 0 ; x < i.length ; x++){
+            i[x] = Integer.valueOf(bitWeek.charAt(x)) ;
+        }
+        return i;
+    }
+
 	/**
 	 * remove first launch
 	 * @param context

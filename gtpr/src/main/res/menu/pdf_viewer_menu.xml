@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:gtg.virus.gtpr="http://schemas.android.com/apk/res-auto" >
 
-    <item android:id="@+id/opt_menu_search" gtg.virus.gtpr:showAsAction="always" android:icon="@drawable/ic_menu_search" gtg.virus.gtpr:actionViewClass="android.support.v7.widget.SearchView"></item>
+    <item android:id="@+id/opt_menu_edit" gtg.virus.gtpr:showAsAction="always" android:icon="@drawable/ic_content_edit" ></item>
     <item android:id="@+id/opt_more" gtg.virus.gtpr:showAsAction="always" android:icon="@drawable/ic_menu_more">
         <menu>
             <item android:id="@+id/opt_menu_set_alarm" android:title="Set Alarm"/>

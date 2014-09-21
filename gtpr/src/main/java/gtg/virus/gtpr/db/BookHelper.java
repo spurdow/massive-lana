@@ -49,6 +49,25 @@ public class BookHelper extends AbstractHelper implements IHelper<Book> {
         return null;
     }
 
+    public Book getBookById(long id){
+        SQLiteDatabase db = mInstance.getReadableDatabase();
+
+        Cursor c = db.rawQuery("SELECT * FROM " + Book.SQBook.TABLE_NAME + " WHERE " + Book.SQBook.ID + "=?", new String[]{String.valueOf(id)});
+
+        if(c.moveToFirst()){
+            Book b = new Book();
+            b.setId(c.getLong(c.getColumnIndex(Book.SQBook.ID)));
+            b.setTitle(c.getString(c.getColumnIndex(Book.SQBook.TITLE)));
+            b.setPath(c.getString(c.getColumnIndex(Book.SQBook.PATH)));
+            b.setStatus(c.getInt(c.getColumnIndex(Book.SQBook.STATUS)));
+
+            return b;
+        }
+        return null;
+    }
+
+
+
     @Override
     public List<Book> list() {
 

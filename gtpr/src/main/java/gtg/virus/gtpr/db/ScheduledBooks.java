@@ -28,7 +28,7 @@ public class ScheduledBooks extends Item{
         public final static String KEY = "FOREIGN KEY (" + BOOK_ID + ") REFERENCES " + Book.SQBook.TABLE_NAME + "(" +Book.SQBook.ID+ ")";
 
         public final static String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ( " + ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
-                PATH + " TEXT , " + BOOK_ID + " INTEGER , " +TIME_TO_ALARM + " TEXT NOT NULL, " + INFO + " TEXT , " + STATUS + " INTEGER , " + BIT_WEEK + " TEXT , " +KEY+ " );"  ;
+                PATH + " TEXT , " + BOOK_ID + " INTEGER UNIQUE NOT NULL, " +TIME_TO_ALARM + " TEXT NOT NULL, " + INFO + " TEXT , " + STATUS + " INTEGER , " + BIT_WEEK + " TEXT , " +KEY+ " );"  ;
 
         public final static String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
 

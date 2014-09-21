@@ -70,6 +70,7 @@
         <activity android:name=".GTGAudioListener"></activity>
         <activity android:name=".ScheduleBooksInfoView"></activity>
         <activity android:name=".ScheduledBooksView"></activity>
+        <activity android:name=".ShelfView"></activity>
         
         <service android:name=".service.AudioService" android:process=":remote"></service>
     </application>

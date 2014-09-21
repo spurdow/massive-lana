@@ -47,6 +47,11 @@ public class ShelfAdapter extends BaseAdapter {
 	public final static int MAX_CHARACTERS = 10;
 
 	protected static final String TAG = ShelfAdapter.class.getSimpleName();
+
+
+    public interface OnViewClick{
+        void bookClick(PBook book , int position);
+    }
 	
 	/**
 	 * @param mContext
@@ -166,7 +171,13 @@ public class ShelfAdapter extends BaseAdapter {
 
 						@Override
 						public void onClick(View v) {
-							// TODO Auto-generated method stub
+
+                            if(mClickListener != null){
+                                mClickListener.bookClick(b , position);
+                                return;
+                            }
+
+
 							if(Utilities.isEpub(b.getPath())){
                                 Intent intent = new Intent(mContext, GTGEpubViewer.class);
                                 intent.putExtra(PIN_EXTRA_PBOOK, b.toString());
@@ -252,9 +263,14 @@ public class ShelfAdapter extends BaseAdapter {
 		
 		return convertView;
 	}
-	
-	
-	private class ViewHolder{
+
+    protected OnViewClick mClickListener = null;
+
+    public void setmClickListener(OnViewClick mClickListener) {
+        this.mClickListener = mClickListener;
+    }
+
+    private class ViewHolder{
 		LinearLayout shelf_parent;
 	}
 

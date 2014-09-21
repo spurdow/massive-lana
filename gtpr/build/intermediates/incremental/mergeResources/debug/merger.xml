@@ -4779,16 +4779,16 @@ useLogo|showHome|showTitle
                     msgid="2031811694353399454" >"Επιλέξτε κάποια εφαρμογή"
                 </string>
                 <string
+                    name="abc_searchview_description_clear"
+                    msgid="3691816814315814921" >"Διαγραφή ερωτήματος"
+                </string>
+                <string
                     name="abc_searchview_description_voice"
                     msgid="893419373245838918" >"Φωνητική αναζήτηση"
                 </string>
                 <string
                     name="abc_action_menu_overflow_description"
                     msgid="3588849162933574182" >"Περισσότερες επιλογές"
-                </string>
-                <string
-                    name="abc_searchview_description_clear"
-                    msgid="3691816814315814921" >"Διαγραφή ερωτήματος"
                 </string>
             </file>
             <file
@@ -6110,16 +6110,16 @@ false
                     msgid="4076576682505996667" >"Atlikta"
                 </string>
                 <string
+                    name="abc_action_bar_home_description"
+                    msgid="4600421777120114993" >"Eiti į pagrindinį puslapį"
+                </string>
+                <string
                     name="abc_searchview_description_search"
                     msgid="8264924765203268293" >"Paieška"
                 </string>
                 <string
                     name="abc_shareactionprovider_share_with_application"
                     msgid="7165123711973476752" >"Bendrinti naudojant „%s“"
-                </string>
-                <string
-                    name="abc_action_bar_home_description"
-                    msgid="4600421777120114993" >"Eiti į pagrindinį puslapį"
                 </string>
             </file>
             <file
@@ -11559,13 +11559,15 @@ true
                 </string>
                 <string name="menu_record" >Record
                 </string>
+                <string name="help_text" >We would like to give thanks to the following libraries and with the help of our Department\'s Advisers and people who are behind the app.
+                </string>
                 <string name="label" >Info
                 </string>
                 <string name="alarm_repeat" >Repeat
                 </string>
-                <string name="enable" >Enable
-                </string>
                 <string name="drawer_close" >PinBook
+                </string>
+                <string name="enable" >Enable
                 </string>
                 <string name="first_launch_dialog" >Please wait while we configure things
                 </string>
@@ -11887,6 +11889,31 @@ true
             <file
                 name="activity_scheduled_books"
                 path="G:\Android Studio\gtg\gtpr\src\main\res\layout\activity_scheduled_books.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_shelf_view"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\layout\activity_shelf_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="scheduled_menu"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\menu\scheduled_menu.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="pbook_list_row"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\layout\pbook_list_row.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="activity_schedule_layout"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\layout\activity_schedule_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="help_layout"
+                path="G:\Android Studio\gtg\gtpr\src\main\res\layout\help_layout.xml"
                 qualifiers=""
                 type="layout" />
         </source>

@@ -689,6 +689,7 @@
     <eat-comment />
 
     <string name="first_launch_dialog">Please wait while we configure things</string>
+    <string name="help_text">We would like to give thanks to the following libraries and with the help of our Department\'s Advisers and people who are behind the app.</string>
     <!-- From: file:/G:/Android%20Studio/gtg/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/res/values/values.xml -->
     <eat-comment />
 

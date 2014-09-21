@@ -1,6 +1,7 @@
 package gtg.virus.gtpr.db;
 
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 public class Book extends Item{
@@ -8,7 +9,20 @@ public class Book extends Item{
     @SerializedName("ebook_title")
     private String title;
 
-
+    /**
+     * -Schedule-
+     * Read
+     * On-Time
+     * Delay
+     * Cancel
+     *
+     * -Leisure-
+     * To-Read
+     * Current
+     * Done
+     * Re-Reading
+     *
+     */
 
     public static class SQBook extends SQItem{
 
@@ -32,5 +46,9 @@ public class Book extends Item{
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String toString(){
+        return new Gson().toJson(this , Book.class);
     }
 }
