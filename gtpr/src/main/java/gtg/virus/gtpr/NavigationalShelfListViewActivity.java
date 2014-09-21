@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import gtg.virus.gtpr.db.BookHelper;
 import gtg.virus.gtpr.service.AudioService;
 import gtg.virus.gtpr.utils.OverridedBaseImageDownloader;
 import nl.siegmann.epublib.domain.Author;
@@ -362,7 +363,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
             	if(bookCache.containsKey(newFile.getName())){
             		AlertDialog.Builder builder = new AlertDialog.Builder(this);
             		builder.setTitle("Warning");
-            		builder.setMessage("The system found that this file is already in your list.If you continue file will be appended. Are you sure you want to continue?");
+            		builder.setMessage("The system found that this file is already in your list.If you continue file will NOT be appended. Are you sure you want to continue?");
             		builder.setPositiveButton("Yes", new OnClickListener(){
 
 						@Override
@@ -371,7 +372,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 		            		/**
 		            		 * Asynctask saving pdf in storage
 		            		 */
-							new AsyncTask<Void, Void,PBook>(){
+							/*new AsyncTask<Void, Void,PBook>(){
 
 			            		private ProgressDialog mProgress;
 								@Override
@@ -548,11 +549,11 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 								
 								
 			            		
-			            	}.executeOnExecutor(mService, null,null,null);	
+			            	}.executeOnExecutor(mService, null,null,null);	*/
 						}
 
-            		});
-            		builder.setNegativeButton("No", new OnClickListener(){
+                           		});
+            		/*builder.setNegativeButton("No", new OnClickListener(){
 
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
@@ -560,7 +561,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 							dialog.dismiss();
 						}
             			
-            		});
+            		});*/
             		
             		final AlertDialog alert = builder.create();
             		alert.show();
@@ -739,13 +740,20 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 							if(result != null){
 								mShelfAdapter.addBook(result);
 								bookCache.put(result.getFilename(), result);
+                                BookHelper b = new BookHelper(NavigationalShelfListViewActivity.this);
+                                gtg.virus.gtpr.db.Book item = new gtg.virus.gtpr.db.Book();
+                                item.setTitle(result.getTitle());
+                                item.setPath(result.getPath());
+                                item.setStatus(1);
+                                long id = b.add(item);
+                                Log.w(TAG , "Added Bookid => " + id) ;
 							}
 							mProgress.dismiss();
 						}
 						
 						
 	            		
-	            	}.executeOnExecutor(mService, null,null,null);	
+	            	}.executeOnExecutor(mService, null, null, null);
             	}
 	        }
             break;

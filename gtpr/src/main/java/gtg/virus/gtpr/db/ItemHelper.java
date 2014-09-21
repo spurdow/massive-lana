@@ -10,22 +10,17 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-public class ItemHelper implements IHelper<Item>{
+public class ItemHelper extends AbstractHelper implements IHelper<Item>{
 
-	private Context mContext;
-	
-	private DatabaseHelper mHelper;
 
-	public ItemHelper(Context context) {
-		super();
-		this.mContext = context;
-		this.mHelper = DatabaseHelper.getInstance(context);
-	}
+    public ItemHelper(Context mContext) {
+        super(mContext);
+    }
 
-	@Override
+    @Override
 	public long add(Item item) {
 		// TODO Auto-generated method stub
-		SQLiteDatabase db = mHelper.getWritableDatabase();
+		SQLiteDatabase db = mInstance.getWritableDatabase();
 		
 		ContentValues cv = new ContentValues();
 		//cv.put(SQItem.ID, item.getId());
@@ -38,7 +33,7 @@ public class ItemHelper implements IHelper<Item>{
 	@Override
 	public List<Item> list() {
 		// TODO Auto-generated method stub
-		SQLiteDatabase db = mHelper.getReadableDatabase();
+		SQLiteDatabase db = mInstance.getReadableDatabase();
 		
 		Cursor c = db.rawQuery("SELECT * FROM " + SQItem.TABLE_NAME, null);
 		List<Item> items = new ArrayList<Item>();

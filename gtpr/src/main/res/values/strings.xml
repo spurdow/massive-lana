@@ -9,5 +9,10 @@
     <string name="launch_dialog">Please wait while we get the configuration and stuff</string>
     <string name="menu_add">Add</string>
     <string name="menu_record">Record</string>
+    <string name="set_alarm">Set Alarm</string>
+    <string name="enable">Enable</string>
+    <string name="time">Set Time</string>
+    <string name="alarm_vibrate">Vibrate</string>
+    <string name="label">Info</string>
 
 </resources>

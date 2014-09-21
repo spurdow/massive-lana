@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public final class DatabaseHelper extends SQLiteOpenHelper{
 
-	public final static int DATABASE_VERSION = 2;
+	public final static int DATABASE_VERSION = 3;
 	
 	public final static String DATABASE_NAME = "pinbook.db";
 	
@@ -34,6 +34,9 @@ public final class DatabaseHelper extends SQLiteOpenHelper{
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
 		db.execSQL(SQItem.CREATE_TABLE);
+        db.execSQL(Book.SQBook.CREATE_TABLE);
+        db.execSQL(ScheduledBooks.SQScheduledBooks.CREATE_TABLE);
+        db.execSQL(ScheduledBooks.SQScheduledBooks.KEY);
 	}
 
 	@Override
@@ -41,6 +44,8 @@ public final class DatabaseHelper extends SQLiteOpenHelper{
 		// TODO Auto-generated method stub
 		if(newVersion > oldVersion){
 			db.execSQL(SQItem.DROP_TABLE);
+            db.execSQL(Book.SQBook.DROP_TABLE);
+            db.execSQL(ScheduledBooks.SQScheduledBooks.DROP_TABLE);
 		}
 		onCreate(db);
 	}

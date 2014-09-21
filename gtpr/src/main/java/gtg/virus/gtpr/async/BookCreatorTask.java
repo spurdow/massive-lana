@@ -141,6 +141,9 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
 		// TODO Auto-generated method stub
 		if(result == null) return;
 		super.onPostExecute(result);
+
+        B
+
 		mAdapter.addBook(result);
 		bookCache.put(result.getFilename(), result);
 		if(mDoc != null)

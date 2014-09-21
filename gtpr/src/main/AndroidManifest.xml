@@ -68,6 +68,8 @@
         <activity android:name="AudioBookMaker"></activity>
         <activity android:name="AudioListView"></activity>
         <activity android:name=".GTGAudioListener"></activity>
+        <activity android:name=".ScheduleBooksInfoView"></activity>
+        <activity android:name=".ScheduledBooksView"></activity>
         
         <service android:name=".service.AudioService" android:process=":remote"></service>
     </application>
