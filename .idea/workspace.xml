@@ -53,10 +53,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: gtg.virus.gtpr" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="workspace">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/AbstractViewer.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/AbstractViewer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="workspace" />
     <ignored path="gtg.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
