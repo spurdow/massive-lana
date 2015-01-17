@@ -4,10 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EPUB3Reader/EPUB3Reader.iml" filepath="$PROJECT_DIR$/EPUB3Reader/EPUB3Reader.iml" />
       <module fileurl="file://$PROJECT_DIR$/aFileChooser/aFileChooser.iml" filepath="$PROJECT_DIR$/aFileChooser/aFileChooser.iml" />
-      <module fileurl="file://$PROJECT_DIR$/crouton/crouton.iml" filepath="$PROJECT_DIR$/crouton/crouton.iml" />
-      <module fileurl="file://$PROJECT_DIR$/facebookSDK/facebookSDK.iml" filepath="$PROJECT_DIR$/facebookSDK/facebookSDK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gtg.iml" filepath="$PROJECT_DIR$/gtg.iml" />
       <module fileurl="file://$PROJECT_DIR$/gtpr/gtpr.iml" filepath="$PROJECT_DIR$/gtpr/gtpr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/massive-lana.iml" filepath="$PROJECT_DIR$/massive-lana.iml" />
       <module fileurl="file://$PROJECT_DIR$/pr/pr.iml" filepath="$PROJECT_DIR$/pr/pr.iml" />
     </modules>
   </component>

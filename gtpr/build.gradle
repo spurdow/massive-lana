@@ -10,25 +10,11 @@ android {
         targetSdkVersion 19
     }
 
-    buildTypes {
-        release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-        }
-        dev {
-            debuggable true
-            versionNameSuffix '-unsigned'
-        }
-        debug {
-            debuggable true
-        }
-    }
 }
 
 dependencies {
     compile project(':aFileChooser')
     compile project(':pr')
-    compile project(':facebookSDK')
     compile 'com.android.support:support-v4:19.1.0'
     compile 'com.android.support:appcompat-v7:20.0.0'
     compile 'com.google.code.gson:gson:2.2.4'
@@ -39,6 +25,9 @@ dependencies {
     compile files('libs/epublib-core-latest.jar')
     compile files('libs/slf4j-android-1.5.8.jar')
     compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
-    compile project(':crouton')
     compile 'com.commonsware.cwac:merge:1.0.2'
+    compile 'com.facebook.android:facebook-android-sdk:3.22.0'
+    compile('de.keyboardsurfer.android.widget:crouton:1.8.4@aar') {
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
 }

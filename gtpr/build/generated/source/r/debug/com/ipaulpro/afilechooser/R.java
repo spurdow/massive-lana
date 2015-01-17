@@ -12,24 +12,24 @@ public final class R {
 		public static final int use_provider = 0x7f060007;
 	}
 	public static final class dimen {
-		public static final int list_item_padding = 0x7f090022;
-		public static final int list_padding = 0x7f090023;
+		public static final int list_item_padding = 0x7f090031;
+		public static final int list_padding = 0x7f090032;
 	}
 	public static final class drawable {
-		public static final int ic_chooser = 0x7f0200a0;
-		public static final int ic_file = 0x7f0200b5;
-		public static final int ic_folder = 0x7f0200b6;
-		public static final int ic_provider = 0x7f0200ca;
+		public static final int ic_chooser = 0x7f0200a7;
+		public static final int ic_file = 0x7f0200bc;
+		public static final int ic_folder = 0x7f0200bd;
+		public static final int ic_provider = 0x7f0200d1;
 	}
 	public static final class layout {
 		public static final int file = 0x7f030038;
 	}
 	public static final class string {
 		public static final int choose_file = 0x7f0b0012;
-		public static final int empty_directory = 0x7f0b002f;
-		public static final int error_selecting_file = 0x7f0b0031;
-		public static final int internal_storage = 0x7f0b0034;
-		public static final int storage_removed = 0x7f0b0045;
+		public static final int empty_directory = 0x7f0b0032;
+		public static final int error_selecting_file = 0x7f0b0034;
+		public static final int internal_storage = 0x7f0b0037;
+		public static final int storage_removed = 0x7f0b0048;
 	}
 	public static final class style {
 		public static final int fileChooserName = 0x7f0c0097;

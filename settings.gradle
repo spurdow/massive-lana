@@ -1,5 +1,4 @@
-include ':facebookSDK', ':EPUB3Reader'
+include ':EPUB3Reader'
 include ':aFileChooser'
 include ':pr'
 include ':gtpr'
-include ':crouton'
