@@ -11,38 +11,38 @@ public final class R {
 		public static final int clr_back = 0x7f070003;
 	}
 	public static final class drawable {
-		public static final int file03 = 0x7f020095;
-		public static final int folder = 0x7f020096;
-		public static final int folder0 = 0x7f020097;
-		public static final int folder1 = 0x7f020098;
-		public static final int folder2 = 0x7f020099;
-		public static final int ic_launcher = 0x7f0200c1;
-		public static final int pdf_icon = 0x7f0200e0;
+		public static final int file03 = 0x7f020098;
+		public static final int folder = 0x7f020099;
+		public static final int folder0 = 0x7f02009a;
+		public static final int folder1 = 0x7f02009b;
+		public static final int folder2 = 0x7f02009c;
+		public static final int ic_launcher = 0x7f0200c4;
+		public static final int pdf_icon = 0x7f0200e3;
 	}
 	public static final class id {
-		public static final int PDFThumb = 0x7f08009f;
-		public static final int PDFView = 0x7f080099;
-		public static final int annot_combo = 0x7f0800b2;
-		public static final int annot_text = 0x7f0800b3;
-		public static final int bar_act = 0x7f0800b9;
-		public static final int bar_cmd = 0x7f0800a0;
-		public static final int bar_find = 0x7f08009a;
-		public static final int btn_act = 0x7f0800a5;
-		public static final int btn_cancel = 0x7f0800b8;
-		public static final int btn_close = 0x7f0800a8;
-		public static final int btn_edit = 0x7f0800a7;
-		public static final int btn_end = 0x7f0800a3;
-		public static final int btn_ink = 0x7f0800a1;
-		public static final int btn_line = 0x7f0800b7;
-		public static final int btn_next = 0x7f08009d;
-		public static final int btn_note = 0x7f0800b6;
-		public static final int btn_oval = 0x7f0800b5;
-		public static final int btn_prev = 0x7f08009c;
-		public static final int btn_rect = 0x7f0800a2;
-		public static final int btn_remove = 0x7f0800a4;
-		public static final int btn_save = 0x7f0800a6;
-		public static final int btn_saveas = 0x7f08009e;
-		public static final int btn_sel = 0x7f0800ba;
+		public static final int PDFThumb = 0x7f0800a2;
+		public static final int PDFView = 0x7f08009c;
+		public static final int annot_combo = 0x7f0800b5;
+		public static final int annot_text = 0x7f0800b6;
+		public static final int bar_act = 0x7f0800bc;
+		public static final int bar_cmd = 0x7f0800a3;
+		public static final int bar_find = 0x7f08009d;
+		public static final int btn_act = 0x7f0800a8;
+		public static final int btn_cancel = 0x7f0800bb;
+		public static final int btn_close = 0x7f0800ab;
+		public static final int btn_edit = 0x7f0800aa;
+		public static final int btn_end = 0x7f0800a6;
+		public static final int btn_ink = 0x7f0800a4;
+		public static final int btn_line = 0x7f0800ba;
+		public static final int btn_next = 0x7f0800a0;
+		public static final int btn_note = 0x7f0800b9;
+		public static final int btn_oval = 0x7f0800b8;
+		public static final int btn_prev = 0x7f08009f;
+		public static final int btn_rect = 0x7f0800a5;
+		public static final int btn_remove = 0x7f0800a7;
+		public static final int btn_save = 0x7f0800a9;
+		public static final int btn_saveas = 0x7f0800a1;
+		public static final int btn_sel = 0x7f0800bd;
 		public static final int dlg_input = 0x7f08008a;
 		public static final int dlg_show_note = 0x7f080087;
 		public static final int rad_copy = 0x7f08008d;
@@ -51,12 +51,12 @@ public final class R {
 		public static final int rad_squiggly = 0x7f080091;
 		public static final int rad_strikeout = 0x7f080090;
 		public static final int rad_underline = 0x7f08008f;
-		public static final int thumbs = 0x7f0800bb;
+		public static final int thumbs = 0x7f0800be;
 		public static final int txt_content = 0x7f080089;
-		public static final int txt_find = 0x7f08009b;
+		public static final int txt_find = 0x7f08009e;
 		public static final int txt_password = 0x7f08008b;
 		public static final int txt_subj = 0x7f080088;
-		public static final int view = 0x7f0800b4;
+		public static final int view = 0x7f0800b7;
 	}
 	public static final class layout {
 		public static final int dlg_note = 0x7f030032;

@@ -1,10 +1,10 @@
 package gtg.virus.gtpr;
 
-import gtg.virus.gtpr.entities.User;
-import gtg.virus.gtpr.utils.Utilities;
-
-import java.util.Arrays;
-import java.util.List;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 
 import com.facebook.Request;
 import com.facebook.Response;
@@ -14,21 +14,15 @@ import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 
+import java.util.Arrays;
+import java.util.List;
 
+import butterknife.InjectView;
+import gtg.virus.gtpr.entities.User;
+import gtg.virus.gtpr.parent.ParentFragment;
+import gtg.virus.gtpr.utils.Utilities;
 
-
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
-
-public class LoginFragment extends Fragment{
+public class LoginFragment extends ParentFragment {
 
 	private static final String TAG = LoginFragment.class.getSimpleName();
 
@@ -37,6 +31,9 @@ public class LoginFragment extends Fragment{
 	private final List<String> permissions;
 	
 	private Session mSession = null;
+
+    @InjectView(R.id.authButton)
+    protected LoginButton authButton;
 
 	public LoginFragment() {
 		permissions = Arrays.asList("user_status");
@@ -50,20 +47,23 @@ public class LoginFragment extends Fragment{
 		Log.i(TAG, "LoginFragment");
 	}
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_main, container, false);
+    @Override
+    public int resId() {
+        return R.layout.fragment_main;
+    }
 
-		LoginButton authButton = (LoginButton) view.findViewById(R.id.authButton);
-		authButton.setFragment(this);
-		authButton.setReadPermissions(permissions);
-		
+    @Override
+    public boolean useButterKnife() {
+        return true;
+    }
 
-		return view;
-	}
+    @Override
+    public void overrideSetUpView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
+        authButton.setFragment(this);
+        authButton.setReadPermissions(permissions);
+    }
 
-	@Override
+    @Override
 	public void onResume() {
 		super.onResume();
 

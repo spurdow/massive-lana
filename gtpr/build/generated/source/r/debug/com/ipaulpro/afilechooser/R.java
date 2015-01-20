@@ -16,10 +16,10 @@ public final class R {
 		public static final int list_padding = 0x7f090032;
 	}
 	public static final class drawable {
-		public static final int ic_chooser = 0x7f0200a7;
-		public static final int ic_file = 0x7f0200bc;
-		public static final int ic_folder = 0x7f0200bd;
-		public static final int ic_provider = 0x7f0200d1;
+		public static final int ic_chooser = 0x7f0200aa;
+		public static final int ic_file = 0x7f0200bf;
+		public static final int ic_folder = 0x7f0200c0;
+		public static final int ic_provider = 0x7f0200d4;
 	}
 	public static final class layout {
 		public static final int file = 0x7f030038;

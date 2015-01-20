@@ -1,33 +1,33 @@
 package gtg.virus.gtpr.async;
 
-import static gtg.virus.gtpr.utils.Utilities.*;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-
-import gtg.virus.gtpr.R;
-import gtg.virus.gtpr.db.BookHelper;
-import nl.siegmann.epublib.domain.Author;
-import nl.siegmann.epublib.domain.Book;
-import nl.siegmann.epublib.epub.EpubReader;
-
-import com.radaee.pdf.Document;
-import com.radaee.pdf.Page;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaMetadataRetriever;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import com.radaee.pdf.Document;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import gtg.virus.gtpr.R;
 import gtg.virus.gtpr.adapters.ShelfAdapter;
+import gtg.virus.gtpr.db.BookHelper;
 import gtg.virus.gtpr.entities.PBook;
-import gtg.virus.gtpr.utils.Utilities;
+import nl.siegmann.epublib.domain.Author;
+import nl.siegmann.epublib.domain.Book;
+import nl.siegmann.epublib.epub.EpubReader;
+
+import static gtg.virus.gtpr.utils.Utilities.bookCache;
+import static gtg.virus.gtpr.utils.Utilities.isEpub;
+import static gtg.virus.gtpr.utils.Utilities.isMp3;
+import static gtg.virus.gtpr.utils.Utilities.isPdf;
+import static gtg.virus.gtpr.utils.Utilities.isTxt;
+import static gtg.virus.gtpr.utils.Utilities.renderPage;
 
 public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
 
@@ -98,7 +98,10 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
+				} catch(NullPointerException e){
+                    e.printStackTrace();
+                    page0 = BitmapFactory.decodeResource(mContext.getResources() , R.drawable.ic_content_paste);
+                }
         		if(page0 != null){
         			newBook.setPage0(page0);
         		}	

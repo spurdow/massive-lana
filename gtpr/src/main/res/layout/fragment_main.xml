@@ -10,7 +10,52 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        />
+        android:layout_margin="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="OR"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="30dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/username"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30sp"
+        android:textIsSelectable="false"
+        android:layout_margin="20dp"
+        android:hint="Username" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/password"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30sp"
+        android:textIsSelectable="false"
+        android:layout_margin="20dp"
+        android:hint="Password" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Login"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_ok_selector"
+        android:layout_margin="20dp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="#ffffbb50" />
 
 
 </LinearLayout>
