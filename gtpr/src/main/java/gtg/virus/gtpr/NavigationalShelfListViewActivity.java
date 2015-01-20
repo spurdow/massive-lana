@@ -1,45 +1,5 @@
 package gtg.virus.gtpr;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-import gtg.virus.gtpr.db.BookHelper;
-import gtg.virus.gtpr.db.ScheduledBooks;
-import gtg.virus.gtpr.service.AudioService;
-import gtg.virus.gtpr.utils.OverridedBaseImageDownloader;
-import nl.siegmann.epublib.domain.Author;
-import nl.siegmann.epublib.domain.Book;
-import nl.siegmann.epublib.epub.EpubReader;
-
-import com.commonsware.cwac.merge.MergeAdapter;
-import com.ipaulpro.afilechooser.utils.FileUtils;
-import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
-import com.radaee.pdf.Document;
-import com.radaee.pdf.Global;
-
-import de.keyboardsurfer.android.widget.crouton.Crouton;
-import de.keyboardsurfer.android.widget.crouton.Style;
-import gtg.virus.gtpr.adapters.ShelfAdapter;
-import gtg.virus.gtpr.adapters.TitleListAdapter;
-import gtg.virus.gtpr.async.AppLaunchTask;
-import gtg.virus.gtpr.async.AppLaunchTask.AppLaunchListener;
-import gtg.virus.gtpr.async.BookCreatorTask;
-import gtg.virus.gtpr.entities.PBook;
-import gtg.virus.gtpr.entities.Menu;
-import gtg.virus.gtpr.entities.User;
-import gtg.virus.gtpr.utils.Utilities;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -66,7 +26,49 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import static gtg.virus.gtpr.utils.Utilities.*;
+import com.commonsware.cwac.merge.MergeAdapter;
+import com.ipaulpro.afilechooser.utils.FileUtils;
+import com.radaee.pdf.Document;
+import com.radaee.pdf.Global;
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
+import gtg.virus.gtpr.adapters.ShelfAdapter;
+import gtg.virus.gtpr.adapters.TitleListAdapter;
+import gtg.virus.gtpr.async.AppLaunchTask;
+import gtg.virus.gtpr.async.AppLaunchTask.AppLaunchListener;
+import gtg.virus.gtpr.async.BookCreatorTask;
+import gtg.virus.gtpr.db.BookHelper;
+import gtg.virus.gtpr.entities.Menu;
+import gtg.virus.gtpr.entities.PBook;
+import gtg.virus.gtpr.entities.User;
+import gtg.virus.gtpr.service.AudioService;
+import gtg.virus.gtpr.utils.Utilities;
+import nl.siegmann.epublib.domain.Author;
+import nl.siegmann.epublib.domain.Book;
+import nl.siegmann.epublib.epub.EpubReader;
+
+import static gtg.virus.gtpr.utils.Utilities.STORAGE_SUFFIX;
+import static gtg.virus.gtpr.utils.Utilities.bookCache;
+import static gtg.virus.gtpr.utils.Utilities.copy;
+import static gtg.virus.gtpr.utils.Utilities.isEpub;
+import static gtg.virus.gtpr.utils.Utilities.isMp3;
+import static gtg.virus.gtpr.utils.Utilities.isPdf;
+import static gtg.virus.gtpr.utils.Utilities.isTxt;
+import static gtg.virus.gtpr.utils.Utilities.isValideBook;
+import static gtg.virus.gtpr.utils.Utilities.renderPage;
 public class NavigationalShelfListViewActivity extends ActionBarActivity {
 
 	private ListView mListView = null;
@@ -230,17 +232,6 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
         }
     }
 
-    private ImageLoaderConfiguration getConfig(){
-        return new ImageLoaderConfiguration.Builder(this)
-                .diskCacheExtraOptions(480, 800, null)
-                .memoryCache(new LruMemoryCache(2 * 1024 * 1024))
-                .memoryCacheSize(2 * 1024 * 1024)
-                .diskCacheSize(50 * 1024 * 1024)
-                .diskCacheFileCount(100)
-                .imageDownloader(new OverridedBaseImageDownloader(this))
-                .build();
-
-    }
 
     private void makeProfileView(){
 
@@ -249,20 +240,10 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
         TextView userNameView = (TextView) profileView.findViewById(R.id.txt_menu_list_title);
         final User user = Utilities.getUser(this);
 
-        ImageLoader imgLoader = ImageLoader.getInstance();
 
-        imgLoader.init(getConfig());
+        Picasso.with(this).load(user.getPhoto()).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
 
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                    .showImageOnFail(R.drawable.ic_social_person)
-                    .cacheOnDisk(true)
-                    .showImageForEmptyUri(R.drawable.ic_social_person)
-                    .displayer(new RoundedBitmapDisplayer(200))
-                    .build();
-
-
-
-        imgLoader.displayImage(user.getPhoto(), profilePicture, options);
+        //imgLoader.displayImage(user.getPhoto(), profilePicture, options);
 
         userNameView.setText(user.getFullname());
 
@@ -322,10 +303,6 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 	}
 	
 	
-
-	
-
-
 	@Override
 	public boolean onCreateOptionsMenu(android.view.Menu menu) {
 		// TODO Auto-generated method stub

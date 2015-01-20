@@ -15,13 +15,13 @@ public abstract class ParentFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(resId() , container);
+        View view = inflater.inflate(resId() , container , false);
 
         if(useButterKnife()){
             ButterKnife.inject(this , view);
         }
 
-        overrideSetUpView(inflater , container , savedInstanceState);
+        overrideSetUpView( view , inflater , container , savedInstanceState);
 
         return view;
     }
@@ -31,7 +31,7 @@ public abstract class ParentFragment extends Fragment {
 
     public abstract boolean useButterKnife();
 
-    public abstract void overrideSetUpView(LayoutInflater inflater , ViewGroup container, Bundle saveInstanceState);
+    public abstract void overrideSetUpView(View createdView , LayoutInflater inflater , ViewGroup container, Bundle saveInstanceState);
 
 
     @Override

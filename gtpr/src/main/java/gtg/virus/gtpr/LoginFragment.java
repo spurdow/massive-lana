@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.facebook.Request;
@@ -58,7 +59,7 @@ public class LoginFragment extends ParentFragment {
     }
 
     @Override
-    public void overrideSetUpView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
+    public void overrideSetUpView(View createdView , LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         authButton.setFragment(this);
         authButton.setReadPermissions(permissions);
     }
