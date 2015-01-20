@@ -4,9 +4,6 @@ package gtg.virus.gtpr.fragment_pages;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +53,7 @@ public class WebPageFragment extends AbstractFragmentViewer {
         mWebView.getSettings().setBuiltInZoomControls(true);
         mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
         mWebView.getSettings().setLoadsImagesAutomatically(true);
-        mWebView.loadDataWithBaseURL(baseUrl, data, type, encoding, null);
+        mWebView.loadData( data, type, encoding);
 
     }
 
