@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.facebook.Request;
 import com.facebook.Response;
@@ -21,7 +22,6 @@ import java.util.List;
 import butterknife.InjectView;
 import gtg.virus.gtpr.entities.User;
 import gtg.virus.gtpr.parent.ParentFragment;
-import gtg.virus.gtpr.utils.Utilities;
 
 public class LoginFragment extends ParentFragment {
 
@@ -117,9 +117,8 @@ public class LoginFragment extends ParentFragment {
 					mSession = session;
 
 						
-						final User mmuser = Utilities.getUser(LoginFragment.this.getActivity());
-						if(mmuser != null)
-							Utilities.saveUser(LoginFragment.this.getActivity(), mmuser);
+						final User mmuser = User.findById(User.class , (long) 1);
+
 
 						Request request = Request.newMeRequest(session, new Request.GraphUserCallback() {
 							
@@ -128,34 +127,30 @@ public class LoginFragment extends ParentFragment {
 								// TODO Auto-generated method stub
 								if(mSession == Session.getActiveSession()){
 									if(user != null){
-										User muser = null;
-										if(mmuser == null){
-											muser = new User();
-										}else{
-											muser = mmuser;
-										}
+										User muser = new User();
+
+
 										muser.setFacebook_id(user.getId());
 										muser.setFullname(user.getName());
 										muser.setStatus(1);
-
-										if(LoginFragment.this.getActivity() != null && muser != null)
-											Utilities.saveUser(LoginFragment.this.getActivity() , muser);
-
+                                        muser.save();
+                                        Intent i = new Intent(LoginFragment.this.getActivity(),  NavigationalShelfListViewActivity.class);
+                                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        startActivity(i);
 									}
 									
 								}
 								if(response.getError() != null){
 									//Toast.makeText(MainFragment.this.getActivity(), "Error : " + response.getError().getErrorMessage(), Toast.LENGTH_LONG).show();
 									Log.w(TAG, "Error : " + response.getError());
-								}
+                                    Toast.makeText(LoginFragment.this.getActivity() , "Something went wrong! try again." , Toast.LENGTH_SHORT).show();
+                                }
 							}
 						});
 				    	request.executeAsync();
 						
 						
-					Intent i = new Intent(LoginFragment.this.getActivity(),  NavigationalShelfListViewActivity.class);
-					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-					startActivity(i);
+
 				}
 			
 			

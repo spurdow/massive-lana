@@ -12,6 +12,7 @@ import android.graphics.BitmapFactory;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -233,15 +234,26 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
     }
 
 
+    @SuppressLint("NewApi")
     private void makeProfileView(){
 
         View profileView = this.getLayoutInflater().inflate(R.layout.menu_list_row, null);
         ImageView profilePicture = (ImageView) profileView.findViewById(R.id.img_menu_list);
         TextView userNameView = (TextView) profileView.findViewById(R.id.txt_menu_list_title);
-        final User user = Utilities.getUser(this);
+        final User user = User.findById(User.class , (long) 1);
 
 
-        Picasso.with(this).load(user.getPhoto()).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
+        if(user != null){
+            Picasso.with(this).load(user.getPhoto()).placeholder(R.drawable.com_facebook_profile_default_icon).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
+
+        }else{
+            //Picasso.with(this).load(user.getPhoto()).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                profileView.setBackground(getResources().getDrawable(R.drawable.com_facebook_profile_default_icon));
+            }else{
+                profileView.setBackgroundResource(R.drawable.com_facebook_profile_default_icon);
+            }
+        }
 
         //imgLoader.displayImage(user.getPhoto(), profilePicture, options);
 

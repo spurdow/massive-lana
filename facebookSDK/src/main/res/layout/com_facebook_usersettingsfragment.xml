@@ -27,7 +27,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/com_facebook_usersettingsfragment_logo_image"
+            android:gid="@+gid/com_facebook_usersettingsfragment_logo_image"
             android:layout_width="193dp"
             android:layout_height="44dp"
             android:layout_gravity="center_horizontal"
@@ -36,7 +36,7 @@
             android:contentDescription="@string/com_facebook_logo_content_description"/>
 
         <TextView
-            android:id="@+id/com_facebook_usersettingsfragment_profile_name"
+            android:gid="@+gid/com_facebook_usersettingsfragment_profile_name"
             android:layout_width="fill_parent"
             android:layout_height="100dp"
             android:lines="1"
@@ -46,7 +46,7 @@
             android:gravity="center"/>
     
         <com.facebook.widget.LoginButton
-            android:id="@+id/com_facebook_usersettingsfragment_login_button"
+            android:gid="@+gid/com_facebook_usersettingsfragment_login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

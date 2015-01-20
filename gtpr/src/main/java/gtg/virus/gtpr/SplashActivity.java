@@ -1,33 +1,24 @@
 package gtg.virus.gtpr;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
-
-import gtg.virus.gtpr.entities.User;
-import gtg.virus.gtpr.utils.Utilities;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.pm.Signature;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.ContactsContract;
-import android.util.Base64;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import gtg.virus.gtpr.entities.User;
 
 public class SplashActivity extends Activity {
 
@@ -133,7 +124,7 @@ public class SplashActivity extends Activity {
 			Intent i = new Intent(SplashActivity.this, NavigationalShelfListViewActivity.class);
 			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 			startActivity(i);
-			User user = Utilities.getUser(SplashActivity.this);
+			User user = User.findById(User.class , (long) 1);
 
             Map<String, String> userFromPhone = getList(SplashActivity.this);
 
@@ -142,10 +133,15 @@ public class SplashActivity extends Activity {
 
             }
 
-            user.setPhoto(userFromPhone.get(PHOTO_THUMB_URI));
-            user.setFullname(userFromPhone.get(DISPLAY_NAME));
-            Utilities.saveUser(SplashActivity.this, user);
+            if(user.getPhoto() == null) {
+                user.setPhoto(userFromPhone.get(PHOTO_THUMB_URI));
+            }
 
+            if(user.getFullname() == null) {
+                user.setFullname(userFromPhone.get(DISPLAY_NAME));
+            }
+            //Utilities.saveUser(SplashActivity.this, user);
+            user.save();
 
 /*			if(user == null){
 				// go to login
@@ -159,7 +155,7 @@ public class SplashActivity extends Activity {
 				startActivity(i);
 			}*/
 
-            finish();
+            //finish();
 		}
 		
 	}

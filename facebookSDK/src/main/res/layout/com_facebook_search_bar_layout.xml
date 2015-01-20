@@ -2,7 +2,7 @@
 
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/com_facebook_search_bar_view"
+        android:gid="@+gid/com_facebook_search_bar_view"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,7 +13,7 @@
         android:background="@color/com_facebook_picker_search_bar_background"
         >
     <EditText
-            android:id="@+id/com_facebook_picker_search_text"
+            android:gid="@+gid/com_facebook_picker_search_text"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginLeft="5dp"

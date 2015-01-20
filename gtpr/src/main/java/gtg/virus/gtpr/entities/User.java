@@ -2,11 +2,12 @@ package gtg.virus.gtpr.entities;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.orm.SugarRecord;
 
-public class User {
+public class User extends SugarRecord<User>{
 	
 
-	private long id;
+
 	
 	@SerializedName("fullname")
 	private String fullname;
@@ -23,16 +24,14 @@ public class User {
 	
 
 	/**
-	 * @param id
 	 * @param fullname
 	 * @param facebook_id
 	 * @param photo
 	 * @param status
 	 */
-	public User(long id, String fullname, String facebook_id, String photo,
+	public User(String fullname, String facebook_id, String photo,
 			int status) {
 		super();
-		this.id = id;
 		this.fullname = fullname;
 		this.facebook_id = facebook_id;
 		this.photo = photo;
@@ -49,19 +48,7 @@ public class User {
 	}
 
 
-	/**
-	 * @return the id
-	 */
-	public long getId() {
-		return id;
-	}
 
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	/**
 	 * @return the fullname

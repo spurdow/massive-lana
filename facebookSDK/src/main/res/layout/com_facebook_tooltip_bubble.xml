@@ -6,14 +6,14 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp">
   <RelativeLayout
-  	android:id="@+id/com_facebook_body_frame"
+  	android:gid="@+gid/com_facebook_body_frame"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_below="@+id/com_facebook_tooltip_bubble_view_top_pointer"
+    android:layout_below="@+gid/com_facebook_tooltip_bubble_view_top_pointer"
     android:layout_centerHorizontal="true"
     android:background="@drawable/com_facebook_tooltip_blue_background">
       <ImageView 
-        android:id="@+id/com_facebook_button_xout"
+        android:gid="@+gid/com_facebook_button_xout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -22,18 +22,18 @@
         android:src="@drawable/com_facebook_tooltip_blue_xout"
         />
       <TextView
-          android:id="@+id/com_facebook_tooltip_bubble_view_text_body"
+          android:gid="@+gid/com_facebook_tooltip_bubble_view_text_body"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_alignParentTop="true"
-          android:layout_toLeftOf="@id/com_facebook_button_xout"
+          android:layout_toLeftOf="@gid/com_facebook_button_xout"
           android:layout_alignParentLeft="true"
           android:padding="10dp"
           style="@style/tooltip_bubble_text"
           />
   </RelativeLayout>
   <ImageView
-      android:id="@+id/com_facebook_tooltip_bubble_view_top_pointer"
+      android:gid="@+gid/com_facebook_tooltip_bubble_view_top_pointer"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_alignParentTop="true"
@@ -42,12 +42,12 @@
       android:src="@drawable/com_facebook_tooltip_blue_topnub"
       />
   <ImageView
-      android:id="@+id/com_facebook_tooltip_bubble_view_bottom_pointer"
+      android:gid="@+gid/com_facebook_tooltip_bubble_view_bottom_pointer"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center_horizontal|bottom"
       android:layout_centerHorizontal="true"
-      android:layout_below="@id/com_facebook_body_frame"
+      android:layout_below="@gid/com_facebook_body_frame"
       android:layout_marginTop="-13dp"
       android:src="@drawable/com_facebook_tooltip_blue_bottomnub"
       />
