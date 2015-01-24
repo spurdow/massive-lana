@@ -121,39 +121,40 @@ public class SplashActivity extends Activity {
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
-			Intent i = new Intent(SplashActivity.this, NavigationalShelfListViewActivity.class);
+			/*Intent i = new Intent(SplashActivity.this, NavigationalShelfListViewActivity.class);
 			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-			startActivity(i);
+			startActivity(i);*/
 			User user = User.findById(User.class , (long) 1);
 
             Map<String, String> userFromPhone = getList(SplashActivity.this);
 
-            if(user == null){
-                user = new User();
 
-            }
 
-            if(user.getPhoto() == null) {
+
+            if(user != null && user.getPhoto() == null) {
                 user.setPhoto(userFromPhone.get(PHOTO_THUMB_URI));
+                user.save();
             }
 
-            if(user.getFullname() == null) {
+            if(user != null && user.getFullname() == null) {
                 user.setFullname(userFromPhone.get(DISPLAY_NAME));
+                user.save();
             }
             //Utilities.saveUser(SplashActivity.this, user);
-            user.save();
 
-/*			if(user == null){
+
+
+			if(user == null){
 				// go to login
-				Intent i = new Intent(SplashActivity.this,  LoginActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-				startActivity(i);
+				Intent login = new Intent(SplashActivity.this,  LoginActivity.class);
+				/*login.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);*/
+				startActivity(login);
 			}else{
 				// go to main
-				Intent i = new Intent(SplashActivity.this,  NavigationalShelfListViewActivity.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-				startActivity(i);
-			}*/
+				Intent main = new Intent(SplashActivity.this,  NavigationalShelfListViewActivity.class);
+				/*i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);*/
+				startActivity(main);
+			}
 
             //finish();
 		}

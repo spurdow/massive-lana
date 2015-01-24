@@ -1,11 +1,11 @@
 package gtg.virus.gtpr.entities;
 
-import gtg.virus.gtpr.R;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import android.view.View;
+import gtg.virus.gtpr.R;
 
 public class Shelf {
 	
@@ -16,9 +16,7 @@ public class Shelf {
 	public final static int MAX = 3;
 
 	private View mView = null;
-	/**
-	 * @param books
-	 */
+
 	public Shelf() {
 		super();
 		this.books = new ArrayList<PBook>();

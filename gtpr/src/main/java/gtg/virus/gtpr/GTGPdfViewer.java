@@ -1,29 +1,27 @@
 package gtg.virus.gtpr;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+import android.widget.TextView;
+
 import com.google.gson.Gson;
 import com.radaee.pdf.Document;
-import com.radaee.pdf.Global;
 import com.radaee.pdf.Page.Annotation;
 import com.radaee.reader.PDFReader;
 import com.radaee.reader.PDFReader.PDFReaderListener;
 import com.radaee.view.PDFVPage;
 
 import gtg.virus.gtpr.entities.PBook;
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import static gtg.virus.gtpr.utils.Utilities.*;
+
+import static gtg.virus.gtpr.utils.Utilities.PIN_EXTRA_PBOOK;
 
 public class GTGPdfViewer extends AbstractViewer implements PDFReaderListener , AbstractViewer.OnActionBarItemClick{
 
 	private static final String TAG = GTGPdfViewer.class.getSimpleName();
 
 	private Document mDoc = new Document();
-	
+
 	private PDFReader mReader = null;
 
 

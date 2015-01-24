@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.orm.SugarRecord;
 
+
 public class User extends SugarRecord<User>{
 	
 
