@@ -59,9 +59,9 @@ public class AudioListView extends ActionBarActivity implements AudioListAdapter
      * its Handler as appropriate).  You can use this method for any items
      * for which you would like to do processing without those other
      * facilities.
-     * <p/>
-     * <p>Derived classes should call through to the base class for it to
-     * perform the default menu handling.</p>
+     * <mPaint/>
+     * <mPaint>Derived classes should call through to the base class for it to
+     * perform the default menu handling.</mPaint>
      *
      * @param item The menu item that was selected.
      * @return boolean Return false to allow normal menu processing to

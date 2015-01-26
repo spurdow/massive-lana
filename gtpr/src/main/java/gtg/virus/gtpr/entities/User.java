@@ -8,8 +8,6 @@ import com.orm.SugarRecord;
 public class User extends SugarRecord<User>{
 	
 
-
-	
 	@SerializedName("fullname")
 	private String fullname;
 	

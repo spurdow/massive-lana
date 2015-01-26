@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -18,12 +17,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import gtg.virus.gtpr.entities.PBook;
+import gtg.virus.gtpr.utils.color.ColorPickerDialog;
 
-public abstract class AbstractViewer extends ActionBarActivity{
+public abstract class AbstractViewer extends ActionBarActivity implements ColorPickerDialog.OnColorChangedListener {
 
     protected PBook mBook;
 
@@ -31,6 +28,21 @@ public abstract class AbstractViewer extends ActionBarActivity{
 
     protected int mPageCount = 0;
 
+    protected ColorPickerDialog mColorDialog=null;
+
+    protected ViewerState mState = ViewerState.Normal;
+
+    @Override
+    public void colorChanged(String key, int color) {
+        mPaint.setColor(color);
+    }
+
+    public enum ViewerState{
+        Normal,
+        Drawing,
+        SetAlarm,
+        PdfDetails,
+    }
 
     protected OnActionBarItemClick mAbsClickListener ;
 
@@ -60,6 +72,9 @@ public abstract class AbstractViewer extends ActionBarActivity{
         initializeResources(savedInstanceState);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mColorDialog = new ColorPickerDialog(this , this , "colorKey" , mInitialColor , mDefaultColor);
+
     }
 
 
@@ -73,24 +88,29 @@ public abstract class AbstractViewer extends ActionBarActivity{
     int sx = -1;
     int sy = -1;
     Rect r = new Rect();
+
+    Paint mPaint = new Paint(){{
+        setAntiAlias(true);
+        setDither(true);
+        setColor(mInitialColor);
+        setStyle(Paint.Style.STROKE);
+        setStrokeJoin(Paint.Join.ROUND);
+        setStrokeCap(Paint.Cap.ROUND);
+        setStrokeWidth(5);
+    }};
+
     private boolean editmode = false;
 
     private DrawView mDraw;
 
+    private int mInitialColor = Color.BLACK;
+    private int mDefaultColor = Color.WHITE;
+
     private class DrawView extends View {
 
         private final String TAG = DrawView.class.getSimpleName();
-        Rect r = new Rect();
 
-        Paint p = new Paint(){{
-            setAntiAlias(true);
-            setDither(true);
-            setColor(Color.BLACK);
-            setStyle(Paint.Style.STROKE);
-            setStrokeJoin(Paint.Join.ROUND);
-            setStrokeCap(Paint.Cap.ROUND);
-            setStrokeWidth(5);
-        }};
+
 
         Path path = new Path();
 
@@ -103,17 +123,17 @@ public abstract class AbstractViewer extends ActionBarActivity{
 
 
 
-            canvas.drawPoint(sx , sy , p);
+            canvas.drawPoint(sx , sy , mPaint);
 
             if(started){
                 path.lineTo(sx , sy);
 
                 Log.w(TAG , sx + " " + sy);
 
-                canvas.drawPath(path , p);
+                canvas.drawPath(path , mPaint);
             }else{
                 path.reset();
-                canvas.drawPath(path , p);
+                canvas.drawPath(path , mPaint);
             }
 
 
@@ -142,7 +162,9 @@ public abstract class AbstractViewer extends ActionBarActivity{
 
             case R.id.opt_menu_edit:
                 ViewGroup vg = (ViewGroup)  findViewById(R.id.parent_view_group);
-                if(!editmode){
+
+                if(mState == ViewerState.Normal){
+                    mColorDialog.show();
                     // create doodle
 
                     mDraw  = new DrawView(this);
@@ -175,8 +197,9 @@ public abstract class AbstractViewer extends ActionBarActivity{
                     vg.addView(mDraw);
 
 
-                    editmode = true;
+                    mState = ViewerState.Drawing;
                 }else{
+                    mColorDialog.dismiss();
                     //erase doodle
                     if(mDraw != null)
                         vg.removeView(mDraw);
@@ -185,7 +208,7 @@ public abstract class AbstractViewer extends ActionBarActivity{
                     sy = -1;
                     r = new Rect();
 
-                    editmode = false;
+                    mState = ViewerState.Normal;
                 }
 
 

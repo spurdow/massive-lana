@@ -31,4 +31,5 @@ dependencies {
         exclude group: 'com.google.android', module: 'support-v4'
     }
     compile 'com.joanzapata.pdfview:android-pdfview:1.0.+@aar'
+    compile project(':pr')
 }

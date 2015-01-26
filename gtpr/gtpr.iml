@@ -99,8 +99,8 @@
     <orderEntry type="library" exported="" name="facebook-android-sdk-3.22.0" level="project" />
     <orderEntry type="library" exported="" name="picasso-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="android-pdfview-1.0.2" level="project" />
+    <orderEntry type="module" module-name="pr" exported="" />
     <orderEntry type="module" module-name="aFileChooser" exported="" />
-    <orderEntry type="module" module-name="pr" />
   </component>
 </module>
 
