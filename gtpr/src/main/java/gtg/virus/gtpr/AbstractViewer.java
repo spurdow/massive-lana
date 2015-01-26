@@ -2,6 +2,7 @@ package gtg.virus.gtpr;
 
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,7 +10,6 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -85,8 +85,8 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
         return super.onCreateOptionsMenu(menu);
     }
 
-    int sx = -1;
-    int sy = -1;
+    int sx = Integer.MAX_VALUE;
+    int sy = Integer.MAX_VALUE;
     Rect r = new Rect();
 
     Paint mPaint = new Paint(){{
@@ -99,56 +99,106 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
         setStrokeWidth(5);
     }};
 
-    private boolean editmode = false;
+
 
     private DrawView mDraw;
 
     private int mInitialColor = Color.BLACK;
     private int mDefaultColor = Color.WHITE;
 
-    private class DrawView extends View {
+    public enum CanvasState{
+        None,
+        Down,
+        Moving
+    }
 
-        private final String TAG = DrawView.class.getSimpleName();
-
-
-
-        Path path = new Path();
-
-        public DrawView(Context context) {
-            super(context);
-        }
-
-        public void onDraw(Canvas canvas){
-            super.onDraw(canvas);
+    private CanvasState canvasState = CanvasState.None;
 
 
+        public class DrawView extends View {
 
-            canvas.drawPoint(sx , sy , mPaint);
+            public int width;
+            public  int height;
+            private Bitmap  mBitmap;
+            private Canvas  mCanvas;
+            private Path    mPath;
+            private Paint   mBitmapPaint;
+            Context context;
+            private Paint circlePaint;
+            private Path circlePath;
 
-            if(started){
-                path.lineTo(sx , sy);
+            public DrawView(Context c) {
+                super(c);
+                context=c;
+                mPath = new Path();
+                mBitmapPaint = new Paint(Paint.DITHER_FLAG);
+                circlePaint = new Paint();
+                circlePath = new Path();
+                circlePaint.setAntiAlias(true);
+                circlePaint.setColor(Color.BLUE);
+                circlePaint.setStyle(Paint.Style.STROKE);
+                circlePaint.setStrokeJoin(Paint.Join.MITER);
+                circlePaint.setStrokeWidth(4f);
 
-                Log.w(TAG , sx + " " + sy);
 
-                canvas.drawPath(path , mPaint);
-            }else{
-                path.reset();
-                canvas.drawPath(path , mPaint);
+            }
+
+            @Override
+            protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+                super.onSizeChanged(w, h, oldw, oldh);
+
+                mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+                mCanvas = new Canvas(mBitmap);
+
+            }
+            @Override
+            protected void onDraw(Canvas canvas) {
+                super.onDraw(canvas);
+
+                canvas.drawBitmap( mBitmap, 0, 0, mBitmapPaint);
+
+                canvas.drawPath( mPath,  mPaint);
+
+                canvas.drawPath( circlePath,  circlePaint);
+            }
+
+            private float mX, mY;
+            private static final float TOUCH_TOLERANCE = 4;
+
+            public void touch_start(float x, float y) {
+                mPath.reset();
+                mPath.moveTo(x, y);
+                mX = x;
+                mY = y;
+            }
+            public void touch_move(float x, float y) {
+                float dx = Math.abs(x - mX);
+                float dy = Math.abs(y - mY);
+                if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
+                    mPath.quadTo(mX, mY, (x + mX)/2, (y + mY)/2);
+                    mX = x;
+                    mY = y;
+
+                    circlePath.reset();
+                    circlePath.addCircle(mX, mY, 30, Path.Direction.CW);
+                }
+            }
+            public void touch_up() {
+                mPath.lineTo(mX, mY);
+                circlePath.reset();
+                // commit the path to our offscreen
+                mCanvas.drawPath(mPath,  mPaint);
+                // kill this so we don't double draw
+                mPath.reset();
             }
 
 
-
-
-
-
-            Log.w(TAG, "Drawing...");
         }
 
 
 
 
 
-    }
     private boolean started = false;
     int ctr = 0;
     private float[] points = new float[10000];
@@ -171,25 +221,23 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
                     mDraw.setOnTouchListener(new View.OnTouchListener() {
                         @Override
                         public boolean onTouch(View v, MotionEvent event) {
+                            float x = event.getX();
+                            float y = event.getY();
 
-                            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                                sx = (int) event.getX();
-                                sy = (int) event.getY();
-
-
-
-                            }else if(event.getAction()==MotionEvent.ACTION_UP){
-
-                            }else if(event.getAction()==MotionEvent.ACTION_MOVE){
-
-                                sx = (int) event.getX();
-                                sy = (int) event.getY();
-
+                            switch (event.getAction()) {
+                                case MotionEvent.ACTION_DOWN:
+                                    mDraw.touch_start(x, y);
+                                    mDraw.invalidate();
+                                    break;
+                                case MotionEvent.ACTION_MOVE:
+                                    mDraw.touch_move(x, y);
+                                    mDraw.invalidate();
+                                    break;
+                                case MotionEvent.ACTION_UP:
+                                    mDraw.touch_up();
+                                    mDraw.invalidate();
+                                    break;
                             }
-
-                            mDraw.invalidate();
-                            started  = true;
-                            Log.w("TEST" , "Painting..");
                             return true;
                         }
                     });
@@ -204,10 +252,10 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
                     if(mDraw != null)
                         vg.removeView(mDraw);
                     started = false;
-                    sx = -1;
-                    sy = -1;
+                    sx = Integer.MAX_VALUE;
+                    sy = Integer.MAX_VALUE;
                     r = new Rect();
-
+                    canvasState  = CanvasState.None;
                     mState = ViewerState.Normal;
                 }
 
