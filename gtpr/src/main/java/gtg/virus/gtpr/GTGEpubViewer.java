@@ -1,13 +1,12 @@
 package gtg.virus.gtpr;
 
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.MenuItem;
-import android.webkit.WebView;
 
+import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
 import com.google.gson.Gson;
 
 import java.io.FileInputStream;
@@ -95,22 +94,22 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         Log.w(TAG , "Fragments size " + mFragments.size());
         mAdapter = new PagerAdapter(getSupportFragmentManager() , mFragments);
 
-        mPager.setPageTransformer(false , new VerticalPageTransformer());
+        mPager.setPageTransformer(false , new CubeOutTransformer());
         mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
 
-                Log.w(TAG , "onPageScrolled " + i + " " + i2);
+                Log.w(TAG, "onPageScrolled " + i + " " + i2);
             }
 
             @Override
             public void onPageSelected(int i) {
-                Log.w(TAG , "onPageSelected");
+                Log.w(TAG, "onPageSelected");
             }
 
             @Override
             public void onPageScrollStateChanged(int i) {
-                Log.w(TAG , "onPageScrollStateChanged");
+                Log.w(TAG, "onPageScrollStateChanged");
             }
         });
         mPager.setAdapter(mAdapter);

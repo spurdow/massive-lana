@@ -3,9 +3,6 @@ package gtg.virus.gtpr;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-/**
- * Created by DavidLuvelleJoseph on 1/25/2015.
- */
 public class GTGPdfView2 extends AbstractViewer {
     @Override
     protected int getContentViewResId() {

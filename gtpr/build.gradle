@@ -27,6 +27,7 @@ dependencies {
     compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
     compile 'com.commonsware.cwac:merge:1.0.2'
     compile 'com.facebook.android:facebook-android-sdk:3.22.0'
+    compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.0.0@aar'
     compile('de.keyboardsurfer.android.widget:crouton:1.8.4@aar') {
         exclude group: 'com.google.android', module: 'support-v4'
     }
