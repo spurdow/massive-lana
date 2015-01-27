@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
+import com.ToxicBakery.viewpager.transforms.FlipHorizontalTransformer;
 import com.google.gson.Gson;
 
 import java.io.FileInputStream;
@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.castorflex.android.verticalviewpager.VerticalViewPager;
 import gtg.virus.gtpr.adapters.PagerAdapter;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.fragment_pages.WebPageFragment;
@@ -29,7 +28,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
     private final static String TAG = GTGEpubViewer.class.getSimpleName();
 
-    private VerticalViewPager mPager;
+    private ViewPager mPager;
 
     private PagerAdapter mAdapter;
 
@@ -45,7 +44,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
     @Override
     protected void initializeResources(Bundle saveInstanceState) {
-        mPager = (VerticalViewPager) findViewById(R.id.pager);
+        mPager = (ViewPager) findViewById(R.id.pager);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
@@ -94,8 +93,8 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         Log.w(TAG , "Fragments size " + mFragments.size());
         mAdapter = new PagerAdapter(getSupportFragmentManager() , mFragments);
 
-        mPager.setPageTransformer(false , new CubeOutTransformer());
-        mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mPager.setPageTransformer(true , new FlipHorizontalTransformer());
+  /*      mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
 
@@ -111,7 +110,8 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
             public void onPageScrollStateChanged(int i) {
                 Log.w(TAG, "onPageScrollStateChanged");
             }
-        });
+        });*/
+
         mPager.setAdapter(mAdapter);
 
     }
