@@ -15,5 +15,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/epub_web_view"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="right|top" />
+
+    <ToggleButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/toggle_bookmark"
+        android:layout_gravity="right|top"
+        android:background="@drawable/bookmark_toggle_selector"
+        android:layout_margin="10dp"
+        android:textOn=""
+        android:textOff=""
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_centerVertical="true"/>
 </FrameLayout>

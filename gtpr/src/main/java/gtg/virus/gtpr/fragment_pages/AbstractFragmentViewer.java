@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
+
 public abstract class AbstractFragmentViewer extends Fragment {
 
     public final static String DATA_FILTER = "_data_filter";
@@ -23,12 +25,18 @@ public abstract class AbstractFragmentViewer extends Fragment {
 
     public abstract void overrideActions(Bundle savedInstanceState);
 
+    public abstract boolean useButterKnife();
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(getResId() , container , false);
+        if(useButterKnife()){
+            ButterKnife.inject(this , v);
+        }
         ///////////////////////////////////////////////////////////////////////////////////////
         initializeView(v , inflater , container , savedInstanceState);
         ///////////////////////////////////////////////////////////////////////////////////////
+
         return v;
     }
 
@@ -45,5 +53,13 @@ public abstract class AbstractFragmentViewer extends Fragment {
         ////////////////////////////////////////////////////////////////////////////////////////
         overrideActions(savedInstanceState);
         ///////////////////////////////////////////////////////////////////////////////////////
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if(useButterKnife()) {
+            ButterKnife.reset(this);
+        }
     }
 }

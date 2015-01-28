@@ -6,13 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import butterknife.InjectView;
 import gtg.virus.gtpr.R;
 
 public class EpubCoverImageFragment extends AbstractFragmentViewer {
 
     public final static String TAG = EpubCoverImageFragment.class.getSimpleName();
 
-    private ImageView mImageView;
+    @InjectView(R.id.epub_fragment_cover_imageview)
+    protected ImageView mImageView;
 
     public static EpubCoverImageFragment newInstance(final String data , final String path){
         EpubCoverImageFragment mFrag = new EpubCoverImageFragment();
@@ -33,7 +35,7 @@ public class EpubCoverImageFragment extends AbstractFragmentViewer {
 
     @Override
     public void initializeView(View v, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mImageView = (ImageView) v.findViewById(R.id.epub_fragment_cover_imageview);
+        //mImageView = (ImageView) v.findViewById(R.id.epub_fragment_cover_imageview);
 
         setHasOptionsMenu(true);
     }
@@ -41,6 +43,11 @@ public class EpubCoverImageFragment extends AbstractFragmentViewer {
     @Override
     public void overrideActions(Bundle savedInstanceState) {
         mImageView.setScrollContainer(true);
+    }
+
+    @Override
+    public boolean useButterKnife() {
+        return true;
     }
 
 

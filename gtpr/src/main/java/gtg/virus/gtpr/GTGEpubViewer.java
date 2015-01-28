@@ -9,9 +9,12 @@ import android.view.MenuItem;
 import com.ToxicBakery.viewpager.transforms.FlipHorizontalTransformer;
 import com.google.gson.Gson;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +22,9 @@ import gtg.virus.gtpr.adapters.PagerAdapter;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.fragment_pages.WebPageFragment;
 import nl.siegmann.epublib.domain.Book;
+import nl.siegmann.epublib.domain.Resource;
+import nl.siegmann.epublib.domain.Spine;
+import nl.siegmann.epublib.domain.SpineReference;
 import nl.siegmann.epublib.domain.TOCReference;
 import nl.siegmann.epublib.epub.EpubReader;
 
@@ -33,6 +39,8 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
     private PagerAdapter mAdapter;
 
     private List<Fragment> mFragments;
+
+    Book epubBook = null;
 
     /**
      * @return the layout from R.
@@ -54,7 +62,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         }
 
         EpubReader epubReader = new EpubReader();
-        Book epubBook = null;
+        epubBook = null;
         try {
             epubBook = epubReader.readEpub(new FileInputStream(mBook.getPath()));
 
@@ -88,7 +96,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
         }*/
 
-        logContentsTable(epubBook.getTableOfContents().getTocReferences() , 0);
+        //logContentsTable(epubBook.getTableOfContents().getTocReferences() , 0);
 
         Log.w(TAG , "Fragments size " + mFragments.size());
         mAdapter = new PagerAdapter(getSupportFragmentManager() , mFragments);
@@ -121,6 +129,39 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         item.setTitle("View Epub Details");
     }
 
+    private void arrangeData(){
+
+        Spine spine = epubBook.getSpine();
+        List<SpineReference> spineList = spine.getSpineReferences() ;
+        int count = spineList.size();
+        String line = null;
+        String linez = null;
+        StringBuilder string = new StringBuilder();
+        for (int i = 0; count > i; i++) {
+            Resource res = spine.getResource(i);
+
+            try {
+                InputStream is = res.getInputStream();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                try {
+                    while ((line = reader.readLine()) != null) {
+                        linez =   string.append(line + "\n").toString();
+                    }
+
+                } catch (IOException e) {e.printStackTrace();}
+
+                //do something with stream
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        Log.w(TAG , "Linez => " + linez);
+        mFragments.add(WebPageFragment.newInstance(linez, mBook.getPath()));
+        /*webView.loadData(linez, "text/html", "utf-8");*/
+
+    }
+
     private void logContentsTable(List<TOCReference> tocReferences, int depth) {
         if (tocReferences == null) {
             return;
@@ -142,6 +183,8 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
             }
             logContentsTable(tocReference.getChildren(), depth + 1);
         }
+
+
     }
 
     @Override

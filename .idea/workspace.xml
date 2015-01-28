@@ -49,11 +49,21 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="linez" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="WARN" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: gtg.virus.gtpr" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtpr/src/main/res/drawable/bookmark_toggle_selector.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/AbstractFragmentViewer.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/AbstractFragmentViewer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/EpubCoverImageFragment.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/EpubCoverImageFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/facebook/android/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/facebook/android/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/gtg/virus/gtpr/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/gtg/virus/gtpr/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/res/layout/epub_fragment_layout.xml" afterPath="$PROJECT_DIR$/gtpr/src/main/res/layout/epub_fragment_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gtg.iws" />
@@ -85,11 +95,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GTGEpubViewer.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GTGEpubViewer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="2265">
-              <caret line="138" column="40" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.8742331" vertical-offset="1605" max-vertical-offset="2820">
+              <caret line="158" column="41" selection-start-line="158" selection-start-column="41" selection-end-line="158" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShelfAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/ShelfAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1973" max-vertical-offset="3600">
+              <caret line="181" column="69" selection-start-line="181" selection-start-column="69" selection-end-line="181" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/BookAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1086" max-vertical-offset="2310">
+              <caret line="153" column="40" selection-start-line="153" selection-start-column="40" selection-end-line="153" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -98,31 +128,46 @@
       <file leaf-file-name="WebPageFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="840">
-              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="546" max-vertical-offset="1110">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="e#2070#2071#0" expanded="true" />
+                <element signature="e#2112#2113#0" expanded="true" />
+                <element signature="e#2165#2166#0" expanded="true" />
+                <element signature="e#2192#2193#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractFragmentViewer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/AbstractFragmentViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="960">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="epub_fragment_layout.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="epub_fragment_layout.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/layout/epub_fragment_layout.xml">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.703704" vertical-offset="176" max-vertical-offset="555">
+              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GTGPdfView2.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGPdfView2.java">
+      <file leaf-file-name="bookmark_toggle_selector.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/drawable/bookmark_toggle_selector.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="405">
-              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+              <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -153,26 +198,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="975">
               <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="630">
-              <caret line="29" column="82" selection-start-line="29" selection-start-column="82" selection-end-line="29" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.gradle" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="150">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2105,9 +2130,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/db/ScheduleHelper.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/PBookAdapter.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/res/menu/scheduled_menu.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/db/Book.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/activity_schedule_layout.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/ScheduledBooksView.java" />
@@ -2117,7 +2139,6 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/db/ScheduledBooks.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/Utilities.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGTxtViewer.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/epub_fragment_layout.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/Help.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/menu/pdf_viewer_menu.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/txt_main_layout.xml" />
@@ -2153,8 +2174,12 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGPdfView2.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/application/PinBookApplication.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/swipe/SwipeGesture.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/epub_main_layout.xml" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/res/drawable/bookmark_toggle_selector.xml" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/epub_fragment_layout.xml" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/EpubCoverImageFragment.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/AbstractFragmentViewer.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java" />
       </list>
     </option>
@@ -2455,7 +2480,7 @@
     <property name="DEBUGGABLE_PROCESS" value="gtg.virus.gtpr" />
     <property name="SHOW_ALL_PROCESSES" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="bui&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;AbstractViewer&#9;PSI&#9;JAVA://gtg.virus.gtpr.AbstractViewer&#10;build.&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;GTG&#9;PSI&#9;JAVA://gtg.virus.gtpr.GTGEpubViewer&#10;Android&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;Splash&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java&#10;User&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/entities/User.java&#10;build&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;Web&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java&#10;activity_splas&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/layout/activity_splash.xml&#10;Androidma&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;LoginAc&#9;PSI&#9;JAVA://gtg.virus.gtpr.LoginActivity&#10;build.g&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;androidm&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml" />
+    <property name="SearchEverywhereHistoryKey" value="Adapter&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/adapters/BookAdapter.java&#10;bui&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;AbstractViewer&#9;PSI&#9;JAVA://gtg.virus.gtpr.AbstractViewer&#10;build.&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;GTG&#9;PSI&#9;JAVA://gtg.virus.gtpr.GTGEpubViewer&#10;Android&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;Splash&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java&#10;User&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/entities/User.java&#10;build&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;Web&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java&#10;activity_splas&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/layout/activity_splash.xml&#10;Androidma&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;LoginAc&#9;PSI&#9;JAVA://gtg.virus.gtpr.LoginActivity&#10;build.g&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;androidm&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="268" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.WIDTH" value="141" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="test" />
@@ -2857,7 +2882,11 @@
       <created>1422455934444</created>
       <updated>1422455934444</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="updated swipe epub reader">
+      <created>1422455959706</created>
+      <updated>1422455959706</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2867,8 +2896,10 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17222223" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39968154" sideWeight="0.5452381" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39968154" sideWeight="0.4547619" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -2876,14 +2907,14 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35191083" sideWeight="0.15714286" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2730159" sideWeight="0.50348026" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3089172" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31687897" sideWeight="0.8428571" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4156051" sideWeight="0.8428571" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960381" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936507" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26349208" sideWeight="0.4965197" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26349208" sideWeight="0.4965197" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28503186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35191083" sideWeight="0.51111114" order="16" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2891,8 +2922,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17222223" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -2979,30 +3008,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/drawable-hdpi/ic_download.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/drawable-hdpi/ic_drawer.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/drawable/button_ok_pressed.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/drawable/button_ok_unpressed.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/drawable/button_ok_selector.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
@@ -3146,13 +3151,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="593" max-vertical-offset="1800">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/BookAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="826" max-vertical-offset="2400">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -3306,6 +3304,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="773" max-vertical-offset="2370">
           <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3352,31 +3351,79 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java">
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/drawable/bookmark_toggle_selector.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="2265">
-          <caret line="138" column="40" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/EpubCoverImageFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0847881" vertical-offset="135" max-vertical-offset="735">
+          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+          <folding>
+            <element signature="e#1379#1380#0" expanded="true" />
+            <element signature="e#1406#1407#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/AbstractFragmentViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="960">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/layout/epub_fragment_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.703704" vertical-offset="176" max-vertical-offset="555">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/BookAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1086" max-vertical-offset="2310">
+          <caret line="153" column="40" selection-start-line="153" selection-start-column="40" selection-end-line="153" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/ShelfAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1973" max-vertical-offset="3600">
+          <caret line="181" column="69" selection-start-line="181" selection-start-column="69" selection-end-line="181" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/fragment_pages/WebPageFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="840">
-          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="546" max-vertical-offset="1110">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#2070#2071#0" expanded="true" />
+            <element signature="e#2112#2113#0" expanded="true" />
+            <element signature="e#2165#2166#0" expanded="true" />
+            <element signature="e#2192#2193#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/layout/epub_fragment_layout.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8742331" vertical-offset="1605" max-vertical-offset="2820">
+          <caret line="158" column="41" selection-start-line="158" selection-start-column="41" selection-end-line="158" selection-end-column="41" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
   </component>

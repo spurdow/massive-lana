@@ -9,13 +9,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.ToggleButton;
 
+import butterknife.InjectView;
+import butterknife.OnCheckedChanged;
 import gtg.virus.gtpr.R;
 
 public class WebPageFragment extends AbstractFragmentViewer {
 
     private static final String TAG = WebPageFragment.class.getSimpleName();
-    private WebView mWebView;
+
+    @InjectView(R.id.epub_web_view)
+    protected WebView mWebView;
+
+    @InjectView(R.id.toggle_bookmark)
+    protected ToggleButton mToggle;
+
+
 
     public static WebPageFragment newInstance(final String data , final String path){
         WebPageFragment mFrag = new WebPageFragment();
@@ -36,7 +46,7 @@ public class WebPageFragment extends AbstractFragmentViewer {
 
     @Override
     public void initializeView(View view, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mWebView = (WebView) view.findViewById(R.id.epub_web_view);
+
 
         mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE , null);
 
@@ -53,8 +63,19 @@ public class WebPageFragment extends AbstractFragmentViewer {
         mWebView.getSettings().setBuiltInZoomControls(true);
         mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
         mWebView.getSettings().setLoadsImagesAutomatically(true);
+        mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.loadData( data, type, encoding);
 
+    }
+
+    @OnCheckedChanged(R.id.toggle_bookmark)
+    void onBookMarked(boolean conditional){
+        Log.w(TAG , "Bookmarked!");
+    }
+
+    @Override
+    public boolean useButterKnife() {
+        return true;
     }
 
 
