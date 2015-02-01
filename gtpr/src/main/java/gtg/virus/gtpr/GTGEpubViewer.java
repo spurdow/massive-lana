@@ -15,6 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -120,6 +121,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
             }
         });*/
 
+        arrangeData();
         mPager.setAdapter(mAdapter);
 
     }
@@ -139,10 +141,26 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         StringBuilder string = new StringBuilder();
         for (int i = 0; count > i; i++) {
             Resource res = spine.getResource(i);
+            Reader rreader = null;
+            try {
+                rreader = res.getReader();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally{
+                if(rreader != null){
+                    try {
+                        rreader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        //ignore
+                    }
+                }
+            }
 
             try {
                 InputStream is = res.getInputStream();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is , "UTF-8"));
                 try {
                     while ((line = reader.readLine()) != null) {
                         linez =   string.append(line + "\n").toString();
