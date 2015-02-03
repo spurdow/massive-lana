@@ -32,9 +32,17 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
 
     protected ViewerState mState = ViewerState.Normal;
 
+    public static final String EDIT_COLOR_KEY = "edit_color_key";
+
+    public static final String EDIT_BACKGROUND_COLOR_KEY = "background_color_key";
+
+    public static final String EDIT_TEXT_COLOR_KEY = "text_color_key";
+
     @Override
     public void colorChanged(String key, int color) {
-        mPaint.setColor(color);
+        if(EDIT_COLOR_KEY.equals(key)) {
+            mPaint.setColor(color);
+        }
     }
 
     public enum ViewerState{
@@ -73,7 +81,7 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mColorDialog = new ColorPickerDialog(this , this , "colorKey" , mInitialColor , mDefaultColor);
+        mColorDialog = new ColorPickerDialog(this , this , EDIT_COLOR_KEY , mInitialColor , mDefaultColor);
 
     }
 
