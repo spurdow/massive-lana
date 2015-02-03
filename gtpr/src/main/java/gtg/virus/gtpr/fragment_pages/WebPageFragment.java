@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ToggleButton;
 
@@ -65,6 +66,7 @@ public class WebPageFragment extends AbstractFragmentViewer {
         mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
         mWebView.getSettings().setLoadsImagesAutomatically(true);
         mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.setWebChromeClient(new WebChromeClient());
         mWebView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
