@@ -65,7 +65,15 @@ public class WebPageFragment extends AbstractFragmentViewer {
         mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
         mWebView.getSettings().setLoadsImagesAutomatically(true);
         mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Log.w(TAG , "Long Click!");
+                return false;
+            }
+        });
         mWebView.loadData( data, type, encoding);
+
 
     }
 
