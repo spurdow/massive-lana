@@ -50,6 +50,7 @@ public class WebPageFragment extends AbstractFragmentViewer {
 
         mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE , null);
 
+
         setHasOptionsMenu(true);
     }
 
