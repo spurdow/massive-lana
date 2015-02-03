@@ -16,13 +16,13 @@ public final class R {
 		public static final int list_padding = 0x7f090032;
 	}
 	public static final class drawable {
-		public static final int ic_chooser = 0x7f0200ab;
-		public static final int ic_file = 0x7f0200c0;
-		public static final int ic_folder = 0x7f0200c1;
-		public static final int ic_provider = 0x7f0200d5;
+		public static final int ic_chooser = 0x7f0200af;
+		public static final int ic_file = 0x7f0200c4;
+		public static final int ic_folder = 0x7f0200c5;
+		public static final int ic_provider = 0x7f0200d9;
 	}
 	public static final class layout {
-		public static final int file = 0x7f030038;
+		public static final int file = 0x7f03003a;
 	}
 	public static final class string {
 		public static final int choose_file = 0x7f0b0012;
@@ -32,7 +32,7 @@ public final class R {
 		public static final int storage_removed = 0x7f0b004b;
 	}
 	public static final class style {
-		public static final int fileChooserName = 0x7f0c0097;
+		public static final int fileChooserName = 0x7f0c00a2;
 	}
 	public static final class xml {
 		public static final int mimetypes = 0x7f050001;
