@@ -1,120 +1,43 @@
 package gtg.virus.gtpr.entities;
 
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
-import com.orm.SugarRecord;
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
+
+@Table(name = "user" , id = "_id")
+public class User extends Model {
+
+    @Column()
+    public long remote_id;
+    @Column()
+    public String first_name;
+    @Column()
+    public String middle_name;
+    @Column()
+    public String last_name;
+    @Column()
+    public String picture;
+    @Column()
+    public String username;
+    @Column()
+    public String password;
+    @Column()
+    public String email;
+    @Column()
+    public int type;
+    @Column()
+    public String key;
+    @Column()
+    public int status;
+
+    public User() {
+    }
 
 
-public class User extends SugarRecord<User>{
-	
+    public String getFullName(){ return first_name + " " + last_name;}
 
-	@SerializedName("fullname")
-	private String fullname;
-	
-	@SerializedName("facebook_id")
-	private String facebook_id;
-	
-	@SerializedName("photo")
-	private String photo;
-	
-	@SerializedName("status")
-	private int status;
-	
-	
-
-	/**
-	 * @param fullname
-	 * @param facebook_id
-	 * @param photo
-	 * @param status
-	 */
-	public User(String fullname, String facebook_id, String photo,
-			int status) {
-		super();
-		this.fullname = fullname;
-		this.facebook_id = facebook_id;
-		this.photo = photo;
-		this.status = status;
-	}
-
-	
-	/**
-	 * 
-	 */
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
-
-
-	/**
-	 * @return the fullname
-	 */
-	public String getFullname() {
-		return fullname;
-	}
-
-	/**
-	 * @param fullname the fullname to set
-	 */
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
-	}
-
-	/**
-	 * @return the facebook_id
-	 */
-	public String getFacebook_id() {
-		return facebook_id;
-	}
-
-	/**
-	 * @param facebook_id the facebook_id to set
-	 */
-	public void setFacebook_id(String facebook_id) {
-		this.facebook_id = facebook_id;
-	}
-
-	/**
-	 * @return the photo
-	 */
-	public String getPhoto() {
-		return photo;
-	}
-
-	/**
-	 * @param photo the photo to set
-	 */
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-
-	/**
-	 * @return the status
-	 */
-	public int getStatus() {
-		return status;
-	}
-
-	/**
-	 * @param status the status to set
-	 */
-	public void setStatus(int status) {
-		this.status = status;
-	}
-
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return new Gson().toJson(this, User.class);
-	}
-	
-	
-	
+    public static User getUser(){
+        return new Select().from(User.class).executeSingle();
+    }
 }

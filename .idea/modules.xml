@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/gtpr/gtpr.iml" filepath="$PROJECT_DIR$/gtpr/gtpr.iml" />
       <module fileurl="file://$PROJECT_DIR$/massive-lana.iml" filepath="$PROJECT_DIR$/massive-lana.iml" />
       <module fileurl="file://$PROJECT_DIR$/pr/pr.iml" filepath="$PROJECT_DIR$/pr/pr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webViewMarker/webViewMarker.iml" filepath="$PROJECT_DIR$/webViewMarker/webViewMarker.iml" />
     </modules>
   </component>
 </project>

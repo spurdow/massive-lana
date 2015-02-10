@@ -1,14 +1,16 @@
 package gtg.virus.gtpr.application;
 
-import com.orm.SugarApp;
 
+import android.app.Application;
 
-public class PinBookApplication extends SugarApp {
+import com.activeandroid.ActiveAndroid;
+
+public class PinBookApplication extends Application {
 
 
     @Override
     public void onCreate() {
         super.onCreate();
-
+        ActiveAndroid.initialize(this);
     }
 }

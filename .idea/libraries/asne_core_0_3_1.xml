@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="asne-core-0.3.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/com.github.asne/asne-core/0.3.1/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/com.github.asne/asne-core/0.3.1/libs/signpost-core-1.2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/com.github.asne/asne-core/0.3.1/libs/signpost-commonshttp4-1.2.1.1.jar!/" />
+      <root url="file://$PROJECT_DIR$/gtpr/build/intermediates/exploded-aar/com.github.asne/asne-core/0.3.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

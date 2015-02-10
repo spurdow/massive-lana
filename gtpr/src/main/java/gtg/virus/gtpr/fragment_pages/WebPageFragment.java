@@ -8,9 +8,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.bossturban.webviewmarker.TextSelectionSupport;
 
 import butterknife.InjectView;
 import butterknife.OnCheckedChanged;
@@ -25,6 +28,9 @@ public class WebPageFragment extends AbstractFragmentViewer {
 
     @InjectView(R.id.toggle_bookmark)
     protected ToggleButton mToggle;
+
+    protected TextSelectionSupport mTextSelectionSupport;
+
 
 
 
@@ -49,6 +55,9 @@ public class WebPageFragment extends AbstractFragmentViewer {
     public void initializeView(View view, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
+        mTextSelectionSupport = TextSelectionSupport.support(getActivity() , mWebView);
+
+
         mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE , null);
 
 
@@ -61,19 +70,51 @@ public class WebPageFragment extends AbstractFragmentViewer {
         Log.w(TAG , "Path " + baseUrl );
         final String type = "text/html";
         final String encoding = "utf-8";
+
+        mTextSelectionSupport.setSelectionListener(new TextSelectionSupport.SelectionListener() {
+            @Override
+            public void startSelection() {
+
+            }
+
+            @Override
+            public void selectionChanged(String text) {
+                Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void endSelection() {
+
+            }
+        });
+
+        mWebView.setWebViewClient(new WebViewClient() {
+            public void onScaleChanged(WebView view, float oldScale, float newScale) {
+                mTextSelectionSupport.onScaleChanged(oldScale, newScale);
+            }
+        });
         mWebView.getSettings().setDisplayZoomControls(true);
         mWebView.getSettings().setBuiltInZoomControls(true);
-        mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
-        mWebView.getSettings().setLoadsImagesAutomatically(true);
+
+/*        mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
+        mWebView.getSettings().setLoadsImagesAutomatically(true);*/
         mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.setWebChromeClient(new WebChromeClient());
+/*        mWebView.setWebChromeClient(new WebChromeClient());
         mWebView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 Log.w(TAG , "Long Click!");
                 return false;
             }
-        });
+        });*/
+
+ /*       // we dont do url linking as of now
+        mWebView.setWebViewClient(new WebViewClient(){
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return false;
+            }
+        });*/
         mWebView.loadData( data, type, encoding);
 
 

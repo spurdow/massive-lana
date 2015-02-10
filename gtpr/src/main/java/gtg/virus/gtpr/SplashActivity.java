@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.ContactsContract;
@@ -65,9 +64,7 @@ public class SplashActivity extends Activity {
             Log.e("exception", e.toString());
         }
 */        
-        mTextView  = (TextView) findViewById(R.id.txt_title_one);
-        Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/Pacifico.ttf");  
-        mTextView.setTypeface(tf,Typeface.BOLD);
+
         ObjectAnimator animator = ObjectAnimator.ofFloat(mTextView, "y", 400f , 100f );
         animator.setDuration(1000);
         animator.start();
@@ -124,20 +121,20 @@ public class SplashActivity extends Activity {
 			/*Intent i = new Intent(SplashActivity.this, NavigationalShelfListViewActivity.class);
 			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 			startActivity(i);*/
-			User user = User.findById(User.class , (long) 1);
+			User user = User.getUser();
 
             Map<String, String> userFromPhone = getList(SplashActivity.this);
 
 
 
 
-            if(user != null && user.getPhoto() == null) {
-                user.setPhoto(userFromPhone.get(PHOTO_THUMB_URI));
+            if(user != null && user.picture == null) {
+                user.picture = userFromPhone.get(PHOTO_THUMB_URI);
                 user.save();
             }
 
-            if(user != null && user.getFullname() == null) {
-                user.setFullname(userFromPhone.get(DISPLAY_NAME));
+            if(user != null && user.getFullName() == null) {
+                user.first_name = userFromPhone.get(DISPLAY_NAME);
                 user.save();
             }
             //Utilities.saveUser(SplashActivity.this, user);

@@ -240,11 +240,11 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
         View profileView = this.getLayoutInflater().inflate(R.layout.menu_list_row, null);
         ImageView profilePicture = (ImageView) profileView.findViewById(R.id.img_menu_list);
         TextView userNameView = (TextView) profileView.findViewById(R.id.txt_menu_list_title);
-        final User user = User.findById(User.class , (long) 1);
+        final User user = User.getUser();
 
 
         if(user != null){
-            Picasso.with(this).load(user.getPhoto()).placeholder(R.drawable.com_facebook_profile_default_icon).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
+            Picasso.with(this).load(user.picture).placeholder(R.drawable.com_facebook_profile_default_icon).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
 
         }else{
             //Picasso.with(this).load(user.getPhoto()).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
@@ -257,8 +257,9 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 
         //imgLoader.displayImage(user.getPhoto(), profilePicture, options);
 
-        userNameView.setText(user.getFullname());
-
+        if(user != null) {
+            userNameView.setText(user.first_name + " " + user.last_name);
+        }
         mMergeAdapter.addView(profileView);
 
     }

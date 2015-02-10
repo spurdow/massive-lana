@@ -20,5 +20,9 @@
     <string name="settings_bg_color_confirm">Confirm color</string>
     <string name="settings_default_color_confirm">Default color</string>
     <string name="settings_bg_color_dialog">Color Dialog</string>
+    <string name="provide_correct_credentials">Please provide correct credentials.</string>
+    <string name="ok">Okay</string>
+    <string name="retry">Retry?</string>
+    <string name="success">Success</string>
 
 </resources>
