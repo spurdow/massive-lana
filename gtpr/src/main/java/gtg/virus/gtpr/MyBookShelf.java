@@ -31,6 +31,7 @@ import gtg.virus.gtpr.base.BaseFragment;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.utils.Utilities;
 
+import static gtg.virus.gtpr.utils.Utilities.PIN_EXTRA_PBOOK;
 import static gtg.virus.gtpr.utils.Utilities.STORAGE_SUFFIX;
 import static gtg.virus.gtpr.utils.Utilities.bookCache;
 
@@ -58,6 +59,7 @@ public class MyBookShelf extends BaseFragment implements ShelfAdapter.OnViewClic
         mShelfAdapter = new ShelfAdapter(getActivity());
         mListView.setAdapter(mShelfAdapter);
         mShelfAdapter.setmClickListener(this);
+
     }
 
     @Override
@@ -161,5 +163,14 @@ public class MyBookShelf extends BaseFragment implements ShelfAdapter.OnViewClic
     @Override
     public void bookClick(PBook book, int position) {
         Utilities.makeText(getActivity() , "Position " + position);
+        if(Utilities.isEpub(book.getPath())){
+            Intent intent = new Intent(getActivity(), GTGEpubViewer.class);
+            intent.putExtra(PIN_EXTRA_PBOOK, book.toString());
+            getActivity().startActivity(intent);
+
+            Log.w(TAG , "Starting GTGEpubViewer " + book.toString() );
+        }
     }
+
+
 }

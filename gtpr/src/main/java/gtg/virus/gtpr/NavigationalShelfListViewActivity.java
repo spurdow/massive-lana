@@ -33,6 +33,7 @@ import java.util.concurrent.Executors;
 import gtg.virus.gtpr.adapters.MenuAdapter;
 import gtg.virus.gtpr.entities.Menu;
 import gtg.virus.gtpr.entities.User;
+import gtg.virus.gtpr.retrofit.Constants;
 import gtg.virus.gtpr.service.AudioService;
 
 import static gtg.virus.gtpr.utils.Utilities.bookCache;
@@ -170,12 +171,12 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
         Fragment frag = null;
         switch(position){
             case 0 :
-
+                //getSupportFragmentManager().beginTransaction().remove()
                 break;
             case 1 : break;
             case 2 :
                 frag = new MyBookShelf();
-
+                setTitle(getString(R.string.mybookshelf));
                 break;
             case 3 : break;
             case 4 :
@@ -211,16 +212,19 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 
         userNameView.setText(user.getFullName());
 
-        if(user != null){
+        if(user != null && user.picture != null){
             Picasso.with(this).load(user.picture).placeholder(R.drawable.com_facebook_profile_default_icon).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
 
-        }else{
+        }else if(user != null && user.image != null){
             //Picasso.with(this).load(user.getPhoto()).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+/*            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
                 profileView.setBackground(getResources().getDrawable(R.drawable.com_facebook_profile_default_icon));
             }else{
                 profileView.setBackgroundResource(R.drawable.com_facebook_profile_default_icon);
-            }
+            }*/
+
+            Picasso.with(this).load(Constants.SERVER + user.image).placeholder(R.drawable.com_facebook_profile_default_icon).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
+
         }
 
         //imgLoader.displayImage(user.getPhoto(), profilePicture, options);
@@ -334,7 +338,11 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 
         Global.RemoveTmp();
 	}
-	
+
+
+    public void setPageTitle(String title){
+        getSupportActionBar().setTitle(title);
+    }
 
 	
 }

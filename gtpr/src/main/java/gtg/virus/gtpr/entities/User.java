@@ -30,6 +30,8 @@ public class User extends Model {
     public String key;
     @Column()
     public int status;
+    @Column()
+    public String image;
 
     public User() {
     }

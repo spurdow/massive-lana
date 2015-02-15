@@ -25,5 +25,6 @@
     <string name="retry">Retry?</string>
     <string name="success">Success</string>
     <string name="provide_correct_ebook">Please provide correct ebook</string>
+    <string name="mybookshelf">My Book Shelf</string>
 
 </resources>

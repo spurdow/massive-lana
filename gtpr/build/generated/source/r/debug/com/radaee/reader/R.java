@@ -69,16 +69,16 @@ public final class R {
 	}
 	public static final class string {
 		public static final int app_name = 0x7f0b0011;
-		public static final int s_act = 0x7f0b003f;
-		public static final int s_edit = 0x7f0b0040;
-		public static final int s_end = 0x7f0b0041;
-		public static final int s_find = 0x7f0b0042;
-		public static final int s_ink = 0x7f0b0043;
-		public static final int s_next = 0x7f0b0044;
-		public static final int s_prev = 0x7f0b0045;
-		public static final int s_rect = 0x7f0b0046;
-		public static final int s_remove = 0x7f0b0047;
-		public static final int s_save = 0x7f0b0048;
-		public static final int s_saveas = 0x7f0b0049;
+		public static final int s_act = 0x7f0b0040;
+		public static final int s_edit = 0x7f0b0041;
+		public static final int s_end = 0x7f0b0042;
+		public static final int s_find = 0x7f0b0043;
+		public static final int s_ink = 0x7f0b0044;
+		public static final int s_next = 0x7f0b0045;
+		public static final int s_prev = 0x7f0b0046;
+		public static final int s_rect = 0x7f0b0047;
+		public static final int s_remove = 0x7f0b0048;
+		public static final int s_save = 0x7f0b0049;
+		public static final int s_saveas = 0x7f0b004a;
 	}
 }

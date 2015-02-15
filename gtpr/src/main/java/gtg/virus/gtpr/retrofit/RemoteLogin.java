@@ -13,7 +13,6 @@ public class RemoteLogin {
     private String status;
     @SerializedName("message")
     private String message;
-
     @SerializedName("entities")
     private Entity entity;
 
