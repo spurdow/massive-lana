@@ -1,17 +1,7 @@
 package gtg.virus.gtpr.adapters;
 
-import gtg.virus.gtpr.R;
-import gtg.virus.gtpr.entities.Menu;
-
-import java.util.List;
-
-
-
-
-
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
@@ -21,14 +11,19 @@ import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class TitleListAdapter extends AbstractListAdapter<Menu> {
+import java.util.List;
+
+import gtg.virus.gtpr.R;
+import gtg.virus.gtpr.entities.Menu;
+
+public class MenuAdapter extends AbstractListAdapter<Menu> {
 	
 	
 	private LayoutInflater mInflater = null;
 
     public boolean isMenu = true;
 
-	public TitleListAdapter(Context context, List<Menu> lists) {
+	public MenuAdapter(Context context, List<Menu> lists) {
 		super(context, lists);
 		// TODO Auto-generated constructor stub
 		mInflater = LayoutInflater.from(context);

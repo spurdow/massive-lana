@@ -15,6 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import gtg.virus.gtpr.R;
+import gtg.virus.gtpr.aaentity.AABook;
 import gtg.virus.gtpr.adapters.ShelfAdapter;
 import gtg.virus.gtpr.entities.PBook;
 import nl.siegmann.epublib.domain.Author;
@@ -44,8 +45,6 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
 		this.mContext = mContext;
 		this.mAdapter = mAdapter;
 	}
-
-
 
 	@Override
 	protected PBook doInBackground(String... params) {
@@ -145,22 +144,33 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
 		if(result == null) return;
 		super.onPostExecute(result);
 
+/*
         BookHelper mh = new BookHelper(mContext);
         gtg.virus.gtpr.db.Book b = mh.getBook(result.getPath());
+*/
+
+        AABook newBook = AABook.find(result.getPath());
+
+        if(newBook == null){
 
 
-        if(b == null){
-            b = new gtg.virus.gtpr.db.Book();
-            b.setTitle(result.getTitle());
-            b.setPath(result.getPath());
-            b.setStatus(1);
+            newBook = new AABook();
+            newBook.title = result.getTitle();
+            newBook.path = result.getPath();
+            newBook.status = 1;
 
-            mh.add(b);
+            long id = newBook.save();
+            if(id > 0){
+                mAdapter.addBook(result);
+                bookCache.put(result.getFilename(), result);
+            }
+
+        }else{
+            mAdapter.addBook(result);
+            bookCache.put(result.getFilename(), result);
         }
 
-        mAdapter.addBook(result);
 
-        bookCache.put(result.getFilename(), result);
 
 		if(mDoc != null)
 			mDoc.Close();

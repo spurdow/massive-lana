@@ -44,7 +44,7 @@
                 android:ems="10"
                 android:id="@+id/username"
                 android:layout_gravity="center_horizontal"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textIsSelectable="false"
                 android:layout_margin="20dp"
                 android:hint="Username" />
@@ -68,7 +68,7 @@
                 android:ems="10"
                 android:id="@+id/password"
                 android:layout_gravity="center_horizontal"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textIsSelectable="false"
                 android:layout_margin="20dp"
                 android:hint="Password" />
@@ -89,7 +89,7 @@
             android:text="Login"
             android:id="@+id/button"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="50dp"
             android:textColor="@color/fbutton_color_clouds"
             fbutton:buttonColor="@color/fbutton_color_orange"
             fbutton:shadowColor="@color/fbutton_color_carrot"
@@ -113,7 +113,7 @@
         <Button
             android:id="@+id/fb_button"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:layout_margin="30dp"

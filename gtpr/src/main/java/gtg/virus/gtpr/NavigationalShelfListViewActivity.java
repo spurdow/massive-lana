@@ -1,6 +1,7 @@
 package gtg.virus.gtpr;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -27,6 +28,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.activeandroid.ActiveAndroid;
 import com.commonsware.cwac.merge.MergeAdapter;
 import com.ipaulpro.afilechooser.utils.FileUtils;
 import com.radaee.pdf.Document;
@@ -47,8 +49,8 @@ import java.util.concurrent.Executors;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 import gtg.virus.gtpr.aaentity.AABook;
+import gtg.virus.gtpr.adapters.MenuAdapter;
 import gtg.virus.gtpr.adapters.ShelfAdapter;
-import gtg.virus.gtpr.adapters.TitleListAdapter;
 import gtg.virus.gtpr.async.AppLaunchTask;
 import gtg.virus.gtpr.async.AppLaunchTask.AppLaunchListener;
 import gtg.virus.gtpr.async.BookCreatorTask;
@@ -101,6 +103,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+        ActiveAndroid.initialize(this);
 		Global.Init( this );
 		setContentView(R.layout.activity_main);
 				
@@ -222,8 +225,8 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                 startActivity(i);
                 break;
             case 5 :
-                Intent s = new Intent(this , ScheduledBooksView.class);
-                startActivity(s);
+                //Intent s = new Intent(this , ScheduledBooksView.class);
+                //startActivity(s);
                 break;
 
             case 8:
@@ -231,10 +234,11 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                 startActivity(x);
                 break;
         }
+
+        mDrawerLayout.closeDrawers();
     }
 
-
-    @SuppressLint("NewApi")
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     private void makeProfileView(){
 
         View profileView = this.getLayoutInflater().inflate(R.layout.menu_list_row, null);
@@ -242,6 +246,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
         TextView userNameView = (TextView) profileView.findViewById(R.id.txt_menu_list_title);
         final User user = User.getUser();
 
+        userNameView.setText(user.getFullName());
 
         if(user != null){
             Picasso.with(this).load(user.picture).placeholder(R.drawable.com_facebook_profile_default_icon).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
@@ -274,13 +279,16 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 		txtView.setText(mainMenu);
 		mMergeAdapter.addView(v);
 		List<Menu> mMenu = new ArrayList<Menu>();
-		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_all_books) , "Bookmarked Books"));
-		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_annotate1) , "Annotated Books"));
-		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_audio_play) , "Audio Books"));
-		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_menu_calendar) , "Schedule Books"));
+		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My BookShelf"));
+		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Online BookShelf"));
+		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Bookmarks"));
+		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Annotations"));
+        mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Audio"));
+        mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Scheduled Reading"));
+        mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Reading Logs"));
 
 		
-		final TitleListAdapter mAdapter = new TitleListAdapter(this, mMenu);
+		final MenuAdapter mAdapter = new MenuAdapter(this, mMenu);
 		mMergeAdapter.addAdapter(mAdapter);
 	
 	}
@@ -296,7 +304,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 		List<Menu> mMenu = new ArrayList<Menu>();
 		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_action_settings) , "Settings"));
 		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_menu_help) , "Help"));
-		final TitleListAdapter mAdapter = new TitleListAdapter(this, mMenu);
+		final MenuAdapter mAdapter = new MenuAdapter(this, mMenu);
 		mMergeAdapter.addAdapter(mAdapter);
 	
 	}

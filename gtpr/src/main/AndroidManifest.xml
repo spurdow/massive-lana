@@ -10,9 +10,6 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
 
-
-
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -37,16 +34,21 @@
 
         <meta-data
             android:name="AA_MODELS"
-            android:value="gtg.virus.gtpr.entities.User" />
+            android:value="gtg.virus.gtpr.entities.User,
+            gtg.virus.gtpr.aaentity.AABook" />
 
-        <meta-data android:name="AA_DB_NAME" android:value="pinbook.db" />
-        <meta-data android:name="AA_DB_VERSION" android:value="6" />
+        <meta-data android:name="AA_DB_NAME" android:value="pinbook-remake.db" />
+        <meta-data android:name="AA_DB_VERSION" android:value="1" />
 
         <activity
             android:name="gtg.virus.gtpr.SplashActivity"
             android:label="@string/app_name"
             android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name="com.facebook.LoginActivity"
                   android:theme="@android:style/Theme.Translucent.NoTitleBar"
@@ -54,11 +56,7 @@
                   android:noHistory="true"/>
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
         <activity android:name="LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="NavigationalShelfListViewActivity"></activity>
         
@@ -83,8 +81,6 @@
         <activity android:name="AudioBookMaker"></activity>
         <activity android:name="AudioListView"></activity>
         <activity android:name=".GTGAudioListener"></activity>
-        <activity android:name=".ScheduleBooksInfoView"></activity>
-        <activity android:name=".ScheduledBooksView"></activity>
         <activity android:name=".ShelfView"></activity>
         
         <service android:name=".service.AudioService" android:process=":remote"></service>
