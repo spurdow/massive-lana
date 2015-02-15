@@ -51,7 +51,6 @@ import gtg.virus.gtpr.adapters.TitleListAdapter;
 import gtg.virus.gtpr.async.AppLaunchTask;
 import gtg.virus.gtpr.async.AppLaunchTask.AppLaunchListener;
 import gtg.virus.gtpr.async.BookCreatorTask;
-import gtg.virus.gtpr.db.BookHelper;
 import gtg.virus.gtpr.entities.Menu;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.entities.User;

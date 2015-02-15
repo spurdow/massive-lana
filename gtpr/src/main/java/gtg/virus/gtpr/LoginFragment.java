@@ -33,6 +33,8 @@ public class LoginFragment extends ParentFragment {
 	private static final String TAG = LoginFragment.class.getSimpleName();
 
 
+
+
     @InjectView(R.id.fb_button)
     protected Button authButton;
 

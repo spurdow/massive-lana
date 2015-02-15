@@ -16,7 +16,6 @@ import java.io.IOException;
 
 import gtg.virus.gtpr.R;
 import gtg.virus.gtpr.adapters.ShelfAdapter;
-import gtg.virus.gtpr.db.BookHelper;
 import gtg.virus.gtpr.entities.PBook;
 import nl.siegmann.epublib.domain.Author;
 import nl.siegmann.epublib.domain.Book;

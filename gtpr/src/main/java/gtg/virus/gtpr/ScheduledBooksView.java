@@ -12,16 +12,12 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Switch;
 
-import com.google.gson.Gson;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 import gtg.virus.gtpr.adapters.BookAdapter;
-import gtg.virus.gtpr.db.Book;
-import gtg.virus.gtpr.db.BookHelper;
 
 public class ScheduledBooksView extends ActionBarActivity implements BookAdapter.OnEventListener {
 

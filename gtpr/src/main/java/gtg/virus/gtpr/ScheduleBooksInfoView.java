@@ -1,19 +1,14 @@
 package gtg.virus.gtpr;
 
-import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -23,9 +18,6 @@ import com.google.gson.Gson;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 
-import gtg.virus.gtpr.db.Book;
-import gtg.virus.gtpr.db.ScheduleHelper;
-import gtg.virus.gtpr.db.ScheduledBooks;
 import gtg.virus.gtpr.utils.Utilities;
 
 public class ScheduleBooksInfoView extends ActionBarActivity {

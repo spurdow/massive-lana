@@ -23,9 +23,6 @@ import java.io.IOException;
 import java.util.List;
 
 import gtg.virus.gtpr.R;
-import gtg.virus.gtpr.db.Book;
-import gtg.virus.gtpr.db.ScheduleHelper;
-import gtg.virus.gtpr.db.ScheduledBooks;
 import nl.siegmann.epublib.epub.EpubReader;
 
 import static gtg.virus.gtpr.utils.Utilities.isEpub;
