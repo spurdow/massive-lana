@@ -223,7 +223,8 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                 profileView.setBackgroundResource(R.drawable.com_facebook_profile_default_icon);
             }*/
 
-            Picasso.with(this).load(Constants.SERVER + user.image).placeholder(R.drawable.com_facebook_profile_default_icon).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
+            final String image  = Constants.SERVER +"/"+ user.image;
+            Picasso.with(this).load(image).placeholder(R.drawable.com_facebook_profile_default_icon).error(R.drawable.com_facebook_profile_default_icon).into(profilePicture);
 
         }
 
