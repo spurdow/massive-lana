@@ -18,11 +18,11 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:loginView="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/com_facebook_usersettingsfragment_background_gradient" >
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -37,7 +37,7 @@
 
         <TextView
             android:id="@+id/com_facebook_usersettingsfragment_profile_name"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:lines="1"
             android:textSize="16sp"
@@ -57,4 +57,4 @@
     
     </LinearLayout>
 </ScrollView>
-<!-- From: file:/G:/Android%20Studio/gtg/facebookSDK/src/main/res/layout/com_facebook_usersettingsfragment.xml --><!-- From: file:/G:/Android%20Studio/gtg/gtpr/build/intermediates/exploded-aar/gtg/facebookSDK/unspecified/res/layout/com_facebook_usersettingsfragment.xml -->
+<!-- From: file:/Users/gokhanc/src/sdkrm/out/android-sdk/facebook/res/layout/com_facebook_usersettingsfragment.xml --><!-- From: file:/G:/projects/massive-lana/gtpr/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/3.19.1/res/layout/com_facebook_usersettingsfragment.xml -->

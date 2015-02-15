@@ -11,4 +11,4 @@
         android:text="@string/help_text"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
-</LinearLayout><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/layout/help_layout.xml -->
+</LinearLayout><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/layout/help_layout.xml -->

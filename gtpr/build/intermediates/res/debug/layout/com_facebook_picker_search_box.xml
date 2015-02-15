@@ -27,4 +27,4 @@
             android:background="@drawable/com_facebook_picker_default_separator_color"
             />
 </LinearLayout>
-<!-- From: file:/G:/Android%20Studio/gtg/facebookSDK/src/main/res/layout/com_facebook_picker_search_box.xml --><!-- From: file:/G:/Android%20Studio/gtg/gtpr/build/intermediates/exploded-aar/gtg/facebookSDK/unspecified/res/layout/com_facebook_picker_search_box.xml -->
+<!-- From: file:/Users/gokhanc/src/sdkrm/out/android-sdk/facebook/res/layout/com_facebook_picker_search_box.xml --><!-- From: file:/G:/projects/massive-lana/gtpr/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/3.19.1/res/layout/com_facebook_picker_search_box.xml -->

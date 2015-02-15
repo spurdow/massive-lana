@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
 
     <ProgressBar android:indeterminate="true"
                  android:layout_width="wrap_content"
@@ -13,4 +13,4 @@
                  android:indeterminateOnly="true"
             />
 </RelativeLayout>
-<!-- From: file:/G:/Android%20Studio/gtg/facebookSDK/src/main/res/layout/com_facebook_login_activity_layout.xml --><!-- From: file:/G:/Android%20Studio/gtg/gtpr/build/intermediates/exploded-aar/gtg/facebookSDK/unspecified/res/layout/com_facebook_login_activity_layout.xml -->
+<!-- From: file:/Users/gokhanc/src/sdkrm/out/android-sdk/facebook/res/layout/com_facebook_login_activity_layout.xml --><!-- From: file:/G:/projects/massive-lana/gtpr/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/3.19.1/res/layout/com_facebook_login_activity_layout.xml -->

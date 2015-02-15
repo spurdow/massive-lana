@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <TextView
+    <gtg.virus.gtpr.utils.extensions.PacificoTextView
         android:id="@+id/txt_title_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,4 +19,4 @@
         android:textSize="30sp" />
 
 </LinearLayout>
-<!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/layout/activity_splash.xml -->
+<!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/layout/activity_splash.xml -->

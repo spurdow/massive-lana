@@ -1,6 +1,7 @@
 package gtg.virus.gtpr.aaentity;
 
 import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 
 /**
@@ -9,9 +10,12 @@ import com.activeandroid.annotation.Table;
 @Table(name = "aabook" , id = "_id")
 public class AABook extends Model{
 
+    @Column()
     public String title;
 
+    @Column()
     public String path;
 
-
+    @Column()
+    public int status;
 }

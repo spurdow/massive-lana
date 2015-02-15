@@ -26,4 +26,4 @@
         android:drawable="@drawable/spinner_ab_focused_pinbook_layout" />
     <item android:drawable="@drawable/spinner_ab_default_pinbook_layout" />
 </selector>
-<!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/drawable/spinner_background_ab_pinbook_layout.xml -->
+<!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/drawable/spinner_background_ab_pinbook_layout.xml -->

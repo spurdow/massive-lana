@@ -24,5 +24,6 @@
     <string name="ok">Okay</string>
     <string name="retry">Retry?</string>
     <string name="success">Success</string>
+    <string name="provide_correct_ebook">Please provide correct ebook</string>
 
 </resources>

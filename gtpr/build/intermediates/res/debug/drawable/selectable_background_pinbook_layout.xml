@@ -22,4 +22,4 @@
     <item android:state_pressed="false" android:state_focused="true" android:drawable="@drawable/list_focused_pinbook_layout" />
     <item android:state_pressed="true" android:drawable="@drawable/list_pressed_pinbook_layout" />
     <item android:drawable="@android:color/transparent" />
-</selector><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/drawable/selectable_background_pinbook_layout.xml -->
+</selector><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/drawable/selectable_background_pinbook_layout.xml -->

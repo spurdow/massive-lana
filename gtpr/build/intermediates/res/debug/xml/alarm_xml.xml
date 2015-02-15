@@ -18,4 +18,4 @@
     <EditTextPreference android:key="label"
         android:title="@string/label"
         android:dialogTitle="@string/label" />
-</PreferenceScreen><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/xml/alarm_xml.xml -->
+</PreferenceScreen><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/xml/alarm_xml.xml -->

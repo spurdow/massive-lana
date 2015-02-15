@@ -1,0 +1,15 @@
+int attr fletBackground 0x7f010006
+int attr fletPadding 0x7f010001
+int attr fletPaddingBottom 0x7f010005
+int attr fletPaddingLeft 0x7f010002
+int attr fletPaddingRight 0x7f010004
+int attr fletPaddingTop 0x7f010003
+int attr fletTextAppearance 0x7f010000
+int[] styleable FloatLabeledEditText { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005, 0x7f010006 }
+int styleable FloatLabeledEditText_fletBackground 6
+int styleable FloatLabeledEditText_fletPadding 1
+int styleable FloatLabeledEditText_fletPaddingBottom 5
+int styleable FloatLabeledEditText_fletPaddingLeft 2
+int styleable FloatLabeledEditText_fletPaddingRight 4
+int styleable FloatLabeledEditText_fletPaddingTop 3
+int styleable FloatLabeledEditText_fletTextAppearance 0

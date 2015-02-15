@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- From: file:/G:/Android%20Studio/gtg/gtpr/build/intermediates/exploded-aar/gtg/aFileChooser/unspecified/res/values-v11/values.xml -->
-    <eat-comment />
-
+    <!-- From: file:/G:/projects/massive-lana/gtpr/build/intermediates/exploded-aar/massive-lana/aFileChooser/unspecified/res/values-v11/values.xml -->
+    <eat-comment/>
     <string name="choose_file">Choose a file</string>
-    <!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/values-v11/styles.xml -->
-    <eat-comment />
-
+    <!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/values-v11/styles.xml -->
+    <eat-comment/>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
         <!-- API 11 theme customizations can go here. -->
     </style>
-    <!-- From: file:/G:/Android%20Studio/gtg/gtpr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-v11/values.xml -->
-    <eat-comment />
-
+    <!-- From: file:/G:/projects/massive-lana/gtpr/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values-v11/values.xml -->
+    <eat-comment/>
     <style name="Theme.Base" parent="android:Theme.Holo">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
@@ -30,7 +26,6 @@
         <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
         <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
     </style>
-
     <style name="Theme.Base.AppCompat.Dialog.FixedSize" parent="android:Theme.Holo.Dialog">
         <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
         <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
@@ -43,7 +38,6 @@
         <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
         <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
     </style>
-
     <style name="Theme.Base.AppCompat.Dialog.Light.FixedSize" parent="android:Theme.Holo.Light.Dialog">
         <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
         <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
@@ -56,7 +50,6 @@
         <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
         <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
     </style>
-
     <style name="Theme.Base.Light" parent="android:Theme.Holo.Light">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
@@ -73,13 +66,8 @@
         <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
         <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
     </style>
-
-    <style name="Widget.AppCompat.Base.AutoCompleteTextView" parent="android:Widget.Holo.AutoCompleteTextView" />
-
-    <style name="Widget.AppCompat.Base.ProgressBar" parent="android:Widget.Holo.ProgressBar" />
-
-    <style name="Widget.AppCompat.Base.ProgressBar.Horizontal" parent="android:Widget.Holo.ProgressBar.Horizontal" />
-
-    <style name="Widget.AppCompat.Light.Base.AutoCompleteTextView" parent="android:Widget.Holo.Light.AutoCompleteTextView" />
-
+    <style name="Widget.AppCompat.Base.AutoCompleteTextView" parent="android:Widget.Holo.AutoCompleteTextView"/>
+    <style name="Widget.AppCompat.Base.ProgressBar" parent="android:Widget.Holo.ProgressBar"/>
+    <style name="Widget.AppCompat.Base.ProgressBar.Horizontal" parent="android:Widget.Holo.ProgressBar.Horizontal"/>
+    <style name="Widget.AppCompat.Light.Base.AutoCompleteTextView" parent="android:Widget.Holo.Light.AutoCompleteTextView"/>
 </resources>

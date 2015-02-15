@@ -1,16 +1,128 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:float="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <com.facebook.widget.LoginButton
-        android:id="@+id/authButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        />
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
-</LinearLayout><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/layout/fragment_main.xml -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="right"
+            android:layout_marginBottom="50dp">
+
+            <gtg.virus.gtpr.utils.extensions.PacificoTextView
+                android:id="@+id/txt_title_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            float:fletPaddingBottom="10dp"
+            float:fletTextAppearance="@style/floatlabelededittext"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/username"
+                android:layout_gravity="center_horizontal"
+                android:textSize="30sp"
+                android:textIsSelectable="false"
+                android:layout_margin="20dp"
+                android:hint="Username" />
+
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            float:fletPaddingBottom="10dp"
+            float:fletTextAppearance="@style/floatlabelededittext"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/password"
+                android:layout_gravity="center_horizontal"
+                android:textSize="30sp"
+                android:textIsSelectable="false"
+                android:layout_margin="20dp"
+                android:hint="Password" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+<!--        <Button
+
+
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/button_ok_selector"
+            android:layout_margin="20dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#ffffbb50" />-->
+
+
+        <info.hoang8f.widget.FButton
+            android:text="Login"
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:textColor="@color/fbutton_color_clouds"
+            fbutton:buttonColor="@color/fbutton_color_orange"
+            fbutton:shadowColor="@color/fbutton_color_carrot"
+            fbutton:shadowEnabled="true"
+            fbutton:shadowHeight="5dp"
+            fbutton:cornerRadius="5dp"
+
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="OR"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="30dp"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/fb_button"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_margin="30dp"
+            android:background="@drawable/com_facebook_button_blue"
+            android:text="Facebook Login"
+            android:drawableLeft="@drawable/com_facebook_inverse_icon"
+            android:textColor="#fff" />
+
+
+    </LinearLayout>
+
+</ScrollView><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/layout/fragment_main.xml -->

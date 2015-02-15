@@ -9,4 +9,4 @@
         android:layout_height="wrap_content"
         android:id="@+id/list_books"
         android:layout_gravity="center_horizontal" />
-</LinearLayout><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/layout/activity_scheduled_books.xml -->
+</LinearLayout><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/layout/activity_scheduled_books.xml -->

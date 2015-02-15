@@ -21,4 +21,4 @@
         android:id="@+id/imageView"
         android:layout_gravity="right"
         android:src="@drawable/bookmarkgray2x" />
-</FrameLayout><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/layout/txt_main_layout.xml -->
+</FrameLayout><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/layout/txt_main_layout.xml -->

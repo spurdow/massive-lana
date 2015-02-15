@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FloatLabeledEditText"><attr format="reference" name="fletTextAppearance"/><attr format="reference|dimension" name="fletPadding"/><attr format="reference|dimension" name="fletPaddingLeft"/><attr format="reference|dimension" name="fletPaddingTop"/><attr format="reference|dimension" name="fletPaddingRight"/><attr format="reference|dimension" name="fletPaddingBottom"/><attr format="reference|color" name="fletBackground"/></declare-styleable>
+</resources>

@@ -9,4 +9,4 @@
         android:layout_height="match_parent"
         android:id="@+id/epub_fragment_cover_imageview"
         android:layout_gravity="center_horizontal" />
-</LinearLayout><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/layout/epub_fragment_cover_layout.xml -->
+</LinearLayout><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/layout/epub_fragment_cover_layout.xml -->

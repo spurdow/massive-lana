@@ -46,6 +46,7 @@ import java.util.concurrent.Executors;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
+import gtg.virus.gtpr.aaentity.AABook;
 import gtg.virus.gtpr.adapters.ShelfAdapter;
 import gtg.virus.gtpr.adapters.TitleListAdapter;
 import gtg.virus.gtpr.async.AppLaunchTask;
@@ -737,15 +738,31 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 							// TODO Auto-generated method stub
 							super.onPostExecute(result);
 							if(result != null){
-								mShelfAdapter.addBook(result);
-								bookCache.put(result.getFilename(), result);
-                                BookHelper b = new BookHelper(NavigationalShelfListViewActivity.this);
-                                gtg.virus.gtpr.db.Book item = new gtg.virus.gtpr.db.Book();
-                                item.setTitle(result.getTitle());
-                                item.setPath(result.getPath());
-                                item.setStatus(1);
-                                long id = b.add(item);
-                                Log.w(TAG , "Added Bookid => " + id) ;
+                                AABook newBook = new AABook();
+                                newBook.title = result.getTitle();
+                                newBook.path = result.getPath();
+                                newBook.status = 1;
+
+
+                                long id = newBook.save();
+                                if(id > 0){
+
+                                    mShelfAdapter.addBook(result);
+                                    bookCache.put(result.getFilename(), result);
+                                    Log.w(TAG , "Added Bookid => " + id) ;
+                                }else{
+                                    AlertDialog alert = new AlertDialog.Builder(NavigationalShelfListViewActivity.this)
+                                            .setMessage(getString(R.string.provide_correct_ebook))
+                                            .setNegativeButton(R.string.ok , new OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    dialog.dismiss();
+                                                }
+                                            }).create();
+                                    alert.show();
+                                }
+
+
 							}
 							mProgress.dismiss();
 						}

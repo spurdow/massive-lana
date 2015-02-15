@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- When selected, use grey -->
+    <item android:drawable="@drawable/bookmark2x"
+        android:state_checked="true" />
+    <!-- When not selected, use white-->
+    <item android:drawable="@drawable/bookmarkgray2x"
+        android:state_checked="false"/>
+
+</selector><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/drawable/bookmark_toggle_selector.xml -->

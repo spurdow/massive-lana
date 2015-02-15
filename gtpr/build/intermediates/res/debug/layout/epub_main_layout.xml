@@ -8,8 +8,9 @@
 
 
 
-    <fr.castorflex.android.verticalviewpager.VerticalViewPager
+    <android.support.v4.view.ViewPager
         android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-</FrameLayout><!-- From: file:/G:/Android%20Studio/gtg/gtpr/src/main/res/layout/epub_main_layout.xml -->
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+</FrameLayout><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/layout/epub_main_layout.xml -->
