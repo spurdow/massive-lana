@@ -2,21 +2,13 @@ package gtg.virus.gtpr;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.MediaMetadataRetriever;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -30,58 +22,24 @@ import android.widget.TextView;
 
 import com.activeandroid.ActiveAndroid;
 import com.commonsware.cwac.merge.MergeAdapter;
-import com.ipaulpro.afilechooser.utils.FileUtils;
-import com.radaee.pdf.Document;
 import com.radaee.pdf.Global;
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import de.keyboardsurfer.android.widget.crouton.Crouton;
-import de.keyboardsurfer.android.widget.crouton.Style;
-import gtg.virus.gtpr.aaentity.AABook;
 import gtg.virus.gtpr.adapters.MenuAdapter;
-import gtg.virus.gtpr.adapters.ShelfAdapter;
-import gtg.virus.gtpr.async.AppLaunchTask;
-import gtg.virus.gtpr.async.AppLaunchTask.AppLaunchListener;
-import gtg.virus.gtpr.async.BookCreatorTask;
 import gtg.virus.gtpr.entities.Menu;
-import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.entities.User;
 import gtg.virus.gtpr.service.AudioService;
-import gtg.virus.gtpr.utils.Utilities;
-import nl.siegmann.epublib.domain.Author;
-import nl.siegmann.epublib.domain.Book;
-import nl.siegmann.epublib.epub.EpubReader;
 
-import static gtg.virus.gtpr.utils.Utilities.STORAGE_SUFFIX;
 import static gtg.virus.gtpr.utils.Utilities.bookCache;
-import static gtg.virus.gtpr.utils.Utilities.copy;
-import static gtg.virus.gtpr.utils.Utilities.isEpub;
-import static gtg.virus.gtpr.utils.Utilities.isMp3;
-import static gtg.virus.gtpr.utils.Utilities.isPdf;
-import static gtg.virus.gtpr.utils.Utilities.isTxt;
-import static gtg.virus.gtpr.utils.Utilities.isValideBook;
-import static gtg.virus.gtpr.utils.Utilities.renderPage;
 public class NavigationalShelfListViewActivity extends ActionBarActivity {
-
-	private ListView mListView = null;
-	
-	private Document mDoc = null;
 
 	private static final String TAG = NavigationalShelfListViewActivity.class.getSimpleName();
 
-	private static final int REQUEST_CHOOSER = 12345;
-	
 	protected DrawerLayout mDrawerLayout = null;
 	
 	protected ListView mDrawerList = null;
@@ -91,9 +49,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 	private ActionBarDrawerToggle mDrawerToggle = null;
 	
 	private MergeAdapter mMergeAdapter = null;
-	
-	private ShelfAdapter mShelfAdapter = null;
-	
+
 	private ExecutorService mService = Executors.newFixedThreadPool(100);
 	
 	/* (non-Javadoc)
@@ -107,11 +63,6 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 		Global.Init( this );
 		setContentView(R.layout.activity_main);
 				
-		mListView = (ListView) findViewById(R.id.shelf_list_view);
-
-		mShelfAdapter = new ShelfAdapter( this );
-		mListView.setAdapter(mShelfAdapter);
-
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 	    mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
@@ -176,7 +127,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
 		
-		AppLaunchTask task = new AppLaunchTask(this);
+	/*	AppLaunchTask task = new AppLaunchTask(this);
 		task.setListener(new AppLaunchListener(){
 
 			@Override
@@ -207,7 +158,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 			}
 			
 		});
-		task.execute(null,null,null);
+		task.execute(null,null,null);*/
 
         Intent service = new Intent(this , AudioService.class);
         startService(service);
@@ -215,14 +166,21 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
     }
 
     private void itemClick(int position){
+
+        Fragment frag = null;
         switch(position){
-            case 0 : break;
+            case 0 :
+
+                break;
             case 1 : break;
-            case 2 : break;
+            case 2 :
+                frag = new MyBookShelf();
+
+                break;
             case 3 : break;
             case 4 :
-                Intent i = new Intent(this , AudioListView.class);
-                startActivity(i);
+              /*  Intent i = new Intent(this , AudioListView.class);
+                startActivity(i);*/
                 break;
             case 5 :
                 //Intent s = new Intent(this , ScheduledBooksView.class);
@@ -230,11 +188,16 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                 break;
 
             case 8:
-                Intent x = new Intent(this , Help.class);
-                startActivity(x);
+                /*Intent x = new Intent(this , Help.class);
+                startActivity(x);*/
                 break;
         }
 
+        if(frag != null){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.content_frame , frag)
+                    .commit();
+        }
         mDrawerLayout.closeDrawers();
     }
 
@@ -327,7 +290,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 	@Override
 	public boolean onCreateOptionsMenu(android.view.Menu menu) {
 		// TODO Auto-generated method stub
-		this.getMenuInflater().inflate(R.menu.main_menu, menu);
+		//this.getMenuInflater().inflate(R.menu.main_menu, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -343,458 +306,28 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 	    switch(item.getItemId()){
 	    case R.id.menu_add: 
 	    	 // Create the ACTION_GET_CONTENT Intent
-	        Intent getContentIntent = FileUtils.createGetContentIntent();
+	        /*Intent getContentIntent = FileUtils.createGetContentIntent();
 
 	        Intent intent = Intent.createChooser(getContentIntent, "Select a file");
 	        startActivityForResult(intent, REQUEST_CHOOSER);
-	    	break;
-            case R.id.menu_record:
-                Intent i = new Intent(this , AudioBookMaker.class);
-                startActivity(i);
-            break;
+	    	break;*/
+
+             break;
+        case R.id.menu_record:
+             Intent i = new Intent(this , AudioBookMaker.class);
+             startActivity(i);
+             break;
 	    }
 	    return super.onOptionsItemSelected(item);
 	}
 	
 	
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// TODO Auto-generated method stub
-		switch (requestCode) {
-        case REQUEST_CHOOSER:   
-            if (resultCode == RESULT_OK) {
-            	final Uri uri = data.getData();
-            	final String path = FileUtils.getPath(NavigationalShelfListViewActivity.this, uri);
-            	final File newFile= new File(path);
-            	
-            	if(bookCache.containsKey(newFile.getName())){
-            		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            		builder.setTitle("Warning");
-            		builder.setMessage("The system found that this file is already in your list.If you continue file will NOT be appended.");
-            		builder.setPositiveButton("Yes", new OnClickListener(){
-
-						@Override
-						public void onClick(final DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
-		            		/**
-		            		 * Asynctask saving pdf in storage
-		            		 */
-							/*new AsyncTask<Void, Void,PBook>(){
-
-			            		private ProgressDialog mProgress;
-								@Override
-								protected void onPreExecute() {
-									// TODO Auto-generated method stub
-									super.onPreExecute();
-									mProgress = new ProgressDialog(NavigationalShelfListViewActivity.this);
-									mProgress.setMessage("Please wait...");
-									mProgress.setIndeterminate(true);
-									mProgress.show();
-								}
-
-								@Override
-								protected PBook doInBackground(Void... params) {
-									// TODO Auto-generated method stub
-									// load the file to the pinbook repo
-
-									File newPdf = new File(path);
-									Log.w(TAG, "File " + newPdf.getName());
-									final String[] arr_file = newPdf.getName().split("[.]");
-									final String filename = arr_file[0] + bookCache.size() + "." + arr_file[1];
-									File toStorage = new File(Environment.getExternalStorageDirectory() +"/"+ STORAGE_SUFFIX + "/" + filename );
-
-									try {
-										copy( newPdf , toStorage );
-									} catch (IOException e) {
-										// TODO Auto-generated catch block
-										e.printStackTrace();
-										// unsuccessful copy
-										makeText("Theres a problem with the disk.");
-										return null;
-									}
-									
-					                // Get the File path from the Uri
-					                
-					                PBook b = null;
-					                Log.i(TAG, "Path " + path);
-					                // Alternatively, use FileUtils.getFile(Context, Uri)
-					                if (path != null && isValideBook(path) && FileUtils.isLocal(path)) {
-					                    if(isPdf(path)){
-					                    	
-					                    	
-					                    	mDoc = new Document();
-					                    	int index = mDoc.Open(path, "");
-					 
-					                    	if( index == 0){
-						                    	String author = mDoc.GetMeta("Author");
-						                    	String title = mDoc.GetMeta("Title");
-						                    	String subject = mDoc.GetMeta("Subject");
-						                    
-						                    	Log.i(TAG,"Meta " + author + " " + title + " " + subject);
-						                    	b = new PBook();
-						                    	b.addAuthor(author);
-						                    	b.setTitle(title);
-						                    	b.setPath(path);;
-						                    	Bitmap page0 = renderPage(mDoc , 100, 100);
-						                    	b.setPage0(page0);
-						                    	b.isPdf= true;
-						                    	b.setFilename(newPdf.getName());
-						                    	
-						                    	// we are not accepting file if the file doesnt give us the title
-						                    	
-						                    	if(title == null){
-						                    		makeText("File is invalid");
-						                    		b = null;
-						                    	}else if(title.equals("")){
-						                    		makeText("File is invalid");
-						                    		b = null;
-						                    	}
-						                    	
-					                    	}else if(index == -1){
-					                    		makeText("Password needed");
-					                    	}else if(index == -2){
-					                    		makeText("Unknown Encryption");
-					                    	}else if(index == -3){
-					                    		makeText("Damage or Invalid Format");
-					                    	}else if(index == -10){
-					                    		makeText("Access Denied");
-					                    	}
-					                    	
-					                    }else if(isEpub(path)){
-					                    	EpubReader epubReader = new EpubReader();
-					                    	Book epubBook = null;
-					                    	try {
-												epubBook = epubReader.readEpub(new FileInputStream(path));
-											} catch (FileNotFoundException e) {
-												// TODO Auto-generated catch block
-												e.printStackTrace();
-											} catch (IOException e) {
-												// TODO Auto-generated catch block
-												e.printStackTrace();
-											}
-					                    	if(epubBook != null){
-					                    		b = new PBook();
-					                    		final String title = epubBook.getTitle();
-					                    		for(Author auth : epubBook.getMetadata().getAuthors()){
-					                    			b.addAuthor(auth.getFirstname() + " " + auth.getLastname());
-					                    		}
-					                    		b.isEpub = true;
-					                    		b.setTitle(title);
-					                    		b.setPath(path);
-					                    		b.setFilename(newPdf.getName());
-					                    		Bitmap page0 = null;
-					                    		try {
-													page0 = BitmapFactory.decodeStream(epubBook.getCoverImage().getInputStream());
-												} catch (IOException e) {
-													// TODO Auto-generated catch block
-													e.printStackTrace();
-												}
-					                    		if(page0 != null){
-					                    			b.setPage0(page0);
-					                    		}
-					                    	}
-					                    }else if(isTxt(path)){
-                                            b = new PBook();
-                                            b.setTitle("TextFile");
-                                            Bitmap page0 = BitmapFactory.decodeResource(getResources() , R.drawable.ic_content_paste);
-                                            b.setPage0(page0);
-                                            b.setPath(path);
-                                            b.setFilename(newPdf.getName());
-                                            Log.w(TAG , "txt file added");
-                                        }else if(isMp3(path)){
-                                            b = new PBook();
-                                            MediaMetadataRetriever meta = new MediaMetadataRetriever();
-                                            meta.setDataSource(path);
-
-                                            byte[] art = meta.getEmbeddedPicture();
-                                            Bitmap songImage = null;
-                                            try {
-                                                songImage = BitmapFactory.decodeByteArray(art, 0, art.length);
-                                            }catch(Exception ex){
-
-                                            }
-                                            b.setPage0(songImage);
-                                            b.addAuthor(meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_AUTHOR));
-                                            b.setFilename(newPdf.getName());
-                                            b.setPath(path);
-                                            b.setTitle(meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE));
-
-                                            b.setTitle(newPdf.getName());
-                                            meta.release();
-                                            Log.w(TAG , "mp3 file added.");
-                                        }
-					                }else if(!isValideBook(path)){
-					                	makeText( "File is not a pdf/epub/txt/mp3");
-					                }
-					                Log.w(TAG, "doInBackground");
-									return b;
-								}
-								
-								private void makeText(final String msg){
-									runOnUiThread(new Runnable(){
-
-										@Override
-										public void run() {
-											// TODO Auto-generated method stub
-											Crouton.makeText(NavigationalShelfListViewActivity.this, msg, Style.INFO).show();
-											//Toast.makeText(NavigationalShelfListViewActivity.this, msg, Toast.LENGTH_SHORT).show();
-										}
-										
-									});
-								}
-								@Override
-								protected void onPostExecute(PBook result) {
-									// TODO Auto-generated method stub
-									super.onPostExecute(result);
-									if(result != null){
-										mShelfAdapter.addBook(result);
-										bookCache.put(result.getFilename(), result);
-									}
-									mProgress.dismiss();
-									dialog.dismiss();
-								}
-								
-								
-			            		
-			            	}.executeOnExecutor(mService, null,null,null);	*/
-						}
-
-                           		});
-            		/*builder.setNegativeButton("No", new OnClickListener(){
-
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							// TODO Auto-generated method stub
-							dialog.dismiss();
-						}
-            			
-            		});*/
-            		
-            		final AlertDialog alert = builder.create();
-            		alert.show();
-            	}
-            	else{
-            		/**
-            		 * Asynctask saving pdf in storage
-            		 */
-            		new AsyncTask<Void, Void,PBook>(){
-
-	            		private ProgressDialog mProgress;
-						@Override
-						protected void onPreExecute() {
-							// TODO Auto-generated method stub
-							super.onPreExecute();
-							mProgress = new ProgressDialog(NavigationalShelfListViewActivity.this);
-							mProgress.setMessage("Please wait...");
-							mProgress.setIndeterminate(true);
-							mProgress.show();
-						}
-
-						@Override
-						protected PBook doInBackground(Void... params) {
-							// TODO Auto-generated method stub
-							// load the file to the pinbook repo
-							
-							File newPdf = new File(path);
-							Log.w(TAG, "File " + newPdf.getName());
-							File toStorage = new File(Environment.getExternalStorageDirectory() +"/"+ STORAGE_SUFFIX + "/" + newPdf.getName() );
-
-							try {
-								copy( newPdf , toStorage );
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-								// unsuccessful copy
-								makeText("Theres a problem with the disk.");
-								return null;
-							}
-
-			                // Get the File path from the Uri
-			                
-			                PBook b = null;
-			                Log.i(TAG, "Path " + path);
-			                // Alternatively, use FileUtils.getFile(Context, Uri)
-			                if (path != null && isValideBook(path) && FileUtils.isLocal(path)) {
-                                Log.w(TAG , "Valid Book");
-			                    if(isPdf(path)){
-			                    	
-			                    	
-			                    	mDoc = new Document();
-			                    	int index = mDoc.Open(path, "");
-			 
-			                    	if( index == 0){
-				                    	String author = mDoc.GetMeta("Author");
-				                    	String title = mDoc.GetMeta("Title");
-				                    	String subject = mDoc.GetMeta("Subject");
-				                    
-				                    	Log.i(TAG,"Meta " + author + " " + title + " " + subject);
-				                    	b = new PBook();
-				                    	b.addAuthor(author);
-				                    	b.setTitle(title);
-				                    	b.setPath(path);;
-				                    	Bitmap page0 = renderPage(mDoc , 100, 100);
-				                    	b.setPage0(page0);
-				                    	b.isPdf= true;
-				                    	b.setFilename(newPdf.getName());
-				                    	
-				                    	// we are not accepting file if the file doesnt give us the title
-				                    	
-				                    	if(title == null){
-				                    		makeText("File is invalid");
-				                    		b = null;
-				                    	}else if(title.equals("")){
-				                    		makeText("File is invalid");
-				                    		b = null;
-				                    	}
-				                    	
-			                    	}else if(index == -1){
-			                    		makeText("Password needed");
-			                    	}else if(index == -2){
-			                    		makeText("Unknown Encryption");
-			                    	}else if(index == -3){
-			                    		makeText("Damage or Invalid Format");
-			                    	}else if(index == -10){
-			                    		makeText("Access Denied");
-			                    	}
-			                    	
-			                    }else if(isEpub(path)){
-			                    	EpubReader epubReader = new EpubReader();
-			                    	Book epubBook = null;
-			                    	try {
-										epubBook = epubReader.readEpub(new FileInputStream(path));
-									} catch (FileNotFoundException e) {
-										// TODO Auto-generated catch block
-										e.printStackTrace();
-									} catch (IOException e) {
-										// TODO Auto-generated catch block
-										e.printStackTrace();
-									}
-			                    	if(epubBook != null){
-			                    		b = new PBook();
-			                    		final String title = epubBook.getTitle();
-			                    		for(Author auth : epubBook.getMetadata().getAuthors()){
-			                    			b.addAuthor(auth.getFirstname() + " " + auth.getLastname());
-			                    		}
-			                    		b.isEpub = true;
-			                    		b.setTitle(title);
-			                    		b.setPath(path);
-			                    		b.setFilename(newPdf.getName());
-			                    		Bitmap page0 = null;
-			                    		try {
-											page0 = BitmapFactory.decodeStream(epubBook.getCoverImage().getInputStream());
-											
-			                    		} catch (IOException e) {
-											// TODO Auto-generated catch block
-											e.printStackTrace();
-										}
-			                    		if(page0 != null){
-			                    			b.setPage0(page0);
-			                    		}
-			                    	}
-			                    }else if(isTxt(path)){
-                                    b = new PBook();
-                                    b.setTitle("TextFile");
-                                    Bitmap page0 = BitmapFactory.decodeResource(getResources() , R.drawable.ic_content_paste);
-                                    b.setPage0(page0);
-                                    b.setPath(path);
-                                    b.setFilename(newPdf.getName());
-                                    Log.w(TAG , "txt file added");
-                                }else if(isMp3(path)){
-                                    b = new PBook();
-                                    MediaMetadataRetriever meta = new MediaMetadataRetriever();
-                                    meta.setDataSource(path);
-
-                                    byte[] art = meta.getEmbeddedPicture();
-                                    Bitmap songImage = null;
-                                    try {
-                                        songImage = BitmapFactory.decodeByteArray(art, 0, art.length);
-                                    }catch(Exception ex){
-
-                                    }
-                                    b.setPage0(songImage);
-                                    b.addAuthor(meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_AUTHOR));
-                                    b.setFilename(newPdf.getName());
-                                    b.setPath(path);
-                                    b.setTitle(newPdf.getName());
-
-                                    meta.release();
-                                    Log.w(TAG , "mp3 file added. ");
-                                }
-
-			                }else if(!isValideBook(path)){
-			                	makeText( "File is not a pdf/epub/txt");
-			                }
-			                Log.w(TAG, "doInBackground");
-							return b;
-						}
-						
-						private void makeText(final String msg){
-							runOnUiThread(new Runnable(){
-
-								@Override
-								public void run() {
-									// TODO Auto-generated method stub
-									//Toast.makeText(NavigationalShelfListViewActivity.this, msg, Toast.LENGTH_SHORT).show();
-									Crouton.makeText(NavigationalShelfListViewActivity.this, msg, Style.INFO).show();
-								}
-								
-							});
-						}
-						@Override
-						protected void onPostExecute(PBook result) {
-							// TODO Auto-generated method stub
-							super.onPostExecute(result);
-							if(result != null){
-                                AABook newBook = new AABook();
-                                newBook.title = result.getTitle();
-                                newBook.path = result.getPath();
-                                newBook.status = 1;
-
-
-                                long id = newBook.save();
-                                if(id > 0){
-
-                                    mShelfAdapter.addBook(result);
-                                    bookCache.put(result.getFilename(), result);
-                                    Log.w(TAG , "Added Bookid => " + id) ;
-                                }else{
-                                    AlertDialog alert = new AlertDialog.Builder(NavigationalShelfListViewActivity.this)
-                                            .setMessage(getString(R.string.provide_correct_ebook))
-                                            .setNegativeButton(R.string.ok , new OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialog, int which) {
-                                                    dialog.dismiss();
-                                                }
-                                            }).create();
-                                    alert.show();
-                                }
-
-
-							}
-							mProgress.dismiss();
-						}
-						
-						
-	            		
-	            	}.executeOnExecutor(mService, null, null, null);
-            	}
-	        }
-            break;
-    }
-		super.onActivityResult(requestCode, resultCode, data);
-	}
-
 
 	@Override
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		if(mDoc != null){
-			mDoc.Close();
-			mDoc = null;
-		}
-		
 		bookCache.clear();
 
         stopService(new Intent(this , AudioService.class));

@@ -1,27 +1,6 @@
 package gtg.virus.gtpr.utils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.RandomAccessFile;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Pattern;
-
-import com.google.gson.Gson;
-import com.radaee.pdf.Document;
-import com.radaee.pdf.Matrix;
-import com.radaee.pdf.Page;
-
-import gtg.virus.gtpr.entities.PBook;
-import gtg.virus.gtpr.entities.User;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -30,6 +9,26 @@ import android.graphics.Paint;
 import android.os.Environment;
 import android.util.Log;
 
+import com.google.gson.Gson;
+import com.radaee.pdf.Document;
+import com.radaee.pdf.Matrix;
+import com.radaee.pdf.Page;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Pattern;
+
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
+import gtg.virus.gtpr.entities.PBook;
+import gtg.virus.gtpr.entities.User;
+
 public final class Utilities {
 	
 	// the global tag to access shared file folders
@@ -37,6 +36,8 @@ public final class Utilities {
 	private static final String TAG = GLOBAL_TAG;
 	
 	public final static String STORAGE_SUFFIX = "Pinbook";
+
+    public final static String REMOTE_STORAGE_SUFFIX  = "Pinbook-Remote";
 
     public final static String AUDIO_STORAGE_SUFFIX = "Pinbook_Media";
 	
@@ -262,4 +263,17 @@ public final class Utilities {
 		inStream.close();
 		outStream.close();
 	}
+
+    public static void makeText(final Context context , final String msg){
+        ((Activity)context).runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                //Toast.makeText(NavigationalShelfListViewActivity.this, msg, Toast.LENGTH_SHORT).show();
+                Crouton.makeText(((Activity)context), msg, Style.INFO).show();
+            }
+
+        });
+    }
 }

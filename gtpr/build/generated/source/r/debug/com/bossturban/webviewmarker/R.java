@@ -12,9 +12,9 @@ public final class R {
 		public static final int text_select_handle_right = 0x7f020105;
 	}
 	public static final class id {
-		public static final int dragLayer = 0x7f0800c6;
-		public static final int endHandle = 0x7f0800c8;
-		public static final int startHandle = 0x7f0800c7;
+		public static final int dragLayer = 0x7f0800c7;
+		public static final int endHandle = 0x7f0800c9;
+		public static final int startHandle = 0x7f0800c8;
 	}
 	public static final class layout {
 		public static final int selection_drag_layer = 0x7f03004a;

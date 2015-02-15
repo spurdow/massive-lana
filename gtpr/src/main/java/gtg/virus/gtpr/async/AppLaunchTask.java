@@ -1,15 +1,18 @@
 package gtg.virus.gtpr.async;
 
-import java.io.File;
-import java.io.IOException;
-
-import gtg.virus.gtpr.R;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
-import static gtg.virus.gtpr.utils.Utilities.*;
+
+import java.io.File;
+
+import gtg.virus.gtpr.R;
+
+import static gtg.virus.gtpr.utils.Utilities.AUDIO_STORAGE_SUFFIX;
+import static gtg.virus.gtpr.utils.Utilities.isFirstLaunch;
+import static gtg.virus.gtpr.utils.Utilities.removeFirstLaunch;
 
 public class AppLaunchTask extends AsyncTask<Void,String,Boolean>{
 
@@ -24,15 +27,18 @@ public class AppLaunchTask extends AsyncTask<Void,String,Boolean>{
 	private int count_tries ;
 	
 	private AppLaunchListener mListener = null;
+
+    private String suffix;
 	
 	public interface AppLaunchListener{
 		void onStartTask();
 		void onFinishTask();
 	}
 	
-	public AppLaunchTask(Context mContext) {
+	public AppLaunchTask(Context mContext , String suffix) {
 		super();
 		this.mContext = mContext;
+        this.suffix = suffix;
 	}
 
 
@@ -98,7 +104,7 @@ public class AppLaunchTask extends AsyncTask<Void,String,Boolean>{
 	@Override
 	protected Boolean doInBackground(Void... params) {
 		// TODO Auto-generated method stub
-		File fDirectory = new File(Environment.getExternalStorageDirectory() , STORAGE_SUFFIX);
+		File fDirectory = new File(Environment.getExternalStorageDirectory() , suffix);
 
 
 

@@ -18,14 +18,17 @@
 				    android:orientation="vertical"
                     >
 				
-				    <ListView
-				        android:id="@+id/shelf_list_view"
-				        android:layout_width="match_parent"
-				        android:layout_height="wrap_content" >
-				    </ListView>
-		
+
 				</LinearLayout>
-			</FrameLayout>
+
+                <gtg.virus.gtpr.utils.extensions.PacificoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Welcome to Pinbook"
+                    android:id="@+id/textView3"
+                    android:layout_gravity="center" />
+            </FrameLayout>
     <ListView
         android:id="@+id/left_drawer"
         android:layout_width="300dp"

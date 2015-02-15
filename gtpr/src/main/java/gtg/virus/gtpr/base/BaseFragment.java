@@ -22,14 +22,20 @@ public abstract class BaseFragment extends Fragment {
 
         ButterKnife.inject(this , v);
 
+        setHasOptionsMenu(hasOptions());
+
         provideOnCreateView(inflater , container , savedInstanceState);
 
         return v;
     }
 
+    protected abstract boolean hasOptions();
+
     protected abstract void provideOnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
 
     protected abstract int resourceId();
+
+
 
 
 
