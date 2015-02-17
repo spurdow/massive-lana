@@ -26,5 +26,7 @@
     <string name="success">Success</string>
     <string name="provide_correct_ebook">Please provide correct ebook</string>
     <string name="mybookshelf">My Book Shelf</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="myremotebookshelf">My Remote Book Shelf</string>
 
 </resources>

@@ -8,11 +8,11 @@ import java.util.List;
 import gtg.virus.gtpr.R;
 
 public class Shelf {
-	
+
 	private List<PBook> books;
-	
+
 	private int max;
-	
+
 	public final static int MAX = 3;
 
 	private View mView = null;
@@ -22,12 +22,12 @@ public class Shelf {
 		this.books = new ArrayList<PBook>();
 		this.max = MAX;
 	}
-	
-	
+
+
 	public void addBook(PBook b){
 		books.add(b);
 	}
-	
+
 	public PBook getBook(int pos){
 		return books.get(pos);
 	}
@@ -45,9 +45,9 @@ public class Shelf {
 	public void setBooks(List<PBook> books) {
 		this.books = books;
 	}
-	
-	
-	
+
+
+
 	/**
 	 * @return the max
 	 */
@@ -62,9 +62,9 @@ public class Shelf {
 	public void setMax(int max) {
 		this.max = max;
 	}
-	
-	
-	
+
+
+
 
 
 	/**
@@ -86,6 +86,6 @@ public class Shelf {
 	public int resId(){
 		return R.layout.shelf_item;
 	}
-	
-	
+
+
 }

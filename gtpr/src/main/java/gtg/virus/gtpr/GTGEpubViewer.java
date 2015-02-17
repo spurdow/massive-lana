@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.InjectView;
 import gtg.virus.gtpr.adapters.PagerAdapter;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.fragment_pages.WebPageFragment;
@@ -28,11 +29,14 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
     private final static String TAG = GTGEpubViewer.class.getSimpleName();
 
-    private ViewPager mPager;
+    @InjectView(R.id.pager)
+    protected ViewPager mPager;
 
     private PagerAdapter mAdapter;
 
     private List<Fragment> mFragments;
+
+
 
     Book epubBook = null;
 
@@ -46,7 +50,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
     @Override
     protected void initializeResources(Bundle saveInstanceState) {
-        mPager = (ViewPager) findViewById(R.id.pager);
+
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){

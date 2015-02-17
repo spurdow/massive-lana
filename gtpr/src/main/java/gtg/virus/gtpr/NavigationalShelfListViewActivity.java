@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -178,7 +177,10 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                 frag = new MyBookShelf();
                 setTitle(getString(R.string.mybookshelf));
                 break;
-            case 3 : break;
+            case 3 :
+                frag = new MyRemoteBookShelf();
+                setTitle(getString(R.string.myremotebookshelf));
+                break;
             case 4 :
               /*  Intent i = new Intent(this , AudioListView.class);
                 startActivity(i);*/
@@ -247,13 +249,13 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 		txtView.setText(mainMenu);
 		mMergeAdapter.addView(v);
 		List<Menu> mMenu = new ArrayList<Menu>();
-		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My BookShelf"));
-		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Online BookShelf"));
-		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Bookmarks"));
-		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Annotations"));
-        mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Audio"));
-        mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Scheduled Reading"));
-        mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_launcher) , "My Reading Logs"));
+		mMenu.add(new Menu(getResources().getDrawable(R.drawable.mybookshelf_selector) , "My BookShelf"));
+		mMenu.add(new Menu(getResources().getDrawable(R.drawable.onlinebookshelf_selector) , "My Online BookShelf"));
+		mMenu.add(new Menu(getResources().getDrawable(R.drawable.bookmark_selector) , "My Bookmarks"));
+		mMenu.add(new Menu(getResources().getDrawable(R.drawable.annotation_selector) , "My Annotations"));
+        mMenu.add(new Menu(getResources().getDrawable(R.drawable.audio_selector) , "My Audio"));
+        mMenu.add(new Menu(getResources().getDrawable(R.drawable.schedule_selector) , "My Scheduled Reading"));
+        mMenu.add(new Menu(getResources().getDrawable(R.drawable.readinglogs_selector) , "My Reading Logs"));
 
 		
 		final MenuAdapter mAdapter = new MenuAdapter(this, mMenu);
@@ -270,8 +272,8 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 		txtView.setText(settings);
 		mMergeAdapter.addView(v);
 		List<Menu> mMenu = new ArrayList<Menu>();
-		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_action_settings) , "Settings"));
-		mMenu.add(new Menu(BitmapFactory.decodeResource(getResources(),R.drawable.ic_menu_help) , "Help"));
+		mMenu.add(new Menu(getResources().getDrawable(R.drawable.setting_selector) , "Settings"));
+		mMenu.add(new Menu(getResources().getDrawable(R.drawable.ic_menu_help) , "Help"));
 		final MenuAdapter mAdapter = new MenuAdapter(this, mMenu);
 		mMergeAdapter.addAdapter(mAdapter);
 	

@@ -4,11 +4,13 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Select;
+import com.google.gson.annotations.SerializedName;
 
 @Table(name = "user" , id = "_id")
 public class User extends Model {
 
     @Column()
+    @SerializedName("id")
     public long remote_id;
     @Column()
     public String first_name;

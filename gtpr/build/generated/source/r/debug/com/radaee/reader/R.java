@@ -11,13 +11,13 @@ public final class R {
 		public static final int clr_back = 0x7f070003;
 	}
 	public static final class drawable {
-		public static final int file03 = 0x7f02009d;
-		public static final int folder = 0x7f02009e;
-		public static final int folder0 = 0x7f02009f;
-		public static final int folder1 = 0x7f0200a0;
-		public static final int folder2 = 0x7f0200a1;
-		public static final int ic_launcher = 0x7f0200c9;
-		public static final int pdf_icon = 0x7f0200f0;
+		public static final int file03 = 0x7f0200a4;
+		public static final int folder = 0x7f0200a5;
+		public static final int folder0 = 0x7f0200a6;
+		public static final int folder1 = 0x7f0200a7;
+		public static final int folder2 = 0x7f0200a8;
+		public static final int ic_launcher = 0x7f0200f2;
+		public static final int pdf_icon = 0x7f02012a;
 	}
 	public static final class id {
 		public static final int PDFThumb = 0x7f0800a6;
@@ -69,16 +69,16 @@ public final class R {
 	}
 	public static final class string {
 		public static final int app_name = 0x7f0b0011;
-		public static final int s_act = 0x7f0b0040;
-		public static final int s_edit = 0x7f0b0041;
-		public static final int s_end = 0x7f0b0042;
-		public static final int s_find = 0x7f0b0043;
-		public static final int s_ink = 0x7f0b0044;
-		public static final int s_next = 0x7f0b0045;
-		public static final int s_prev = 0x7f0b0046;
-		public static final int s_rect = 0x7f0b0047;
-		public static final int s_remove = 0x7f0b0048;
-		public static final int s_save = 0x7f0b0049;
-		public static final int s_saveas = 0x7f0b004a;
+		public static final int s_act = 0x7f0b0042;
+		public static final int s_edit = 0x7f0b0043;
+		public static final int s_end = 0x7f0b0044;
+		public static final int s_find = 0x7f0b0045;
+		public static final int s_ink = 0x7f0b0046;
+		public static final int s_next = 0x7f0b0047;
+		public static final int s_prev = 0x7f0b0048;
+		public static final int s_rect = 0x7f0b0049;
+		public static final int s_remove = 0x7f0b004a;
+		public static final int s_save = 0x7f0b004b;
+		public static final int s_saveas = 0x7f0b004c;
 	}
 }

@@ -33,8 +33,6 @@ public class LoginFragment extends ParentFragment {
 	private static final String TAG = LoginFragment.class.getSimpleName();
 
 
-
-
     @InjectView(R.id.fb_button)
     protected Button authButton;
 
@@ -115,6 +113,7 @@ public class LoginFragment extends ParentFragment {
         if(!TextUtils.isEmpty(username) && !TextUtils.isEmpty(password)){
 
             final ProgressDialog dialog  = new ProgressDialog(getActivity());
+            dialog.setMessage(getString(R.string.please_wait));
             dialog.show();
             RestAdapter restAdapter = new RestAdapter.Builder()
                     .setEndpoint(Constants.SERVER)
@@ -129,7 +128,7 @@ public class LoginFragment extends ParentFragment {
                     dialog.dismiss();
 
                     if(remoteLogin.getStatus().equals(getString(R.string.success))){
-                        remoteLogin.getEntity().getListOfUsers().get(0).save();
+                        remoteLogin.getEntity().getList().get(0).save();
 
                         Intent i = new Intent(getActivity()  , NavigationalShelfListViewActivity.class);
                         startActivity(i);

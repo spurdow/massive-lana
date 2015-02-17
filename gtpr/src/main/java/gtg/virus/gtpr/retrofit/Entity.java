@@ -4,25 +4,25 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import gtg.virus.gtpr.entities.User;
-
 /**
  * Created by DavidLuvelleJoseph on 2/10/2015.
  */
-public class Entity {
+public class Entity<E> {
 
-    @SerializedName("users")
-    private List<User> listOfUsers;
 
-    public List<User> getListOfUsers() {
-        return listOfUsers;
+    @SerializedName("")
+    private List<E> list;
+
+    public List<E> getList() {
+        return list;
     }
 
-    public void setListOfUsers(List<User> listOfUsers) {
-        this.listOfUsers = listOfUsers;
+    public void setList(List<E> list) {
+        this.list = list;
     }
 
     public Entity() {
 
     }
+
 }

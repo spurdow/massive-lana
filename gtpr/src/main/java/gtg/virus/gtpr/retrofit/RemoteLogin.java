@@ -14,7 +14,7 @@ public class RemoteLogin {
     @SerializedName("message")
     private String message;
     @SerializedName("entities")
-    private Entity entity;
+    private UserEntity entity;
 
     public RemoteLogin() {
 
@@ -36,11 +36,11 @@ public class RemoteLogin {
         this.message = message;
     }
 
-    public Entity getEntity() {
+    public UserEntity getEntity() {
         return entity;
     }
 
-    public void setEntity(Entity entity) {
+    public void setEntity(UserEntity entity) {
         this.entity = entity;
     }
 }

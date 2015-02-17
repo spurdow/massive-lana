@@ -1,10 +1,11 @@
 package gtg.virus.gtpr.entities;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 
 public class Menu {
 	
-	private Bitmap image;
+	private Drawable image;
 	private String title;
 	
 	
@@ -13,7 +14,7 @@ public class Menu {
 	 * @param image
 	 * @param title
 	 */
-	public Menu(Bitmap image, String title) {
+	public Menu(Drawable image, String title) {
 		super();
 		this.image = image;
 		this.title = title;
@@ -21,13 +22,13 @@ public class Menu {
 	/**
 	 * @return the image
 	 */
-	public Bitmap getImage() {
+	public Drawable getImage() {
 		return image;
 	}
 	/**
 	 * @param image the image to set
 	 */
-	public void setImage(Bitmap image) {
+	public void setImage(Drawable image) {
 		this.image = image;
 	}
 	/**

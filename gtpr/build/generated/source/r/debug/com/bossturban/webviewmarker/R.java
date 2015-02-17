@@ -8,8 +8,8 @@ package com.bossturban.webviewmarker;
 
 public final class R {
 	public static final class drawable {
-		public static final int text_select_handle_left = 0x7f020104;
-		public static final int text_select_handle_right = 0x7f020105;
+		public static final int text_select_handle_left = 0x7f020143;
+		public static final int text_select_handle_right = 0x7f020144;
 	}
 	public static final class id {
 		public static final int dragLayer = 0x7f0800c7;

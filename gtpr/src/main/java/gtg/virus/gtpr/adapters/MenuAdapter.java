@@ -1,9 +1,9 @@
 package gtg.virus.gtpr.adapters;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,10 +51,10 @@ public class MenuAdapter extends AbstractListAdapter<Menu> {
 
 
 
-        Bitmap bitmap = getObject(position).getImage();
-		if(bitmap != null){
+        Drawable drawable = getObject(position).getImage();
+		if(drawable != null){
 
-			mView.mImgView.setImageBitmap(getObject(position).getImage());
+            mView.mImgView.setImageDrawable(drawable);
 		    if(isMenu){
                 mView.mImgView.getDrawable().setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
             }

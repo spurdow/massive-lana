@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import butterknife.ButterKnife;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.utils.color.ColorPickerDialog;
 
@@ -76,7 +77,7 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getContentViewResId());
-
+        ButterKnife.inject(this);
         initializeResources(savedInstanceState);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
