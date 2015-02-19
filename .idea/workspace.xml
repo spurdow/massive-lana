@@ -59,14 +59,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: gtg.virus.gtpr" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/entities/RemoteBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AARemoteBook.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AARemoteBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/retrofit/EbookEntity.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/retrofit/EbookEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/MenuAdapter.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/MenuAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/res/drawable/mybookshelf_selector.xml" afterPath="$PROJECT_DIR$/gtpr/src/main/res/drawable/mybookshelf_selector.xml" />
+    <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="remote book">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gtg.iws" />
@@ -3909,7 +3902,11 @@
       <created>1424194925864</created>
       <updated>1424194925864</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="remote book">
+      <created>1424361337543</created>
+      <updated>1424361337544</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3995,7 +3992,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="hello" />
     <MESSAGE value="with audio" />
     <MESSAGE value="workspace" />
     <MESSAGE value="removed useless" />
@@ -4020,7 +4016,8 @@
     <MESSAGE value="recode new pibook" />
     <MESSAGE value="updated pinbook to fragment" />
     <MESSAGE value="updated pinbook login" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated pinbook login" />
+    <MESSAGE value="remote book" />
+    <option name="LAST_COMMIT_MESSAGE" value="remote book" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
