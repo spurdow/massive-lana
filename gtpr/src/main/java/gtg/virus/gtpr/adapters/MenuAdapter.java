@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 import gtg.virus.gtpr.R;
 import gtg.virus.gtpr.entities.Menu;
 
@@ -41,9 +43,8 @@ public class MenuAdapter extends AbstractListAdapter<Menu> {
 		ViewHolder mView = null;
 		if(child == null){
 			child = mInflater.inflate(R.layout.menu_list_row, null);
-			mView = new ViewHolder();
-			mView.mImgView = (ImageView) child.findViewById(R.id.img_menu_list);
-			mView.mTitle = (TextView) child.findViewById(R.id.txt_menu_list_title);
+			mView = new ViewHolder(child);
+
 			child.setTag(mView);
 		}else{
 			mView = (ViewHolder) child.getTag();
@@ -68,10 +69,15 @@ public class MenuAdapter extends AbstractListAdapter<Menu> {
 		
 	
 	
-	private class ViewHolder{
-		private ImageView mImgView;
-		private TextView mTitle;
+	static class ViewHolder{
+        @InjectView(R.id.img_menu_list)
+		ImageView mImgView;
+        @InjectView(R.id.txt_menu_list_title)
+		TextView mTitle;
 
+        ViewHolder(View child){
+            ButterKnife.inject(this, child);
+        }
 	}
 
 }

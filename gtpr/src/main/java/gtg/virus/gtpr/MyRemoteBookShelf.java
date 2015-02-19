@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -15,6 +16,7 @@ import butterknife.InjectView;
 import gtg.virus.gtpr.aaentity.AARemoteBook;
 import gtg.virus.gtpr.adapters.RemoteShelfAdapter;
 import gtg.virus.gtpr.base.BaseFragment;
+import gtg.virus.gtpr.entities.RemoteBook;
 import gtg.virus.gtpr.entities.User;
 import gtg.virus.gtpr.retrofit.Constants;
 import gtg.virus.gtpr.retrofit.EbookQueryService;
@@ -29,6 +31,7 @@ import retrofit.client.Response;
  */
 public class MyRemoteBookShelf extends BaseFragment implements RemoteShelfAdapter.OnViewClick {
 
+    private static final String TAG = MyRemoteBookShelf.class.getSimpleName();
     @InjectView(R.id.shelf_list_view)
     protected ListView mListView;
 
@@ -72,17 +75,31 @@ public class MyRemoteBookShelf extends BaseFragment implements RemoteShelfAdapte
                 dialog.dismiss();
 
                 if(remotePBooks.getStatus().equals(getString(R.string.success))){
-                    List<AARemoteBook> ebooks = remotePBooks.getEntity().getEbook();
+                    List<RemoteBook> ebooks = remotePBooks.getEntity().getEbook();
                     for(int i = 0 ; i < ebooks.size() ; i++){
                         //RemotePBook pbook = new RemotePBook();
-
-                        mShelfAdapter.addBook(ebooks.get(i));
+                        Log.w(TAG , ebooks.get(i).getPath());
+                        RemoteBook remoteBook = ebooks.get(i);
+                        AARemoteBook aaRemoteBook = new AARemoteBook();
+                        aaRemoteBook.fileName = remoteBook.getFilename();
+                        aaRemoteBook.author = remoteBook.getAuthor();
+                        aaRemoteBook.format = remoteBook.getFormat();
+                        aaRemoteBook.path = remoteBook.getPath();
+                        aaRemoteBook.remoteDivisionId = remoteBook.getDivision_id();
+                        aaRemoteBook.remoteId = remoteBook.getId();
+                        aaRemoteBook.remoteUserId = remoteBook.getUser_id();
+                        aaRemoteBook.status = remoteBook.getStatus();
+                        aaRemoteBook.title = remoteBook.getTitle();
+                        long id = aaRemoteBook.save();
+                        if(id > 0) {
+                            mShelfAdapter.addBook(aaRemoteBook);
+                        }
                     }
 
                 }else{
                     AlertDialog alert = new AlertDialog.Builder(getActivity())
                             .setTitle(getString(R.string.retry))
-                            .setMessage(getString(R.string.provide_correct_credentials))
+                            .setMessage(remotePBooks.getMessage())
                             .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
@@ -98,6 +115,18 @@ public class MyRemoteBookShelf extends BaseFragment implements RemoteShelfAdapte
             @Override
             public void failure(RetrofitError error) {
                 dialog.dismiss();
+                AlertDialog alert = new AlertDialog.Builder(getActivity())
+                        .setTitle(getString(R.string.retry))
+                        .setMessage(getString(R.string.provide_correct_credentials))
+                        .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                dialog.dismiss();
+                            }
+                        }).create();
+
+                alert.show();
             }
         });
 

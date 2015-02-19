@@ -4,7 +4,6 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Select;
-import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
@@ -13,14 +12,11 @@ import java.util.List;
  */
 @Table(name = "aaremoteebook" , id = "_id")
 public class AARemoteBook extends Model {
-    @Column()
-    @SerializedName("id")
+    @Column(name = "remote_id" , index =  true , unique =  true, onUniqueConflict = Column.ConflictAction.REPLACE)
     public long remoteId;
     @Column()
-    @SerializedName("user_id")
     public long remoteUserId;
     @Column()
-    @SerializedName("division_id")
     public long remoteDivisionId;
     @Column()
     public String title;
@@ -29,7 +25,6 @@ public class AARemoteBook extends Model {
     @Column()
     public String format;
     @Column()
-    @SerializedName("filename")
     public String fileName;
     @Column()
     public String path;
@@ -37,20 +32,9 @@ public class AARemoteBook extends Model {
     public int status;
 
     public AARemoteBook() {
-        super();
+
     }
 
-    public AARemoteBook(long remoteId, long remoteUserId, long remoteDivisionId, String title, String author, String format, String fileName, String path, int status) {
-        this.remoteId = remoteId;
-        this.remoteUserId = remoteUserId;
-        this.remoteDivisionId = remoteDivisionId;
-        this.title = title;
-        this.author = author;
-        this.format = format;
-        this.fileName = fileName;
-        this.path = path;
-        this.status = status;
-    }
 
     public static List<AARemoteBook> list(){
         return new Select().from(AARemoteBook.class).execute();

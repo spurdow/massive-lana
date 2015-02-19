@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-import gtg.virus.gtpr.aaentity.AARemoteBook;
+import gtg.virus.gtpr.entities.RemoteBook;
 
 /**
  * Created by DavidLuvelleJoseph on 2/18/2015.
@@ -12,16 +12,16 @@ import gtg.virus.gtpr.aaentity.AARemoteBook;
 public class EbookEntity {
 
     @SerializedName("ebooks")
-    private List<AARemoteBook> ebook;
+    private List<RemoteBook> ebook;
 
     public EbookEntity() {
     }
 
-    public List<AARemoteBook> getEbook() {
+    public List<RemoteBook> getEbook() {
         return ebook;
     }
 
-    public void setEbook(List<AARemoteBook> ebook) {
+    public void setEbook(List<RemoteBook> ebook) {
         this.ebook = ebook;
     }
 }
