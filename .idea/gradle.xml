@@ -6,6 +6,16 @@
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="distributionUrl=http/:/services.gradle.org/distributions/gradle-1.10-all.zip" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/EPUB3Reader" />
+            <option value="$PROJECT_DIR$/aFileChooser" />
+            <option value="$PROJECT_DIR$/gtpr" />
+            <option value="$PROJECT_DIR$/pr" />
+            <option value="$PROJECT_DIR$/webViewMarker" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>

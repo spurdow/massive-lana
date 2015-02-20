@@ -15,7 +15,7 @@ public class AABook extends Model{
     @Column(name = "title")
     public String title;
 
-    @Column(name = "path" , index =  true)
+    @Column(name = "path" , index =  true , unique =  true , onUniqueConflict = Column.ConflictAction.REPLACE)
     public String path;
 
     @Column(name = "status")

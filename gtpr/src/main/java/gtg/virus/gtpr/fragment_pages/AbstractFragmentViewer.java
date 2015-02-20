@@ -13,13 +13,17 @@ import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 import gtg.virus.gtpr.R;
+import gtg.virus.gtpr.aaentity.AABook;
+import gtg.virus.gtpr.aaentity.AABookmark;
 import gtg.virus.gtpr.utils.etc.ActionItem;
 import gtg.virus.gtpr.utils.etc.QuickAction;
 
 public abstract class AbstractFragmentViewer extends Fragment {
 
-    public final static String DATA_FILTER = "_data_filter";
-    public final static String PATH_FILTER = "_path_filter";
+    public static final String DATA_FILTER = "_data_filter";
+    public static final String PATH_FILTER = "_path_filter";
+    public static final String PAGE_FILTER = "_page_filter";
+    public static final String ENCODING_FILTER = "_char_filter";
 
     //action id
     public static final int ID_UP     = 1;
@@ -33,17 +37,27 @@ public abstract class AbstractFragmentViewer extends Fragment {
 
     protected String baseUrl = null;
 
+    protected AABook book;
+
     public abstract int getResId();
 
     public abstract void initializeView(View v , LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
 
     public abstract void overrideActions(Bundle savedInstanceState);
 
+    public abstract void checkBookMark(boolean conditional);
+
     public abstract boolean useButterKnife();
 
     protected ArrayList<ActionItem> actionItemArrayList = new ArrayList<ActionItem>();
 
     protected QuickAction quickAction;
+
+    protected int page;
+
+    protected String encoding;
+
+    protected String sample_sentence;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -112,6 +126,19 @@ public abstract class AbstractFragmentViewer extends Fragment {
         if(extras != null && extras.containsKey(DATA_FILTER)){
             data = extras.getString(DATA_FILTER);
             baseUrl = extras.getString(PATH_FILTER);
+            page = extras.getInt(PAGE_FILTER);
+            encoding = extras.getString(ENCODING_FILTER);
+        }
+
+        book = AABook.find(baseUrl);
+
+        if(book != null){
+            AABookmark aaBookmark =AABookmark.findBookMark(page , book);
+            if(aaBookmark != null){
+                checkBookMark(true);
+            }else{
+                checkBookMark(false);
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////

@@ -6,7 +6,6 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.ToxicBakery.viewpager.transforms.FlipHorizontalTransformer;
 import com.google.gson.Gson;
 
 import java.io.FileInputStream;
@@ -99,8 +98,8 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         Log.w(TAG , "Fragments size " + mFragments.size());
         mAdapter = new PagerAdapter(getSupportFragmentManager() , mFragments);
 
-        mPager.setPageTransformer(true , new FlipHorizontalTransformer());
-  /*      mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        //mPager.setPageTransformer(true , new FlipHorizontalTransformer());
+       /* mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
 
@@ -131,6 +130,8 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         if (tocReferences == null) {
             return;
         }
+        int page = 0;
+        String charEncoding = null;
         for (TOCReference tocReference:tocReferences) {
             StringBuilder tocString = new StringBuilder();
             for (int i = 0; i < depth; i++) {
@@ -142,11 +143,19 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
             row.setResource(tocReference.getResource());
             contentDetails.add(row);*/
             try {
-                mFragments.add(WebPageFragment.newInstance(new String(tocReference.getResource().getData()) , mBook.getPath()));
+
+
+            /*    final String stringData = IOUtils.toString(tocReference.getResource().getInputStream(), tocReference.getResource().getInputEncoding());
+                Log.w(TAG , "Data String=> " + stringData );
+                */
+                charEncoding = tocReference.getResource().getInputEncoding();
+                mFragments.add(WebPageFragment.newInstance(new String(tocReference.getResource().getData()) , mBook.getPath() , page , charEncoding));
+                Log.w(TAG , "Page = " + page);
             } catch (IOException e) {
                 e.printStackTrace();
             }
             logContentsTable(tocReference.getChildren(), depth + 1);
+            page++;
         }
     }
 

@@ -63,6 +63,7 @@ public class MyRemoteBookShelf extends BaseFragment implements RemoteShelfAdapte
                 .setEndpoint(Constants.SERVER)
                 .build();
 
+
         User user = User.getUser();
 
         final ProgressDialog dialog  = new ProgressDialog(getActivity());
@@ -73,6 +74,8 @@ public class MyRemoteBookShelf extends BaseFragment implements RemoteShelfAdapte
             @Override
             public void success(RemoteQueryEbook remotePBooks, Response response) {
                 dialog.dismiss();
+
+
 
                 if(remotePBooks.getStatus().equals(getString(R.string.success))){
                     List<RemoteBook> ebooks = remotePBooks.getEntity().getEbook();

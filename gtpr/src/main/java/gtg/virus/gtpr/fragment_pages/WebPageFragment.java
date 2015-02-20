@@ -18,6 +18,8 @@ import com.bossturban.webviewmarker.TextSelectionSupport;
 import butterknife.InjectView;
 import butterknife.OnCheckedChanged;
 import gtg.virus.gtpr.R;
+import gtg.virus.gtpr.aaentity.AABookmark;
+import gtg.virus.gtpr.utils.Utilities;
 
 public class WebPageFragment extends AbstractFragmentViewer {
 
@@ -34,12 +36,14 @@ public class WebPageFragment extends AbstractFragmentViewer {
 
 
 
-    public static WebPageFragment newInstance(final String data , final String path){
+    public static WebPageFragment newInstance(final String data , final String path , final int page , final String charEncoding){
         WebPageFragment mFrag = new WebPageFragment();
 
         Bundle args = new Bundle();
         args.putString(DATA_FILTER , data);
         args.putString(PATH_FILTER , path);
+        args.putInt(PAGE_FILTER , page);
+        args.putString(ENCODING_FILTER , charEncoding);
 
         mFrag.setArguments(args);
 
@@ -53,14 +57,8 @@ public class WebPageFragment extends AbstractFragmentViewer {
 
     @Override
     public void initializeView(View view, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-
         mTextSelectionSupport = TextSelectionSupport.support(getActivity() , mWebView);
-
-
         mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE , null);
-
-
         setHasOptionsMenu(true);
     }
 
@@ -69,7 +67,6 @@ public class WebPageFragment extends AbstractFragmentViewer {
     public void overrideActions(Bundle savedInstanceState) {
         Log.w(TAG , "Path " + baseUrl );
         final String type = "text/html";
-        final String encoding = "utf-8";
 
         mTextSelectionSupport.setSelectionListener(new TextSelectionSupport.SelectionListener() {
             @Override
@@ -95,33 +92,46 @@ public class WebPageFragment extends AbstractFragmentViewer {
         });
         mWebView.getSettings().setDisplayZoomControls(true);
         mWebView.getSettings().setBuiltInZoomControls(true);
-
-/*        mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
-        mWebView.getSettings().setLoadsImagesAutomatically(true);*/
         mWebView.getSettings().setJavaScriptEnabled(true);
-/*        mWebView.setWebChromeClient(new WebChromeClient());
-        mWebView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                Log.w(TAG , "Long Click!");
-                return false;
-            }
-        });*/
 
- /*       // we dont do url linking as of now
-        mWebView.setWebViewClient(new WebViewClient(){
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                return false;
-            }
-        });*/
         mWebView.loadData( data, type, encoding);
 
 
     }
 
+    @Override
+    public void checkBookMark(boolean conditional) {
+        mToggle.setChecked(conditional);
+    }
+
     @OnCheckedChanged(R.id.toggle_bookmark)
     void onBookMarked(boolean conditional){
+        Toast.makeText(getActivity() , "test" , Toast.LENGTH_SHORT).show();
+        if(conditional){
+            AABookmark aaBookmark =AABookmark.findBookMark(page , book);
+            if(aaBookmark == null){
+                aaBookmark = new AABookmark();
+                aaBookmark.book = book;
+                aaBookmark.bookmark_page = page;
+                aaBookmark.sentence_sample = mWebView.getTitle();
+                long id = aaBookmark.save();
+                if(id > 0){
+                    Utilities.makeText(getActivity() , getString(R.string.success));
+                    checkBookMark(true);
+                }else{
+                    Utilities.makeText(getActivity(), getString(R.string.failed_to_bookmark ));
+                    checkBookMark(false);
+                }
+            }
+        }else{
+            AABookmark aaBookmark =AABookmark.findBookMark(page , book);
+            if(aaBookmark != null){
+                aaBookmark.delete();
+
+            }
+
+            checkBookMark(false);
+        }
         Log.w(TAG , "Bookmarked!");
     }
 

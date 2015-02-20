@@ -28,5 +28,7 @@
     <string name="mybookshelf">My Book Shelf</string>
     <string name="please_wait">Please wait...</string>
     <string name="myremotebookshelf">My Remote Book Shelf</string>
+    <string name="failed_to_bookmark">Failed to bookmark</string>
+    <string name="mybookmarklist">Bookmark List</string>
 
 </resources>

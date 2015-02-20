@@ -1,10 +1,5 @@
 package gtg.virus.gtpr.adapters;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Properties;
-
-
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
@@ -13,6 +8,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filterable;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 
 public abstract class AbstractListAdapter<E> extends BaseAdapter implements
@@ -28,6 +28,14 @@ public abstract class AbstractListAdapter<E> extends BaseAdapter implements
 		this.lists = lists;
 		mInflater = LayoutInflater.from(context);
 	}
+
+    public AbstractListAdapter(Context context){
+        this(context , new ArrayList<E>());
+    }
+
+    public void add(E e){
+        lists.add(e);
+    }
 
 	@Override
 	public int getCount() {

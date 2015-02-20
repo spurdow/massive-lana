@@ -182,8 +182,8 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                 setTitle(getString(R.string.myremotebookshelf));
                 break;
             case 4 :
-              /*  Intent i = new Intent(this , AudioListView.class);
-                startActivity(i);*/
+                frag = new BookmarkList();
+                setTitle(getString(R.string.mybookmarklist));
                 break;
             case 5 :
                 //Intent s = new Intent(this , ScheduledBooksView.class);

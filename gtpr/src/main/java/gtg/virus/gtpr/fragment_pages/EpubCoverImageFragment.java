@@ -46,6 +46,11 @@ public class EpubCoverImageFragment extends AbstractFragmentViewer {
     }
 
     @Override
+    public void checkBookMark(boolean conditional) {
+
+    }
+
+    @Override
     public boolean useButterKnife() {
         return true;
     }
