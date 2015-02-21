@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "aabookmark" , id = "_id")
 public class AABookmark extends Model {
 
-    @Column(name = "page" , index = true, unique = true, onUniqueConflict = Column.ConflictAction.REPLACE)
+    @Column(name = "page" , index = true)
     public int bookmark_page;
 
     @Column()

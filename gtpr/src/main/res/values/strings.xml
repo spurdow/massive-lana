@@ -30,5 +30,9 @@
     <string name="myremotebookshelf">My Remote Book Shelf</string>
     <string name="failed_to_bookmark">Failed to bookmark</string>
     <string name="mybookmarklist">Bookmark List</string>
+    <string name="failed_to_open_book">Failed to open book.</string>
+    <string name="save_doodle">Save doodle?</string>
+    <string name="do_you_want_to_save_draw">Do you want to save your doodle?</string>
+    <string name="no">No</string>
 
 </resources>

@@ -1,7 +1,9 @@
 package gtg.virus.gtpr;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -16,12 +18,24 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
+import gtg.virus.gtpr.aaentity.AABook;
+import gtg.virus.gtpr.aaentity.AADoodle;
+import gtg.virus.gtpr.async.AddNewDoodle;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.utils.color.ColorPickerDialog;
+import gtg.virus.gtpr.utils.etc.DrawnView;
 
 public abstract class AbstractViewer extends ActionBarActivity implements ColorPickerDialog.OnColorChangedListener {
+
+    public static final String TAG = AbstractViewer.class.getSimpleName();
+
+    public static final String INDEX_KEY = TAG + ".index_key";
 
     protected PBook mBook;
 
@@ -39,10 +53,23 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
 
     public static final String EDIT_TEXT_COLOR_KEY = "text_color_key";
 
+    protected int index_key = -1;
+
+    protected ViewGroup vg;
+
+    protected int current_page;
+
+    protected AABook current_book;
+
+    protected List<AADoodle> current_doodle;
+
+    protected int current_color = Color.BLACK;
+
     @Override
     public void colorChanged(String key, int color) {
         if(EDIT_COLOR_KEY.equals(key)) {
             mPaint.setColor(color);
+            current_color = color;
         }
     }
 
@@ -78,9 +105,12 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
         super.onCreate(savedInstanceState);
         setContentView(getContentViewResId());
         ButterKnife.inject(this);
+        vg = (ViewGroup)  findViewById(R.id.parent_view_group);
         initializeResources(savedInstanceState);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         mColorDialog = new ColorPickerDialog(this , this , EDIT_COLOR_KEY , mInitialColor , mDefaultColor);
 
@@ -94,6 +124,8 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
         return super.onCreateOptionsMenu(menu);
     }
 
+    final List<Float> xPoints = new ArrayList<Float>();
+    final List<Float> yPoints = new ArrayList<Float>();
     int sx = Integer.MAX_VALUE;
     int sy = Integer.MAX_VALUE;
     Rect r = new Rect();
@@ -111,6 +143,8 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
 
 
     private DrawView mDraw;
+
+
 
     private int mInitialColor = Color.BLACK;
     private int mDefaultColor = Color.WHITE;
@@ -179,6 +213,9 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
                 mPath.moveTo(x, y);
                 mX = x;
                 mY = y;
+
+                xPoints.add( x);
+                yPoints.add( y);
             }
             public void touch_move(float x, float y) {
                 float dx = Math.abs(x - mX);
@@ -188,6 +225,8 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
                     mX = x;
                     mY = y;
 
+                    xPoints.add( x);
+                    yPoints.add( y);
                     circlePath.reset();
                     circlePath.addCircle(mX, mY, 30, Path.Direction.CW);
                 }
@@ -210,8 +249,7 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
 
     private boolean started = false;
     int ctr = 0;
-    private float[] points = new float[10000];
-    //private List<Point> points = (List<Point>) new ArrayList<Point>();
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO Auto-generated method stub
@@ -220,9 +258,61 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
             case android.R.id.home: finish(); break;
 
             case R.id.opt_menu_edit:
-                ViewGroup vg = (ViewGroup)  findViewById(R.id.parent_view_group);
 
-                if(mState == ViewerState.Normal){
+
+
+                if(mState == ViewerState.Drawing){
+                    AlertDialog alertDialog = new AlertDialog.Builder(this)
+                            .setTitle(getString(R.string.save_doodle))
+                            .setMessage(getString(R.string.do_you_want_to_save_draw))
+                            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                    new AddNewDoodle(AbstractViewer.this, xPoints, yPoints, current_book, current_page, current_color) {
+                                        @Override
+                                        protected void onPostExecute(Boolean aBoolean) {
+                                            super.onPostExecute(aBoolean);
+                                            if (!aBoolean.booleanValue()) {
+                                                Toast.makeText(AbstractViewer.this , "Problem with saving" , Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    }
+                                            .execute();
+
+                                    if (mDraw != null)
+                                        vg.removeView(mDraw);
+                                    started = false;
+                                    sx = Integer.MAX_VALUE;
+                                    sy = Integer.MAX_VALUE;
+                                    r = new Rect();
+                                    canvasState = CanvasState.None;
+                                    mState = ViewerState.Normal;
+                                    dialog.dismiss();
+
+
+                                }
+                            })
+                            .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //erase doodle
+                                    if (mDraw != null)
+                                        vg.removeView(mDraw);
+                                    started = false;
+                                    sx = Integer.MAX_VALUE;
+                                    sy = Integer.MAX_VALUE;
+                                    r = new Rect();
+                                    canvasState = CanvasState.None;
+                                    mState = ViewerState.Normal;
+                                    dialog.dismiss();
+                                }
+                            })
+                            .create();
+
+                    alertDialog.show();
+                }
+                else if(mState == ViewerState.Normal){
                     mColorDialog.show();
                     // create doodle
 
@@ -255,7 +345,7 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
 
 
                     mState = ViewerState.Drawing;
-                }else{
+                }else {
                     mColorDialog.dismiss();
                     //erase doodle
                     if(mDraw != null)
@@ -297,5 +387,30 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
 
     public void setAbsClickListener(OnActionBarItemClick mAbsClickListener) {
         this.mAbsClickListener = mAbsClickListener;
+    }
+
+    protected DrawnView mDrawnView = null;
+    public void setCurrentPage(int i ){
+        current_page = i;
+        current_doodle = AADoodle.list( current_page , current_book);
+
+        if(mDrawnView != null){
+            vg.removeView(mDrawnView);
+        }
+
+        if(current_doodle != null && !current_doodle.isEmpty()){
+            List<Float> x = new ArrayList<Float>();
+            List<Float> y = new ArrayList<Float>();
+            for(int index = 0 ; index < current_doodle.size() ; index++){
+                x.add(current_doodle.get(index).sx);
+                y.add(current_doodle.get(index).sy);
+
+            }
+
+            mDrawnView = new DrawnView(AbstractViewer.this , current_color , x , y );
+            vg.addView(mDrawnView);
+
+
+        }
     }
 }

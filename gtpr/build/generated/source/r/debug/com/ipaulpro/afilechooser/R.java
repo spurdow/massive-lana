@@ -26,10 +26,10 @@ public final class R {
 	}
 	public static final class string {
 		public static final int choose_file = 0x7f0b0012;
-		public static final int empty_directory = 0x7f0b0031;
-		public static final int error_selecting_file = 0x7f0b0033;
-		public static final int internal_storage = 0x7f0b0037;
-		public static final int storage_removed = 0x7f0b0053;
+		public static final int empty_directory = 0x7f0b0032;
+		public static final int error_selecting_file = 0x7f0b0034;
+		public static final int internal_storage = 0x7f0b0039;
+		public static final int storage_removed = 0x7f0b0057;
 	}
 	public static final class style {
 		public static final int fileChooserName = 0x7f0c00a2;

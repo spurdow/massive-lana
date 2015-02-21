@@ -162,7 +162,7 @@ public class MyBookShelf extends BaseFragment implements ShelfAdapter.OnViewClic
 
     @Override
     public void bookClick(PBook book, int position) {
-        Utilities.makeText(getActivity() , "Position " + position);
+       // Utilities.makeText(getActivity() , "Position " + position);
         if(Utilities.isEpub(book.getPath())){
             Intent intent = new Intent(getActivity(), GTGEpubViewer.class);
             intent.putExtra(PIN_EXTRA_PBOOK, book.toString());

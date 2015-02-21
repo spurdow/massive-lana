@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.InjectView;
+import gtg.virus.gtpr.aaentity.AABook;
 import gtg.virus.gtpr.adapters.PagerAdapter;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.fragment_pages.WebPageFragment;
@@ -56,7 +57,13 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
             String gsonExtra =  extras.getString(PIN_EXTRA_PBOOK);
 
             mBook = new Gson().fromJson(gsonExtra, PBook.class);
+
+            if(extras.containsKey(INDEX_KEY)){
+                index_key = extras.getInt(INDEX_KEY);
+            }
         }
+
+        current_book = AABook.find(mBook.getPath());
 
         EpubReader epubReader = new EpubReader();
         epubBook = null;
@@ -99,7 +106,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         mAdapter = new PagerAdapter(getSupportFragmentManager() , mFragments);
 
         //mPager.setPageTransformer(true , new FlipHorizontalTransformer());
-       /* mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
 
@@ -108,16 +115,23 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
             @Override
             public void onPageSelected(int i) {
-                Log.w(TAG, "onPageSelected");
+                setCurrentPage(i);
             }
 
             @Override
             public void onPageScrollStateChanged(int i) {
                 Log.w(TAG, "onPageScrollStateChanged");
             }
-        });*/
+        });
 
         mPager.setAdapter(mAdapter);
+
+        if(index_key >= 0){
+            mPager.setCurrentItem(index_key , true);
+            setCurrentPage(index_key);
+        }else{
+            setCurrentPage(0);
+        }
 
     }
 

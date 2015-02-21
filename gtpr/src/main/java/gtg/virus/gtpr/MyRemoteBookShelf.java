@@ -76,6 +76,9 @@ public class MyRemoteBookShelf extends BaseFragment implements RemoteShelfAdapte
                 dialog.dismiss();
 
 
+                if(!isAdded() || !isVisible()){
+                    return;
+                }
 
                 if(remotePBooks.getStatus().equals(getString(R.string.success))){
                     List<RemoteBook> ebooks = remotePBooks.getEntity().getEbook();
@@ -118,6 +121,10 @@ public class MyRemoteBookShelf extends BaseFragment implements RemoteShelfAdapte
             @Override
             public void failure(RetrofitError error) {
                 dialog.dismiss();
+
+                if(!isAdded() || !isVisible()){
+                    return;
+                }
                 AlertDialog alert = new AlertDialog.Builder(getActivity())
                         .setTitle(getString(R.string.retry))
                         .setMessage(getString(R.string.provide_correct_credentials))

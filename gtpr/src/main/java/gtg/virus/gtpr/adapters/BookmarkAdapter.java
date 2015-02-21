@@ -73,7 +73,7 @@ public class BookmarkAdapter extends AbstractListAdapter<AABookmark> {
 
             v.bookImage.setImageBitmap(page0);
         }
-        v.bookPage.setText("Page " + String.valueOf(bookmark.bookmark_page));
+        v.bookPage.setText("Page " + String.valueOf(bookmark.bookmark_page + 1));
         v.bookName.setText(book.title);
         v.bookSample.setText(bookmark.sentence_sample);
 
