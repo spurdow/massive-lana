@@ -276,8 +276,14 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
                                         protected void onPostExecute(Boolean aBoolean) {
                                             super.onPostExecute(aBoolean);
                                             if (!aBoolean.booleanValue()) {
-                                                Toast.makeText(AbstractViewer.this , "Problem with saving" , Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(AbstractViewer.this, "Problem with saving", Toast.LENGTH_SHORT).show();
                                             }
+
+                                            mDrawnView = new DrawnView(AbstractViewer.this, current_color, xPoints, yPoints);
+                                            //LinearLayoutParams params = new Linear
+                                            vg.addView(mDrawnView);
+
+
                                         }
                                     }
                                             .execute();
@@ -409,26 +415,34 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
                 current_book.save();
             }
         }
-        current_page = i;
-        current_doodle = AADoodle.list( current_page , current_book);
+        try {
+            current_page = i;
+            current_doodle = AADoodle.list( current_page , current_book);
 
-        if(mDrawnView != null){
-            vg.removeView(mDrawnView);
-        }
-
-        if(current_doodle != null && !current_doodle.isEmpty()){
-            List<Float> x = new ArrayList<Float>();
-            List<Float> y = new ArrayList<Float>();
-            for(int index = 0 ; index < current_doodle.size() ; index++){
-                x.add(current_doodle.get(index).sx);
-                y.add(current_doodle.get(index).sy);
+            if(mDrawnView != null){
+                vg.removeViewInLayout(mDrawnView);
 
             }
 
-            mDrawnView = new DrawnView(AbstractViewer.this , current_color , x , y );
-            vg.addView(mDrawnView);
+
+            if (current_doodle != null && !current_doodle.isEmpty()) {
+                List<Float> x = new ArrayList<Float>();
+                List<Float> y = new ArrayList<Float>();
+                for (int index = 0; index < current_doodle.size(); index++) {
+                    x.add(current_doodle.get(index).sx);
+                    y.add(current_doodle.get(index).sy);
+
+                }
+
+                mDrawnView = new DrawnView(AbstractViewer.this, current_color, x, y);
+
+                //LinearLayoutParams params = new Linear
+                vg.addView(mDrawnView);
 
 
+            }
+        }catch(NullPointerException ex){
+            ex.printStackTrace();
         }
     }
 }

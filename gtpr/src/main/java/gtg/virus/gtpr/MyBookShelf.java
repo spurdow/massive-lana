@@ -167,8 +167,15 @@ public class MyBookShelf extends BaseFragment implements ShelfAdapter.OnViewClic
             Intent intent = new Intent(getActivity(), GTGEpubViewer.class);
             intent.putExtra(PIN_EXTRA_PBOOK, book.toString());
             getActivity().startActivity(intent);
-
-            Log.w(TAG , "Starting GTGEpubViewer " + book.toString() );
+        }
+        else if(Utilities.isPdf(book.getPath())){
+            Intent intent = new Intent(getActivity(), GTGPdfViewer.class);
+            intent.putExtra(PIN_EXTRA_PBOOK, book.toString());
+            startActivity(intent);
+        }else if(Utilities.isTxt(book.getPath())) {
+            Intent intent = new Intent(getActivity(), GTGTxtViewer.class);
+            intent.putExtra(PIN_EXTRA_PBOOK, book.toString());
+            startActivity(intent);
         }
 
 

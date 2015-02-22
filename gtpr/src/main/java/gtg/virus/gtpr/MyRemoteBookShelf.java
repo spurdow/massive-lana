@@ -160,11 +160,11 @@ public class MyRemoteBookShelf extends BaseFragment implements RemoteShelfAdapte
 
     @Override
     public void bookClick(AARemoteBook book, int position) {
-        final String url = Constants.EBOOK_QUERY_SUBDOMAIN + book.path;
+        final String url = Constants.SERVER + Constants.EBOOK_QUERY_SUBDOMAIN + book.path;
 
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-        request.setDescription("Some descrition");
-        request.setTitle("Some title");
+        request.setDescription("Grabbing file from repo");
+        request.setTitle("Working...");
         // in order for this if to run, you must use the android 3.2 to compile your app
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             request.allowScanningByMediaScanner();

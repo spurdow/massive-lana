@@ -10,7 +10,16 @@ android {
         targetSdkVersion 19
     }
 
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+
 }
+
+
 
 dependencies {
     compile project(':aFileChooser')
@@ -41,6 +50,7 @@ dependencies {
     compile 'org.apache.commons:commons-io:1.3.2'
     compile 'com.telly:groundy:+'
     compile 'com.telly:groundy-compiler:+'
+    compile 'com.roomorama:caldroid:1.1.8'
 
 
 }

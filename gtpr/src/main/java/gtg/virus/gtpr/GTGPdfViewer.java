@@ -12,6 +12,7 @@ import com.radaee.reader.PDFReader;
 import com.radaee.reader.PDFReader.PDFReaderListener;
 import com.radaee.view.PDFVPage;
 
+import gtg.virus.gtpr.aaentity.AABook;
 import gtg.virus.gtpr.entities.PBook;
 
 import static gtg.virus.gtpr.utils.Utilities.PIN_EXTRA_PBOOK;
@@ -55,6 +56,11 @@ public class GTGPdfViewer extends AbstractViewer implements PDFReaderListener , 
 
         mPageNo.setText("0/"+mPageCount);
 
+        maxPage = mPageCount;
+
+        current_book = AABook.find(mBook.getPath());
+
+        setCurrentPage(0);
         setAbsClickListener(this);
     }
 
@@ -93,6 +99,7 @@ public class GTGPdfViewer extends AbstractViewer implements PDFReaderListener , 
 		// TODO Auto-generated method stub
 		Log.i(TAG, "OnPageChanged " + pageno);
 		mPageNo.setText(pageno+"/"+mPageCount);
+        setCurrentPage(pageno);
 	}
 
 	@Override
