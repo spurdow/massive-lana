@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.google.gson.Gson;
 import com.radaee.pdf.Document;
@@ -12,8 +13,12 @@ import com.radaee.reader.PDFReader;
 import com.radaee.reader.PDFReader.PDFReaderListener;
 import com.radaee.view.PDFVPage;
 
+import butterknife.InjectView;
+import butterknife.OnCheckedChanged;
 import gtg.virus.gtpr.aaentity.AABook;
+import gtg.virus.gtpr.aaentity.AABookmark;
 import gtg.virus.gtpr.entities.PBook;
+import gtg.virus.gtpr.utils.Utilities;
 
 import static gtg.virus.gtpr.utils.Utilities.PIN_EXTRA_PBOOK;
 
@@ -25,6 +30,8 @@ public class GTGPdfViewer extends AbstractViewer implements PDFReaderListener , 
 
 	private PDFReader mReader = null;
 
+    @InjectView(R.id.toggle_bookmark)
+    protected ToggleButton mToggle;
 
     /**
      * @return the layout from R.
@@ -80,7 +87,39 @@ public class GTGPdfViewer extends AbstractViewer implements PDFReaderListener , 
 		}
 		
 	}
-	
+
+    public void checkBookMark(boolean conditional) {
+        mToggle.setChecked(conditional);
+    }
+    @OnCheckedChanged(R.id.toggle_bookmark)
+    void onBookMarked(boolean conditional){
+        if(conditional){
+            AABookmark aaBookmark =AABookmark.findBookMark(current_page , current_book);
+            if(aaBookmark == null){
+                aaBookmark = new AABookmark();
+                aaBookmark.book = current_book;
+                aaBookmark.bookmark_page = current_page;
+                aaBookmark.sentence_sample = "";
+                long id = aaBookmark.save();
+                if(id > 0){
+                    Utilities.makeText(this, getString(R.string.success));
+                    checkBookMark(true);
+                }else{
+                    Utilities.makeText(this, getString(R.string.failed_to_bookmark ));
+                    checkBookMark(false);
+                }
+            }
+        }else{
+            AABookmark aaBookmark =AABookmark.findBookMark(current_page , current_book);
+            if(aaBookmark != null){
+                aaBookmark.delete();
+
+            }
+
+            checkBookMark(false);
+        }
+        Log.w(TAG , "Bookmarked!");
+    }
 	
 
 
@@ -100,6 +139,24 @@ public class GTGPdfViewer extends AbstractViewer implements PDFReaderListener , 
 		Log.i(TAG, "OnPageChanged " + pageno);
 		mPageNo.setText(pageno+"/"+mPageCount);
         setCurrentPage(pageno);
+
+
+
+        AABookmark aaBookmark =AABookmark.findBookMark(pageno , current_book);
+        if(aaBookmark == null){
+            aaBookmark = new AABookmark();
+            aaBookmark.book = current_book;
+            aaBookmark.bookmark_page = current_page;
+            aaBookmark.sentence_sample = "";
+            long id = aaBookmark.save();
+            if(id > 0){
+                Utilities.makeText(this, getString(R.string.success));
+                checkBookMark(true);
+            }else{
+                Utilities.makeText(this, getString(R.string.failed_to_bookmark ));
+                checkBookMark(false);
+            }
+        }
 	}
 
 	@Override

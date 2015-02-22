@@ -106,7 +106,6 @@ public class WebPageFragment extends AbstractFragmentViewer {
 
     @OnCheckedChanged(R.id.toggle_bookmark)
     void onBookMarked(boolean conditional){
-        Toast.makeText(getActivity() , "test" , Toast.LENGTH_SHORT).show();
         if(conditional){
             AABookmark aaBookmark =AABookmark.findBookMark(page , book);
             if(aaBookmark == null){

@@ -28,8 +28,8 @@ public final class R {
 		public static final int choose_file = 0x7f0b0014;
 		public static final int empty_directory = 0x7f0b0036;
 		public static final int error_selecting_file = 0x7f0b0038;
-		public static final int internal_storage = 0x7f0b003d;
-		public static final int storage_removed = 0x7f0b005e;
+		public static final int internal_storage = 0x7f0b003e;
+		public static final int storage_removed = 0x7f0b0061;
 	}
 	public static final class style {
 		public static final int fileChooserName = 0x7f0c00a2;
