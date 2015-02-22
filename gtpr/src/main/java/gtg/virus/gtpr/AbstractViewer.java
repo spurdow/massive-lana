@@ -420,7 +420,7 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
             current_doodle = AADoodle.list( current_page , current_book);
 
             if(mDrawnView != null){
-                vg.removeViewInLayout(mDrawnView);
+                vg.removeView(mDrawnView);
 
             }
 

@@ -9,6 +9,8 @@ import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.radaee.pdf.Document;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,11 +24,15 @@ import gtg.virus.gtpr.utils.Utilities;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.epub.EpubReader;
 
+import static gtg.virus.gtpr.utils.Utilities.renderPage;
+
 /**
  * Created by DavidLuvelleJoseph on 2/22/2015.
  */
 public class ReadingPlanAdapter extends AbstractListAdapter<AABook> {
 
+    private static final String TAG = ReadingPlanAdapter.class.getSimpleName();
+    private Document mDoc;
 
     public ReadingPlanAdapter(Context context, List<AABook> lists) {
         super(context, lists);
@@ -77,6 +83,16 @@ public class ReadingPlanAdapter extends AbstractListAdapter<AABook> {
 
                 v.bookImage.setImageBitmap(page0);
             }
+        }else if(Utilities.isPdf(book.path)){
+
+            mDoc = new Document();
+            int index = mDoc.Open(book.path, "");
+
+            if( index == 0) {
+                Bitmap page0 = renderPage(mDoc, 100, 100);
+                v.bookImage.setImageBitmap(page0);
+            }
+
         }
 
         v.bookSample.setText(book.title);
@@ -90,6 +106,11 @@ public class ReadingPlanAdapter extends AbstractListAdapter<AABook> {
         }
 
         v.bookStatus.setText(status);
+
+        if(mDoc != null){
+            mDoc.Close();
+            mDoc = null;
+        }
 
         return child;
     }

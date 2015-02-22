@@ -164,7 +164,7 @@ public class MyRemoteBookShelf extends BaseFragment implements RemoteShelfAdapte
 
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         request.setDescription("Grabbing file from repo");
-        request.setTitle("Working...");
+        request.setTitle("Grabbing...");
         // in order for this if to run, you must use the android 3.2 to compile your app
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             request.allowScanningByMediaScanner();
