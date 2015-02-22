@@ -60,13 +60,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/ReadingPlanAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/ReadingPlanList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtpr/src/main/res/layout/reading_plan_list.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtpr/src/main/res/layout/reading_plan_row.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/BookmarkAdapter.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/BookmarkAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/gtpr/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGAudioListener.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGAudioListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/bossturban/webviewmarker/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/bossturban/webviewmarker/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/github/gorbin/asne/core/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/github/gorbin/asne/core/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/github/gorbin/asne/facebook/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/github/gorbin/asne/facebook/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/radaee/reader/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/radaee/reader/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/gtg/virus/gtpr/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/gtg/virus/gtpr/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gtg.iws" />
@@ -157,12 +158,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SplashActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SplashActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7157895" vertical-offset="1275" max-vertical-offset="2669">
-              <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2669">
+              <caret line="127" column="39" selection-start-line="127" selection-start-column="39" selection-end-line="127" selection-end-column="39" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GTGAudioListener.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGAudioListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47719297" vertical-offset="2074" max-vertical-offset="5695">
+              <caret line="193" column="37" selection-start-line="193" selection-start-column="37" selection-end-line="193" selection-end-column="37" />
+              <folding>
+                <element signature="e#2330#2339#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2610,7 +2623,6 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AAScheduled_Books.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGAudioListener.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/Mp3ShelfAdapter.java" />
@@ -2625,6 +2637,7 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/ReadingPlanAdapter.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/ReadingPlanList.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGAudioListener.java" />
       </list>
     </option>
   </component>
@@ -2918,7 +2931,7 @@
     <property name="DEBUGGABLE_PROCESS" value="gtg.virus.gtpr" />
     <property name="SHOW_ALL_PROCESSES" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="SplashAc&#9;PSI&#9;JAVA://gtg.virus.gtpr.SplashActivity&#10;LoginAc&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;ReadingPla&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/ReadingPlanList.java&#10;Login&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;ShelfAda&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/adapters/ShelfAdapter.java&#10;Aud&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/AudioListView.java&#10;Book&#9;PSI&#9;JAVA://gtg.virus.gtpr.aaentity.AABook&#10;android&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;strings&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/values/strings.xml&#10;LoginA&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;LoginFra&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;LoginFrag&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;NAviga&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;loginFrag&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;LoginSer&#9;PSI&#9;JAVA://gtg.virus.gtpr.retrofit.UserLoginService&#10;Naviga&#9;PSI&#9;JAVA://gtg.virus.gtpr.NavigationalShelfListViewActivity&#10;Consta&#9;PSI&#9;JAVA://gtg.virus.gtpr.retrofit.Constants&#10;GTGE&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java&#10;row&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/layout/menu_list_row.xml&#10;build.&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;Android&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;Abst&#9;PSI&#9;JAVA://gtg.virus.gtpr.fragment_pages.AbstractFragmentViewer&#10;GTG&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java&#10;USer&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/entities/User.java&#10;androi&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;MyRemote&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java&#10;Na&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;MyBoo&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;User&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/entities/User.java&#10;AARe&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AARemoteBook.java&#10;Nav&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;RemoteB&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java&#10;MyB&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;Mybook&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;Remote&#9;PSI&#9;JAVA://gtg.virus.gtpr.retrofit.RemoteLogin&#10;Users&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/retrofit/UserLoginService.java&#10;A&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;Splas&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java&#10;Andro&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;Pinb&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/application/PinBookApplication.java&#10;Uti&#9;PSI&#9;JAVA://gtg.virus.gtpr.utils.Utilities&#10;rE&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/retrofit/RemoteLogin.java&#10;styles&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/values/styles.xml&#10;bui&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;Constants&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/retrofit/Constants.java&#10;Androi&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;onsta&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/retrofit/Constants.java&#10;gradle&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;com_facebook_ic&#9;FILE&#9;file://G:/projects/massive-lana/facebookSDK/src/main/res/drawable-hdpi/com_facebook_inverse_icon.png" />
+    <property name="SearchEverywhereHistoryKey" value="Gtg&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGAudioListener.java&#10;SplashAc&#9;PSI&#9;JAVA://gtg.virus.gtpr.SplashActivity&#10;LoginAc&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;ReadingPla&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/ReadingPlanList.java&#10;Login&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;ShelfAda&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/adapters/ShelfAdapter.java&#10;Aud&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/AudioListView.java&#10;Book&#9;PSI&#9;JAVA://gtg.virus.gtpr.aaentity.AABook&#10;android&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;strings&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/values/strings.xml&#10;LoginA&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;LoginFra&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;LoginFrag&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;NAviga&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;loginFrag&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;LoginSer&#9;PSI&#9;JAVA://gtg.virus.gtpr.retrofit.UserLoginService&#10;Naviga&#9;PSI&#9;JAVA://gtg.virus.gtpr.NavigationalShelfListViewActivity&#10;Consta&#9;PSI&#9;JAVA://gtg.virus.gtpr.retrofit.Constants&#10;GTGE&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java&#10;row&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/layout/menu_list_row.xml&#10;build.&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;Android&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;Abst&#9;PSI&#9;JAVA://gtg.virus.gtpr.fragment_pages.AbstractFragmentViewer&#10;GTG&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java&#10;USer&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/entities/User.java&#10;androi&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;MyRemote&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java&#10;Na&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;MyBoo&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;User&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/entities/User.java&#10;AARe&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AARemoteBook.java&#10;Nav&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;RemoteB&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java&#10;MyB&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;Mybook&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;Remote&#9;PSI&#9;JAVA://gtg.virus.gtpr.retrofit.RemoteLogin&#10;Users&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/retrofit/UserLoginService.java&#10;A&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;Splas&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java&#10;Andro&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;Pinb&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/application/PinBookApplication.java&#10;Uti&#9;PSI&#9;JAVA://gtg.virus.gtpr.utils.Utilities&#10;rE&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/retrofit/RemoteLogin.java&#10;styles&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/values/styles.xml&#10;bui&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;Constants&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/retrofit/Constants.java&#10;Androi&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;onsta&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/retrofit/Constants.java&#10;gradle&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="318" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.WIDTH" value="141" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="test" />
@@ -3437,7 +3450,11 @@
       <created>1424615834877</created>
       <updated>1424615834877</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="keyhash and added audio list">
+      <created>1424617218262</created>
+      <updated>1424617218262</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3458,7 +3475,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37420383" sideWeight="0.6269841" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2730159" sideWeight="0.50348026" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3089172" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19904459" sideWeight="0.37301588" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.027070064" sideWeight="0.37301588" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960381" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -4242,16 +4259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGAudioListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="5593">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="e#2330#2339#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/Mp3ShelfAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1728" max-vertical-offset="4539">
@@ -4472,9 +4479,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7157895" vertical-offset="1275" max-vertical-offset="2669">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2669">
+          <caret line="127" column="39" selection-start-line="127" selection-start-column="39" selection-end-line="127" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGAudioListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47719297" vertical-offset="2074" max-vertical-offset="5695">
+          <caret line="193" column="37" selection-start-line="193" selection-start-column="37" selection-end-line="193" selection-end-column="37" />
+          <folding>
+            <element signature="e#2330#2339#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
