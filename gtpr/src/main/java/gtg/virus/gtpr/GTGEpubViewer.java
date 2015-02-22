@@ -65,6 +65,7 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
 
         current_book = AABook.find(mBook.getPath());
 
+
         EpubReader epubReader = new EpubReader();
         epubBook = null;
         try {
@@ -132,6 +133,18 @@ public class GTGEpubViewer extends AbstractViewer implements AbstractViewer.OnAc
         }else{
             setCurrentPage(0);
         }
+
+        maxPage = mAdapter.getCount();
+
+/*        if(current_book != null){
+            if(current_book.status == 0 && current_book.status != 1){
+                current_book.status = 1;
+                current_book.save();
+            }else if(current_book.status == 2 ){
+                current_book.status = 3;
+                current_book.save();
+            }
+        }*/
 
     }
 

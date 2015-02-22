@@ -63,6 +63,8 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
 
     protected List<AADoodle> current_doodle;
 
+    protected int maxPage = 0;
+
     protected int current_color = Color.BLACK;
 
     @Override
@@ -391,6 +393,22 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
 
     protected DrawnView mDrawnView = null;
     public void setCurrentPage(int i ){
+
+        if(current_book != null){
+            if(current_book.status == 0 && current_book.status != 1){
+                current_book.status = 1;
+                current_book.save();
+            }else if(current_book.status == 1  ){
+                current_book.status = 2;
+                current_book.save();
+            }else if(current_book.status == 2 ){
+                current_book.status = 3;
+                current_book.save();
+            }else if(current_book.status == 3 && maxPage == i){
+                current_book.status = 4;
+                current_book.save();
+            }
+        }
         current_page = i;
         current_doodle = AADoodle.list( current_page , current_book);
 

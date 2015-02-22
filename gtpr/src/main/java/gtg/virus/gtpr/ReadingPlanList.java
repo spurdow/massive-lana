@@ -3,7 +3,13 @@ package gtg.virus.gtpr;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import java.util.List;
+
+import butterknife.InjectView;
+import gtg.virus.gtpr.aaentity.AABook;
+import gtg.virus.gtpr.adapters.ReadingPlanAdapter;
 import gtg.virus.gtpr.base.BaseFragment;
 
 /**
@@ -12,6 +18,10 @@ import gtg.virus.gtpr.base.BaseFragment;
 public class ReadingPlanList extends BaseFragment {
 
 
+    @InjectView(R.id.readingplan_list)
+    protected ListView mListView;
+
+    private ReadingPlanAdapter mAdapter;
 
     @Override
     protected boolean hasOptions() {
@@ -20,7 +30,14 @@ public class ReadingPlanList extends BaseFragment {
 
     @Override
     protected void provideOnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mAdapter = new ReadingPlanAdapter(getActivity());
+        mListView.setAdapter(mAdapter);
 
+        List<AABook> books = AABook.findAll();
+
+        for(AABook aaBook : books){
+            mAdapter.add(aaBook);
+        }
     }
 
     @Override

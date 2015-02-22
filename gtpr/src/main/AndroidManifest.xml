@@ -38,7 +38,8 @@
             gtg.virus.gtpr.aaentity.AABook,
             gtg.virus.gtpr.aaentity.AABookmark,
             gtg.virus.gtpr.aaentity.AARemoteBook,
-            gtg.virus.gtpr.aaentity.AADoodle"/>
+            gtg.virus.gtpr.aaentity.AADoodle,
+            gtg.virus.gtpr.aaentity.AAReading_Plan"/>
 
         <meta-data android:name="AA_DB_NAME" android:value="pinbook-remake.db" />
         <meta-data android:name="AA_DB_VERSION" android:value="2" />

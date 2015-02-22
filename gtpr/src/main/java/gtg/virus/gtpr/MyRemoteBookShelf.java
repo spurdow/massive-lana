@@ -1,9 +1,14 @@
 package gtg.virus.gtpr;
 
 import android.app.AlertDialog;
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -155,6 +160,20 @@ public class MyRemoteBookShelf extends BaseFragment implements RemoteShelfAdapte
 
     @Override
     public void bookClick(AARemoteBook book, int position) {
+        final String url = Constants.EBOOK_QUERY_SUBDOMAIN + book.path;
 
+        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+        request.setDescription("Some descrition");
+        request.setTitle("Some title");
+        // in order for this if to run, you must use the android 3.2 to compile your app
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            request.allowScanningByMediaScanner();
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        }
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "pinbook-downloads");
+
+        // get download service and enqueue file
+        DownloadManager manager = (DownloadManager)getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
+        manager.enqueue(request);
     }
 }

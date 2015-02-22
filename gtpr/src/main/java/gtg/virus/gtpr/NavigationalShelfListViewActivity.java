@@ -198,6 +198,11 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                 frag = new AudioListView();
                 setTitle(getString(R.string.audiobooks));
                 break;
+
+            case 8 :
+                frag = new ReadingPlanList();
+                setTitle(getString(R.string.reading_plan));
+                break;
         }
 
         if(frag != null){
@@ -259,6 +264,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
 		mMenu.add(new Menu(getResources().getDrawable(R.drawable.annotation_selector) , "My Annotations"));
         mMenu.add(new Menu(getResources().getDrawable(R.drawable.audio_selector) , "My Audio"));
         mMenu.add(new Menu(getResources().getDrawable(R.drawable.schedule_selector) , "My Scheduled Reading"));
+        mMenu.add(new Menu(getResources().getDrawable(R.drawable.readinglogs_selector) , "My Reading Plan"));
         mMenu.add(new Menu(getResources().getDrawable(R.drawable.readinglogs_selector) , "My Reading Logs"));
 
 		

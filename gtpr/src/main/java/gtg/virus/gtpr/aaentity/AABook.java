@@ -6,6 +6,8 @@ import com.activeandroid.annotation.Table;
 import com.activeandroid.query.From;
 import com.activeandroid.query.Select;
 
+import java.util.List;
+
 /**
  * Created by DavidLuvelleJoseph on 2/15/2015.
  */
@@ -29,5 +31,9 @@ public class AABook extends Model{
 
         return book;//new Select().from(AABook.class).executeSingle();
 
+    }
+
+    public static List<AABook> findAll(){
+        return new Select().from(AABook.class).execute();
     }
 }

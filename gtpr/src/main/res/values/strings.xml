@@ -39,5 +39,6 @@
     <string name="currently_reading">Currently Reading</string>
     <string name="done_reading">Done reading</string>
     <string name="reread">Reread ebook</string>
+    <string name="reading_plan">Reading Plan List</string>
 
 </resources>

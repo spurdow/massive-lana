@@ -83,10 +83,10 @@ public class ReadingPlanAdapter extends AbstractListAdapter<AABook> {
         String status = "";
         switch(book.status){
 
-            case 0 : status = getContext().getString(R.string.to_read);break;
-            case 1 : status = getContext().getString(R.string.currently_reading);break;
-            case 2 : status = getContext().getString(R.string.done_reading);break;
-            case 3 : status = getContext().getString(R.string.reread); break;
+            case 1 : status = getContext().getString(R.string.to_read);break;
+            case 2 : status = getContext().getString(R.string.currently_reading);break;
+            case 3 : status = getContext().getString(R.string.done_reading);break;
+            case 4 : status = getContext().getString(R.string.reread); break;
         }
 
         v.bookStatus.setText(status);
