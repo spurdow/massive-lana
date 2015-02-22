@@ -40,5 +40,6 @@
     <string name="done_reading">Done reading</string>
     <string name="reread">Reread ebook</string>
     <string name="reading_plan">Reading Plan List</string>
+    <string name="schedule_books">Schedule Books</string>
 
 </resources>

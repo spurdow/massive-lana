@@ -12,10 +12,6 @@ import java.util.Date;
 public class AAScheduled_Books extends Model {
 
 
-
-    @Column(name = "book_id" , index = true )
-    public long book_id;
-
     @Column()
     public Date dateStarted;
 
@@ -24,4 +20,7 @@ public class AAScheduled_Books extends Model {
 
     @Column()
     public int status;
+
+    @Column(name = "book")
+    public AABook book;
 }
