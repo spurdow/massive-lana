@@ -147,6 +147,8 @@ public class GTGPdfViewer extends AbstractViewer implements PDFReaderListener , 
             Utilities.makeText(this, getString(R.string.success));
             checkBookMark(true);
 
+        }else{
+            checkBookMark(false);
         }
 	}
 
