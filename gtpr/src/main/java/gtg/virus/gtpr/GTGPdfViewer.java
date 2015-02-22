@@ -143,19 +143,10 @@ public class GTGPdfViewer extends AbstractViewer implements PDFReaderListener , 
 
 
         AABookmark aaBookmark =AABookmark.findBookMark(pageno , current_book);
-        if(aaBookmark == null){
-            aaBookmark = new AABookmark();
-            aaBookmark.book = current_book;
-            aaBookmark.bookmark_page = current_page;
-            aaBookmark.sentence_sample = "";
-            long id = aaBookmark.save();
-            if(id > 0){
-                Utilities.makeText(this, getString(R.string.success));
-                checkBookMark(true);
-            }else{
-                Utilities.makeText(this, getString(R.string.failed_to_bookmark ));
-                checkBookMark(false);
-            }
+        if(aaBookmark != null){
+            Utilities.makeText(this, getString(R.string.success));
+            checkBookMark(true);
+
         }
 	}
 

@@ -9,6 +9,8 @@ import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.radaee.pdf.Document;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,11 +24,14 @@ import gtg.virus.gtpr.utils.Utilities;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.epub.EpubReader;
 
+import static gtg.virus.gtpr.utils.Utilities.renderPage;
+
 /**
  * Created by DavidLuvelleJoseph on 2/21/2015.
  */
 public class BookmarkAdapter extends AbstractListAdapter<AABookmark> {
 
+    private Document mDoc;
 
     public BookmarkAdapter(Context context) {
         super(context);
@@ -76,11 +81,26 @@ public class BookmarkAdapter extends AbstractListAdapter<AABookmark> {
 
                 v.bookImage.setImageBitmap(page0);
             }
+        }else if(Utilities.isPdf(book.path)){
+
+            mDoc = new Document();
+            int index = mDoc.Open(book.path, "");
+
+            if( index == 0) {
+                Bitmap page0 = renderPage(mDoc, 100, 100);
+                v.bookImage.setImageBitmap(page0);
+            }
+
         }
         v.bookPage.setText("Page " + String.valueOf(bookmark.bookmark_page + 1));
         v.bookName.setText(book.title);
         v.bookSample.setText(bookmark.sentence_sample);
 
+
+        if(mDoc != null){
+            mDoc.Close();
+            mDoc = null;
+        }
         return child;
     }
 
