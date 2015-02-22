@@ -189,7 +189,7 @@ public class GTGAudioListener extends ActionBarActivity {
         currPosition = ( currPosition + 1 ) % players.size() ;
 /*        reset();
         onPlayStopClick(mPlayStop);*/
-        onPlayStopClick(mPlayStop);
+
         setUp();
         Log.w(TAG , "Currposition " + currPosition);
     }
@@ -198,7 +198,7 @@ public class GTGAudioListener extends ActionBarActivity {
         currPosition = ( currPosition + players.size() - 1) % players.size();
 /*        reset();
         onPlayStopClick(mPlayStop);*/
-        onPlayStopClick(mPlayStop);
+
         setUp();
         Log.w(TAG , "Currposition " + currPosition);
     }
