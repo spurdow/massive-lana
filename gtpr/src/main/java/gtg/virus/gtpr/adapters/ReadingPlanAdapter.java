@@ -12,42 +12,43 @@ import android.widget.TextView;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import gtg.virus.gtpr.R;
 import gtg.virus.gtpr.aaentity.AABook;
-import gtg.virus.gtpr.aaentity.AABookmark;
 import gtg.virus.gtpr.utils.Utilities;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.epub.EpubReader;
 
 /**
- * Created by DavidLuvelleJoseph on 2/21/2015.
+ * Created by DavidLuvelleJoseph on 2/22/2015.
  */
-public class BookmarkAdapter extends AbstractListAdapter<AABookmark> {
+public class ReadingPlanAdapter extends AbstractListAdapter<AABook> {
 
 
-    public BookmarkAdapter(Context context) {
+    public ReadingPlanAdapter(Context context, List<AABook> lists) {
+        super(context, lists);
+    }
+
+    public ReadingPlanAdapter(Context context) {
         super(context);
     }
 
     @Override
     public View getOverridedView(int position, View child, ViewGroup root) {
         ViewHolder v = null;
+
         if(child == null){
-            child = mInflater.inflate(R.layout.bookmark_list_row , root, false);
+            child = mInflater.inflate(R.layout.reading_plan_row , root, false);
             v = new ViewHolder(child);
             child.setTag(v);
         }else{
             v = (ViewHolder) child.getTag();
         }
 
-        AABookmark bookmark = getObject(position);
-
-        AABook book = bookmark.book;
-
-
+        AABook book = getObject(position);
         if(Utilities.isEpub(book.path)) {
             EpubReader epubReader = new EpubReader();
             Book epubBook = null;
@@ -77,9 +78,18 @@ public class BookmarkAdapter extends AbstractListAdapter<AABookmark> {
                 v.bookImage.setImageBitmap(page0);
             }
         }
-        v.bookPage.setText("Page " + String.valueOf(bookmark.bookmark_page + 1));
-        v.bookName.setText(book.title);
-        v.bookSample.setText(bookmark.sentence_sample);
+
+        v.bookSample.setText(book.title);
+        String status = "";
+        switch(book.status){
+
+            case 0 : status = getContext().getString(R.string.to_read);break;
+            case 1 : status = getContext().getString(R.string.currently_reading);break;
+            case 2 : status = getContext().getString(R.string.done_reading);break;
+            case 3 : status = getContext().getString(R.string.reread); break;
+        }
+
+        v.bookStatus.setText(status);
 
         return child;
     }
@@ -93,11 +103,9 @@ public class BookmarkAdapter extends AbstractListAdapter<AABookmark> {
         @InjectView(R.id.image_book)
         ImageView bookImage;
         @InjectView(R.id.txt_book)
-        TextView bookName;
-        @InjectView(R.id.txt_sample)
         TextView bookSample;
-        @InjectView(R.id.txt_page)
-        TextView bookPage;
+        @InjectView(R.id.txt_status)
+        TextView bookStatus;
 
         ViewHolder(View child){
             ButterKnife.inject(this, child);

@@ -35,5 +35,9 @@
     <string name="do_you_want_to_save_draw">Do you want to save your doodle?</string>
     <string name="no">No</string>
     <string name="audiobooks">Audio Books</string>
+    <string name="to_read">To read ebooks</string>
+    <string name="currently_reading">Currently Reading</string>
+    <string name="done_reading">Done reading</string>
+    <string name="reread">Reread ebook</string>
 
 </resources>
