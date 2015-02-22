@@ -188,7 +188,8 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
             case 5 :
                 //Intent s = new Intent(this , ScheduledBooksView.class);
                 //startActivity(s);
-
+                frag = new AnnotationsList();
+                setTitle(getString(R.string.annotations));
                 break;
 
             case 6:
