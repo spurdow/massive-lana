@@ -19,7 +19,6 @@ import butterknife.InjectView;
 import butterknife.OnCheckedChanged;
 import gtg.virus.gtpr.R;
 import gtg.virus.gtpr.aaentity.AABookmark;
-import gtg.virus.gtpr.utils.Utilities;
 
 public class WebPageFragment extends AbstractFragmentViewer {
 
@@ -115,10 +114,10 @@ public class WebPageFragment extends AbstractFragmentViewer {
                 aaBookmark.sentence_sample = mWebView.getTitle();
                 long id = aaBookmark.save();
                 if(id > 0){
-                    Utilities.makeText(getActivity() , getString(R.string.success));
+                    //Utilities.makeText(getActivity() , getString(R.string.success));
                     checkBookMark(true);
                 }else{
-                    Utilities.makeText(getActivity(), getString(R.string.failed_to_bookmark ));
+                    //Utilities.makeText(getActivity(), getString(R.string.failed_to_bookmark ));
                     checkBookMark(false);
                 }
             }
