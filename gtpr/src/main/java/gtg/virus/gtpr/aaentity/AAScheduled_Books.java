@@ -11,8 +11,7 @@ import java.util.Date;
 /*@Table(name = "aasheduled_books" , id = "_id")*/
 public class AAScheduled_Books extends Model {
 
-    @Column()
-    public String scheduleBookName;
+
 
     @Column(name = "book_id" , index = true )
     public long book_id;

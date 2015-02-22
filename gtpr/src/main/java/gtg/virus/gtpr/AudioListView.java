@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -23,24 +24,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.InjectView;
-import gtg.virus.gtpr.adapters.AudioListAdapter;
+import gtg.virus.gtpr.adapters.Mp3ShelfAdapter;
+import gtg.virus.gtpr.adapters.ShelfAdapter;
 import gtg.virus.gtpr.async.AddNewBookTask;
+import gtg.virus.gtpr.async.AppLaunchTask;
+import gtg.virus.gtpr.async.Mp3CreatorTask;
 import gtg.virus.gtpr.base.BaseFragment;
 import gtg.virus.gtpr.entities.Audio;
 import gtg.virus.gtpr.entities.PBook;
 import gtg.virus.gtpr.service.AudioService;
 import gtg.virus.gtpr.utils.Utilities;
 
+import static gtg.virus.gtpr.utils.Utilities.STORAGE_SUFFIX;
 import static gtg.virus.gtpr.utils.Utilities.bookCache;
 
-public class AudioListView extends BaseFragment implements AudioListAdapter.OnRefreshList {
+public class AudioListView extends BaseFragment implements ShelfAdapter.OnViewClick {
 
     private static final String TAG = AudioListView.class.getSimpleName();
     private static final int REQUEST_CHOOSER = 12345;
     @InjectView(R.id.audio_list)
     protected ListView mListView;
 
-    private AudioListAdapter mAdapter;
+    private Mp3ShelfAdapter mShelfAdapter;
 
 
 
@@ -77,7 +82,7 @@ public class AudioListView extends BaseFragment implements AudioListAdapter.OnRe
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
+    /*@Override
     public void refresh(int pos) {
         final int size= mAdapter.getCount();
 
@@ -92,7 +97,7 @@ public class AudioListView extends BaseFragment implements AudioListAdapter.OnRe
         }
 
         mAdapter.notifyDataSetChanged();
-    }
+    }*/
 
     @Override
     protected boolean hasOptions() {
@@ -101,17 +106,57 @@ public class AudioListView extends BaseFragment implements AudioListAdapter.OnRe
 
     @Override
     protected void provideOnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mAdapter = new AudioListAdapter(getActivity());
-        mAdapter.setmRef(this);
+/*        mAdapter = new AudioListAdapter(getActivity());
+        mAdapter.setmRef(this);*/
+        mShelfAdapter  = new Mp3ShelfAdapter(getActivity());
+     /*   mShelfAdapter.setmClickListener(this);*/
+        mListView.setAdapter(mShelfAdapter);
 
-        mListView.setAdapter(mAdapter);
+        //new AsyncFind().execute(null,null,null);
 
-        new AsyncFind().execute(null,null,null);
+        AppLaunchTask task = new AppLaunchTask(getActivity() , STORAGE_SUFFIX);
+        task.setListener(new AppLaunchTask.AppLaunchListener(){
+
+            @Override
+            public void onStartTask() {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onFinishTask() {
+                // TODO Auto-generated method stub
+
+                HashMap<String ,String> data = new HashMap<String , String>();
+                File f = new File(Environment.getExternalStorageDirectory() , Utilities.STORAGE_SUFFIX);
+                Utilities.walkdir(f, data, Utilities.pdfSlashPattern);
+
+                if(data.size() > 0){
+                    for(Map.Entry<String,String> e : data.entrySet()){
+                        /*BookCreatorTask bookTask = new BookCreatorTask(getActivity(), mShelfAdapter);*/
+                        Mp3CreatorTask mp3CreatorTask = new Mp3CreatorTask(getActivity() , mShelfAdapter);
+                        mp3CreatorTask.execute(e.getValue());
+                        Log.i(TAG, "Val " + e.getValue());
+                    }
+
+                }else{
+                    Utilities.makeText(getActivity()  , "You dont have ebook/s yet.");
+                    //Toast.makeText(NavigationalShelfListViewActivity.this, "You dont have pdf's yet", Toast.LENGTH_LONG).show();
+                }
+            }
+
+        });
+        task.execute(null,null,null);
     }
 
     @Override
     protected int resourceId() {
         return R.layout.audio_books_main_layout;
+    }
+
+    @Override
+    public void bookClick(PBook book, int position) {
+
     }
 
     private class AsyncFind extends AsyncTask<Void , Void, Void>{
@@ -129,7 +174,7 @@ public class AudioListView extends BaseFragment implements AudioListAdapter.OnRe
                 a.setTitle(e.getKey());
                 a.setPath(e.getValue());
                 Log.w(TAG , "key " + e.getKey() + " val " + e.getValue());
-                mAdapter.add(a);
+                //mAdapter.add(a);
             }
 
 
@@ -168,7 +213,7 @@ public class AudioListView extends BaseFragment implements AudioListAdapter.OnRe
                         new AddNewBookTask(getActivity(), new AddNewBookTask.OnFinishTask() {
                             @Override
                             public void onFinish(PBook pbook) {
-                                //mShelfAdapter.addBook(pbook);
+                                mShelfAdapter.addBook(pbook);
                             }
                         } , AddNewBookTask.State.Mp3).execute(path);
                     }

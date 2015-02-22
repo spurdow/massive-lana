@@ -170,6 +170,8 @@ public class MyBookShelf extends BaseFragment implements ShelfAdapter.OnViewClic
 
             Log.w(TAG , "Starting GTGEpubViewer " + book.toString() );
         }
+
+
     }
 
 

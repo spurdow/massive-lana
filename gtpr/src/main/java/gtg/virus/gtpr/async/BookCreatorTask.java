@@ -3,7 +3,6 @@ package gtg.virus.gtpr.async;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.MediaMetadataRetriever;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -24,7 +23,6 @@ import nl.siegmann.epublib.epub.EpubReader;
 
 import static gtg.virus.gtpr.utils.Utilities.bookCache;
 import static gtg.virus.gtpr.utils.Utilities.isEpub;
-import static gtg.virus.gtpr.utils.Utilities.isMp3;
 import static gtg.virus.gtpr.utils.Utilities.isPdf;
 import static gtg.virus.gtpr.utils.Utilities.isTxt;
 import static gtg.virus.gtpr.utils.Utilities.renderPage;
@@ -38,6 +36,8 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
 	private ShelfAdapter mAdapter;
 	
 	private Document mDoc;
+
+
 	
 	
 	public BookCreatorTask(Context mContext, ShelfAdapter mAdapter) {
@@ -112,7 +112,7 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
             newBook.setPath(params[0]);
             newBook.setFilename(file.getName());
 
-        }else if(isMp3(params[0])){
+        }/*else if(isMp3(params[0])){
             newBook = new PBook();
             MediaMetadataRetriever meta = new MediaMetadataRetriever();
             meta.setDataSource(params[0]);
@@ -132,7 +132,7 @@ public class BookCreatorTask extends AsyncTask<String, Void , PBook>{
 
             meta.release();
             Log.w(TAG , "mp3 file added. " );
-        }
+        }*/
 		return newBook;
 	}
 

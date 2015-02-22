@@ -1,8 +1,15 @@
 package gtg.virus.gtpr;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Base64;
+import android.util.Log;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 
 public class LoginActivity extends ActionBarActivity {
@@ -22,7 +29,7 @@ public class LoginActivity extends ActionBarActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
         // Add code to print out the key hash
-/*        try {
+        try {
             PackageInfo info = getPackageManager().getPackageInfo(
                     "gtg.virus.gtpr",
                     PackageManager.GET_SIGNATURES);
@@ -35,7 +42,7 @@ public class LoginActivity extends ActionBarActivity {
 
         } catch (NoSuchAlgorithmException e) {
 
-        }*/
+        }
 		
 		if (savedInstanceState == null) {
 			// Add the fragment on initial activity setup
