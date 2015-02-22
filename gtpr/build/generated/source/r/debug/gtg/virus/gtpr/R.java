@@ -1784,7 +1784,8 @@ containing a value of this type.
         public static final int main_menu=0x7f0d0002;
         public static final int my_bookshelf_menu=0x7f0d0003;
         public static final int pdf_viewer_menu=0x7f0d0004;
-        public static final int scheduled_menu=0x7f0d0005;
+        public static final int schedule_list_menu=0x7f0d0005;
+        public static final int scheduled_menu=0x7f0d0006;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0b0000;

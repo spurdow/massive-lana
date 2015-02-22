@@ -59,18 +59,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e339106d-c02e-4902-9484-62f63d039c6f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gtpr/src/main/res/menu/schedule_list_menu.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AAScheduled_Books.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AAScheduled_Books.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/bossturban/webviewmarker/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/bossturban/webviewmarker/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/github/gorbin/asne/core/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/github/gorbin/asne/core/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/github/gorbin/asne/facebook/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/github/gorbin/asne/facebook/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/com/ipaulpro/afilechooser/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/gtg/virus/gtpr/R.java" afterPath="$PROJECT_DIR$/gtpr/build/generated/source/r/debug/gtg/virus/gtpr/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/ScheduleListAdapter.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/ScheduleListAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/ScheduledBooksList.java" afterPath="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/ScheduledBooksList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/res/layout/schedule_row.xml" afterPath="$PROJECT_DIR$/gtpr/src/main/res/layout/schedule_row.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/gtpr/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gtpr/src/main/res/menu/audio_list_view.xml" afterPath="$PROJECT_DIR$/gtpr/src/main/res/menu/audio_list_view.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gtg.iws" />
@@ -102,41 +97,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ReadingPlanAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/ReadingPlanAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1769" max-vertical-offset="2329">
-              <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="133" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1055#1056#0" expanded="true" />
-                <element signature="e#1092#1093#0" expanded="true" />
-                <element signature="e#3144#3184#0" expanded="true" />
-                <element signature="e#3222#3272#0" expanded="true" />
-                <element signature="e#3310#3355#0" expanded="true" />
-                <element signature="e#3393#3432#0" expanded="true" />
-                <element signature="e#3652#3653#0" expanded="true" />
-                <element signature="e#3679#3680#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AAScheduled_Books.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AAScheduled_Books.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-              <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GTGPdfViewer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGPdfViewer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2839">
-              <caret line="117" column="39" selection-start-line="117" selection-start-column="39" selection-end-line="117" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -172,13 +137,55 @@
       <file leaf-file-name="ScheduledBooksList.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/ScheduledBooksList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="714">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="749" max-vertical-offset="1309">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#860#861#0" expanded="true" />
-                <element signature="e#906#907#0" expanded="true" />
+                <element signature="e#1308#1309#0" expanded="true" />
+                <element signature="e#1354#1355#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schedule_list_menu.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/menu/schedule_list_menu.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+              <folding>
+                <element signature="e#300#318#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="audio_list_view.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/menu/audio_list_view.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pdf_viewer_menu.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/menu/pdf_viewer_menu.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my_bookshelf_menu.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/menu/my_bookshelf_menu.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="66" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -199,37 +206,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddNewDoodle.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/AddNewDoodle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1038" max-vertical-offset="1598">
-              <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NavigationalShelfListViewActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39670932" vertical-offset="2163" max-vertical-offset="5355">
-              <caret line="192" column="22" selection-start-line="192" selection-start-column="22" selection-end-line="192" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.64533824" vertical-offset="2214" max-vertical-offset="5389">
+              <caret line="203" column="61" selection-start-line="203" selection-start-column="61" selection-end-line="203" selection-end-column="61" />
               <folding>
-                <element signature="e#6689#6723#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DrawnView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/utils/etc/DrawnView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="574" max-vertical-offset="1700">
-              <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3645#3665#0" expanded="true" />
+                <element signature="e#3667#3688#0" expanded="true" />
+                <element signature="e#3911#3932#0" expanded="true" />
+                <element signature="e#4261#4281#0" expanded="true" />
+                <element signature="e#6121#6152#0" expanded="true" />
+                <element signature="e#6272#6309#0" expanded="true" />
+                <element signature="e#6424#6458#0" expanded="true" />
+                <element signature="e#6934#6964#0" expanded="true" />
+                <element signature="e#7085#7119#0" expanded="true" />
+                <element signature="e#7237#7269#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2635,7 +2627,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/bookmark_list_row.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/menu_list_row.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AABookmark.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/BookmarkList.java" />
@@ -2652,7 +2643,6 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/fragment_main.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/aaentity/oauth/impl/FacebookLogin.java" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/res/menu/audio_list_view.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/async/AddNewBookTask.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/Mp3ShelfAdapter.java" />
@@ -2682,9 +2672,11 @@
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/reading_plan_row.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/res/layout/schedule_row.xml" />
-        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AAScheduled_Books.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/ScheduleListAdapter.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AAScheduled_Books.java" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/ScheduledBooksList.java" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/res/menu/schedule_list_menu.xml" />
+        <option value="$PROJECT_DIR$/gtpr/src/main/res/menu/audio_list_view.xml" />
         <option value="$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java" />
       </list>
     </option>
@@ -2834,7 +2826,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
+              <option name="myItemId" value="menu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2981,7 +2973,7 @@
     <property name="DEBUGGABLE_PROCESS" value="gtg.virus.gtpr" />
     <property name="SHOW_ALL_PROCESSES" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="Naviga&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;sched&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/layout/schedule_row.xml&#10;Android&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;AASch&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AAScheduled_Books.java&#10;ReadingPla&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/adapters/ReadingPlanAdapter.java&#10;BookTas&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/async/AddNewBookTask.java&#10;ShelfAda&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/adapters/ShelfAdapter.java&#10;Remote&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java&#10;build&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;GTGPDf&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGPdfViewer.java&#10;GTGE&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java&#10;Boo&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;BookS&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;Booktas&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/async/BookCreatorTask.java&#10;Util&#9;PSI&#9;JAVA://gtg.virus.gtpr.utils.Utilities&#10;build.gra&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;And&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;ReadingPLanAda&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/adapters/ReadingPlanAdapter.java&#10;Navi&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;AA&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AAReading_Plan.java&#10;and&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;Gtg&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGAudioListener.java&#10;SplashAc&#9;PSI&#9;JAVA://gtg.virus.gtpr.SplashActivity&#10;LoginAc&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;Login&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;Aud&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/AudioListView.java&#10;Book&#9;PSI&#9;JAVA://gtg.virus.gtpr.aaentity.AABook&#10;android&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;strings&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/values/strings.xml&#10;LoginA&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;LoginFra&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;LoginFrag&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;NAviga&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;loginFrag&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;LoginSer&#9;PSI&#9;JAVA://gtg.virus.gtpr.retrofit.UserLoginService&#10;Consta&#9;PSI&#9;JAVA://gtg.virus.gtpr.retrofit.Constants&#10;row&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/layout/menu_list_row.xml&#10;build.&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;Abst&#9;PSI&#9;JAVA://gtg.virus.gtpr.fragment_pages.AbstractFragmentViewer&#10;GTG&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java&#10;USer&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/entities/User.java&#10;androi&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;MyRemote&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java&#10;Na&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;MyBoo&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;User&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/entities/User.java&#10;AARe&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AARemoteBook.java&#10;Nav&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;RemoteB&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java&#10;MyB&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java" />
+    <property name="SearchEverywhereHistoryKey" value="NA&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;AudioL&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/AudioListView.java&#10;Naviga&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;sched&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/layout/schedule_row.xml&#10;Android&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;AASch&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AAScheduled_Books.java&#10;ReadingPla&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/adapters/ReadingPlanAdapter.java&#10;BookTas&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/async/AddNewBookTask.java&#10;ShelfAda&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/adapters/ShelfAdapter.java&#10;Remote&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java&#10;build&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;GTGPDf&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGPdfViewer.java&#10;GTGE&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java&#10;Boo&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;BookS&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;Booktas&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/async/BookCreatorTask.java&#10;Util&#9;PSI&#9;JAVA://gtg.virus.gtpr.utils.Utilities&#10;build.gra&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;And&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;ReadingPLanAda&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/adapters/ReadingPlanAdapter.java&#10;Navi&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;AA&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AAReading_Plan.java&#10;and&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;Gtg&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGAudioListener.java&#10;SplashAc&#9;PSI&#9;JAVA://gtg.virus.gtpr.SplashActivity&#10;LoginAc&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;Login&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;Aud&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/AudioListView.java&#10;Book&#9;PSI&#9;JAVA://gtg.virus.gtpr.aaentity.AABook&#10;android&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;strings&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/values/strings.xml&#10;LoginA&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java&#10;LoginFra&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;LoginFrag&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;NAviga&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;loginFrag&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java&#10;LoginSer&#9;PSI&#9;JAVA://gtg.virus.gtpr.retrofit.UserLoginService&#10;Consta&#9;PSI&#9;JAVA://gtg.virus.gtpr.retrofit.Constants&#10;row&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/res/layout/menu_list_row.xml&#10;build.&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/build.gradle&#10;Abst&#9;PSI&#9;JAVA://gtg.virus.gtpr.fragment_pages.AbstractFragmentViewer&#10;GTG&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/GTGEpubViewer.java&#10;USer&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/entities/User.java&#10;androi&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/AndroidManifest.xml&#10;MyRemote&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyRemoteBookShelf.java&#10;Na&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java&#10;MyBoo&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/MyBookShelf.java&#10;User&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/entities/User.java&#10;AARe&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AARemoteBook.java&#10;Nav&#9;FILE&#9;file://G:/projects/massive-lana/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="318" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.WIDTH" value="141" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="test" />
@@ -3528,7 +3520,11 @@
       <created>1424625321524</created>
       <updated>1424625321524</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="added schedule book list">
+      <created>1424626360308</created>
+      <updated>1424626360308</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3614,7 +3610,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="remove imageloader replace Picasso" />
     <MESSAGE value="updated test db" />
     <MESSAGE value="updated webview fragment" />
     <MESSAGE value="updated with pdf view from new open source lib" />
@@ -3639,7 +3634,8 @@
     <MESSAGE value="updated audio list and adding of new audio" />
     <MESSAGE value="keyhash and added audio list" />
     <MESSAGE value="added reading plan" />
-    <option name="LAST_COMMIT_MESSAGE" value="added reading plan" />
+    <MESSAGE value="added schedule book list" />
+    <option name="LAST_COMMIT_MESSAGE" value="added schedule book list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3664,19 +3660,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java</url>
-          <line>227</line>
+          <line>229</line>
           <properties />
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java</url>
-          <line>230</line>
+          <line>232</line>
           <properties />
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java</url>
-          <line>228</line>
+          <line>230</line>
           <properties />
           <option name="timeStamp" value="72" />
         </line-breakpoint>
@@ -4063,38 +4059,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/LoginFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2499">
-          <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/menu/my_bookshelf_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.76" vertical-offset="0" max-vertical-offset="765">
-          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/adapters/AudioListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.20731707" vertical-offset="765" max-vertical-offset="1683">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGPdfView2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
@@ -4199,25 +4163,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/AudioListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1530" max-vertical-offset="3298">
-          <caret line="136" column="68" selection-start-line="136" selection-start-column="68" selection-end-line="136" selection-end-column="68" />
-          <folding>
-            <element signature="e#3329#3330#0" expanded="true" />
-            <element signature="e#3356#3357#0" expanded="true" />
-            <element signature="e#4236#4253#0" expanded="true" />
-            <element signature="e#5275#5276#0" expanded="true" />
-            <element signature="e#5330#5331#0" expanded="true" />
-            <element signature="e#5606#5622#0" expanded="true" />
-            <element signature="e#7229#7497#0" expanded="true" />
-            <element signature="e#7470#7471#0" expanded="true" />
-            <element signature="e#7588#7843#0" expanded="true" />
-            <element signature="e#7816#7817#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/LoginActivity.java">
@@ -4513,31 +4458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/AbstractViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7165" max-vertical-offset="7752">
-          <caret line="435" column="0" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3465#3472#0" expanded="true" />
-            <element signature="e#3521#3528#0" expanded="true" />
-            <element signature="e#7373#7404#0" expanded="true" />
-            <element signature="e#7446#7490#0" expanded="true" />
-            <element signature="e#7539#7561#0" expanded="true" />
-            <element signature="e#7563#9356#0" expanded="true" />
-            <element signature="e#9325#9326#0" expanded="true" />
-            <element signature="e#9405#9427#0" expanded="true" />
-            <element signature="e#9429#10243#0" expanded="true" />
-            <element signature="e#10212#10213#0" expanded="true" />
-            <element signature="e#10571#11646#0" expanded="true" />
-            <element signature="e#11623#11624#0" expanded="true" />
-            <element signature="e#14120#14127#0" expanded="true" />
-            <element signature="e#14176#14183#0" expanded="true" />
-            <element signature="e#14239#14248#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/GTGPdfViewer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2839">
@@ -4573,30 +4493,106 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/aaentity/AAScheduled_Books.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/AbstractViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7165" max-vertical-offset="7752">
+          <caret line="435" column="0" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3465#3472#0" expanded="true" />
+            <element signature="e#3521#3528#0" expanded="true" />
+            <element signature="e#7373#7404#0" expanded="true" />
+            <element signature="e#7446#7490#0" expanded="true" />
+            <element signature="e#7539#7561#0" expanded="true" />
+            <element signature="e#7563#9356#0" expanded="true" />
+            <element signature="e#9325#9326#0" expanded="true" />
+            <element signature="e#9405#9427#0" expanded="true" />
+            <element signature="e#9429#10243#0" expanded="true" />
+            <element signature="e#10212#10213#0" expanded="true" />
+            <element signature="e#10571#11646#0" expanded="true" />
+            <element signature="e#11623#11624#0" expanded="true" />
+            <element signature="e#14120#14127#0" expanded="true" />
+            <element signature="e#14176#14183#0" expanded="true" />
+            <element signature="e#14239#14248#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/menu/pdf_viewer_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="547">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/AudioListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.2943327" vertical-offset="0" max-vertical-offset="3128">
+          <caret line="143" column="51" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/menu/my_bookshelf_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/menu/schedule_list_menu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding>
+            <element signature="e#300#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gtpr/src/main/res/menu/audio_list_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/ScheduledBooksList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="714">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="749" max-vertical-offset="1309">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#860#861#0" expanded="true" />
-            <element signature="e#906#907#0" expanded="true" />
+            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="e#1354#1355#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gtpr/src/main/java/gtg/virus/gtpr/NavigationalShelfListViewActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39670932" vertical-offset="2163" max-vertical-offset="5355">
-          <caret line="192" column="22" selection-start-line="192" selection-start-column="22" selection-end-line="192" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.64533824" vertical-offset="2214" max-vertical-offset="5389">
+          <caret line="203" column="61" selection-start-line="203" selection-start-column="61" selection-end-line="203" selection-end-column="61" />
           <folding>
-            <element signature="e#6689#6723#0" expanded="true" />
+            <element signature="e#3645#3665#0" expanded="true" />
+            <element signature="e#3667#3688#0" expanded="true" />
+            <element signature="e#3911#3932#0" expanded="true" />
+            <element signature="e#4261#4281#0" expanded="true" />
+            <element signature="e#6121#6152#0" expanded="true" />
+            <element signature="e#6272#6309#0" expanded="true" />
+            <element signature="e#6424#6458#0" expanded="true" />
+            <element signature="e#6934#6964#0" expanded="true" />
+            <element signature="e#7085#7119#0" expanded="true" />
+            <element signature="e#7237#7269#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -188,8 +188,7 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
             case 5 :
                 //Intent s = new Intent(this , ScheduledBooksView.class);
                 //startActivity(s);
-                frag = new ScheduledBooksList();
-                setTitle(getString(R.string.schedule_books));
+
                 break;
 
             case 6:
@@ -200,7 +199,10 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                 frag = new AudioListView();
                 setTitle(getString(R.string.audiobooks));
                 break;
-
+            case 7 :
+                frag = new ScheduledBooksList();
+                setTitle(getString(R.string.schedule_books));
+                break;
             case 8 :
                 frag = new ReadingPlanList();
                 setTitle(getString(R.string.reading_plan));
