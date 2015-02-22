@@ -22,7 +22,7 @@ public class LoginActivity extends ActionBarActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
         // Add code to print out the key hash
-        /*try {
+/*        try {
             PackageInfo info = getPackageManager().getPackageInfo(
                     "gtg.virus.gtpr",
                     PackageManager.GET_SIGNATURES);

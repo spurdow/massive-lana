@@ -13,11 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.facebook.Session;
-import com.github.gorbin.asne.core.SocialNetworkManager;
-
 import butterknife.InjectView;
 import butterknife.OnClick;
+import gtg.virus.gtpr.aaentity.oauth.impl.FacebookLogin;
 import gtg.virus.gtpr.parent.ParentFragment;
 import gtg.virus.gtpr.retrofit.Constants;
 import gtg.virus.gtpr.retrofit.RemoteLogin;
@@ -45,12 +43,14 @@ public class LoginFragment extends ParentFragment {
     @InjectView(R.id.password)
     protected TextView mPassword;
 
+    private FacebookLogin fbLogin ;
 
-    private SocialNetworkManager mSocialManager;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        fbLogin = new FacebookLogin(getActivity() , this);
+        fbLogin.onCreate(savedInstanceState);
 	}
 
     @Override
@@ -71,19 +71,20 @@ public class LoginFragment extends ParentFragment {
     @Override
 	public void onResume() {
 		super.onResume();
-
+        fbLogin.onResume();
 
 	}
 
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
+        fbLogin.onActivityResult(getActivity() , requestCode , resultCode , data);
 	}
 
 	@Override
 	public void onPause() {
 		super.onPause();
-
+        fbLogin.onPause();
 	}
 
 	@Override
@@ -95,14 +96,14 @@ public class LoginFragment extends ParentFragment {
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
-
 	}
 
 
     @OnClick(R.id.fb_button)
     void onAuthButton(){
-        Session session = new Session(getActivity().getApplicationContext());
+        fbLogin = new FacebookLogin(getActivity() , this);
 
+        fbLogin.doLogin();
     }
 
     @OnClick(R.id.button)

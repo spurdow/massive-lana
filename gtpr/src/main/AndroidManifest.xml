@@ -82,8 +82,8 @@
         <activity android:name="GTGEpubViewer"></activity>
         <activity android:name="GTGTxtViewer"></activity>
         <activity android:name="AudioBookMaker"></activity>
-        <activity android:name="AudioListView"></activity>
-        <activity android:name=".GTGAudioListener"></activity>
+<!--        <activity android:name="AudioListView"></activity>
+        <activity android:name=".GTGAudioListener"></activity>-->
         <activity android:name=".ShelfView"></activity>
         
         <service android:name=".service.AudioService" android:process=":remote"></service>

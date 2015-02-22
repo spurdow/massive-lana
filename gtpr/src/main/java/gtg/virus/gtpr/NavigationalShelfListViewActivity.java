@@ -190,9 +190,13 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                 //startActivity(s);
                 break;
 
-            case 8:
+            case 6:
                 /*Intent x = new Intent(this , Help.class);
                 startActivity(x);*/
+                /*frag = new GTGAudioListener();
+                setTitle(getString(R.string.audiobooks));*/
+                frag = new AudioListView();
+                setTitle(getString(R.string.audiobooks));
                 break;
         }
 

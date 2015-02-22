@@ -81,24 +81,28 @@ public class MyRemoteBookShelf extends BaseFragment implements RemoteShelfAdapte
                 }
 
                 if(remotePBooks.getStatus().equals(getString(R.string.success))){
-                    List<RemoteBook> ebooks = remotePBooks.getEntity().getEbook();
-                    for(int i = 0 ; i < ebooks.size() ; i++){
-                        //RemotePBook pbook = new RemotePBook();
-                        Log.w(TAG , ebooks.get(i).getPath());
-                        RemoteBook remoteBook = ebooks.get(i);
-                        AARemoteBook aaRemoteBook = new AARemoteBook();
-                        aaRemoteBook.fileName = remoteBook.getFilename();
-                        aaRemoteBook.author = remoteBook.getAuthor();
-                        aaRemoteBook.format = remoteBook.getFormat();
-                        aaRemoteBook.path = remoteBook.getPath();
-                        aaRemoteBook.remoteDivisionId = remoteBook.getDivision_id();
-                        aaRemoteBook.remoteId = remoteBook.getId();
-                        aaRemoteBook.remoteUserId = remoteBook.getUser_id();
-                        aaRemoteBook.status = remoteBook.getStatus();
-                        aaRemoteBook.title = remoteBook.getTitle();
-                        long id = aaRemoteBook.save();
-                        if(id > 0) {
-                            mShelfAdapter.addBook(aaRemoteBook);
+                    if(remotePBooks != null && remotePBooks.getEntity() != null) {
+                        List<RemoteBook> ebooks = remotePBooks.getEntity().getEbook();
+                        if (ebooks != null && !ebooks.isEmpty()) {
+                            for (int i = 0; i < ebooks.size(); i++) {
+                                //RemotePBook pbook = new RemotePBook();
+                                Log.w(TAG, ebooks.get(i).getPath());
+                                RemoteBook remoteBook = ebooks.get(i);
+                                AARemoteBook aaRemoteBook = new AARemoteBook();
+                                aaRemoteBook.fileName = remoteBook.getFilename();
+                                aaRemoteBook.author = remoteBook.getAuthor();
+                                aaRemoteBook.format = remoteBook.getFormat();
+                                aaRemoteBook.path = remoteBook.getPath();
+                                aaRemoteBook.remoteDivisionId = remoteBook.getDivision_id();
+                                aaRemoteBook.remoteId = remoteBook.getId();
+                                aaRemoteBook.remoteUserId = remoteBook.getUser_id();
+                                aaRemoteBook.status = remoteBook.getStatus();
+                                aaRemoteBook.title = remoteBook.getTitle();
+                                long id = aaRemoteBook.save();
+                                if (id > 0) {
+                                    mShelfAdapter.addBook(aaRemoteBook);
+                                }
+                            }
                         }
                     }
 

@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Pinbook</string>
-    <string name="app_id">838264129517965</string>
+    <string name="app_id">1383527155295793</string>
     <string name="drawer_open">PinBook-Menu</string>
     <string name="drawer_close">PinBook</string>
     <string name="first_launch_dialog">Please wait while we configure things</string>
@@ -34,5 +34,6 @@
     <string name="save_doodle">Save doodle?</string>
     <string name="do_you_want_to_save_draw">Do you want to save your doodle?</string>
     <string name="no">No</string>
+    <string name="audiobooks">Audio Books</string>
 
 </resources>

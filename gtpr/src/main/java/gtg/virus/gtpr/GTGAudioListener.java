@@ -7,10 +7,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -19,32 +20,54 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Stack;
 
+import butterknife.InjectView;
+import gtg.virus.gtpr.base.BaseFragment;
 import gtg.virus.gtpr.entities.Audio;
 
-import static gtg.virus.gtpr.service.AudioService.*;
+import static gtg.virus.gtpr.service.AudioService.ABSOLUTE_PATH_SHELF;
+import static gtg.virus.gtpr.service.AudioService.ABS_FILE_NAME;
+import static gtg.virus.gtpr.service.AudioService.ACTION_MEDIA_PLAYER_SERVICE;
+import static gtg.virus.gtpr.service.AudioService.ACTION_MEDIA_PLAYER_STOP_SERVICE;
+import static gtg.virus.gtpr.service.AudioService.AUDIO_SERVICE_STATUS;
+import static gtg.virus.gtpr.service.AudioService.ERROR_NOT_RUNNING;
+import static gtg.virus.gtpr.service.AudioService.EXTRA_SERVICE_MESSAGE_STATUS;
+import static gtg.virus.gtpr.service.AudioService.FILE_NAME;
+import static gtg.virus.gtpr.service.AudioService.MAX_PLAYER_DURATION;
+import static gtg.virus.gtpr.service.AudioService.PLAYER_DURATION;
+import static gtg.virus.gtpr.service.AudioService.SEEK_SUCCESS;
+import static gtg.virus.gtpr.service.AudioService.SERVICE_STATUS;
+import static gtg.virus.gtpr.service.AudioService.SUCCESSFUL_PAUSE;
+import static gtg.virus.gtpr.service.AudioService.SUCCESSFUL_RUNNING;
+import static gtg.virus.gtpr.service.AudioService.SUCCESSFUL_STOP;
+import static gtg.virus.gtpr.service.AudioService.TAG;
 
-public class GTGAudioListener extends ActionBarActivity {
+public class GTGAudioListener extends BaseFragment {
 
     public final static String PIN_EXTRA_PBOOK = "_pbook_extra";
 
-    private SeekBar mSeekBar = null;
+    @InjectView(R.id.audio_player_seekbar)
+    protected SeekBar mSeekBar = null;
 
-    private ImageButton mPlayStop = null;
+    @InjectView(R.id.audio_button_play_stop)
+    protected ImageButton mPlayStop = null;
 
-    private ImageButton mPrev = null;
+    @InjectView(R.id.audio_button_prev)
+    protected ImageButton mPrev = null;
 
-    private ImageButton mNext = null;
+    @InjectView(R.id.audio_button_next)
+    protected ImageButton mNext = null;
 
-    private TextView mCurrent = null;
+    @InjectView(R.id.txt_current_time)
+    protected TextView mCurrent = null;
 
-    private TextView mDuration = null;
+    @InjectView(R.id.txt_duration_time)
+    protected TextView mDuration = null;
 
-    private TextView mTitle = null;
+    @InjectView(R.id.txt_title)
+    protected TextView mTitle = null;
 
     private DecimalFormat format  = new DecimalFormat("00");
 
@@ -84,12 +107,103 @@ public class GTGAudioListener extends ActionBarActivity {
 
     protected StatusReceiver mReceiver = null;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_audio_player);
+    private void setUp(){
+        mTitle.setText(players.get(currPosition).getTitle());
+    }
 
-        Bundle extras = getIntent().getExtras();
+    private void next(){
+        currPosition = ( currPosition + 1 ) % players.size() ;
+        setUp();
+        Log.w(TAG , "Currposition " + currPosition);
+    }
+
+    private void prev(){
+        currPosition = ( currPosition + players.size() - 1) % players.size();
+        setUp();
+        Log.w(TAG , "Currposition " + currPosition);
+    }
+
+    private void reset(){
+        mDurationHour = mDurationMin = mDurationSec = mCurrentHour = mCurrentMin = mCurrentSec = currentDuration = maxDuration= 0;
+
+        mSeekBar.setProgress(0);
+        mSeekBar.setMax(0);
+
+        isPlaying = false;
+
+        mCurrent.setText(String.format(configuration , format.format(mCurrentHour) , format.format(mCurrentMin) , format.format(mCurrentSec)));
+
+        mDuration.setText(String.format(configuration , format.format(mCurrentHour) , format.format(mCurrentMin) , format.format(mCurrentSec)));
+
+    }
+
+    private void onPlayStopClick(View v){
+
+        if(isPlaying){
+            ((ImageButton)v).setImageResource(R.drawable.ic_audio_play);
+            mSeekBar.removeCallbacks(mPlayerRunnable);
+            mSeekBar.setProgress(0);
+
+            Intent i = new Intent();
+            i.setAction(ACTION_MEDIA_PLAYER_STOP_SERVICE);
+            i.putExtra(FILE_NAME, players.get(currPosition).getTitle());
+            i.putExtra(ABS_FILE_NAME , ABSOLUTE_PATH_SHELF);
+            Log.w(TAG, players.get(currPosition).getTitle());
+            mHandler.removeCallbacks(mPlayerRunnable);
+            reset();
+
+            getActivity().sendBroadcast(i);
+            isPlaying = false;
+
+        }else{
+
+            ((ImageButton)v).setImageResource(R.drawable.ic_audio_stop);
+            Intent i = new Intent();
+            i.setAction(ACTION_MEDIA_PLAYER_SERVICE);
+            i.putExtra(FILE_NAME , players.get(currPosition).getTitle());
+            i.putExtra(ABS_FILE_NAME , ABSOLUTE_PATH_SHELF);
+            Log.w(TAG , players.get(currPosition).getTitle());
+            getActivity().sendBroadcast(i);
+            isPlaying = true;
+
+        }
+
+        Log.w(TAG ,"Is Playing : " + isPlaying);
+
+     }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home: getActivity().finish();
+
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if(mReceiver != null){
+            getActivity().unregisterReceiver(mReceiver);
+            mReceiver =null;
+        }
+    }
+
+    @Override
+    protected boolean hasOptions() {
+        return true;
+    }
+
+    @Override
+    protected void provideOnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
+        Bundle extras = getArguments();
 
         players = new Gson().fromJson(extras.getString(PIN_EXTRA_PBOOK), new TypeToken<List<Audio>>() {
         }.getType());
@@ -102,21 +216,7 @@ public class GTGAudioListener extends ActionBarActivity {
             ctr++;
         }
 
-        mTitle = (TextView) findViewById(R.id.txt_title);
-
         maxPosition = players.size();
-
-        mSeekBar = (SeekBar) findViewById(R.id.audio_player_seekbar);
-
-        mPlayStop = (ImageButton) findViewById(R.id.audio_button_play_stop);
-
-        mNext = (ImageButton) findViewById(R.id.audio_button_next);
-
-        mPrev = (ImageButton) findViewById(R.id.audio_button_prev);
-
-        mCurrent = (TextView) findViewById(R.id.txt_current_time);
-
-        mDuration = (TextView) findViewById(R.id.txt_duration_time);
 
         reset();
 
@@ -161,103 +261,15 @@ public class GTGAudioListener extends ActionBarActivity {
 
         if(mReceiver == null){
             mReceiver = new StatusReceiver();
-            registerReceiver(mReceiver, new IntentFilter(AUDIO_SERVICE_STATUS));
+            getActivity().registerReceiver(mReceiver, new IntentFilter(AUDIO_SERVICE_STATUS));
         }
 
         setUp();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    private void setUp(){
-        mTitle.setText(players.get(currPosition).getTitle());
-    }
-
-    private void next(){
-        currPosition = ( currPosition + 1 ) % players.size() ;
-        setUp();
-        Log.w(TAG , "Currposition " + currPosition);
-    }
-
-    private void prev(){
-        currPosition = ( currPosition + players.size() - 1) % players.size();
-        setUp();
-        Log.w(TAG , "Currposition " + currPosition);
-    }
-
-    private void reset(){
-        mDurationHour = mDurationMin = mDurationSec = mCurrentHour = mCurrentMin = mCurrentSec = currentDuration = maxDuration= 0;
-
-        mSeekBar.setProgress(0);
-        mSeekBar.setMax(0);
-
-        isPlaying = false;
-
-        mCurrent.setText(String.format(configuration , format.format(mCurrentHour) , format.format(mCurrentMin) , format.format(mCurrentSec)));
-
-        mDuration.setText(String.format(configuration , format.format(mCurrentHour) , format.format(mCurrentMin) , format.format(mCurrentSec)));
-
-    }
-
-    private void onPlayStopClick(View v){
-
-        if(isPlaying){
-            ((ImageButton)v).setImageResource(R.drawable.ic_audio_play);
-            mSeekBar.removeCallbacks(mPlayerRunnable);
-            mSeekBar.setProgress(0);
-
-            Intent i = new Intent();
-            i.setAction(ACTION_MEDIA_PLAYER_STOP_SERVICE);
-            i.putExtra(FILE_NAME, players.get(currPosition).getTitle());
-            i.putExtra(ABS_FILE_NAME , ABSOLUTE_PATH_SHELF);
-            Log.w(TAG , players.get(currPosition).getTitle());
-            mHandler.removeCallbacks(mPlayerRunnable);
-            reset();
-            sendBroadcast(i);
-            isPlaying = false;
-
-        }else{
-
-            ((ImageButton)v).setImageResource(R.drawable.ic_audio_stop);
-            Intent i = new Intent();
-            i.setAction(ACTION_MEDIA_PLAYER_SERVICE);
-            i.putExtra(FILE_NAME , players.get(currPosition).getTitle());
-            i.putExtra(ABS_FILE_NAME , ABSOLUTE_PATH_SHELF);
-            Log.w(TAG , players.get(currPosition).getTitle());
-            sendBroadcast(i);
-
-            isPlaying = true;
-
-        }
-
-        Log.w(TAG ,"Is Playing : " + isPlaying);
-
-
-
-
-
-
-     }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()){
-            case android.R.id.home: finish();
-
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        if(mReceiver != null){
-            unregisterReceiver(mReceiver);
-            mReceiver =null;
-        }
+    protected int resourceId() {
+        return R.layout.activity_audio_player;
     }
 
     private class StatusReceiver extends BroadcastReceiver{

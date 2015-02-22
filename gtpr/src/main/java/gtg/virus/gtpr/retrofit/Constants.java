@@ -8,4 +8,5 @@ public final class Constants {
     public static final String USER_LOGIN_SUBDOMAIN = "/api/users/login";
     public static final String EBOOK_QUERY_SUBDOMAIN = "/api/ebooks/list";
     public static final String USER_DEFAULT_PHOTO = "/assets/img/default-avatar.jpg";
+    public static final String FB_LOGIN = "/api/users/loginByFB";
 }

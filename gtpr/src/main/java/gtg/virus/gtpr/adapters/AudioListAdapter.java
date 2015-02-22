@@ -3,7 +3,6 @@ package gtg.virus.gtpr.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
@@ -14,10 +13,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 import gtg.virus.gtpr.R;
 import gtg.virus.gtpr.entities.Audio;
 
-import static gtg.virus.gtpr.service.AudioService.*;
+import static gtg.virus.gtpr.service.AudioService.ACTION_MEDIA_PLAYER_SERVICE;
+import static gtg.virus.gtpr.service.AudioService.ACTION_MEDIA_PLAYER_STOP_SERVICE;
+import static gtg.virus.gtpr.service.AudioService.FILE_NAME;
 public class AudioListAdapter extends AbstractListAdapter<Audio>{
 
     public AudioListAdapter(Context context, List<Audio> lists) {
@@ -65,11 +68,7 @@ public class AudioListAdapter extends AbstractListAdapter<Audio>{
         ViewHolder vH = null;
         if(child == null){
             child = mInflater.inflate(R.layout.audio_list_row , null);
-            vH = new ViewHolder();
-            vH.title = (TextView) child.findViewById(R.id.txt_audio_list_title);
-            vH.details = (TextView) child.findViewById(R.id.txt_audio_list_details);
-            vH.button = (Switch) child.findViewById(R.id.play_stop_switch);
-
+            vH = new ViewHolder(child);
             child.setTag(vH);
         }else{
             vH = (ViewHolder) child.getTag();
@@ -122,10 +121,17 @@ public class AudioListAdapter extends AbstractListAdapter<Audio>{
         return null;
     }
 
-    private class ViewHolder {
+    static class ViewHolder {
+        @InjectView(R.id.txt_audio_list_title)
         TextView title;
+        @InjectView(R.id.txt_audio_list_details)
         TextView details;
+        @InjectView(R.id.play_stop_switch)
         Switch button;
+
+        ViewHolder(View child){
+            ButterKnife.inject(this , child);
+        }
     }
 
 }

@@ -34,8 +34,8 @@ import static gtg.virus.gtpr.utils.Utilities.isMp3;
 import static gtg.virus.gtpr.utils.Utilities.isPdf;
 import static gtg.virus.gtpr.utils.Utilities.isTxt;
 import static gtg.virus.gtpr.utils.Utilities.isValideBook;
-import static gtg.virus.gtpr.utils.Utilities.renderPage;
 import static gtg.virus.gtpr.utils.Utilities.makeText;
+import static gtg.virus.gtpr.utils.Utilities.renderPage;
 
 /**
  * Created by DavidLuvelleJoseph on 2/16/2015.
@@ -53,8 +53,23 @@ public class AddNewBookTask extends AsyncTask<String , Void , PBook> {
         void onFinish(PBook pbook);
     }
 
+    private State mState = State.None;
+    public enum State{
+        None,
+        Pdf,
+        Epub,
+        Txt,
+        Mp3
+    }
+
     public AddNewBookTask(Context mContext , OnFinishTask onFinishTask) {
         this.mContext = mContext;
+        this.onFinishTask = onFinishTask;
+    }
+
+    public AddNewBookTask(Context mContext, OnFinishTask onFinishTask, State mState) {
+        this.mContext = mContext;
+        this.mState = mState;
         this.onFinishTask = onFinishTask;
     }
 
@@ -89,8 +104,30 @@ public class AddNewBookTask extends AsyncTask<String , Void , PBook> {
         PBook b = null;
         Log.i(TAG, "Path " + path);
         // Alternatively, use FileUtils.getFile(Context, Uri)
-        if (path != null && isValideBook(path) && FileUtils.isLocal(path)) {
-            Log.w(TAG , "Valid Book");
+        if(path != null && isValideBook(path) && FileUtils.isLocal(path) && mState != State.None) {
+            if(isMp3(path) && mState == State.Mp3){
+                b = new PBook();
+                MediaMetadataRetriever meta = new MediaMetadataRetriever();
+                meta.setDataSource(path);
+
+                byte[] art = meta.getEmbeddedPicture();
+                Bitmap songImage = null;
+                try {
+                    songImage = BitmapFactory.decodeByteArray(art, 0, art.length);
+                }catch(Exception ex){
+
+                }
+                b.setPage0(songImage);
+                b.addAuthor(meta.extractMetadata(MediaMetadataRetriever.METADATA_KEY_AUTHOR));
+                b.setFilename(newPdf.getName());
+                b.setPath(path);
+                b.setTitle(newPdf.getName());
+
+                meta.release();
+                Log.w(TAG , "mp3 file added. ");
+            }
+        }else if (path != null && isValideBook(path) && FileUtils.isLocal(path)) {
+            Log.w(TAG, "Valid Book");
             if(isPdf(path)){
 
 
@@ -197,7 +234,7 @@ public class AddNewBookTask extends AsyncTask<String , Void , PBook> {
             }
 
         }else if(!isValideBook(path)){
-            makeText(mContext, "File is not a pdf/epub/txt");
+            makeText(mContext, "File is not a pdf/epub/txt/audio");
         }
         Log.w(TAG, "doInBackground");
         return b;
