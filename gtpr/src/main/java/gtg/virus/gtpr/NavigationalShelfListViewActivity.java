@@ -208,6 +208,20 @@ public class NavigationalShelfListViewActivity extends ActionBarActivity {
                 frag = new ReadingPlanList();
                 setTitle(getString(R.string.reading_plan));
                 break;
+
+            case 9 :
+                frag = new ReadingLogs();
+                setTitle(getString(R.string.reading_logs));
+                break;
+
+            case 11:
+                frag = new Settings();
+                setTitle(getString(R.string.settings));
+                break;
+
+            case 12 :
+                frag = new Help();
+                setTitle(getString(R.string.help));
         }
 
         if(frag != null){

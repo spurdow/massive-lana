@@ -22,14 +22,14 @@ public final class R {
 		public static final int ic_provider = 0x7f02010f;
 	}
 	public static final class layout {
-		public static final int file = 0x7f03003f;
+		public static final int file = 0x7f030040;
 	}
 	public static final class string {
-		public static final int choose_file = 0x7f0b0013;
-		public static final int empty_directory = 0x7f0b0035;
-		public static final int error_selecting_file = 0x7f0b0037;
-		public static final int internal_storage = 0x7f0b003c;
-		public static final int storage_removed = 0x7f0b005d;
+		public static final int choose_file = 0x7f0b0014;
+		public static final int empty_directory = 0x7f0b0036;
+		public static final int error_selecting_file = 0x7f0b0038;
+		public static final int internal_storage = 0x7f0b003d;
+		public static final int storage_removed = 0x7f0b005e;
 	}
 	public static final class style {
 		public static final int fileChooserName = 0x7f0c00a2;

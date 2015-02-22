@@ -6,10 +6,10 @@ import android.view.ViewGroup;
 
 import gtg.virus.gtpr.base.BaseFragment;
 
-
-public class Help extends BaseFragment {
-
-
+/**
+ * Created by DavidLuvelleJoseph on 2/23/2015.
+ */
+public class Settings extends BaseFragment {
     @Override
     protected boolean hasOptions() {
         return false;

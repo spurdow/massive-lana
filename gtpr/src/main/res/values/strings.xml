@@ -42,5 +42,8 @@
     <string name="reading_plan">Reading Plan List</string>
     <string name="schedule_books">Schedule Books</string>
     <string name="annotations">Annotations</string>
+    <string name="reading_logs">Reading Logs</string>
+    <string name="settings" />
+    <string name="help">Help</string>
 
 </resources>
