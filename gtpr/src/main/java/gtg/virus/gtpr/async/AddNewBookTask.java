@@ -211,7 +211,7 @@ public class AddNewBookTask extends AsyncTask<String , Void , PBook> {
                 b.setPath(path);
                 b.setFilename(newPdf.getName());
                 Log.w(TAG , "txt file added");
-            }else if(isMp3(path)){
+            }/*else if(isMp3(path)){
                 b = new PBook();
                 MediaMetadataRetriever meta = new MediaMetadataRetriever();
                 meta.setDataSource(path);
@@ -231,7 +231,7 @@ public class AddNewBookTask extends AsyncTask<String , Void , PBook> {
 
                 meta.release();
                 Log.w(TAG , "mp3 file added. ");
-            }
+            }*/
 
         }else if(!isValideBook(path)){
             makeText(mContext, "File is not a pdf/epub/txt/audio");

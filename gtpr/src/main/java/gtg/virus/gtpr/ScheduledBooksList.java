@@ -1,15 +1,20 @@
 package gtg.virus.gtpr;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.roomorama.caldroid.CaldroidFragment;
+import com.roomorama.caldroid.CaldroidListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.InjectView;
@@ -57,6 +62,8 @@ public class ScheduledBooksList extends BaseFragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+    SimpleDateFormat format  = new SimpleDateFormat("MMM d , yyyy");
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
@@ -64,6 +71,12 @@ public class ScheduledBooksList extends BaseFragment {
 
 
                 CaldroidFragment fragment = CaldroidFragment.newInstance("Select a date" , 3 , 2015);
+                fragment.setCaldroidListener(new CaldroidListener() {
+                    @Override
+                    public void onSelectDate(Date date, View view) {
+                        Log.w(TAG , "Date selected " + format.format(date));
+                    }
+                });
                 fragment.show(getActivity().getSupportFragmentManager() , TAG);
 
                 break;
