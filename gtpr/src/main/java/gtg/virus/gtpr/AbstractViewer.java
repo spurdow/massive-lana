@@ -420,21 +420,23 @@ public abstract class AbstractViewer extends ActionBarActivity implements ColorP
             current_doodle = AADoodle.list( current_page , current_book);
 
             if(mDrawnView != null){
-                vg.removeView(mDrawnView);
-
+                //vg.removeView(mDrawnView);
+                mDrawnView.setVisibility(View.GONE);
             }
 
 
             if (current_doodle != null && !current_doodle.isEmpty()) {
                 List<Float> x = new ArrayList<Float>();
                 List<Float> y = new ArrayList<Float>();
+                List<Integer> colors = new ArrayList<Integer>();
                 for (int index = 0; index < current_doodle.size(); index++) {
                     x.add(current_doodle.get(index).sx);
                     y.add(current_doodle.get(index).sy);
+                    colors.add(current_doodle.get(index).color);
 
                 }
 
-                mDrawnView = new DrawnView(AbstractViewer.this, current_color, x, y);
+                mDrawnView = new DrawnView(AbstractViewer.this, colors.get(0), x, y);
 
                 //LinearLayoutParams params = new Linear
                 vg.addView(mDrawnView);
