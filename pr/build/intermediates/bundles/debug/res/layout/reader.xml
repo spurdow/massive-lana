@@ -145,4 +145,4 @@
         android:layout_height="50dp"
         android:layout_above="@+id/bar_find" />
 
-</RelativeLayout><!-- From: file:/G:/Android%20Studio/gtg/pr/src/main/res/layout/reader.xml -->
+</RelativeLayout><!-- From: file:/G:/projects/massive-lana/pr/src/main/res/layout/reader.xml -->

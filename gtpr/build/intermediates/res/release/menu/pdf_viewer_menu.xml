@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:gtg.virus.gtpr="http://schemas.android.com/apk/res-auto" >
+
+    <item android:id="@+id/opt_menu_edit" gtg.virus.gtpr:showAsAction="always" android:icon="@drawable/ic_content_edit" ></item>
+    <item android:id="@+id/opt_more" gtg.virus.gtpr:showAsAction="always" android:icon="@drawable/ic_menu_more">
+        <menu>
+            <item android:id="@+id/opt_menu_set_alarm" android:title="Set Alarm"/>
+            <item android:id="@+id/opt_menu_view" android:title="View Pdf Details"/>
+            
+        </menu>
+    </item>
+    
+    
+
+</menu>
+<!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/menu/pdf_viewer_menu.xml -->

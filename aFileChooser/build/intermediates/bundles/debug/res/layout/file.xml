@@ -18,4 +18,4 @@
     style="@style/fileChooserName"
     android:layout_width="fill_parent"
     android:layout_height="?android:attr/listPreferredItemHeight" />
-<!-- From: file:/G:/Android%20Studio/gtg/aFileChooser/src/main/res/layout/file.xml -->
+<!-- From: file:/G:/projects/massive-lana/aFileChooser/src/main/res/layout/file.xml -->

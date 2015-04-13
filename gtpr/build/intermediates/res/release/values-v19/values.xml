@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/G:/projects/massive-lana/gtpr/build/intermediates/exploded-aar/massive-lana/aFileChooser/unspecified/res/values-v19/values.xml -->
+    <eat-comment/>
+    <bool name="use_activity">false</bool>
+    <bool name="use_provider">true</bool>
+</resources>

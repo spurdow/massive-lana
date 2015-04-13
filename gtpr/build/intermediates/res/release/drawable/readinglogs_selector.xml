@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<selector xmlns:android="http://schemas.android.com/apk/res/android">
+		<item android:drawable="@drawable/ic_readinglogs_pressed" android:state_pressed="true"/>
+		<item android:drawable="@drawable/ic_readinglogs_unpressed" android:state_pressed="false"/>
+	</selector><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/drawable/readinglogs_selector.xml -->

@@ -86,4 +86,4 @@
 	<!-- Android specific -->
 	<type extension=".apk" mimetype="application/vnd.android.package-archive" />
 	
-</MimeTypes><!-- From: file:/G:/Android%20Studio/gtg/aFileChooser/src/main/res/xml/mimetypes.xml -->
+</MimeTypes><!-- From: file:/G:/projects/massive-lana/aFileChooser/src/main/res/xml/mimetypes.xml -->

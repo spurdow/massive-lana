@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- From: file:/G:/Android%20Studio/gtg/pr/src/main/res/values/strings.xml -->
-    <eat-comment />
-
+    <!-- From: file:/G:/projects/massive-lana/pr/src/main/res/values/strings.xml -->
+    <eat-comment/>
     <color name="clr_back">#FFCCCC80</color>
-
     <string name="app_name">PDFReader</string>
     <string name="s_act">Do</string>
     <string name="s_edit">Edit</string>
@@ -18,5 +15,4 @@
     <string name="s_remove">Remove</string>
     <string name="s_save">Save</string>
     <string name="s_saveas">Save as</string>
-
 </resources>

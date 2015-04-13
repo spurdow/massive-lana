@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:vpt="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_view_group"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+</FrameLayout><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/layout/epub_main_layout.xml -->

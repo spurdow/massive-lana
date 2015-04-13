@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:background="@drawable/afd_coverimg"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.60"
+        android:src="@drawable/ic_headphones" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/txt_title"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffebf7ee"
+        android:layout_weight="0.60"
+        android:gravity="center_vertical|center_horizontal"
+        android:singleLine="false"
+        android:textSize="13sp"
+        android:textIsSelectable="false" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="00:00"
+            android:id="@+id/txt_current_time"
+            android:textColor="#fff5f3ed"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="00:00"
+            android:id="@+id/txt_duration_time"
+            android:textColor="#fff5f3ed"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+             />
+    </RelativeLayout>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/audio_player_seekbar"
+        android:indeterminate="false" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="78dp"
+        android:weightSum="3">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/audio_button_prev"
+            android:layout_weight="1"
+            android:src="@drawable/ic_navigation_arrow_left" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/audio_button_play_stop"
+            android:layout_gravity="center_horizontal"
+            android:focusableInTouchMode="false"
+            android:layout_weight="1"
+            android:src="@drawable/ic_audio_play" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/audio_button_next"
+            android:layout_weight="1"
+            android:src="@drawable/ic_navigation_arrow_right" />
+    </LinearLayout>
+
+
+</LinearLayout><!-- From: file:/G:/projects/massive-lana/gtpr/src/main/res/layout/activity_audio_player.xml -->

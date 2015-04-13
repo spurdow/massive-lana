@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/caldroid_holo_blue_light" android:state_pressed="true"/> <!-- pressed -->
+    <item android:drawable="@color/caldroid_white" android:state_pressed="false"/> <!-- normal -->
+
+</selector><!-- From: file:/Users/thomasdao/Documents/workspace/Caldroid/caldroid/src/main/res/drawable/cell_bg.xml --><!-- From: file:/G:/projects/massive-lana/gtpr/build/intermediates/exploded-aar/com.roomorama/caldroid/1.1.8/res/drawable/cell_bg.xml -->
